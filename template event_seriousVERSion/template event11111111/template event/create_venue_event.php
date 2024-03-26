@@ -28,175 +28,14 @@
 		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">		
-		<link href="vendor/ckeditor5/sample/css/sample.css" rel="stylesheet">
+		<link href="vendor/ckeditor5/sample/css/sample.css" rel="stylesheet">		
 		
 	</head>
 
 <body class="d-flex flex-column h-100">
+	
 	<!-- Header Start-->
-	<header class="header">
-		<div class="header-inner">
-			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
-				<div class="container">	
-					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-						<span class="navbar-toggler-icon">
-							<i class="fa-solid fa-bars"></i>
-						</span>
-					</button>
-					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
-						<div class="res-main-logo">
-							<img src="images/logo-icon.svg" alt="">
-						</div>
-						<div class="main-logo" id="logo">
-							<img src="images/logo.svg" alt="">
-							<img class="logo-inverse" src="images/dark-logo.svg" alt="">
-						</div>
-					</a>
-					<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-						<div class="offcanvas-header">
-							<div class="offcanvas-logo" id="offcanvasNavbarLabel">
-								<img src="images/logo-icon.svg" alt="">
-							</div>
-							<button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
-								<i class="fa-solid fa-xmark"></i>
-							</button>
-						</div>
-						<div class="offcanvas-body">
-							<div class="offcanvas-top-area">
-								<div class="create-bg">
-									<a href="create.html" class="offcanvas-create-btn">
-										<i class="fa-solid fa-calendar-days"></i>
-										<span>Create Event</span>
-									</a>
-								</div>
-							</div>							
-							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
-								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.html">Home</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Explore Events
-									</a>
-									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="explore_events.html">Explore Events</a></li>
-										<li><a class="dropdown-item" href="venue_event_detail_view.html">Venue Event Detail View</a></li>
-										<li><a class="dropdown-item" href="online_event_detail_view.html">Online Event Detail View</a></li>
-									</ul>
-								</li>
-								
-						
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Help
-									</a>
-									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-										<li><a class="dropdown-item" href="help_center.html">Help Center</a></li>
-										<li><a class="dropdown-item" href="contact_us.html">Contact Us</a></li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Pages
-									</a>
-									<ul class="dropdown-menu dropdown-submenu">
-										<li>
-											<a class="dropdown-item submenu-item" href="#">Other Pages</a>
-											<ul class="submenu dropdown-menu">
-												<li><a class="dropdown-item pe-5" href="sign_in.html">Sign In</a></li>
-												<li><a class="dropdown-item pe-5" href="sign_up.html">Sign Up</a></li>
-												<li><a class="dropdown-item pe-5" href="forgot_password.html">Forgot Password</a></li>
-												<li><a class="dropdown-item pe-5" href="about_us.html">About Us</a></li>
-												<li><a class="dropdown-item pe-5" href="checkout.html">Checkout</a></li>
-												<li><a class="dropdown-item pe-5" href="checkout_premium.html">Checkout Premium</a></li>
-												<li><a class="dropdown-item pe-5" href="invoice.html">Invoice</a></li>
-												<li><a class="dropdown-item pe-5" href="coming_soon.html">Coming Soon</a></li>
-												<li><a class="dropdown-item pe-5" href="error_404.html">Error 404</a></li>
-											</ul>
-										</li>
-										<li>
-											<a class="dropdown-item submenu-item" href="#">Create Event</a>
-											<ul class="submenu dropdown-menu">
-												<li><a class="dropdown-item pe-5" href="create.html">Create</a></li>
-												<li><a class="dropdown-item pe-5" href="create_venue_event.html">Create Venue Event</a></li>
-												<li><a class="dropdown-item pe-5" href="create_online_event.html">Create Online Event</a></li>
-											</ul>
-										</li>
-										<li>
-											<a class="dropdown-item submenu-item" href="#">Events View</a>
-											<ul class="submenu dropdown-menu">
-												<li><a class="dropdown-item pe-5" href="online_event_detail_view.html">Online Event Detail View</a></li>
-												<li><a class="dropdown-item pe-5" href="venue_event_detail_view.html">Venue Event Detail View</a></li>
-											</ul>
-										</li>
-										<li><a class="dropdown-item" href="booking_confirmed.html">Booking Confirmed</a></li>
-										<li><a class="dropdown-item" href="attendee_profile_view.html">Attendee Profile View</a></li>
-										<li><a class="dropdown-item" href="organiser_profile_view.html">Organiser Profile View</a></li>
-										<li><a class="dropdown-item" href="my_organisation_dashboard.html">Organization Dashboard</a></li>
-										<li><a class="dropdown-item" href="sell_tickets_online.html">Sell Tickets Online</a></li>
-										<li><a class="dropdown-item" href="refer_a_friend.html">Refer a Friend</a></li>
-										<li><a class="dropdown-item" href="term_and_conditions.html">Terms & Conditions</a></li>
-										<li><a class="dropdown-item" href="privacy_policy.html">Privacy Policy</a></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div class="offcanvas-footer">
-							<div class="offcanvas-social">
-								<h5>Follow Us</h5>
-								<ul class="social-links">
-									<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="right-header order-2">
-						<ul class="align-self-stretch">
-							<li>
-								<a href="create.html" class="create-btn btn-hover">
-									<i class="fa-solid fa-calendar-days"></i>
-									<span>Create Event</span>
-								</a>
-							</li>
-							<li class="dropdown account-dropdown">
-								<a href="#" class="account-link" role="button" id="accountClick" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
-									<img src="images/profile-imgs/img-13.jpg" alt="">
-									<i class="fas fa-caret-down arrow-icon"></i>
-								</a>
-								<ul class="dropdown-menu dropdown-menu-account dropdown-menu-end" aria-labelledby="accountClick">
-									<li>
-										<div class="dropdown-account-header">
-											<div class="account-holder-avatar">
-												<img src="images/profile-imgs/img-13.jpg" alt="">
-											</div>
-											<h5>John Doe</h5>
-											<p>johndoe@example.com</p>
-										</div>
-									</li>
-									<li class="profile-link">
-										<a href="my_organisation_dashboard.html" class="link-item">My Organisation</a>
-										<a href="organiser_profile_view.html" class="link-item">My Profile</a>									
-										<a href="sign_in.html" class="link-item">Sign Out</a>									
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div class="night_mode_switch__btn">
-									<div id="night-mode" class="fas fa-moon fa-sun"></div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-			<div class="overlay"></div>
-		</div>
-	</header>
+	<?php include "include/nav.php";?>
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">
@@ -206,7 +45,6 @@
 					<div class="col-lg-12 col-md-10">
 						<div class="barren-breadcrumb">
 							<nav aria-label="breadcrumb">
-								
 							</nav>
 						</div>
 					</div>
@@ -218,7 +56,7 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-12 col-md-12">
 						<div class="main-title text-center">
-							<h3>Create Online Event</h3>
+							<h3>Create Venue Event</h3>
 						</div>
 					</div>
 					<div class="col-xl-8 col-lg-9 col-md-12">
@@ -237,17 +75,12 @@
 														<div class="col-lg-12 col-md-12">
 															<div class="form-group border_bottom pb_30">
 																<label class="form-label fs-16">Give your event a name.*</label>
-																
-																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="">
-															</div>
-															<div class="form-group border_bottom pb_30">
-																<label class="form-label fs-16">Give event link</label>
-																
+																<p class="mt-2 d-block fs-14 mb-3">See how your name appears on the event page and a list of all places where your event name will be used. <a href="#" class="a-link">Learn more</a></p>
 																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="">
 															</div>
 															<div class="form-group border_bottom pt_30 pb_30">
 																<label class="form-label fs-16">Choose a category for your event.*</label>
-																
+																<p class="mt-2 d-block fs-14 mb-3">Choosing relevant categories helps to improve the discoverability of your event. <a href="#" class="a-link">Learn more</a></p>
 																<select class="selectpicker" multiple="" data-selected-text-format="count > 4" data-size="5" title="Select category" data-live-search="true">
 																	<option value="01">Arts</option>
 																	<option value="02">Business</option>
@@ -273,7 +106,7 @@
 															</div>
 															<div class="form-group border_bottom pt_30 pb_30">
 																<label class="form-label fs-16">When is your event?*</label>
-																
+																<p class="mt-2 fs-14 d-block mb-3">Tell your attendees when your event starts so they can get ready to attend.</p>
 																<div class="row g-2">
 																	<div class="col-md-6">
 																		<label class="form-label mt-3 fs-6">Event Date.*</label>																
@@ -413,7 +246,7 @@
 															</div>
 															<div class="form-group pt_30 pb_30">
 																<label class="form-label fs-16">Add a few images to your event banner.</label>
-																
+																<p class="mt-2 fs-14 d-block mb-3 pe_right">Upload colorful and vibrant images as the banner for your event! See how beautiful images help your event details page. <a href="#" class="a-link">Learn more</a></p>
 																<div class="content-holder mt-4">
 																	<div class="default-event-thumb">   
 																		<div class="default-event-thumb-btn">
@@ -433,17 +266,131 @@
 																	<div id="pd_editor"></div>
 																</div>
 															</div>
-															
+															<div class="form-group pt_30 pb-2">
+																<label class="form-label fs-16">Where is your event taking place? *</label>
+																<p class="mt-2 fs-14 d-block mb-3">Add a venue to your event to tell your attendees where to join the event.</p>
+																<div class="stepper-data-set">
+																	<div class="content-holder template-selector">
+																		<div class="row g-4">
+																			<div class="col-md-12">
+																				<div class="venue-event">
+																					<div class="map">
+																						<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d27382.59422947023!2d75.84077125074462!3d30.919535510612153!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1534312417365" style="border:0" allowfullscreen></iframe>	
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-md-12">
+																				<div class="form-group mt-1">
+																					<label class="form-label fs-6">Venue*</label>
+																					<input class="form-control h_50" type="text" placeholder="" value="">
+																				</div>
+																			</div>
+																			<div class="col-md-6">
+																				<div class="form-group mt-1">
+																					<label class="form-label fs-6">Address line 1*</label>
+																					<input class="form-control h_50" type="text" placeholder="" value="">
+																				</div>
+																			</div>
+																			<div class="col-md-6">
+																				<div class="form-group mt-1">
+																					<label class="form-label fs-6">Address line 2*</label>
+																					<input class="form-control h_50" type="text" placeholder="" value="">
+																				</div>
+																			</div>
+																			<div class="col-md-6">
+																				<div class="form-group main-form mt-1">
+																					<label class="form-label">Country*</label>
+																					<select class="selectpicker" data-size="5" title="Nothing selected" data-live-search="true">
+																						<option value="Algeria">Algeria</option>
+																						<option value="Argentina">Argentina</option>
+																						<option value="Australia" selected="">Australia</option>
+																						<option value="Austria">Austria (Österreich)</option>
+																						<option value="Belgium">Belgium (België)</option>
+																						<option value="Bolivia">Bolivia</option>
+																						<option value="Brazil">Brazil</option>
+																						<option value="Canada">Canada</option>
+																						<option value="Chile">Chile</option>
+																						<option value="Colombia">Colombia</option>
+																						<option value="Costa Rica">Costa Rica</option>
+																						<option value="Cyprus">Cyprus</option>
+																						<option value="Czech Republic">Czech Republic</option>
+																						<option value="Denmark">Denmark</option>
+																						<option value="Dominican Republic">Dominican Republic</option>
+																						<option value="Estonia">Estonia</option>
+																						<option value="Finland">Finland</option>
+																						<option value="France">France</option>
+																						<option value="Germany">Germany</option>
+																						<option value="Greece">Greece</option>
+																						<option value="Hong Kong">Hong Kong</option>
+																						<option value="Iceland">Iceland</option>
+																						<option value="India">India</option>
+																						<option value="Indonesia">Indonesia</option>
+																						<option value="Ireland">Ireland</option>
+																						<option value="Israel">Israel</option>
+																						<option value="Italy">Italy</option>
+																						<option value="Japan">Japan</option>
+																						<option value="Latvia">Latvia</option>
+																						<option value="Lithuania">Lithuania</option>
+																						<option value="Luxembourg">Luxembourg</option>
+																						<option value="Malaysia">Malaysia</option>
+																						<option value="Mexico">Mexico</option>
+																						<option value="Nepal">Nepal</option>
+																						<option value="Netherlands">Netherlands</option>
+																						<option value="New Zealand">New Zealand</option>
+																						<option value="Norway">Norway</option>
+																						<option value="Paraguay">Paraguay</option>
+																						<option value="Peru">Peru</option>
+																						<option value="Philippines">Philippines</option>
+																						<option value="Poland">Poland</option>
+																						<option value="Portugal">Portugal</option>
+																						<option value="Singapore">Singapore</option>
+																						<option value="Slovakia">Slovakia</option>
+																						<option value="Slovenia">Slovenia</option>
+																						<option value="South Africa">South Africa</option>
+																						<option value="South Korea">South Korea</option>
+																						<option value="Spain">Spain</option>
+																						<option value="Sweden">Sweden</option>
+																						<option value="Switzerland">Switzerland</option>
+																						<option value="Tanzania">Tanzania</option>
+																						<option value="Thailand">Thailand</option>
+																						<option value="Turkey">Turkey</option>
+																						<option value="United Kingdom">United Kingdom</option>
+																						<option value="United States">United States</option>
+																						<option value="Vietnam">Vietnam</option>																					
+																					</select>
+																				</div>
+																			</div>
+																			<div class="col-md-6">
+																				<div class="form-group mt-1">
+																					<label class="form-label">State*</label>
+																					<input class="form-control h_50" type="text" placeholder="" value="Victoria">																								
+																				</div>
+																			</div>
+																			<div class="col-lg-6 col-md-12">
+																				<div class="form-group mt-1">
+																					<label class="form-label">City/Suburb*</label>
+																					<input class="form-control h_50" type="text" placeholder="" value="Melbourne">																								
+																				</div>
+																			</div>
+																			<div class="col-lg-6 col-md-12">
+																				<div class="form-group mt-1">
+																					<label class="form-label">Zip/Post Code*</label>
+																					<input class="form-control h_50" type="text" placeholder="" value="3000">																								
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-									
-									
-									
 								<div class="step-footer step-tab-pager mt-4">
+									
+									
 									<button type="submit" class="btn btn-default btn-hover steps_btn">Create</button>
 								</div>
 							</div>
@@ -456,61 +403,7 @@
 	</div>
 	<!-- Body End-->
 	<!-- Footer Start-->
-	<footer class="footer mt-auto">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-content">
-							<h4>Company</h4>
-							<ul class="footer-link-list">
-								<li><a href="about_us.html" class="footer-link">About Us</a></li>
-								<li><a href="help_center.html" class="footer-link">Help Center</a></li>
-								<li><a href="faq.html" class="footer-link">FAQ</a></li>
-								<li><a href="contact_us.html" class="footer-link">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-content">
-							<h4>Useful Links</h4>
-							<ul class="footer-link-list">
-								<li><a href="create.html" class="footer-link">Create Event</a></li>
-								<li><a href="sell_tickets_online.html" class="footer-link">Sell Tickets Online</a></li>
-								<li><a href="privacy_policy.html" class="footer-link">Privacy Policy</a></li>
-								<li><a href="term_and_conditions.html" class="footer-link">Terms & Conditions</a></li>
-							</ul>
-						</div>
-					</div>
-					
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-content">
-							<h4>Follow Us</h4>
-							<ul class="social-links">
-								<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-							</ul>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-copyright-text">
-							<p class="mb-0">© 2024, <strong>Barren</strong>. All rights reserved. Powered by Gambolthemes</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php include "include/Footer.php";?>
 	<!-- Footer End-->
 	
 	
@@ -520,11 +413,11 @@
 	<script src="vendor/OwlCarousel/owl.carousel.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
 	<script src="vendor/ckeditor5/ckeditor.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/night-mode.js"></script>
 	<script src="js/jquery-steps.min.js"></script>
 	<script src="js/datepicker.min.js"></script>
 	<script src="js/i18n/datepicker.en.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/night-mode.js"></script>	
 	<script>
 		$('#add-event-tab').steps({
 		  onFinish: function () {

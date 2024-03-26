@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="fr" class="h-100">
+<html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,112 +31,7 @@
 
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
-	<header class="header">
-		<div class="header-inner">
-			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
-				<div class="container-fluid ">	
-					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-						<span class="navbar-toggler-icon">
-							<i class="fa-solid fa-bars"></i>
-						</span>
-					</button>
-					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
-						<div class="res-main-logo">
-							<img src="images/logo-icon.svg" alt="">
-						</div>
-						<div class="main-logo" id="logo">
-							<img src="images/logo.svg" alt="">
-							<img class="logo-inverse" src="images/dark-logo.svg" alt="">
-						</div>
-					</a>
-					<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-						<div class="offcanvas-header">
-							<div class="offcanvas-logo" id="offcanvasNavbarLabel">
-								<img src="images/logo-icon.svg" alt="">
-							</div>
-							<button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
-								<i class="fa-solid fa-xmark"></i>
-							</button>
-						</div>
-						<div class="offcanvas-body">
-							<div class="offcanvas-top-area">
-								<div class="create-bg">
-									<a href="create.html" class="offcanvas-create-btn">
-										<i class="fa-solid fa-calendar-days"></i>
-										<span>Create Event</span>
-									</a>
-								</div>
-							</div>							
-							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
-								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.html">Home</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Explore Events
-									</a>
-									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="explore_events.html">Explore Events</a></li>
-										<li><a class="dropdown-item" href="venue_event_detail_view.html">Venue Event Detail View</a></li>
-										<li><a class="dropdown-item" href="online_event_detail_view.html">Online Event Detail View</a></li>
-									</ul>
-								</li>
-								
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Help
-									</a>
-									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-										<li><a class="dropdown-item" href="help_center.html">Help Center</a></li>
-										<li><a class="dropdown-item" href="contact_us.html">Contact Us</a></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div class="offcanvas-footer">
-							<div class="offcanvas-social">
-								<h5>Follow Us</h5>
-								<ul class="social-links">
-									<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-									<li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="right-header order-2">
-						<ul class="align-self-stretch">
-							<li>
-								<a href="create.html" class="create-btn btn-hover">
-									<i class="fa-solid fa-calendar-days"></i>
-									<span>Creer un évènement</span>
-								</a>
-							</li>
-							<li>
-								<a href="create.html" class="create-btn btn-hover ">
-									<span>Inscription</span>
-								</a>
-							</li>
-							<li>
-								<a href="create.html" class="create-btn btn-hover">
-									<span>Connexion</span>
-								</a>
-							</li>
-							<li>
-								<div class="night_mode_switch__btn">
-									<div id="night-mode" class="fas fa-moon fa-sun"></div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-			<div class="overlay"></div>
-		</div>
-	</header>
+	<?php include "include/nav1.php";?>
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">
@@ -145,13 +40,9 @@
 				<div class="row justify-content-center">
 					<div class="col-xl-7 col-lg-9 col-md-10">
 						<div class="hero-banner-content">
-							<h2>Notre systéme de réservation et de billetterie le plus puissant au Maroc</h2>
-							<p>Découvrez MoroccanJoy , la plateforme de réservation et de billetterie en ligne la plus simple et la plus performante 
-								pour tous vos événements au Maroc. Notre plateforme offre une expérience fluide et efficace, vous permettant de réserver 
-								vos places et d'acheter vos billets en quelques clics seulement. Avec MoroccanJoy, 
-								la gestion de vos événements n'a jamais été aussi facile.
-								 Préparez-vous à vivre des expériences inoubliables en toute simplicité.</p>
-							<a href="create.html" class="main-btn btn-hover">Creer un nouveau évènement<i class="fa-solid fa-arrow-right ms-3"></i></a>
+							<h2>The Easiest and Most Powerful Online Event Booking and Ticketing System</h2>
+							<p>Barren is an all-in-one event ticketing platform for event organisers, promoters, and managers. Easily create, promote and manage your events of any type and size.</p>
+							<a href="create.html" class="main-btn btn-hover">Create Event <i class="fa-solid fa-arrow-right ms-3"></i></a>
 						</div>
 					</div>
 				</div>
@@ -162,36 +53,36 @@
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="main-title">
-							<h3> Découvrir nos évènements </h3>
+							<h3>Explore Events</h3>
 						</div>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="event-filter-items">
 							<div class="featured-controls">
 								<div class="filter-tag">
-									<a href="explore_events_by_date.html" class="active">Tous</a>
-									<a href="explore_events_by_date.html">Aujourd'hui</a>
-									<a href="explore_events_by_date.html">Demain</a>
-									<a href="explore_events_by_date.html">Cette semaine</a>
-									<a href="explore_events_by_date.html">Ce Weekend</a>
-									<a href="explore_events_by_date.html">Semaine prochaine</a>
-									<a href="explore_events_by_date.html">Weekend prochain</a>
-									<a href="explore_events_by_date.html">Ce mois-ci</a>
-									<a href="explore_events_by_date.html">Mois prochain</a>
-									<a href="explore_events_by_date.html">Cette année</a>
-									<a href="explore_events_by_date.html">Année prochaine</a>
+									<a href="explore_events_by_date.html" class="active">All</a>
+									<a href="explore_events_by_date.html">Today</a>
+									<a href="explore_events_by_date.html">Tomorrow</a>
+									<a href="explore_events_by_date.html">This Week</a>
+									<a href="explore_events_by_date.html">This Weekend</a>
+									<a href="explore_events_by_date.html">Next Week</a>
+									<a href="explore_events_by_date.html">Next Weekend</a>
+									<a href="explore_events_by_date.html">This Month</a>
+									<a href="explore_events_by_date.html">Next Month</a>
+									<a href="explore_events_by_date.html">This Year</a>
+									<a href="explore_events_by_date.html">Next Year</a>
 								</div>
 								<div class="controls">
-									<button type="button" class="control" data-filter="all">Tous</button>
+									<button type="button" class="control" data-filter="all">All</button>
 									<button type="button" class="control" data-filter=".arts">Arts</button>
-									<button type="button" class="control" data-filter=".business">Entrprises</button>
+									<button type="button" class="control" data-filter=".business">Business</button>
 									<button type="button" class="control" data-filter=".concert">Concert</button>
-									<button type="button" class="control" data-filter=".workshops">Ateliers</button>
-									<button type="button" class="control" data-filter=".coaching_consulting">Encadrement et Conseil</button>
-									<button type="button" class="control" data-filter=".health_Wellness">Santé et bien-être</button>									
-									<button type="button" class="control" data-filter=".volunteer">Bénévoles</button>
+									<button type="button" class="control" data-filter=".workshops">Workshops</button>
+									<button type="button" class="control" data-filter=".coaching_consulting">Coaching and Consulting</button>
+									<button type="button" class="control" data-filter=".health_Wellness">Health and Wellbeing</button>									
+									<button type="button" class="control" data-filter=".volunteer">Volunteer</button>
 									<button type="button" class="control" data-filter=".sports">Sports</button>
-									<button type="button" class="control" data-filter=".free">Gratuit</button>	
+									<button type="button" class="control" data-filter=".free">Free</button>	
 								</div>
 								<div class="row" data-ref="event-filter-content">
 									<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix arts concert workshops volunteer sports health_Wellness" data-ref="mixitup-target">
@@ -203,18 +94,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Un Nouveau Mode De Vie</a>
+												<a href="venue_event_detail_view.html" class="event-title">A New Way Of Life</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">100.00 MAD</span>
+													<span class="duration-price">AUD $100.00*</span>
 													<span class="remaining"></span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>15 avril</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>15 Apr</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Vendredi, 3.45 PM</span>
+														<span>Fri, 3.45 PM</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -230,18 +121,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title">Atelier d'écoute avec Anthony Amel</a>
+												<a href="online_event_detail_view.html" class="event-title">Earrings Workshop with Bronwyn David</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">70.00 MAD</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 restants</span>
+													<span class="duration-price">AUD $75.00*</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 Remaining</span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>30 avril</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>30 Apr</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Samedi, 11.20 PM</span>
+														<span>Sat, 11.20 PM</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>2h</span>
 												</div>
@@ -257,18 +148,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Expo du Printemps Samedi avril 30th 2022 at 7pm</a>
+												<a href="venue_event_detail_view.html" class="event-title">Spring Showcase Saturday April 30th 2022 at 7pm</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">Gratuit</span>
+													<span class="duration-price">Free*</span>
 													<span class="remaining"></span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>30 avril</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>1 May</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Samedi, 4.30 PM</span>
+														<span>Sun, 4.30 PM</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>3h</span>
 												</div>
@@ -284,18 +175,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title">Vie d'un photographe</a>
+												<a href="online_event_detail_view.html" class="event-title">Shutter Life</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">80 MAD</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Restants</span>
+													<span class="duration-price">AUD $85.00</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Remaining</span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>1 Mai</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>1 May</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>dimanche, 5.30 PM</span>
+														<span>Sun, 5.30 PM</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -311,18 +202,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Un nouveau Restautant à découvrir mai 27 2022</a>
+												<a href="venue_event_detail_view.html" class="event-title">Friday Night Dinner at The Old Station May 27 2022</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">40 MAD</span>
+													<span class="duration-price">AUD $41.50*</span>
 													<span class="remaining"></span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>27 Mai</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>27 May</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Vendredi, 12.00 PM</span>
+														<span>Fri, 12.00 PM</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>5h</span>
 												</div>
@@ -338,18 +229,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Slamer , prenez le mic à vos main </a>
+												<a href="venue_event_detail_view.html" class="event-title">Step Up Open Mic Show</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">200 MAD</span>
+													<span class="duration-price">AUD $200.00*</span>
 													<span class="remaining"></span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>30 Juin</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>30 Jun</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Mardi, 4.30 PM</span>
+														<span>Thu, 4.30 PM</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -365,18 +256,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title"> Un Atelier de dessin va vous distraire</a>
+												<a href="online_event_detail_view.html" class="event-title">Tutorial on Canvas Painting for Beginners</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">100 MAD</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>17 Rrestants</span>
+													<span class="duration-price">AUD $50.00*</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>17 Remaining</span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>17 Juillet</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>17 Jul</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Samedi, 5.30 PM</span>
+														<span>Sun, 5.30 PM</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -820,61 +711,7 @@
 		
 	<!-- Body End-->
 	<!-- Footer Start-->
-	<footer class="footer mt-auto">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-content">
-							<h4>Company</h4>
-							<ul class="footer-link-list">
-								<li><a href="about_us.html" class="footer-link">About Us</a></li>
-								<li><a href="help_center.html" class="footer-link">Help Center</a></li>
-								<li><a href="faq.html" class="footer-link">FAQ</a></li>
-								<li><a href="contact_us.html" class="footer-link">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-content">
-							<h4>Useful Links</h4>
-							<ul class="footer-link-list">
-								<li><a href="create.html" class="footer-link">Create Event</a></li>
-								<li><a href="sell_tickets_online.html" class="footer-link">Sell Tickets Online</a></li>
-								<li><a href="privacy_policy.html" class="footer-link">Privacy Policy</a></li>
-								<li><a href="term_and_conditions.html" class="footer-link">Terms & Conditions</a></li>
-							</ul>
-						</div>
-					</div>
-					
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-content">
-							<h4>Follow Us</h4>
-							<ul class="social-links">
-								<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-							</ul>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-copyright-text">
-							<p class="mb-0">© 2024, <strong>Barren</strong>. All rights reserved. Powered by Gambolthemes</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php include "include/Footer.php";?>
 	<!-- Footer End-->
 	
 	
