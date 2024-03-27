@@ -1,4 +1,40 @@
-﻿<!DOCTYPE html>
+﻿<?php
+$message = '';
+if(isset($_POST['submit'])){
+	$email = $_POST['email'];
+	$pass = $_POST['password'];
+
+	if(!empty($email) && !empty($pass)){
+		require 'connect/DataBase.php';
+		
+		$sql = 'SELECT * FROM `user` WHERE U_email = :email AND U_password = :pass' ;
+		$statement = $connection->prepare($sql);
+		$statement->execute([':email' => $email, ':pass' => $pass]);
+		// $user = $statement->fetch(PDO::FETCH_ASSOC);
+		if ($statement->rowCount() >=1){
+			session_start();
+			$_SESSION['user'] = $statement->fetch();
+			header('location: index.php');
+			
+		}else{
+			$message = '<div class="alert alert-danger" role="alert">
+						Les informations est incorecte
+					</div>';
+		}
+
+	}else{
+		$message = '<div class="alert alert-danger" role="alert">
+						Touts les chanpts sont obligatoir
+					</div>';
+	}
+}
+
+?>
+
+
+
+
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -52,17 +88,18 @@
 									</div>
 								</a>
 								<div class="app-top-right-link">
-									New to Barren?<a class="sidebar-register-link" href="sign_up.html">Sign up</a>
+									New to Barren?<a class="sidebar-register-link" href="sign_up.php">Sign up</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-5 col-lg-6 col-md-7">
 							<div class="registration">
-								<form>
+								<?php echo $message?>
+								<form method="post">
 									<h2 class="registration-title">Sign in to Barren</h2>
 									<div class="form-group mt-5">
 										<label class="form-label">Your Email*</label>
-										<input class="form-control h_50" type="email" placeholder="Enter your email" value="">																								
+										<input class="form-control h_50" type="email" name="email" placeholder="Enter your email" value="">																								
 									</div>
 									<div class="form-group mt-4">
 										<div class="field-password">
@@ -70,11 +107,11 @@
 											<a class="forgot-pass-link" href="forgot_password.html">Forgot Password?</a>
 										</div>
 										<div class="loc-group position-relative">
-											<input class="form-control h_50" type="password" placeholder="Enter your password">
+											<input class="form-control h_50" type="password" name="password"  placeholder="Enter your password">
 											<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
 										</div>
 									</div>
-									<button class="main-btn btn-hover w-100 mt-4" type="button" onclick="window.location.href='index.html'">Sign In <i class="fas fa-sign-in-alt ms-2"></i></button>
+									<button class="main-btn btn-hover w-100 mt-4" type="submit" name="submit">Sign In <i class="fas fa-sign-in-alt ms-2"></i></button>
 								</form>
 								<div class="divider">
 									<span>or</span>
@@ -90,7 +127,7 @@
 									</button>
 								</div>
 								<div class="new-sign-link">
-									New to Barren?<a class="signup-link" href="sign_up.html">Sign up</a>
+									New to Barren?<a class="signup-link" href="sign_up.php">Sign up</a>
 								</div>
 							</div>							
 						</div>

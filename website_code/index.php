@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+if(!isset($_SESSION['user'])){
+	$nav = include "include/navindex.php";
+}else{
+	$nav =include "include/navdashbordvreator.php";
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -31,7 +40,7 @@
 
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
-	<?php include "include/nav1.php";?>
+	
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">

@@ -1,3 +1,7 @@
+<?php
+$email = $_SESSION['user']['U_email'];
+$name = $_SESSION['user']['U_name'];
+?>
 <header class="header">
 		<div class="header-inner">		
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">
@@ -86,8 +90,8 @@
 											<div class="account-holder-avatar">
 												<img src="images/profile-imgs/img-13.jpg" alt="">
 											</div>
-											<h5>John Doe</h5>
-											<p>johndoe@example.com</p>
+											<h5><?php echo $name ?></h5>
+											<p><?php echo $email ?></p>
 										</div>
 									</li>
 									<li class="profile-link">

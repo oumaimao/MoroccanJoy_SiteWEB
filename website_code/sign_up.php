@@ -1,4 +1,79 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+$message = '';
+if(isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+	$hash = password_hash($password, PASSWORD_DEFAULT);
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+
+
+
+	if(!empty($email) && !empty($password) && !empty($firstname) && !empty($lastname)){
+		require 'connect/DataBase.php';
+		$sql = 'INSERT INTO user(U_name, U_Prenom, U_email, U_password) VALUES(:nom, :prenom, :email, :pass)'; 
+		$statement = $connection->prepare($sql); 
+
+		if($statement->execute([':nom'=> $lastname, ':prenom'=> $firstname, ':email'=> $email ,':pass'=> $hash]))
+		{ 
+	
+			$message = '<div class="alert alert-success" role="alert">
+							Donnée créée avec succès
+						</div>';
+			echo '<script type="text/javascript">
+			setTimeout(function () {
+				window.location.href= \'sign_in.php\';
+			},1000);
+			</script>';
+		} 
+
+		
+	}else{
+		$message = '<div class="alert alert-danger" role="alert">
+						Touts les chanpts sont obligatoir
+					</div>';
+		
+	}
+	
+
+
+	// 
+	// $statement = $connection->prepare($sql); 
+	// if($statement->execute([':nom'=> $lastname, ':email'=> $email , ':prenom'=> $firstname, ':pass'=> $password])) 
+	// { 
+	
+	// 	$message = 'Donnée créée avec succès'; 
+	// } 
+	
+    // $sql = 'SELECT * FROM `user` WHERE email = :email';
+    // $statement = $connection->prepare($sql);
+    // $statement->execute([':email' => $email]);
+    // $user = $statement->fetch(PDO::FETCH_ASSOC);
+    
+    // if ($user) {
+    //     // Compare hashed password with password entered in login form
+    //     if (password_verify($password, $user['password'])) {
+    //         session_start();
+    //         $_SESSION['User_id'] = $user['User_id'];
+    //         $_SESSION['email'] = $user['email'];
+    //         $_SESSION['U_Prenom'] = $user['U_Prenom'];
+    //         header("Location: index.php");
+    //     } else {
+    //             echo '<div class="alert alert-danger" role="alert">
+    //                     <strong>Error!</strong> Incorrect email or password.
+    //                 </div>';
+
+    //     }
+    // } else {
+    //     echo '<div class="alert alert-danger" role="alert">
+    //                     <strong>Error!</strong> No User Found.
+    //                 </div>';
+    // }
+ } 
+?>
+
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -52,31 +127,34 @@
 									</div>
 								</a>
 								<div class="app-top-right-link">
-									Already have an account?<a class="sidebar-register-link" href="sign_in.html">Sign In</a>
+									Already have an account?<a class="sidebar-register-link" href="sign_in.php">Sign In</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-5 col-lg-6 col-md-7">
 							<div class="registration">
-								<form>
+							
+									<?php echo $message?>
+							
+								<form method="post">
 									<h2 class="registration-title">Sign up to Barren</h2>
 									<div class="row mt-3">
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
 												<label class="form-label">First Name*</label>
-												<input class="form-control h_50" type="text" placeholder="" value="">																								
+												<input class="form-control h_50" type="text" name="firstname" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
 												<label class="form-label">Last Name*</label>
-												<input class="form-control h_50" type="text" placeholder="" value="">																								
+												<input class="form-control h_50" type="text" name="lastname" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">
 											<div class="form-group mt-4">
 												<label class="form-label">Your Email*</label>
-												<input class="form-control h_50" type="email" placeholder="" value="">																								
+												<input class="form-control h_50" type="email" name="email" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">	
@@ -85,13 +163,13 @@
 													<label class="form-label">Password*</label>
 												</div>
 												<div class="loc-group position-relative">
-													<input class="form-control h_50" type="password" placeholder="">
+													<input class="form-control h_50" type="password" name="password" placeholder="">
 													<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
 												</div>
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">		
-											<button class="main-btn btn-hover w-100 mt-4" type="submit">Sign Up</button>
+											<button class="main-btn btn-hover w-100 mt-4" name="submit" type="submit">Sign Up</button>
 										</div>
 									</div>
 								</form>
@@ -112,7 +190,7 @@
 									</button>
 								</div>
 								<div class="new-sign-link">
-									Already have an account?<a class="signup-link" href="sign_in.html">Sign In</a>
+									Already have an account?<a class="signup-link" href="sign_in.php">Sign In</a>
 								</div>
 							</div>							
 						</div>
