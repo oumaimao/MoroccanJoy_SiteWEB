@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -37,7 +37,7 @@
 					<img src="images/sign-logo.svg" alt="">
 				</div>
 				<div class="sign_sidebar_text">
-					<h1>The Easiest Way to Create Events and Sell More Tickets Online</h1>
+					<h1>La façon la plus simple de créer des événements et de vendre plus de billets en ligne</h1>
 				</div>
 			</div>
 			<div class="app-form-content">
@@ -52,29 +52,29 @@
 									</div>
 								</a>
 								<div class="app-top-right-link">
-									<a class="sidebar-register-link" href="sign_in.html"><i class="fa-regular fa-circle-left me-2"></i>Back to sign in</a>
+									<a class="sidebar-register-link" href="sign_in.html"><i class="fa-regular fa-circle-left me-2"></i>Retour pour se connecter</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-5 col-lg-6 col-md-7">
 							<div class="registration">
 								<form>
-									<h2 class="registration-title">Forgot Password</h2>
+									<h2 class="registration-title">Mot de passe oublié </h2>
 									<div class="form-group mt-5">
-										<label class="form-label">Your Email*</label>
+										<label class="form-label">Votre e-mail *</label>
 										<input class="form-control h_50" type="email" placeholder="Enter your email" value="">																								
 									</div>
-									<button class="main-btn btn-hover w-100 mt-4" type="submit">Reset Password</button>
+									<button class="main-btn btn-hover w-100 mt-4" type="submit">réinitialiser le mot de passe</button>
 								</form>
 								<div class="new-sign-link">
-									<a class="signup-link" href="sign_in.html"><i class="fa-regular fa-circle-left me-2"></i>Back to sign in</a>
+									<a class="signup-link" href="sign_in.html"><i class="fa-regular fa-circle-left me-2"></i>Retour pour se connecter</a>
 								</div>
 							</div>							
 						</div>
 					</div>
 				</div>
 				<div class="copyright-footer">
-					© 2024, Barren. All rights reserved. Powered by Gambolthemes
+					©2024, stérile.Tous droits réservés.Propulsé par Gambolthemes
 				</div>
 			</div>			
 		</div>
