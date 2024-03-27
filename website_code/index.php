@@ -373,8 +373,8 @@
 											<div class="host-img">
 												<img src="images/icons/talk-show.png" alt="">
 											</div>
-											<h4>Talk-show</h4>
-											<p>Use our intuitive built-in event template to create and host an engaging Talk Show.</p>
+											<h4>talkShow</h4>
+											<p>Utilisez notre modèle d'événement intégré intuitif pour créer et héberger un talk-show engageant.</p>
 										</div>
 									</div>
 								</div>
@@ -389,8 +389,8 @@
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="main-title">
-							<h3>No Feature Overload, Get Exactly What You Need</h3>
-							<p>As well as being the most affordable online-based event registration tool and one of the best online event ticketing systems in Australia, Barren is super easy-to-use and built with a simplistic layout which is totally convenient for the organisers to operate.</p>
+							<h3>Aucune surcharge de fonctionnalité, obtenez exactement ce dont vous avez besoin</h3>
+							<p>En plus d'être l'outil d'enregistrement d'événements en ligne le plus abordable et l'un des meilleurs systèmes de billetterie d'événements en ligne en Australie, Barren est super facile à utiliser et construit avec une disposition simpliste qui est totalement pratique pour les organisateurs.</p>
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -401,8 +401,8 @@
 										<div class="feature-icon">
 											<img src="images/icons/feature-icon-1.png" alt="">
 										</div>
-										<h4>Online Events</h4>
-										<p>Built-in video conferencing platform to save you time and cost.</p>
+										<h4>Événements en ligne</h4>
+										<p>Plateforme de conférence vidéo intégrée pour vous faire gagner du temps et du coût.</p>
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6">
@@ -410,8 +410,8 @@
 										<div class="feature-icon">
 											<img src="images/icons/feature-icon-2.png" alt="">
 										</div>
-										<h4>Venue Event</h4>
-										<p>Easy-to-use features to create and manage your venue events.</p>
+										<h4>Événement de lieu</h4>
+										<p>Fonctionnalités faciles à utiliser pour créer et gérer vos événements de lieu.</p>
 									</div>
 								</div>
 								<div class="col-xl-3 col-lg-4 col-md-6">
@@ -419,8 +419,8 @@
 										<div class="feature-icon">
 											<img src="images/icons/feature-icon-3.png" alt="">
 										</div>
-										<h4>Engaging Event Page</h4>
-										<p>Create engaging event pages with your logo and our hero image collage gallery.</p>
+										<h4>Page d'événement engageant</h4>
+										<p>Créez des pages d'événements engageants avec votre logo et notre galerie de collage d'image de héros.</p>
 									</div>
 								</div>
 								
@@ -429,8 +429,8 @@
 										<div class="feature-icon">
 											<img src="images/icons/feature-icon-5.png" alt="">
 										</div>
-										<h4>Sell Tickets</h4>
-										<p>Start monetising your online and venue events, sell unlimited* tickets.</p>
+										<h4>Vendre des tickets</h4>
+										<p>Commencez à monétiser vos événements en ligne et sur lieu, vendez des billets illimités *.</p>
 									</div>
 								</div>
 							</div>
@@ -444,8 +444,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="main-title text-center">
-							<h3 >Be a Star Event Host in 3 Easy Steps</h3>
-							<p>Use early-bird discounts, coupons and group ticketing to double your ticket sale. Get paid quickly and securely.</p>
+							<h3 >Être un animateur d'événement vedette en 3 étapes faciles</h3>
+							<p>Utilisez des réductions sur les oiseaux précoces, des coupons et une billetterie de groupe pour doubler votre vente de billets.Être payé rapidement et en toute sécurité.</p>
 						</div>
 					</div>
 					<div class="col-lg-12 text-center ">
@@ -459,15 +459,15 @@
 								<div class="tab-pane fade show active" id="step-01" role="tabpanel">
 									<div class="row">
 										<div class="col-lg-12 col-md-12">
-											<div class="step-text">Sign up for free and create your event easily in minutes.</div>
+											<div class="step-text">Inscrivez-vous gratuitement et créez votre événement facilement en quelques minutes.</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
 											<div class="step-item">
 												<div class="step-icon">
 													<img src="images/icons/step-icon-1.png" alt="">
 												</div>
-												<h4>Sign up for free</h4>
-												<p>Sign up easily using your Google or Facebook account or email and create your events in minutes.</p>
+												<h4>Inscrivez-vous gratuitement </h4>
+												<p>Inscrivez-vous facilement en utilisant votre compte Google ou Facebook ou votre e-mail et créez vos événements en quelques minutes.</p>
 											</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
@@ -475,8 +475,8 @@
 												<div class="step-icon">
 													<img src="images/icons/step-icon-2.png" alt="">
 												</div>
-												<h4>Use built-in event page template</h4>
-												<p>Choose from our customised page templates specially designed to attract attendees.</p>
+												<h4>Utiliser le modèle de page d'événement intégré</h4>
+												<p>Choisissez parmi nos modèles de pages personnalisés spécialement conçus pour attirer les participants.</p>
 											</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
@@ -484,8 +484,8 @@
 												<div class="step-icon">
 													<img src="images/icons/step-icon-3.png" alt="">
 												</div>
-												<h4>Customise your event page as you like</h4>
-												<p>Add logo, collage hero images, and add details to create an outstanding event page.</p>
+												<h4>Personnalisez votre page d'événement comme vous le souhaitez</h4>
+												<p>Ajouter le logo, les images Collage Hero et ajouter des détails pour créer une page d'événement exceptionnelle.</p>
 											</div>
 										</div>
 									</div>
@@ -493,15 +493,15 @@
 								<div class="tab-pane fade" id="step-02" role="tabpanel">
 									<div class="row">
 										<div class="col-lg-12 col-md-12">
-											<div class="step-text">Use our multiple ticketing features & marketing automation tools to boost ticket sales.</div>
+											<div class="step-text">Utilisez nos multiples fonctionnalités de billetterie et outils d'automatisation du marketing pour stimuler les ventes de billets.</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
 											<div class="step-item">
 												<div class="step-icon">
 													<img src="images/icons/step-icon-4.png" alt="">
 												</div>
-												<h4>Promote your events on social media & email</h4>
-												<p>Use our intuitive event promotion tools to reach your target audience and sell tickets.</p>
+												<h4>Promouvoir vos événements sur les réseaux sociaux et les e-mails</h4>
+												<p>Utilisez nos outils de promotion d'événements intuitifs pour atteindre votre public cible et vendre des billets.</p>
 											</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
@@ -509,8 +509,8 @@
 												<div class="step-icon">
 													<img src="images/icons/step-icon-5.png" alt="">
 												</div>
-												<h4>Use early-bird discounts, coupons & group ticketing</h4>
-												<p>Double your ticket sales using our built-in discounts, coupons and group ticketing features.</p>
+												<h4>Utilisez des réductions sur les oiseaux précoces, les coupons et la billetterie de groupe </h4>
+												<p>Doublez vos ventes de billets en utilisant nos remises intégrées, nos coupons et nos fonctionnalités de billetterie de groupe.</p>
 											</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
@@ -518,8 +518,8 @@
 												<div class="step-icon">
 													<img src="images/icons/step-icon-6.png" alt="">
 												</div>
-												<h4>Get paid quickly & securely</h4>
-												<p>Use our PCI compliant payment gateways to collect your payment securely.</p>
+												<h4>Être payé rapidement et en toute sécurité</h4>
+												<p>Utilisez nos passerelles de paiement conformes PCI pour percevoir votre paiement en toute sécurité.</p>
 											</div>
 										</div>
 									</div>
@@ -527,15 +527,15 @@
 								<div class="tab-pane fade" id="step-04" role="tabpanel">
 									<div class="row">
 										<div class="col-lg-12 col-md-12">
-											<div class="step-text">Create more events and earn more money.</div>
+											<div class="step-text">Créez plus d'événements et gagnez plus d'argent.</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
 											<div class="step-item">
 												<div class="step-icon">
 													<img src="images/icons/step-icon-10.png" alt="">
 												</div>
-												<h4>Create multiple sessions & earn more</h4>
-												<p>Use our event scheduling features to create multiple sessions for your events & earn more money.</p>
+												<h4>Créez plusieurs sessions et gagnez plus</h4>
+												<p>Utilisez nos fonctionnalités de planification d'événements pour créer plusieurs sessions pour vos événements et gagner plus d'argent.</p>
 											</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
@@ -543,8 +543,8 @@
 												<div class="step-icon">
 													<img src="images/icons/step-icon-11.png" alt="">
 												</div>
-												<h4>Clone past event to create similar events</h4>
-												<p>Use our event cloning feature to clone past event and create a new one easily within a few clicks.</p>
+												<h4>Clone Past Event pour créer des événements similaires</h4>
+												<p>Utilisez notre fonctionnalité de clonage d'événements pour cloner l'événement passé et en créer un nouveau facilement en quelques clics.</p>
 											</div>
 										</div>
 										<div class="col-lg-4 col-md-6">
@@ -552,8 +552,8 @@
 												<div class="step-icon">
 													<img src="images/icons/step-icon-12.png" alt="">
 												</div>
-												<h4>Get support like nowhere else</h4>
-												<p>Our dedicated on-boarding coach will assist you in becoming an expert in no time.</p>
+												<h4>Obtenez un soutien comme nulle part ailleurs </h4>
+												<p>Notre entraîneur embarqué dédié vous aidera à devenir un expert en un rien de temps.</p>
 											</div>
 										</div>
 									</div>
@@ -569,8 +569,8 @@
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="main-title">
-							<h3>Transforming Thousands of Event Hosts Just Like You</h3>
-							<p>Be part of a winning team. We are continuously thriving to bring the best to our customers. Be that a new product feature, help in setting up your events or even supporting your customers so that they can easily buy tickets and participate your in events. Here is what some of the clients have to say,</p>
+							<h3>Transformer des milliers d'hôtes d'événements comme vous</h3>
+							<p>Faites partie d'une équipe gagnante.Nous prospérons continuellement pour apporter le meilleur à nos clients.Soyez qu'une nouvelle fonctionnalité de produit, aidez à configurer vos événements ou même à soutenir vos clients afin qu'ils puissent facilement acheter des billets et participer à vos événements.Voici ce que certains clients ont à dire,</p>
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -584,7 +584,7 @@
 											</div>
 											<div class="testimonial-user-dt">
 												<h5>Madeline S.</h5>
-												<span>Events Co-ordinator</span>
+												<span>Coordonnatrice des événements</span>
 												<ul>
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-solid fa-star"></i></li>
@@ -605,7 +605,7 @@
 											</div>
 											<div class="testimonial-user-dt">
 												<h5>Gabrielle B.</h5>
-												<span>Administration</span>
+												<span>administration</span>
 												<ul>
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-solid fa-star"></i></li>
@@ -626,7 +626,7 @@
 											</div>
 											<div class="testimonial-user-dt">
 												<h5>Piyush G.</h5>
-												<span>Application Developer</span>
+												<span>Développeur d'applications</span>
 												<ul>
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-solid fa-star"></i></li>
@@ -647,7 +647,7 @@
 											</div>
 											<div class="testimonial-user-dt">
 												<h5>Joanna P.</h5>
-												<span>Event manager</span>
+												<span>Gestionnaire d'événements </span>
 												<ul>
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-solid fa-star"></i></li>
@@ -668,7 +668,7 @@
 											</div>
 											<div class="testimonial-user-dt">
 												<h5>Romo S.</h5>
-												<span>Admin</span>
+												<span>Administrer</span>
 												<ul>
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-solid fa-star"></i></li>
@@ -689,7 +689,7 @@
 											</div>
 											<div class="testimonial-user-dt">
 												<h5>Christopher F.</h5>
-												<span>Online Marketing Executive</span>
+												<span>Directeur de marketing en ligne</span>
 												<ul>
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-solid fa-star"></i></li>
