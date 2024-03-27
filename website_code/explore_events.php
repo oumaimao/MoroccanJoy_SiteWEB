@@ -97,26 +97,26 @@
 									<a href="explore_events_by_date.html" class="active">Toute</a>
 									<a href="explore_events_by_date.html">Aujourd'hui</a>
 									<a href="explore_events_by_date.html">Demain</a>
-									<a href="explore_events_by_date.html">This Week</a>
-									<a href="explore_events_by_date.html">This Weekend</a>
-									<a href="explore_events_by_date.html">Next Week</a>
-									<a href="explore_events_by_date.html">Next Weekend</a>
-									<a href="explore_events_by_date.html">This Month</a>
-									<a href="explore_events_by_date.html">Next Month</a>
-									<a href="explore_events_by_date.html">This Year</a>
-									<a href="explore_events_by_date.html">Next Year</a>
+									<a href="explore_events_by_date.html">Cette semaine</a>
+									<a href="explore_events_by_date.html">Cette fin de semaine</a>
+									<a href="explore_events_by_date.html">La semaine prochaine</a>
+									<a href="explore_events_by_date.html">Le week-end prochain </a>
+									<a href="explore_events_by_date.html">Tson mois </a>
+									<a href="explore_events_by_date.html">Le mois prochain </a>
+									<a href="explore_events_by_date.html"> Cette année </a>
+									<a href="explore_events_by_date.html">L'année prochaine</a>
 								</div>
 								<div class="controls">
-									<button type="button" class="control" data-filter="all">All</button>
-									<button type="button" class="control" data-filter=".arts">Arts</button>
-									<button type="button" class="control" data-filter=".business">Business</button>
-									<button type="button" class="control" data-filter=".concert">Concert</button>
-									<button type="button" class="control" data-filter=".workshops">Workshops</button>
-									<button type="button" class="control" data-filter=".coaching_consulting">Coaching and Consulting</button>
-									<button type="button" class="control" data-filter=".health_Wellness">Health and Wellbeing</button>									
-									<button type="button" class="control" data-filter=".volunteer">Volunteer</button>
-									<button type="button" class="control" data-filter=".sports">Sports</button>
-									<button type="button" class="control" data-filter=".free">Free</button>	
+									<button type="button" class="control" data-filter="all">Toute</button>
+									<button type="button" class="control" data-filter=".arts">arts</button>
+									<button type="button" class="control" data-filter=".business">Entreprise</button>
+									<button type="button" class="control" data-filter=".concert">concert</button>
+									<button type="button" class="control" data-filter=".workshops">Ateliers</button>
+									<button type="button" class="control" data-filter=".coaching_consulting">Ccoaching et consultation</button>
+									<button type="button" class="control" data-filter=".health_Wellness">Santé et bien-être</button>									
+									<button type="button" class="control" data-filter=".volunteer">Bénévole</button>
+									<button type="button" class="control" data-filter=".sports">Des sports</button>
+									<button type="button" class="control" data-filter=".free">Gratuite</button>	
 								</div>
 								<div class="row" data-ref="event-filter-content">
 									<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix arts concert workshops volunteer sports health_Wellness" data-ref="mixitup-target">
@@ -128,7 +128,7 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">A New Way Of Life</a>
+												<a href="venue_event_detail_view.html" class="event-title">Un nouveau mode de vie</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $100.00*</span>
 													<span class="remaining"></span>
@@ -137,9 +137,9 @@
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>15 Apr</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>15 avril </span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Fri, 3.45 PM</span>
+														<span>GRATUIT, 15 h 45</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -155,18 +155,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title">Earrings Workshop with Bronwyn David</a>
+												<a href="online_event_detail_view.html" class="event-title">Atelier des boucles d'oreilles avec Bronwyn David</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $75.00*</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>30 Apr</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>30 avril</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Sat, 11.20 PM</span>
+														<span>Samedi, 23h20</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>2h</span>
 												</div>
@@ -182,16 +182,16 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Spring Showcase Saturday April 30th 2022 at 7pm</a>
+												<a href="venue_event_detail_view.html" class="event-title">Spring Showcase samedi 30 avril 2022 à 19h</a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">Free*</span>
+													<span class="duration-price">Gratuite*</span>
 													<span class="remaining"></span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>1 May</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>1er mai</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
 														<span>Sun, 4.30 PM</span>
 													</div>
@@ -212,13 +212,13 @@
 												<a href="online_event_detail_view.html" class="event-title">Shutter Life</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $85.00</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>1 May</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>1er mai</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
 														<span>Sun, 5.30 PM</span>
 													</div>
@@ -236,7 +236,7 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Friday Night Dinner at The Old Station May 27 2022</a>
+												<a href="venue_event_detail_view.html" class="event-title">Dîner du vendredi soir à l'ancienne gare 27 mai 2022</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $41.50*</span>
 													<span class="remaining"></span>
@@ -245,7 +245,7 @@
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>27 May</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>27 mai</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
 														<span>Fri, 12.00 PM</span>
 													</div>
@@ -263,7 +263,7 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Step Up Open Mic Show</a>
+												<a href="venue_event_detail_view.html" class="event-title">ÉCHEUR DE MIM OUVERT</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $200.00*</span>
 													<span class="remaining"></span>
@@ -290,10 +290,10 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title">Tutorial on Canvas Painting for Beginners</a>
+												<a href="online_event_detail_view.html" class="event-title">Tutorial Canvas Peinture pour les débutants</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $50.00*</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>17 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>17 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
@@ -317,10 +317,10 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Trainee Program on Leadership' 2022</a>
+												<a href="venue_event_detail_view.html" class="event-title">Programme des stagiaires sur le leadership '2022</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $120.00*</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
@@ -337,7 +337,7 @@
 									</div>
 								</div>
 								<div class="browse-btn">
-									<a href="#" class="main-btn btn-hover ">See More</a>
+									<a href="#" class="main-btn btn-hover ">Voir plus </a>
 								</div>
 							</div>
 						</div>
