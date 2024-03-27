@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple </title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -40,31 +40,31 @@
 							<img src="images/dark-logo.svg" alt="invoice-logo">
 						</div>
 						<div class="invoice-header-text">
-							<a href="#" class="download-link">Download</a>
+							<a href="#" class="download-link">Télécharger</a>
 						</div>
 					</div>
 					<div class="invoice-body">
 						<div class="invoice_dts">
 							<div class="row">
 								<div class="col-md-12">
-									<h2 class="invoice_title">Invoice</h2>
+									<h2 class="invoice_title">Facture</h2>
 								</div>
 								<div class="col-md-6">
 									<div class="vhls140">
 										<ul>
-											<li><div class="vdt-list">Invoice to John Doe</div></li>
+											<li><div class="vdt-list">Facture à John Doe</div></li>
 											<li><div class="vdt-list">140 St Kilda Rd</div></li>
 											<li><div class="vdt-list">Melbourne, Victoria</div></li>
-											<li><div class="vdt-list">3000, Australia</div></li>
+											<li><div class="vdt-list">3000, Australie</div></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="vhls140">
 										<ul>
-											<li><div class="vdt-list">Invoice ID : YCCURW-000000</div></li>
-											<li><div class="vdt-list">Order Date : 10/05/2022</div></li>
-											<li><div class="vdt-list">Near MBD Mall,</div></li>
+											<li><div class="vdt-list">ID de facture : YCCURW-000000</div></li>
+											<li><div class="vdt-list">Date de commande: 10/05/2022</div></li>
+											<li><div class="vdt-list">Près du centre commercial MBD,</div></li>
 										</ul>
 									</div>
 								</div>
@@ -76,18 +76,18 @@
 									<thead class="thead-dark">
 										<tr>
 											<th scope="col">#</th>
-											<th scope="col">Event Details</th>
-											<th scope="col">Type</th>
-											<th scope="col">Qty</th>
-											<th scope="col">Unit Price</th>
-											<th scope="col">Total</th>
+											<th scope="col">Détails de l'évènement</th>
+											<th scope="col">Taper</th>
+											<th scope="col">Qté</th>
+											<th scope="col">Prix ​​unitaire</th>
+											<th scope="col">Totale</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>										
 											<td>1</td>	
-											<td><a href="#" target="_blank">Tutorial on Canvas Painting for Beginners</a></td>	
-											<td>Online</td>	
+											<td><a href="#" target="_blank">Tutorial Canvas Peinture pour les débutants</a></td>	
+											<td>En ligne</td>	
 											<td>1</td>
 											<td>$75.00</td>
 											<td>$75.00</td>
@@ -96,8 +96,8 @@
 											<td colspan="1"></td>
 											<td colspan="5">
 												<div class="user_dt_trans text-end pe-xl-4">
-													<div class="totalinv2">Invoice Total : USD $36.00</div>
-													<p>Paid via Paypal</p>
+													<div class="totalinv2">Total de facture: USD $36.00</div>
+													<p>Payé via paypal</p>
 												</div>
 											</td>
 										</tr>
@@ -117,8 +117,8 @@
 												<img src="images/event-imgs/img-7.jpg" alt="">
 											</div>
 											<div class="event-order-dt-content">
-												<h5>Tutorial on Canvas Painting for Beginners</h5>
-												<span>Wed, Jun 01, 2022 5:30 AM. Duration 1h</span>
+												<h5>Tutorial Canvas Peinture pour les débutants </h5>
+												<span>Wed, Jun 01, 2022 5:30 AM. Durée 1h</span>
 												<div class="buyer-name">John Doe</div>
 												<div class="booking-total-tickets">
 													<i class="fa-solid fa-ticket rotate-icon"></i>
@@ -133,8 +133,8 @@
 									<div class="col-lg-5">
 										<div class="QR-dt p-4">
 											<ul class="QR-counter-type">
-												<li>Online</li>
-												<li>Counter</li>
+												<li>En ligne</li>
+												<li>Comptoir</li>
 												<li>0000000001</li>
 											</ul>
 											<div class="QR-scanner">
