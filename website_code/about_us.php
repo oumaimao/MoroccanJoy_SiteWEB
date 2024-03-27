@@ -35,13 +35,13 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="communitieModalLabel">We are all about enriching communities​</h5>
+					<h5 class="modal-title" id="communitieModalLabel">Nous sommes tous des communautés enrichissantes​</h5>
 					<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 				</div>
 				<div class="modal-body">
 					<div class="model-content main-form mt-4">
-						<p class="mb-4">Cras egestas, enim quis lobortis interdum, leo risus bibendum metus, non eleifend nulla odio vel nisi. Quisque gravida lacinia risus, eget vulputate odio lacinia nec. Sed at ipsum nec urna aliquam gravida. Morbi quis lacinia justo. Cras accumsan felis quis hendrerit finibus. Mauris pellentesque maximus felis, vitae mattis ante interdum vel. Maecenas sit amet lacus leo. Aliquam vitae magna quis elit tempus gravida. Nam ornare ex a magna vehicula, sed mollis nibh elementum. Ut vestibulum in quam et aliquet. Nam faucibus commodo nibh auctor dictum.</p>
-						<p class="mb-0">nteger quis sem rutrum est congue scelerisque. Praesent porttitor sed leo vel accumsan. Quisque id sem sit amet quam posuere feugiat nec eget ligula. Mauris eget tempor augue. Donec faucibus nunc sit amet lorem tempus tincidunt. Nullam tristique, nibh vitae posuere viverra, ex nisl porta massa, non eleifend tellus leo sed orci. Nullam posuere, magna eu pulvinar gravida, tortor dui fringilla nisl, id sagittis risus magna et justo. Fusce non malesuada lacus.</p>
+						<p class="mb-4">CRas Enforcement, pour toute politique de protéines, les rires du lion boivent des craintes, pas déductibles sans haine ni sauvegarde.Chaque jupe enceinte sourire, la jupe haineuse vulputate ou.Mais en même temps ou en pot, une certaine grossesse.Soccer toute thérapie de jupe.Demain accumsan Button qui se termine Hendrerit.Mauris Nutrition Bigger Bouton, la vie de l'immobilier à des moments ou.MAECENAS CAROTS POOL Lion.Une partie de la vie d'un grand homme qui a eu un temps de développeur enceinte.Pour le football à partir d'un gros véhicule, mais un élément NIBH doux.À la fabrication dans laquelle l'enquête.Pour la commodité de la gorge, l'auteur a été dit.</p>
+						<p class="mb-0">NTEGER qui est un maquillage à salade est le chocolat de prêt.Actuel innovant, mais le lion ou la couche.Chacune de cette salade est le film que de sortir Ferugiat Neque doit être de la ligule.Mauris a besoin d'un août temporaire.Jusqu'à ce que la gorge soit maintenant beaucoup de clients Tincidunt.Relais triste, Nibh Vitae Pull, de la masse de la porte des joueurs, pas de lion Eleifend mais clinique.Ensemble de relais, une grande enceinte de volley-ball de football, des joueurs écologiques macro DUI, il flèche des rires et juste.Lacs cliniques et non malesuada.</p>
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 				<div class="row justify-content-center">
 					<div class="col-xl-6 col-lg-9 col-md-10">
 						<div class="hero-banner-content text-center">
-							<h2 class="mb-0">We are a team who loves supporting the community through events</h2>
+							<h2 class="mb-0">Nous sommes une équipe qui aime soutenir la communauté à travers des événements</h2>
 						</div>
 					</div>
 				</div>
@@ -72,8 +72,8 @@
 							<h3>Our aim is to provide a powerful and affordable event ticketing solution that can handle events of any size and complexity without an issue.</h3>
 						</div>
 						<div class="about--description">
-							<p>Barren’s online event ticketing software was built on the idea that anyone, anywhere in the world wanting to organise an event should have the tools to simply do so. We promote this idea everyday through the dedication of a team based out of Melbourne, Australia.</p>
-							<p>The focus of our efforts is the event organiser, who works hard to ensure that their attendees have a great experience. We share that passion for bringing people together, creating memories and enriching lives.</p>
+							<p>Le logiciel de billetterie d'événements en ligne de Barren a été construit sur l'idée que quiconque, n'importe où dans le monde, souhaitant organiser un événement devrait avoir les outils pour le faire.Nous faisons la promotion de cette idée tous les jours grâce au dévouement d'une équipe basée à Melbourne, en Australie.</p>
+							<p>L'objectif de nos efforts est l'organisateur de l'événement, qui travaille dur pour s'assurer que leurs participants ont une grande expérience.Nous partageons cette passion pour rassembler les gens, créer des souvenirs et enrichir des vies.</p>
 						</div>
 					</div>
 				</div>
@@ -84,7 +84,7 @@
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="main-title checkout-title text-center">
-							<h3>We are all about enriching communities​</h3>
+							<h3>Nous sommes tous des communautés enrichissantes </h3>
 						</div>
 						<div class="communities-steps">
 							<div class="row">
@@ -94,7 +94,7 @@
 											<img src="images/about/img-1.jpg" alt="">
 										</div>
 										<div class="communities-content">
-											<p>We work with several industry leaders and community groups around Australia and want all of our event organisers to succeed in everything they do. Events are not always easy, but selling tickets online should be.</p>
+											<p>Nous travaillons avec plusieurs leaders de l'industrie et les groupes communautaires en Australie et voulons que tous nos organisateurs d'événements réussissent dans tout ce qu'ils font.Les événements ne sont pas toujours faciles, mais la vente de billets en ligne devrait l'être.</p>
 										</div>
 									</a>
 								</div>
@@ -104,7 +104,7 @@
 											<img src="images/about/img-2.jpg" alt="">
 										</div>
 										<div class="communities-content">
-											<p>We are committed to making a positive impact on the community. That's why our pricing structure is set so that everyone can afford to use Barren, and it's why we offer our system free of charge for any free events or registrations.</p>
+											<p>Nous nous engageons à avoir un impact positif sur la communauté.C'est pourquoi notre structure de prix est définie afin que tout le monde puisse se permettre d'utiliser stérile, et c'est pourquoi nous offrons notre système gratuitement pour tout événement ou inscriptions gratuits.</p>
 										</div>
 									</a>
 								</div>
@@ -114,7 +114,7 @@
 											<img src="images/about/img-3.jpg" alt="">
 										</div>
 										<div class="communities-content">
-											<p>This provides an additional revenue stream for your charity and allows us to positively contribute to the causes that are important to you and your community.</p>
+											<p>Cela fournit une source de revenus supplémentaire pour votre organisme de bienfaisance et nous permet de contribuer positivement aux causes qui sont importantes pour vous et votre communauté.</p>
 										</div>
 									</a>
 								</div>
@@ -129,8 +129,8 @@
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="main-title mb-4">
-							<h3>The Complete Event Ticketing Platform with a Host of Features</h3>
-							<p>Barren's allows you to create and sell tickets for your event and manage all of the data associated with your events, such as ticket sales, visitor insights, reporting, and much more. It's the perfect platform to help you manage your events efficiently.</p>
+							<h3>La plate-forme complète de billetterie d'événements avec une multitude de fonctionnalités</h3>
+							<p>Barren permet de créer et de vendre des billets pour votre événement et de gérer toutes les données associées à vos événements, tels que les ventes de billets, les idées des visiteurs, les rapports et bien plus encore.C'est la plate-forme parfaite pour vous aider à gérer efficacement vos événements.</p>
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -148,20 +148,20 @@
 										<div class="row">
 											<div class="col-12">
 												<div class="feature-item">
-													<h4>Responsive Design</h4>
-													<p>Our responsive and user-friendly event page allows guests to book events from any device.</p>
+													<h4>Conception réactive</h4>
+													<p>Notre page d'événements réactive et conviviale permet aux clients de réserver des événements à partir de n'importe quel appareil.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Public or Private Event</h4>
-													<p>You can host your events in public or by invitation only. Allow only the people whom you've invited to the events.</p>
+													<h4>Événement public ou privé</h4>
+													<p>Vous pouvez organiser vos événements en public ou par invitation uniquement.Accordez uniquement les personnes que vous avez invitées aux événements.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Booking end Countdown Timer</h4>
-													<p>Our Countdown timer can be a unique tool for selling your tickets. The timer shows the end time for ticket sale deadline, discount end period, and more.</p>
+													<h4>Réservation Timer du compte à rebours de fin</h4>
+													<p>Notre compte à rebours peut être un outil unique pour vendre vos billets.La minuterie affiche l'heure de fin de la date limite de vente de billets, la période de fin de réduction, et plus encore.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Multi-session or Multi-Day Event</h4>
-													<p>You can launch multiple-session or multiple-day events according to your needs.</p>
+													<h4>Événement multi-sessions ou plusieurs jours</h4>
+													<p>Vous pouvez lancer des événements de plusieurs sessions ou plusieurs jours en fonction de vos besoins.</p>
 												</div>
 											</div>
 										</div>
@@ -179,20 +179,20 @@
 										<div class="row">
 											<div class="col-12">
 												<div class="feature-item">
-													<h4>Single Ticket</h4>
-													<p>Sell standard, fixed price tickets to all of your attendees coming to the events. You have complete control of limiting ticket numbers. In addition, you can set up Unlimited types of tickets for your event.</p>
+													<h4>Un seul billet</h4>
+													<p>Vendez des billets standard à prix fixe à tous vos participants à venir aux événements.Vous avez un contrôle complet de la limitation des numéros de billets.De plus, vous pouvez configurer des types de billets illimités pour votre événement.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Unlimited Ticket Types</h4>
-													<p>You can price your tickets in different types with the multi-price system. For example, you can sell discounted tickets, such as early-bird discounts, higher-priced VIP tickets, etc.</p>
+													<h4>Types de billets illimités</h4>
+													<p>Vous pouvez évaluer vos billets dans différents types avec le système multi-prix.Par exemple, vous pouvez vendre des billets à prix réduits, tels que des remises en oiseaux précoces, des billets VIP plus chers, etc.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Group Ticketing</h4>
+													<h4>Billetterie de groupe</h4>
 													<p>There are unlimited ways of grouping tickets. You can create various types of tickets. You can set the limit for group ticket purchases from one person. Attendees can choose their seats as there are no seat restrictions on group tickets.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Set Your Rules</h4>
-													<p>Pass the service fee to the attendees or pay it yourself; set ticket cancellation and refund policies</p>
+													<h4>Définissez vos règles</h4>
+													<p>Passez les frais de service aux participants ou payez-le vous-même;Définir les politiques d'annulation et de remboursement des billets</p>
 												</div>
 											</div>
 										</div>
@@ -210,20 +210,20 @@
 										<div class="row">
 											<div class="col-12">
 												<div class="feature-item">
-													<h4>Fully Customisable Forms</h4>
-													<p>Our easy drag and drop feature lets you create attendees' forms as per your event requirements. Create a professional-looking form with a few simple steps.</p>
+													<h4>Formulaires entièrement personnalisables </h4>
+													<p>Notre fonctionnalité Easy Drag and Drop vous permet de créer des formulaires des participants conformément aux exigences de votre événement.Créez une forme d'aspect professionnel avec quelques étapes simples.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Calendar Integration</h4>
-													<p>We've integrated popular online calendars (Outlook, Google, Yahoo, and Apple) where attendees can add events and get alerts when nearing the event date.</p>
+													<h4>Intégration du calendrier</h4>
+													<p>Nous avons intégré des calendriers en ligne populaires (Outlook, Google, Yahoo et Apple) où les participants peuvent ajouter des événements et obtenir des alertes à l'approche de la date de l'événement.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Attendee Dashboard</h4>
-													<p>The attendees' dashboard gives guests the option to cancel their registration should they no longer be able to attend. They can also check their registered events and suggestions.</p>
+													<h4>Tableau de bord des participants</h4>
+													<p>Le tableau de bord des participants donne aux clients la possibilité d'annuler leur inscription s'il ne pouvait plus y assister.Ils peuvent également vérifier leurs événements et suggestions enregistrés.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Secure Payment Methods</h4>
-													<p>Barren's employs PCI-compliant payment gateways and has a comprehensive data protection policy to ensure that your earnings are safe. In addition, we provide flexible payment methods for a smooth payout experience.</p>
+													<h4>Méthodes de paiement sécurisées</h4>
+													<p>Barren's utilise des passerelles de paiement conformes aux PCI et a une politique complète de protection des données pour garantir que vos revenus sont sûrs.De plus, nous fournissons des méthodes de paiement flexibles pour une expérience de paiement en douceur.</p>
 												</div>
 											</div>
 										</div>
@@ -241,20 +241,20 @@
 										<div class="row">
 											<div class="col-12">
 												<div class="feature-item">
-													<h4>Email Campaign</h4>
-													<p>You can design professional-looking emails from our built-in templates and send or schedule invitations, send reminders, and event updates to all of your contacts or pre-categorised attendees.</p>
+													<h4>Campagne par courrier électronique</h4>
+													<p>Vous pouvez concevoir des e-mails professionnels à partir de nos modèles intégrés et envoyer ou planifier des invitations, envoyer des rappels et des mises à jour d'événements à tous vos contacts ou participants pré-catégorisés.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Analytics and Tracking</h4>
-													<p>Your events can be integrated into conversion tracking tools to monitor their social media promotion campaigns. Also, you can add your own Facebook Pixel, Google Analytics and Google Ads conversion codes.</p>
+													<h4>Analytique et suivi</h4>
+													<p>Vos événements peuvent être intégrés dans des outils de suivi de conversion pour surveiller leurs campagnes de promotion des médias sociaux.Vous pouvez également ajouter vos propres codes de conversion Facebook Pixel, Google Analytics et Google ADS.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Coupon</h4>
-													<p>You can use coupons to boost ticket sales. Multiple coupons can be created with additional offers. Create and promote coupons and drive more ticket sales.</p>
+													<h4>coupon</h4>
+													<p>Vous pouvez utiliser des coupons pour stimuler les ventes de billets.Plusieurs coupons peuvent être créés avec des offres supplémentaires.Créer et promouvoir des coupons et générer plus de ventes de billets.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Early Bird Discounts</h4>
-													<p>You can give a percentage or sum of the discounted ticket to selected people. You have the freedom to set up the discounts as you like</p>
+													<h4>Réductions de lève-tôt</h4>
+													<p>Vous pouvez donner un pourcentage ou une somme du billet réduit pour des personnes sélectionnées.Vous avez la liberté de mettre en place les remises comme vous le souhaitez</p>
 												</div>
 											</div>
 										</div>
@@ -272,20 +272,20 @@
 										<div class="row">
 											<div class="col-12">
 												<div class="feature-item">
-													<h4>Built-in Analytic Tools</h4>
-													<p>Barren's dashboard provides essential analytical information about the event and ticket sales. Track and make decisions accordingly to optimise your events to the fullest.</p>
+													<h4>Outils analytiques intégrés </h4>
+													<p>Le tableau de bord de Barren fournit des informations analytiques essentielles sur l'événement et les ventes de billets.Suivez et prenez des décisions en conséquence pour optimiser votre événement au maximum.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Team Collaboration</h4>
-													<p>Work together, from anywhere, with your team. Manage professionally your events together in real-time, all on one platform. Assign tasks to members from our organisation's dashboard.</p>
+													<h4>La collaboration d'équipe</h4>
+													<p>Travaillez ensemble, de n'importe où, avec votre équipe.Gérez professionnellement vos événements ensemble en temps réel, le tout sur une seule plate-forme.Attribuez des tâches aux membres du tableau de bord de notre organisation.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Scanner App</h4>
-													<p>You can use the scanning app to check in guests, and only those with valid tickets can be let in. In addition, you can cross-reference scanned tickets with your guest list through the app.</p>
+													<h4>Application de scanner</h4>
+													<p>Vous pouvez utiliser l'application de numérisation pour enregistrer les invités, et seuls ceux qui ont des billets valides peuvent être laissés entrer. En outre, vous pouvez croiser les billets numérisés avec votre liste d'invités via l'application.</p>
 												</div>
 												<div class="feature-item">
-													<h4>Easy Duplicate Events</h4>
-													<p>Our duplicate event feature saves time and energy and creates the same events within seconds. You can still customise the new event as you want. You will receive separate analytical reports for each event.</p>
+													<h4>Événements en double facile </h4>
+													<p>Notre fonctionnalité d'événement en double permet d'économiser du temps et de l'énergie et crée les mêmes événements en quelques secondes.Vous pouvez toujours personnaliser le nouvel événement comme vous le souhaitez.Vous recevrez des rapports analytiques distincts pour chaque événement.</p>
 												</div>
 											</div>
 										</div>
@@ -307,8 +307,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="main-title text-center">
-							<h3>The Team Behind Barren</h3>
-							<p>Every day we are passionately dedicated to make buying and selling tickets simple and secure.</p>
+							<h3>L'équipe derrière stérile</h3>
+							<p>Chaque jour, nous sommes passionnément dédiés à rendre l'achat et la vente de billets simples et sécurisés.</p>
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -321,7 +321,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Rock William</h4>
-											<span>General Manager</span>
+											<span>Directeur général</span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -338,7 +338,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Brian Mills</h4>
-											<span>Vp Engineering</span>
+											<span>Ingénierie VP</span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -355,7 +355,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Damian Murphy</h4>
-											<span>Business Development Manager</span>
+											<span>Directeur du développement commercial</span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -372,7 +372,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Justine William</h4>
-											<span>Client Success Manager</span>
+											<span>clientSuccessManager</span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -389,7 +389,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Lorraine Tan</h4>
-											<span>Product Manager</span>
+											<span>Chef de produit </span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -406,7 +406,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Anneliese Hough</h4>
-											<span>Product Manager</span>
+											<span>Chef de produit </span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -423,7 +423,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Johnson Dua</h4>
-											<span>Tech Lead</span>
+											<span>Lead de la technologie </span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -440,7 +440,7 @@
 										</div>
 										<div class="team-content">
 											<h4>Lizzy Wizzy</h4>
-											<span>Tech Lead</span>
+											<span>Responsable technologique</span>
 											<div class="user-social-links-group">
 												<a href="https://www.facebook.com/" class="user-social-link" target="_blank"><i class="fab fa-facebook-square"></i></a>
 												<a href="https://www.instagram.com/accounts/login/" class="user-social-link" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -461,7 +461,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="main-title text-center">
-							<h3>321+ events created by thousands of organisations around the globe</h3>
+							<h3>321+ Événements créés par des milliers d'organisations à travers le monde </h3>
 						</div>
 					</div>
 					<div class="col-lg-12">
