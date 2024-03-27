@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -35,7 +35,7 @@
 		<div class="modal-dialog modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="FFModalLabel">Following & Followers</h5>
+					<h5 class="modal-title" id="FFModalLabel">Suivre des suiveurs</h5>
 					<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 				</div>
 				<div class="modal-body">
@@ -43,10 +43,10 @@
 						<div class="">
 							<ul class="nav nav-pills ff-tablist mb-2" role="tablist">
 								<li class="nav-item d-flex me-4">
-									<a class="nav-link px-0 pt-0 pb-3 active" id="pills-following-tab" data-bs-toggle="pill" href="#following" role="tab" aria-controls="following" aria-selected="true">Following <span class="following_count">(2)</span></a>
+									<a class="nav-link px-0 pt-0 pb-3 active" id="pills-following-tab" data-bs-toggle="pill" href="#following" role="tab" aria-controls="following" aria-selected="true">Suivante <span class="following_count">(2)</span></a>
 								</li>
 										<li class="nav-item d-flex">
-									<a class="nav-link px-0 pt-0 pb-3" id="pills-followers-tab" data-bs-toggle="pill" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Followers  </a>
+									<a class="nav-link px-0 pt-0 pb-3" id="pills-followers-tab" data-bs-toggle="pill" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Suiveuses  </a>
 								</li>
 							</ul>
 							<div class="tab-content mt-4">
@@ -113,13 +113,13 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
-									<label class="form-label">Subject*</label>
+									<label class="form-label">Sujette*</label>
 									<input class="form-control h_40" type="text" placeholder="" value="">																								
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
-									<label class="form-label">Message*</label>
+									<label class="form-label">message*</label>
 									<textarea class="form-textarea"  placeholder=""></textarea>																							
 								</div>
 							</div>					
@@ -127,8 +127,8 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-target="#contactModal" data-bs-toggle="modal" data-bs-dismiss="modal">Cancel</button>
-					<button type="button" class="main-btn min-width btn-hover h_40">Submit</button>
+					<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-target="#contactModal" data-bs-toggle="modal" data-bs-dismiss="modal">Annuler</button>
+					<button type="button" class="main-btn min-width btn-hover h_40">Soumettre</button>
 				</div>
 			</div>
 		</div>
@@ -166,10 +166,10 @@
 								</div>
 								<div class="user-btns">
 									<button class="main-btn btn-hover min-width h_40 me-2">Follow</button>
-									<button class="co-main-btn min-width h_40" data-bs-toggle="modal" data-bs-target="#contactModal">Contant Us</button>
+									<button class="co-main-btn min-width h_40" data-bs-toggle="modal" data-bs-target="#contactModal">Contactez-nous</button>
 								</div>
 								<div class="profile-social-link">
-									<h6>Find me on</h6>
+									<h6>Trouvez-moi sur</h6>
 									<div class="social-links">
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -192,10 +192,10 @@
 														<img src="images/event-imgs/img-6.jpg" alt="">
 													</div>
 													<div class="card-event-dt">
-														<h5>Step Up Open Mic Show</h5>
-														<div class="evnt-time">Thu, Jun 30, 2022 4:30 AM</div>
+														<h5>Émission de microphone ouvrir</h5>
+														<div class="evnt-time">Jeu, 30 juin 2022 4h30</div>
 														<div class="event-btn-group">
-															<button class="esv-btn me-2" onclick="window.location.href='venue_event_detail_view.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View</button>
+															<button class="esv-btn me-2" onclick="window.location.href='venue_event_detail_view.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Voir</button>
 														</div>
 													</div>
 												</div>																
@@ -206,10 +206,10 @@
 														<img src="images/event-imgs/img-7.jpg" alt="">
 													</div>
 													<div class="card-event-dt">
-														<h5>Tutorial on Canvas Painting for Beginners</h5>
-														<div class="evnt-time">Sun, Jul 17, 2022 5:30 AM</div>
+														<h5>Tutorial Canvas Painting pour Débutantes</h5>
+														<div class="evnt-time">Soleil, 17 juillet, 2022 5:30 AM </div>
 														<div class="event-btn-group">
-															<button class="esv-btn me-2" onclick="window.location.href='online_event_detail_view.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View</button>
+															<button class="esv-btn me-2" onclick="window.location.href='online_event_detail_view.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Voir</button>
 														</div>
 													</div>
 												</div>																
