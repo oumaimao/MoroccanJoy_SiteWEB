@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -53,8 +53,8 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-12 col-md-12">
 						<div class="main-title checkout-title text-center">
-							<h3>Contact Us</h3>
-							<p class="mb-0">Have any questions? We'd love to hear from you.</p>
+							<h3>Contactez-nous</h3>
+							<p class="mb-0">Avez-vous des questions?Nous aimerions recevoir de vos nouvelles.</p>
 						</div>
 					</div>
 					<div class="col-lg-10">
@@ -65,37 +65,37 @@
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group mt-4">
-													<label class="form-label">First Name*</label>
+													<label class="form-label">Prénom*</label>
 													<input class="form-control h_50" type="text" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group mt-4">
-													<label class="form-label">Last Name*</label>
+													<label class="form-label">Nom de famille*</label>
 													<input class="form-control h_50" type="text" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group mt-4">
-													<label class="form-label">Email*</label>
+													<label class="form-label">E-mail*</label>
 													<input class="form-control h_50" type="Email" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group mt-4">
-													<label class="form-label">Phone*</label>
+													<label class="form-label">Téléphone*</label>
 													<input class="form-control h_50" type="text" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group mt-4">
-													<label class="form-label">Message*</label>
+													<label class="form-label">message*</label>
 													<textarea class="form-textarea" placeholder="About"></textarea>																								
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="text-center mt-4">
-													<button class="main-btn btn-hover h_50 w-100" type="submit">Submit</button>
+													<button class="main-btn btn-hover h_50 w-100" type="submit">Soumettre</button>
 												</div>
 											</div>
 										</div>
@@ -105,8 +105,8 @@
 									<div class="contact-banner-block">
 										<div class="contact-hero-banner">
 											<div class="contact-hero-banner-info">
-												<h3>Contact information</h3>
-												<p>Fill out the form and our team will get back to you soon.</p>
+												<h3>Coordonnées </h3>
+												<p>Remplissez le formulaire et notre équipe vous répondra bientôt.</p>
 												<ul>
 													<li>
 														<div class="contact-info d-flex align-items-center">
@@ -129,7 +129,7 @@
 															<div class="contact-icon">
 																<i class="fa-solid fa-life-ring fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;"></i>
 															</div>
-															<a href="#">Help Center</a>
+															<a href="#">Centre d'aide</a>
 														</div>
 													</li>
 												</ul>
@@ -145,8 +145,8 @@
 							<div class="contact-banner-block">
 								<div class="contact-hero-banner p_30 min-h-auto">
 									<div class="contact-hero-banner-info">
-										<h3>Contact information</h3>
-										<p>Fill out the form and our team will get back to you soon.</p>
+										<h3>Coordonnées </h3>
+										<p>Remplissez le formulaire et notre équipe vous répondra bientôt.</p>
 										<ul>
 											<li>
 												<div class="contact-info d-flex align-items-center">
@@ -169,7 +169,7 @@
 													<div class="contact-icon">
 														<i class="fa-solid fa-life-ring fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;"></i>
 													</div>
-													<a href="#">Help Center</a>
+													<a href="#">Centre d'aide </a>
 												</div>
 											</li>
 										</ul>

@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -48,37 +48,37 @@
 											<select class="selectpicker" data-width="100%" data-size="5">
 												<option value="browse_all" data-icon="fa-solid fa-tower-broadcast" selected>Browse All</option>
 												<option value="online_events" data-icon="fa-solid fa-video">Online Events</option>
-												<option value="venue_events" data-icon="fa-solid fa-location-dot">Venue Events</option>
+												<option value="venue_events" data-icon="fa-solid fa-location-dot">Événements de lieu</option>
 											</select>
 										</div>
 									</div>
 									<div class="col-lg-5 col-md-12">
 										<div class="form-group">
 											<select class="selectpicker" data-width="100%" data-size="5" data-live-search="true">
-												<option value="01" selected>All</option>
-												<option value="02">Arts</option>
-												<option value="03">Business</option>
-												<option value="04">Coaching and Consulting</option>
-												<option value="05">Community and Culture</option>
-												<option value="06">Education and Training</option>
-												<option value="07">Family and Friends</option>
-												<option value="08">Fashion and Beauty</option>
-												<option value="09">Film and Entertainment</option>
-												<option value="10">Food and Drink</option>
-												<option value="11">Free</option>
-												<option value="12">Health and Wellbeing</option>
-												<option value="13">Hobbies and Interest</option>
-												<option value="14">Music and Theater</option>
-												<option value="15">Religion and Spirituality</option>
-												<option value="16">Science and Technology</option>
-												<option value="17">Sports and Fitness</option>
-												<option value="18">Travel and Outdoor</option>
-												<option value="19">Visual Arts</option>
+												<option value="01" selected>Toute</option>
+												<option value="02">arts</option>
+												<option value="03">Entreprise</option>
+												<option value="04">Coaching et consultation</option>
+												<option value="05">Communauté et culture </option>
+												<option value="06">Éducation et formation</option>
+												<option value="07">Famille et amis</option>
+												<option value="08"> Mode et beauté </option>
+												<option value="09">Film et divertissement </option>
+												<option value="10">Nourriture et boisson</option>
+												<option value="11">Gratuite</option>
+												<option value="12">Santé et bien-être </option>
+												<option value="13">Passe-temps et intérêt </option>
+												<option value="14">Musique et théâtre </option>
+												<option value="15">Religion et spiritualité</option>
+												<option value="16">Science et technologie</option>
+												<option value="17">Sports et fitness </option>
+												<option value="18">Voyage et extérieur</option>
+												<option value="19">arts visuels</option>
 											</select>
 										</div>
 									</div>
 									<div class="col-lg-2 col-md-12">
-										<a href="#" class="main-btn btn-hover w-100">Find</a>
+										<a href="#" class="main-btn btn-hover w-100">Trouver</a>
 									</div>
 								</div>
 							</div>
@@ -94,9 +94,9 @@
 						<div class="event-filter-items">
 							<div class="featured-controls">
 								<div class="filter-tag">
-									<a href="explore_events_by_date.html" class="active">All</a>
-									<a href="explore_events_by_date.html">Today</a>
-									<a href="explore_events_by_date.html">Tomorrow</a>
+									<a href="explore_events_by_date.html" class="active">Toute</a>
+									<a href="explore_events_by_date.html">Aujourd'hui</a>
+									<a href="explore_events_by_date.html">Demain</a>
 									<a href="explore_events_by_date.html">This Week</a>
 									<a href="explore_events_by_date.html">This Weekend</a>
 									<a href="explore_events_by_date.html">Next Week</a>

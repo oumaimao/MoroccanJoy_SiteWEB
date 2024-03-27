@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -55,7 +55,7 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-12 col-md-12">
 						<div class="main-title text-center checkout-title">
-							<h3>Create New Event</h3>
+							<h3>Créer un nouvel événement</h3>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-8 col-md-12">
@@ -66,8 +66,8 @@
 										<div class="create-icon">
 											<i class="fa-solid fa-video"></i>
 										</div>
-										<h4>Create an Online Event</h4>
-										<a href="create_online_event.html" class="main-btn btn-hover h_40 w-100">Create<i class="fa-solid fa-arrow-right ms-2"></i></a>
+										<h4>Créer un événement en ligne</h4>
+										<a href="create_online_event.html" class="main-btn btn-hover h_40 w-100">Créer<i class="fa-solid fa-arrow-right ms-2"></i></a>
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -75,8 +75,8 @@
 										<div class="create-icon">
 											<i class="fa-solid fa-location-dot"></i>
 										</div>
-										<h4>Create an Venue Event</h4>
-										<a href="create_venue_event.html" class="main-btn btn-hover h_40 w-100">Create<i class="fa-solid fa-arrow-right ms-2"></i></a>
+										<h4> Créer un événement de lieu</h4>
+										<a href="create_venue_event.html" class="main-btn btn-hover h_40 w-100">Créer<i class="fa-solid fa-arrow-right ms-2"></i></a>
 									</div>
 								</div>
 							</div>

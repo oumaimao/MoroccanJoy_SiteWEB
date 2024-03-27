@@ -40,13 +40,13 @@
 								<div class="row justify-content-center">
 									<div class="col-xl-7 col-lg-8">
 										<div class="coming-soon-content bp-form">
-											<h2>We're coming soon.</h2>
-											<p class="fs-16 mt-4">is working hard to launch a new site that's going to revolutionize the way you do business. Stay tuned!</p>
+											<h2>Nous venons bientôt.</h2>
+											<p class="fs-16 mt-4">travaille dur pour lancer un nouveau site qui va révolutionner la façon dont vous faites des affaires.Restez à l'écoute!</p>
 											<div id="timer" class="flex-wrap d-flex justify-content-center">
-												<div id="days" class="align-items-center flex-column d-flex justify-content-center">00<span>Days</span></div>
-												<div id="hours" class="align-items-center flex-column d-flex justify-content-center">00<span>Hours</span></div>
-												<div id="minutes" class="align-items-center flex-column d-flex justify-content-center">00<span>Minutes</span></div>
-												<div id="seconds" class="align-items-center flex-column d-flex justify-content-center">00<span>Seconds</span></div>
+												<div id="days" class="align-items-center flex-column d-flex justify-content-center">00<span>Jours</span></div>
+												<div id="hours" class="align-items-center flex-column d-flex justify-content-center">00<span>Heures</span></div>
+												<div id="minutes" class="align-items-center flex-column d-flex justify-content-center">00<span>minutes</span></div>
+												<div id="seconds" class="align-items-center flex-column d-flex justify-content-center">00<span>Secondes</span></div>
 											</div>
 											
 											<form class="newsletter-form mt-4">
@@ -56,10 +56,10 @@
 														<button class="main-btn subscribe-btn btn-hover h_40" type="submit">Subscribe</button>
 													</div>
 												</div>
-												<p class="mb-0 mt-1 text-start fs-12">No Spam, we promise.</p>
+												<p class="mb-0 mt-1 text-start fs-12">Pas de spam, nous promettons.</p>
 											</form>
 											<div class="copyright-footer mt-5">
-												© 2024, Barren. All rights reserved. Powered by Gambolthemes
+												© 2024, stérile.Tous droits réservés.
 											</div>
 										</div>
 									</div>

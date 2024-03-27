@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title> Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -56,7 +56,7 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-12 col-md-12">
 						<div class="main-title text-center">
-							<h3>Create Online Event</h3>
+							<h3>Créer un événement en ligne </h3>
 						</div>
 					</div>
 					<div class="col-xl-8 col-lg-9 col-md-12">
@@ -68,53 +68,53 @@
 										<div class="tab-from-content">
 											<div class="main-card">
 												<div class="bp-title">
-													<h4><i class="fa-solid fa-circle-info step_icon me-3"></i>Details</h4>
+													<h4><i class="fa-solid fa-circle-info step_icon me-3"></i>Détails</h4>
 												</div>
 												<div class="p-4 bp-form main-form">
 													<div class="row">
 														<div class="col-lg-12 col-md-12">
 															<div class="form-group border_bottom pb_30">
-																<label class="form-label fs-16">Give your event a name.*</label>
+																<label class="form-label fs-16">Donnez un nom à votre événement.*</label>
 																
 																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="">
 															</div>
 															<div class="form-group border_bottom pb_30">
-																<label class="form-label fs-16">Give event link</label>
+																<label class="form-label fs-16"> Donnez un lien d'événement </label>
 																
 																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="">
 															</div>
 															<div class="form-group border_bottom pt_30 pb_30">
-																<label class="form-label fs-16">Choose a category for your event.*</label>
+																<label class="form-label fs-16">Choisissez une catégorie pour votre événement.*</label>
 																
 																<select class="selectpicker" multiple="" data-selected-text-format="count > 4" data-size="5" title="Select category" data-live-search="true">
-																	<option value="01">Arts</option>
-																	<option value="02">Business</option>
-																	<option value="03">Coaching and Consulting</option>
-																	<option value="04">Community and Culture</option>
-																	<option value="05">Entrepreneurship</option>
-																	<option value="06">Education and Training</option>
-																	<option value="07">Family and Friends</option>
-																	<option value="08">Fashion and Beauty</option>
-																	<option value="09">Film and Entertainment</option>
-																	<option value="10">Food and Drink</option>
-																	<option value="11">Government and Politics</option>
-																	<option value="12">Health and Wellbeing</option>
-																	<option value="13">Hobbies and Interest</option>
-																	<option value="14">Music and Theater</option>
-																	<option value="15">Religion and Spirituality</option>
-																	<option value="16">Science and Technology</option>
-																	<option value="17">Sports and Fitness</option>
-																	<option value="18">Travel and Outdoor</option>
-																	<option value="19">Visual Arts</option>
-																	<option value="20">Others</option>
+																	<option value="01">arts</option>
+																	<option value="02">Entreprise</option>
+																	<option value="03">Coaching et consultation </option>
+																	<option value="04">Communauté et culture</option>
+																	<option value="05">Entrepreneuriat</option>
+																	<option value="06">Éducation et formation</option>
+																	<option value="07">Famille et amis </option>
+																	<option value="08">Mode et beauté</option>
+																	<option value="09">Film et divertissement</option>
+																	<option value="10">Nourriture et boisson</option>
+																	<option value="11">Gouvernement et politique</option>
+																	<option value="12">Santé et bien-être </option>
+																	<option value="13">Passe-temps et intérêt</option>
+																	<option value="14">Musique et théâtre </option>
+																	<option value="15">Religion et spiritualité</option>
+																	<option value="16">Science et technologie</option>
+																	<option value="17">Sports et fitness </option>
+																	<option value="18">Voyage et extérieur</option>
+																	<option value="19">arts visuels</option>
+																	<option value="20">Autres</option>
 																</select>
 															</div>
 															<div class="form-group border_bottom pt_30 pb_30">
-																<label class="form-label fs-16">When is your event?*</label>
+																<label class="form-label fs-16">Quand est votre événement?*</label>
 																
 																<div class="row g-2">
 																	<div class="col-md-6">
-																		<label class="form-label mt-3 fs-6">Event Date.*</label>																
+																		<label class="form-label mt-3 fs-6">Date de l'événement.*</label>																
 																		<div class="loc-group position-relative">
 																			<input class="form-control h_50 datepicker-here" data-language="en" type="text" placeholder="MM/DD/YYYY" value="">
 																			<span class="absolute-icon"><i class="fa-solid fa-calendar-days"></i></span>
@@ -226,7 +226,7 @@
 																				</div>
 																			</div>
 																			<div class="col-md-6">
-																				<label class="form-label mt-3 fs-6">Duration</label>	
+																				<label class="form-label mt-3 fs-6">Durée</label>	
 																				<select class="selectpicker" data-size="5" data-live-search="true">
 																					<option value="15">15m</option>
 																					<option value="30">30m</option>
@@ -250,14 +250,14 @@
 																</div>
 															</div>
 															<div class="form-group pt_30 pb_30">
-																<label class="form-label fs-16">Add a few images to your event banner.</label>
+																<label class="form-label fs-16">Ajoutez quelques images à votre bannière d'événement.</label>
 																
 																<div class="content-holder mt-4">
 																	<div class="default-event-thumb">   
 																		<div class="default-event-thumb-btn">
 																			<div class="thumb-change-btn">
 																				<input type="file" id="thumb-img">
-																				<label for="thumb-img">Change Image</label>
+																				<label for="thumb-img">Changer l'image </label>
 																			</div>
 																		</div>
 																		<img src="images/banners/custom-img.jpg" alt="">
@@ -265,8 +265,8 @@
 																</div>
 															</div>
 															<div class="form-group border_bottom pb_30">
-																<label class="form-label fs-16">Please describe your event.</label>
-																<p class="mt-2 fs-14 d-block mb-3">Write a few words below to describe your event and provide any extra information such as schedules, itinerary or any special instructions required to attend your event.</p>
+																<label class="form-label fs-16">Veuillez décrire votre événement.</label>
+																<p class="mt-2 fs-14 d-block mb-3">Écrivez quelques mots ci-dessous pour décrire votre événement et fournir des informations supplémentaires telles que les horaires, l'itinéraire ou toute instruction spéciale requise pour assister à votre événement.</p>
 																<div class="text-editor mt-4">
 																	<div id="pd_editor"></div>
 																</div>
@@ -282,7 +282,7 @@
 									
 									
 								<div class="step-footer step-tab-pager mt-4">
-									<button type="submit" class="btn btn-default btn-hover steps_btn">Create</button>
+									<button type="submit" class="btn btn-default btn-hover steps_btn">Créer</button>
 								</div>
 							</div>
 						</div> 

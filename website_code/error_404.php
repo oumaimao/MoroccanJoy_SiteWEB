@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -54,9 +54,9 @@
 					<div class="col-xl-6 col-lg-8">
 						<div class="error-404-content text-center">
 							<h2>404</h2>
-							<h4>Opps! Page not found</h4>
-							<p>Seems you're looking for something that doesn't exist. If you think this is a problem with us, please tell us .</p>
-							<a href="index.html" class="main-btn btn-hover h_50"><i class="fa-solid fa-house me-3"></i>Back to home</a>
+							<h4>Opps! Page introuvable </h4>
+							<p>Il semble que vous cherchez quelque chose qui n'existe pas.Si vous pensez que c'est un problème avec nous, veuillez nous dire.</p>
+							<a href="index.html" class="main-btn btn-hover h_50"><i class="fa-solid fa-house me-3"></i>De retour à la maison</a>
 						</div>
 					</div>
 				</div>
