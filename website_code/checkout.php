@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>Barren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -53,26 +53,26 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12">
 						<div class="main-title checkout-title">
-							<h3>Order Confirmation</h3>
+							<h3>Confirmation de commande</h3>
 						</div>
 					</div>
 					<div class="col-xl-8 col-lg-12 col-md-12">
 						<div class="checkout-block">
 							<div class="main-card">
 								<div class="bp-title">
-									<h4>Billing information</h4>
+									<h4>Informations de facturation</h4>
 								</div>
 								<div class="bp-content bp-form">
 									<div class="row">
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">First Name*</label>
+												<label class="form-label">Prénom*</label>
 												<input class="form-control h_50" type="text" placeholder="" value="John">																								
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Last Name*</label>
+												<label class="form-label">Nom de famille*</label>
 												<input class="form-control h_50" type="text" placeholder="" value="Doe">																								
 											</div>
 										</div>
@@ -84,13 +84,13 @@
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Address*</label>
+												<label class="form-label">Adresse*</label>
 												<input class="form-control h_50" type="text" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group main-form mt-4">
-												<label class="form-label">Country*</label>
+												<label class="form-label">Pays*</label>
 												<select class="selectpicker" data-size="5" title="Nothing selected" data-live-search="true">
 													<option value="Algeria">Algeria</option>
 													<option value="Argentina">Argentina</option>
@@ -153,19 +153,19 @@
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">State*</label>
+												<label class="form-label">État*</label>
 												<input class="form-control h_50" type="text" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">City/Suburb*</label>
+												<label class="form-label">Ville*</label>
 												<input class="form-control h_50" type="text" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Zip/Post Code*</label>
+												<label class="form-label">Zip / code postal*</label>
 												<input class="form-control h_50" type="text" placeholder="" value="">																								
 											</div>
 										</div>
@@ -174,19 +174,19 @@
 							</div>
 							<div class="main-card mt-5">
 								<div class="bp-title">
-									<h4>Total Payable Amount : AUD $50.00</h4>
+									<h4>Montant total payable: 50,00 $ AUD</h4>
 								</div>
 								<div class="bp-content bp-form">
 									<div class="row">
 										<div class="col-lg-12 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Card number*</label>
+												<label class="form-label">Numéro de carte*</label>
 												<input class="form-control h_50" type="text" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Expiry date*</label>
+												<label class="form-label">Date d'expiration*</label>
 												<input class="form-control h_50" type="text" placeholder="MM/YY" value="">																								
 											</div>
 										</div>
@@ -197,7 +197,7 @@
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">
-											<button class="main-btn btn-hover h_50 w-100 mt-5" type="button" onclick="window.location.href='booking_confirmed.html'">Confirm & Pay</button>
+											<button class="main-btn btn-hover h_50 w-100 mt-5" type="button" onclick="window.location.href='booking_confirmed.html'">Confirmer et payer </button>
 										</div>
 									</div>
 								</div>
@@ -207,7 +207,7 @@
 					<div class="col-xl-4 col-lg-12 col-md-12">
 						<div class="main-card order-summary">
 							<div class="bp-title">
-								<h4>Billing information</h4>
+								<h4>Informations de facturation</h4>
 							</div>
 							<div class="order-summary-content p_30">
 								<div class="event-order-dt">
@@ -215,38 +215,38 @@
 										<img src="images/event-imgs/img-7.jpg" alt="">
 									</div>
 									<div class="event-order-dt-content">
-										<h5>Tutorial on Canvas Painting for Beginners</h5>
-										<span>Wed, Jun 01, 2022 5:30 AM</span>
-										<div class="category-type">Online Event</div>
+										<h5>Tutorial Canvas Peinture pour les débutants</h5>
+										<span>Mer, 01 juin, 2022 5h30</span>
+										<div class="category-type">Événement en ligne</div>
 									</div>
 								</div>
 								<div class="order-total-block">
 									<div class="order-total-dt">
-										<div class="order-text">Total Ticket</div>
+										<div class="order-text">Billet total</div>
 										<div class="order-number">1</div>
 									</div>
 									<div class="order-total-dt">
-										<div class="order-text">Sub Total</div>
+										<div class="order-text">Sous-total</div>
 										<div class="order-number">$50.00</div>
 									</div>
 									<div class="divider-line"></div>
 									<div class="order-total-dt">
-										<div class="order-text">Total</div>
+										<div class="order-text">Totale</div>
 										<div class="order-number ttl-clr">AUD $50.00</div>
 									</div>
 								</div>
 								<div class="coupon-code-block">
 									<div class="form-group mt-4">
-										<label class="form-label">Coupon Code*</label>
+										<label class="form-label">Code promo*</label>
 										<div class="position-relative">
 											<input class="form-control h_50" type="text" placeholder="Code" value="">
-											<button class="apply-btn btn-hover" type="button">Apply</button>
+											<button class="apply-btn btn-hover" type="button">Appliquer</button>
 										</div>
 									</div>
 								</div>
 								<div class="confirmation-btn">
-									<button class="main-btn btn-hover h_50 w-100 mt-5" type="button" onclick="window.location.href='booking_confirmed.html'">Confirm & Pay</button>
-									<span>Price is inclusive of all applicable GST</span>
+									<button class="main-btn btn-hover h_50 w-100 mt-5" type="button" onclick="window.location.href='booking_confirmed.html'">Confirmer et payer</button>
+									<span>Le prix comprend toute la TPS applicable</span>
 								</div>
 							</div>
 						</div>
