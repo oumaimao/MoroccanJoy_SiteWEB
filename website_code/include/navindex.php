@@ -7,7 +7,7 @@
 							<i class="fa-solid fa-bars"></i>
 						</span>
 					</button>
-					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
+					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.php">
 						<div class="res-main-logo">
 							<img src="images/logo-icon.svg" alt="">
 						</div>
@@ -28,7 +28,7 @@
 						<div class="offcanvas-body">
 							<div class="offcanvas-top-area">
 								<div class="create-bg">
-									<a href="create.html" class="offcanvas-create-btn">
+									<a href="create.php" class="offcanvas-create-btn">
 										<i class="fa-solid fa-calendar-days"></i>
 										<span>Create Event</span>
 									</a>
@@ -36,16 +36,16 @@
 							</div>							
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+									<a class="nav-link active" aria-current="page" href="index.php">Home</a>
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Explore Events
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="explore_events.html">Explore Events</a></li>
-										<li><a class="dropdown-item" href="venue_event_detail_view.html">Venue Event Detail View</a></li>
-										<li><a class="dropdown-item" href="online_event_detail_view.html">Online Event Detail View</a></li>
+										<li><a class="dropdown-item" href="explore_events.php">Explore Events</a></li>
+										<li><a class="dropdown-item" href="venue_event_detail_view.php">Venue Event Detail View</a></li>
+										<li><a class="dropdown-item" href="online_event_detail_view.php">Online Event Detail View</a></li>
 									</ul>
 								</li>
 								
@@ -54,9 +54,9 @@
 										Help
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-										<li><a class="dropdown-item" href="help_center.html">Help Center</a></li>
-										<li><a class="dropdown-item" href="contact_us.html">Contact Us</a></li>
+										<li><a class="dropdown-item" href="faq.php">FAQ</a></li>
+										<li><a class="dropdown-item" href="help_center.php">Help Center</a></li>
+										<li><a class="dropdown-item" href="contact_us.php">Contact Us</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -77,18 +77,18 @@
 					<div class="right-header order-2">
 						<ul class="align-self-stretch">
 							<li>
-								<a href="create.html" class="create-btn btn-hover">
+								<a href="create.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
 									<span>Create Event</span>
 								</a>
 							</li>
 							<li>
-								<a href="create.html" class="create-btn btn-hover ">
+								<a href="sign_up.php" class="create-btn btn-hover ">
 									<span>Sign-up</span>
 								</a>
 							</li>
 							<li>
-								<a href="create.html" class="create-btn btn-hover">
+								<a href="sign_in.php" class="create-btn btn-hover">
 									<span>Sign-in</span>
 								</a>
 							</li>
