@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>BArren - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -40,9 +40,9 @@
 				<div class="row justify-content-center">
 					<div class="col-xl-7 col-lg-9 col-md-10">
 						<div class="hero-banner-content">
-							<h2>The Easiest and Most Powerful Online Event Booking and Ticketing System</h2>
-							<p>Barren is an all-in-one event ticketing platform for event organisers, promoters, and managers. Easily create, promote and manage your events of any type and size.</p>
-							<a href="create.html" class="main-btn btn-hover">Create Event <i class="fa-solid fa-arrow-right ms-3"></i></a>
+							<h2>Le système de réservation d'événements en ligne et de billetterie le plus simple et le plus puissant</h2>
+							<p>Barren est une plate-forme de billetterie d'événements tout-en-un pour les organisateurs d'événements, les promoteurs et les gestionnaires.Créer, promouvoir et gérer facilement vos événements de tout type et taille.</p>
+							<a href="create.html" class="main-btn btn-hover">Créer un évènement <i class="fa-solid fa-arrow-right ms-3"></i></a>
 						</div>
 					</div>
 				</div>
@@ -53,36 +53,36 @@
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="main-title">
-							<h3>Explore Events</h3>
+							<h3>Explorer les événements </h3>
 						</div>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="event-filter-items">
 							<div class="featured-controls">
 								<div class="filter-tag">
-									<a href="explore_events_by_date.html" class="active">All</a>
-									<a href="explore_events_by_date.html">Today</a>
-									<a href="explore_events_by_date.html">Tomorrow</a>
-									<a href="explore_events_by_date.html">This Week</a>
-									<a href="explore_events_by_date.html">This Weekend</a>
-									<a href="explore_events_by_date.html">Next Week</a>
-									<a href="explore_events_by_date.html">Next Weekend</a>
-									<a href="explore_events_by_date.html">This Month</a>
-									<a href="explore_events_by_date.html">Next Month</a>
-									<a href="explore_events_by_date.html">This Year</a>
-									<a href="explore_events_by_date.html">Next Year</a>
+									<a href="explore_events_by_date.html" class="active">Toute</a>
+									<a href="explore_events_by_date.html">Aujourd'hui</a>
+									<a href="explore_events_by_date.html">Demain</a>
+									<a href="explore_events_by_date.html">Cette semaine</a>
+									<a href="explore_events_by_date.html">Ce week-end </a>
+									<a href="explore_events_by_date.html">La semaine prochaine </a>
+									<a href="explore_events_by_date.html">Le weekend prochain</a>
+									<a href="explore_events_by_date.html">Ce mois-ci </a>
+									<a href="explore_events_by_date.html">Le mois prochain </a>
+									<a href="explore_events_by_date.html"> Cette année</a>
+									<a href="explore_events_by_date.html">L'année prochaine</a>
 								</div>
 								<div class="controls">
-									<button type="button" class="control" data-filter="all">All</button>
-									<button type="button" class="control" data-filter=".arts">Arts</button>
-									<button type="button" class="control" data-filter=".business">Business</button>
-									<button type="button" class="control" data-filter=".concert">Concert</button>
-									<button type="button" class="control" data-filter=".workshops">Workshops</button>
-									<button type="button" class="control" data-filter=".coaching_consulting">Coaching and Consulting</button>
-									<button type="button" class="control" data-filter=".health_Wellness">Health and Wellbeing</button>									
-									<button type="button" class="control" data-filter=".volunteer">Volunteer</button>
-									<button type="button" class="control" data-filter=".sports">Sports</button>
-									<button type="button" class="control" data-filter=".free">Free</button>	
+									<button type="button" class="control" data-filter="all">Toute</button>
+									<button type="button" class="control" data-filter=".arts">arts</button>
+									<button type="button" class="control" data-filter=".business">Entreprise</button>
+									<button type="button" class="control" data-filter=".concert">concert</button>
+									<button type="button" class="control" data-filter=".workshops">Ateliers</button>
+									<button type="button" class="control" data-filter=".coaching_consulting">Coaching et consultation</button>
+									<button type="button" class="control" data-filter=".health_Wellness">Santé et bien-être</button>									
+									<button type="button" class="control" data-filter=".volunteer">Bénévole</button>
+									<button type="button" class="control" data-filter=".sports">Des sports</button>
+									<button type="button" class="control" data-filter=".free">Gratuite</button>	
 								</div>
 								<div class="row" data-ref="event-filter-content">
 									<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix arts concert workshops volunteer sports health_Wellness" data-ref="mixitup-target">
@@ -94,7 +94,7 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">A New Way Of Life</a>
+												<a href="venue_event_detail_view.html" class="event-title">Un nouveau mode de vie</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $100.00*</span>
 													<span class="remaining"></span>
@@ -103,9 +103,9 @@
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>15 Apr</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>15 avril </span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Fri, 3.45 PM</span>
+														<span>GRATUIT, 15 h 45</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -121,18 +121,18 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title">Earrings Workshop with Bronwyn David</a>
+												<a href="online_event_detail_view.html" class="event-title"> Atelier des boucles d'oreilles avec Bronwyn David</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $75.00*</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>30 Apr</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>30 Avr</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Sat, 11.20 PM</span>
+														<span>Samedi, 23h20 </span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>2h</span>
 												</div>
@@ -148,16 +148,16 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Spring Showcase Saturday April 30th 2022 at 7pm</a>
+												<a href="venue_event_detail_view.html" class="event-title">Spring Showcase samedi 30 avril 2022 à 19h </a>
 												<div class="duration-price-remaining">
-													<span class="duration-price">Free*</span>
+													<span class="duration-price">Gratuite*</span>
 													<span class="remaining"></span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>1 May</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>1 Peut</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
 														<span>Sun, 4.30 PM</span>
 													</div>
@@ -175,16 +175,16 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title">Shutter Life</a>
+												<a href="online_event_detail_view.html" class="event-title">Vie d'obturation</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $85.00</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>1 May</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>1 Peut</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
 														<span>Sun, 5.30 PM</span>
 													</div>
@@ -202,7 +202,7 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Friday Night Dinner at The Old Station May 27 2022</a>
+												<a href="venue_event_detail_view.html" class="event-title">Dîner du vendredi soir à l'ancienne gare 27 mai 2022 </a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $41.50*</span>
 													<span class="remaining"></span>
@@ -211,9 +211,9 @@
 											<div class="event-footer">
 												<div class="event-timing">
 													<div class="publish-date">
-														<span><i class="fa-solid fa-calendar-day me-2"></i>27 May</span>
+														<span><i class="fa-solid fa-calendar-day me-2"></i>27 Peut</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Fri, 12.00 PM</span>
+														<span>Jeu, 16 h 30</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>5h</span>
 												</div>
@@ -229,7 +229,7 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Step Up Open Mic Show</a>
+												<a href="venue_event_detail_view.html" class="event-title">ÉCHEUR DE MIM OUVERT</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $200.00*</span>
 													<span class="remaining"></span>
@@ -240,7 +240,7 @@
 													<div class="publish-date">
 														<span><i class="fa-solid fa-calendar-day me-2"></i>30 Jun</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Thu, 4.30 PM</span>
+														<span>Jeu, 16 h 30</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -256,10 +256,10 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="online_event_detail_view.html" class="event-title">Tutorial on Canvas Painting for Beginners</a>
+												<a href="online_event_detail_view.html" class="event-title">Tutorial Canvas Peinture pour les débutants </a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $50.00*</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>17 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>17 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
@@ -267,7 +267,7 @@
 													<div class="publish-date">
 														<span><i class="fa-solid fa-calendar-day me-2"></i>17 Jul</span>
 														<span class="dot"><i class="fa-solid fa-circle"></i></span>
-														<span>Sun, 5.30 PM</span>
+														<span>Jeu, 16 h 30</span>
 													</div>
 													<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
 												</div>
@@ -283,10 +283,10 @@
 												<span class="bookmark-icon" title="Bookmark"></span>
 											</div>
 											<div class="event-content">
-												<a href="venue_event_detail_view.html" class="event-title">Trainee Program on Leadership' 2022</a>
+												<a href="venue_event_detail_view.html" class="event-title">TProgramme Rainee sur le leadership '2022</a>
 												<div class="duration-price-remaining">
 													<span class="duration-price">AUD $120.00*</span>
-													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Remaining</span>
+													<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>7 Restante</span>
 												</div>
 											</div>
 											<div class="event-footer">
@@ -303,7 +303,7 @@
 									</div>
 								</div>
 								<div class="browse-btn">
-									<a href="explore_events.html" class="main-btn btn-hover ">Browse All</a>
+									<a href="explore_events.html" class="main-btn btn-hover "> Parcourir tout</a>
 								</div>
 							</div>
 						</div>
@@ -316,8 +316,8 @@
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="main-title">
-							<h3>Host Engaging Online and Venue Events with Barren</h3>
-							<p>Organise venue events and host online events with unlimited possibilities using our built-in virtual event platform. Build a unique event experience for you and your attendees.</p>
+							<h3>Hôte de s'engager en ligne et des événements de lieu avec stérile</h3>
+							<p>Organisez des événements de lieu et organisez des événements en ligne avec des possibilités illimitées à l'aide de notre plate-forme d'événements virtuelles intégrée.Construisez une expérience d'événement unique pour vous et vos participants.</p>
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -329,8 +329,8 @@
 											<div class="host-img">
 												<img src="images/icons/venue-events.png" alt="">
 											</div>
-											<h4>Venue Events</h4>
-											<p>Create outstanding event page for your venue events, attract attendees and sell more tickets.</p>
+											<h4>Événements de lieu</h4>
+											<p>Créez une page d'événement exceptionnelle pour vos événements de lieu, attirez les participants et vendez plus de billets.</p>
 										</div>
 									</div>
 								</div>
@@ -340,8 +340,8 @@
 											<div class="host-img">
 												<img src="images/icons/webinar.png" alt="">
 											</div>
-											<h4>Webinar</h4>
-											<p>Webinars tend to be one-way events. Barren helps to make them more engaging.</p>
+											<h4>Séminaire en ligne</h4>
+											<p>Les webinaires ont tendance à être des événements à sens unique.SARREN aide à les rendre plus engageants.</p>
 										</div>
 									</div>
 								</div>
@@ -351,8 +351,8 @@
 											<div class="host-img">
 												<img src="images/icons/training-workshop.png" alt="">
 											</div>
-											<h4>Training & Workshop </h4>
-											<p>Create and host profitable workshops and training sessions online, sell tickets and earn money.</p>
+											<h4>Atelier de formation </h4>
+											<p>Créer et organiser des ateliers rentables et des séances de formation en ligne, vendre des billets et gagner de l'argent.</p>
 										</div>
 									</div>
 								</div>
@@ -362,8 +362,8 @@
 											<div class="host-img">
 												<img src="images/icons/online-class.png" alt="">
 											</div>
-											<h4>Online Class</h4>
-											<p>Try our e-learning template to create a fantastic e-learning event page and drive engagement. </p>
+											<h4>Classe en ligne</h4>
+											<p>Essayez notre modèle d'apprentissage en ligne pour créer une page d'événements de learning fantastique et conduire l'engagement.</p>
 										</div>
 									</div>
 								</div>
@@ -373,7 +373,7 @@
 											<div class="host-img">
 												<img src="images/icons/talk-show.png" alt="">
 											</div>
-											<h4>Talk Show</h4>
+											<h4>Talk-show</h4>
 											<p>Use our intuitive built-in event template to create and host an engaging Talk Show.</p>
 										</div>
 									</div>
