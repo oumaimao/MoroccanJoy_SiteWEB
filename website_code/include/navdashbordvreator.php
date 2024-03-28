@@ -6,13 +6,6 @@ $name = $_SESSION['user']['U_name'];
 		<div class="header-inner">		
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">
 				<div class="container-fluid ps-0">
-					<button type="button" id="toggleMenu" class="toggle_menu">
-						<i class="fa-solid fa-bars-staggered"></i>
-					</button>
-					<button id="collapse_menu" class="collapse_menu me-4">
-						<i class="fa-solid fa-bars collapse_menu--icon "></i>
-						<span class="collapse_menu--label"></span>
-					</button>
 					<button class="navbar-toggler order-3 ms-2 pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 						<span class="navbar-toggler-icon">
 							<i class="fa-solid fa-bars"></i>
