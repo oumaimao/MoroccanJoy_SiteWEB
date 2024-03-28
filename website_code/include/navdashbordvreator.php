@@ -24,7 +24,7 @@ $name = $_SESSION['user']['U_name'];
 						</div>
 						<div class="main-logo" id="logo">
 							<img src="images/logo.svg" alt="">
-							<img class="logo-inverse" src="images/dark-logo.png" alt="">
+							<img class="logo-inverse" src="images/dark-logo.svg" alt="">
 						</div>
 					</a>
 					<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
