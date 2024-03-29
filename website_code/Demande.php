@@ -70,68 +70,9 @@
 			<div class="overlay"></div>
 		</div>
 	</header>
-    <nav class="vertical_nav">
-		<div class="left_section menu_left" id="js-menu">
-			<div class="left_section">
-				<ul>
-					<li class="menu--item">
-						<a href="Utilisateur.html" class="menu--link" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-gauge menu--icon"></i>
-							<span class="menu--label">Utilisateur</span>
-						</a>
-					</li>
-                    <li class="menu--item">
-						<a href="Resirvation.html" class="menu--link" title="Reports" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-chart-pie menu--icon"></i>
-							<span class="menu--label">Réservations</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Events.html" class="menu--link" title="Events" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-calendar-days menu--icon"></i>
-							<span class="menu--label">évènements</span>
-						</a>
-					</li>
-					
-                    <li class="menu--item">
-						<a href="Billet.html" class="menu--link" title="Payouts" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-credit-card menu--icon"></i>
-							<span class="menu--label">billet</span>
-						</a>
-					</li>
-                   
-					<li class="menu--item">
-						<a href="Gategorie.html" class="menu--link" title="Contact List" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-regular fa-address-card menu--icon"></i>
-							<span class="menu--label">Categories</span>
-						</a>
-					</li>
-					
-					
-					<li class="menu--item">
-						<a href="Reclamation.html" class="menu--link" title="Subscription" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-bahai menu--icon"></i>
-							<span class="menu--label">réclamations</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Demande.html" class="menu--link active" title="Conversion Setup" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-square-plus menu--icon"></i>
-							<span class="menu--label">Demande d'approuvement</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Admin.html" class="menu--link " title="About" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-circle-info menu--icon"></i>
-							<span class="menu--label">Adminstrateurs</span>
-						</a>
-					</li>
-					
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+    <!-- Verticale nav -->
+	<?php include 'include/VerticaleNav.php' ?>
+	<!-- Verticale nav -->
 
 <!-- Body Start -->
 

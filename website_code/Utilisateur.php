@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Gategorie</title>
+		<title>Utilisateurs</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -32,41 +32,7 @@
 	</head>
     <body class="d-flex flex-column h-100">
         
-   <!-- Add Organisation Model Start-->
-   <div class="modal fade" id="addorganisationModal" tabindex="-1" aria-labelledby="addorganisationLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="addorganisationLabel">Gategorie details</h5>
-				<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
-			</div>
-			<div class="modal-body">
-				<div class="model-content main-form">
-					<div class="row">
-						<div class="col-lg-6 col-md-12">
-							<div class="form-group mt-4">
-								<label class="form-label">ID</label>
-								<input class="form-control h_40" type="text" placeholder="" value="">																								
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12">
-							<div class="form-group mt-4">
-								<label class="form-label">Nom</label>
-								<input class="form-control h_40" type="text" placeholder="" value="">																								
-							</div>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Cancel</button>
-				<button type="button" class="main-btn min-width btn-hover h_40">Add</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Add Organisation Model End-->
+		  
     <header class="header">
 		<div class="header-inner">		
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">
@@ -96,81 +62,23 @@
                             <div id="night-mode" class="fas fa-moon fa-sun"></div>
                         </div>
                     </ul>
-                    </li></div>
+                    </li>
+				</div>
 					
 				</div>
 			</nav>
 			<div class="overlay"></div>
 		</div>
 	</header>
-    <nav class="vertical_nav">
-		<div class="left_section menu_left" id="js-menu">
-			<div class="left_section">
-				<ul>
-					<li class="menu--item">
-						<a href="Utilisateur.html" class="menu--link" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-gauge menu--icon"></i>
-							<span class="menu--label">Utilisateur</span>
-						</a>
-					</li>
-                    <li class="menu--item">
-						<a href="Resirvation.html" class="menu--link" title="Reports" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-chart-pie menu--icon"></i>
-							<span class="menu--label">Réservations</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Events.html" class="menu--link" title="Events" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-calendar-days menu--icon"></i>
-							<span class="menu--label">évènements</span>
-						</a>
-					</li>
-					
-                    <li class="menu--item">
-						<a href="Billet.html" class="menu--link" title="Payouts" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-credit-card menu--icon"></i>
-							<span class="menu--label">billet</span>
-						</a>
-					</li>
-                   
-					<li class="menu--item">
-						<a href="Gategorie.html" class="menu--link active" title="Contact List" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-regular fa-address-card menu--icon"></i>
-							<span class="menu--label">Categories</span>
-						</a>
-					</li>
-					
-					
-					<li class="menu--item">
-						<a href="Reclamation.html" class="menu--link" title="Subscription" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-bahai menu--icon"></i>
-							<span class="menu--label">réclamations</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Demande.html" class="menu--link" title="Conversion Setup" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-square-plus menu--icon"></i>
-							<span class="menu--label">Demande d'approuvement</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Admin.html" class="menu--link " title="About" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-circle-info menu--icon"></i>
-							<span class="menu--label">Adminstrateurs</span>
-						</a>
-					</li>
-					
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+    <!-- Verticale nav -->
+	<?php include 'include/VerticaleNav.php' ?>
+	<!-- Verticale nav -->
 <!-- Body Start -->
 
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Gategorie List</h5>
+		<h5 class="mb-4">Utilisateurs List</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
@@ -180,9 +88,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="ocard-right">
-				<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Create</button>
-			</div>
+			
 		</div>
 	</div>
 	<div class="tab-content">
@@ -194,18 +100,27 @@
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">ID</th>
-									<th scope="col">Nom</th>
-									
-									<th scope="col">Opération</th>
+									<th scope="col">Utilisateur</th>
+									<th scope="col">Prenom</th>
+									<th scope="col">Nom	</th>
+									<th scope="col">Email</th>
+									<th scope="col">Telephone</th>
+									<th scope="col">Adresse	</th>
+									<th scope="col">Date Naissance</th>
+									<th scope="col" colspan="2">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>										
 									<td>John Doe</td>	
-									
+									<td>johndoe@example.com</td>	
+									<td>Account Owner</td>	
+									<td>20 May 22, 10.27 AM</td>	
 									<td>No</td>	
-									<td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i></td>	
-										
+									<td>Account Owner</td>	
+									<td>20 May 22, 10.27 AM</td>	
+									<td>20 May 22, 10.27 AM</td>	
+									<td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
 								</tr>
 								
 							</tbody>									
@@ -217,6 +132,7 @@
     </div>
 </div>
 <!-- Body End -->
+
     <script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

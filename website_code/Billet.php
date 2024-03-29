@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Reclamation</title>
+		<title>Billet</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -32,6 +32,7 @@
 	</head>
     <body class="d-flex flex-column h-100">
          
+        
  
     <header class="header">
 		<div class="header-inner">		
@@ -54,7 +55,7 @@
 							<img class="logo-inverse" src="images/dark-logo.svg" alt="">
 						</div>
 					</a>
-					<div class="right-header order-2">
+                    <div class="right-header order-2">
                         <ul class="align-self-stretch">
                         <li>
                        
@@ -64,79 +65,22 @@
                     </ul>
                     </li></div>
 					
+					
 				</div>
 			</nav>
 			<div class="overlay"></div>
 		</div>
 	</header>
-	<nav class="vertical_nav">
-		<div class="left_section menu_left" id="js-menu">
-			<div class="left_section">
-				<ul>
-					<li class="menu--item">
-						<a href="Utilisateur.html" class="menu--link" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-gauge menu--icon"></i>
-							<span class="menu--label">Utilisateur</span>
-						</a>
-					</li>
-                    <li class="menu--item">
-						<a href="Resirvation.html" class="menu--link" title="Reports" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-chart-pie menu--icon"></i>
-							<span class="menu--label">Réservations</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Events.html" class="menu--link" title="Events" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-calendar-days menu--icon"></i>
-							<span class="menu--label">évènements</span>
-						</a>
-					</li>
-					
-                    <li class="menu--item">
-						<a href="Billet.html" class="menu--link" title="Payouts" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-credit-card menu--icon"></i>
-							<span class="menu--label">billet</span>
-						</a>
-					</li>
-                   
-					<li class="menu--item">
-						<a href="Gategorie.html" class="menu--link" title="Contact List" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-regular fa-address-card menu--icon"></i>
-							<span class="menu--label">Categories</span>
-						</a>
-					</li>
-					
-					
-					<li class="menu--item">
-						<a href="Reclamation.html" class="menu--link active" title="Subscription" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-bahai menu--icon"></i>
-							<span class="menu--label">réclamations</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Demande.html" class="menu--link" title="Conversion Setup" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-square-plus menu--icon"></i>
-							<span class="menu--label">Demande d'approuvement</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="Admin.html" class="menu--link " title="About" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-circle-info menu--icon"></i>
-							<span class="menu--label">Adminstrateurs</span>
-						</a>
-					</li>
-					
-				</ul>
-			</div>
-		</div>
-	</nav>
+   <!-- Verticale nav -->
+	<?php include 'include/VerticaleNav.php' ?>
+	<!-- Verticale nav -->
 
 <!-- Body Start -->
 
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Reclamation List</h5>
+		<h5 class="mb-4">Billet List</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
@@ -158,25 +102,24 @@
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">ID</th>
-									<th scope="col">Contact Name</th>
-									<th scope="col">Email</th>
-									<th scope="col">Subject	</th>
-									<th scope="col">Description</th>
-									<th scope="col">User_ID</th>
+									<th scope="col">Nombre_Billet</th>
+                                    <th scope="col">User_ID</th>
+									<th scope="col">Évènement</th>
+                                    <th scope="col">QR_Code</th>
+									<th scope="col">État</th>
+									
 									<th scope="col" colspan="2">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>										
 									<td>John Doe</td>	
-									<td>johndoe@example.com</td>	
-									<td>Account Owner</td>	
-									<td>20 May 22, 10.27 AM</td>	
-									<td>No</td>	
-                                    <td>No</td>	
-									
-									
-									<td><span class="action-btn"><button class="btn btn-primary">Accepter</button><td><span class="action-btn"><button class="btn btn-danger">Refuser</button></span></td></td>	
+									<td>Non</td>	
+                                    <td>John Doe</td>	
+									<td>Non</td>	
+                                    <td>John Doe</td>	
+									<td>Non</td>	
+									<td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
 										
 								</tr>
 								
@@ -189,7 +132,6 @@
     </div>
 </div>
 <!-- Body End -->
-
     <script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

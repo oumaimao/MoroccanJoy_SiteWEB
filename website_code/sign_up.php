@@ -1,76 +1,57 @@
 ﻿<?php
 
 $message = '';
-if(isset($_POST['submit'])) {
+if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 	$hash = password_hash($password, PASSWORD_DEFAULT);
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
+	$phone = $_POST['Phone'];
+	$bdate = $_POST['Bdate'];
+	$adresse = $_POST['adresse'];
+	$Confpassword = $_POST['Confpassword'];
 
 
+ 
 
-	if(!empty($email) && !empty($password) && !empty($firstname) && !empty($lastname)){
+	if(!empty($email) && !empty($password) && !empty($Confpassword) && !empty($firstname) && !empty($lastname) && !empty($phone) && !empty($bdate) && !empty($adresse)){
 		require 'connect/DataBase.php';
-		$sql = 'INSERT INTO user(U_name, U_Prenom, U_email, U_password) VALUES(:nom, :prenom, :email, :pass)'; 
+		$sql = 'INSERT INTO user(U_name, U_Prenom, U_email, U_password, U_telephone, U_adresse, U_dateNaissance) VALUES(:nom, :prenom, :email, :pass, :phone, :adresse, :datenaissance)'; 
 		$statement = $connection->prepare($sql); 
 
-		if($statement->execute([':nom'=> $lastname, ':prenom'=> $firstname, ':email'=> $email ,':pass'=> $hash]))
-		{ 
-	
-			$message = '<div class="alert alert-success" role="alert">
-							Donnée créée avec succès
-						</div>';
-			echo '<script type="text/javascript">
-			setTimeout(function () {
-				window.location.href= \'sign_in.php\';
-			},1000);
-			</script>';
-		} 
+		if($password === $Confpassword){
 
+			if($statement->execute([':nom'=> $lastname, ':prenom'=> $firstname, ':email'=> $email ,':pass'=> $hash, ':phone'=>$phone, ':adresse'=>$adresse, ':datenaissance'=>$bdate]))
+			{ 
 		
-	}else{
+				$message = '<div class="alert alert-success" role="alert">
+								Donnée créée avec succès
+							</div>';
+				echo '<script type="text/javascript">
+				setTimeout(function () {
+					window.location.href= \'sign_in.php\';
+				},1000);
+				</script>';
+			}else{
+				$message = '<div class="alert alert-danger" role="alert">
+								Touts les chanpts sont obligatoir
+							</div>';
+				
+			}
+		}else{
+			$message = '<div class="alert alert-danger" role="alert">
+								Mot de passe est incorecte
+							</div>';
+		}
+	
+ 	}else{
 		$message = '<div class="alert alert-danger" role="alert">
 						Touts les chanpts sont obligatoir
 					</div>';
 		
 	}
-	
-
-
-	// 
-	// $statement = $connection->prepare($sql); 
-	// if($statement->execute([':nom'=> $lastname, ':email'=> $email , ':prenom'=> $firstname, ':pass'=> $password])) 
-	// { 
-	
-	// 	$message = 'Donnée créée avec succès'; 
-	// } 
-	
-    // $sql = 'SELECT * FROM `user` WHERE email = :email';
-    // $statement = $connection->prepare($sql);
-    // $statement->execute([':email' => $email]);
-    // $user = $statement->fetch(PDO::FETCH_ASSOC);
-    
-    // if ($user) {
-    //     // Compare hashed password with password entered in login form
-    //     if (password_verify($password, $user['password'])) {
-    //         session_start();
-    //         $_SESSION['User_id'] = $user['User_id'];
-    //         $_SESSION['email'] = $user['email'];
-    //         $_SESSION['U_Prenom'] = $user['U_Prenom'];
-    //         header("Location: index.php");
-    //     } else {
-    //             echo '<div class="alert alert-danger" role="alert">
-    //                     <strong>Error!</strong> Incorrect email or password.
-    //                 </div>';
-
-    //     }
-    // } else {
-    //     echo '<div class="alert alert-danger" role="alert">
-    //                     <strong>Error!</strong> No User Found.
-    //                 </div>';
-    // }
- } 
+}	 
 ?>
 
 <!DOCTYPE html>
@@ -168,27 +149,44 @@ if(isset($_POST['submit'])) {
 												</div>
 											</div>
 										</div>
+										<div class="col-lg-12 col-md-12">	
+											<div class="form-group mt-4">
+												<div class="field-password">
+													<label class="form-label">Confirme Password*</label>
+												</div>
+												<div class="loc-group position-relative">
+													<input class="form-control h_50" type="password" name="Confpassword" placeholder="">
+													<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12">
+											<div class="form-group mt-4">
+												<label class="form-label">Your Adresse*</label>
+												<input class="form-control h_50" type="text" name="adresse" placeholder="" value="">																								
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12">
+											<div class="form-group mt-4">
+												<label class="form-label">Your Phone*</label>
+												<input class="form-control h_50" type="text" name="Phone" placeholder="" value="">																								
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12">
+											<div class="form-group mt-4">
+												<label class="form-label">Your Birthdate*</label>
+												<input class="form-control h_50" type="date" name="Bdate" placeholder="" value="">																								
+											</div>
+										</div>
 										<div class="col-lg-12 col-md-12">		
 											<button class="main-btn btn-hover w-100 mt-4" name="submit" type="submit">Sign Up</button>
 										</div>
 									</div>
 								</form>
 								<div class="agree-text">
-									By clicking "Sign up", you agree to Barren <a href="#">Terms & Conditions</a> and have read the <a href="#">Privacy Policy</a>.
+									By clicking "Sign up", you agree to Morocconjoy <a href="#">Terms & Conditions</a> and have read the <a href="#">Privacy Policy</a>.
 								</div>								
-								<div class="divider">
-									<span>or</span>
-								</div>
-								<div class="social-btns-list mb-lg-5">
-									<button class="social-login-btn">
-										<svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 26.488 27.029"><g transform="translate(-0.126)"><path d="M1258.806,1021.475a11.578,11.578,0,0,0-.285-2.763h-12.688v5.015h7.448a6.605,6.605,0,0,1-2.763,4.384l-.025.168,4.012,3.108.278.028a13.214,13.214,0,0,0,4.024-9.941" transform="translate(-1232.192 -1007.66)" fill="#4285f4"></path><path d="M145.071,1502.921a12.881,12.881,0,0,0,8.949-3.273l-4.265-3.3a8,8,0,0,1-4.685,1.352,8.136,8.136,0,0,1-7.688-5.616l-.158.013-4.172,3.229-.055.152a13.5,13.5,0,0,0,12.073,7.448" transform="translate(-131.431 -1475.893)" fill="#34a853"></path><path d="M5.952,689.263a8.32,8.32,0,0,1-.45-2.673,8.744,8.744,0,0,1,.435-2.673l-.008-.179-4.224-3.28-.138.066a13.486,13.486,0,0,0,0,12.133l4.385-3.393" transform="translate(0 -673.076)" fill="#fbbc05"></path><path d="M145.071,5.225A7.49,7.49,0,0,1,150.3,7.238l3.814-3.724A12.984,12.984,0,0,0,145.071,0,13.5,13.5,0,0,0,133,7.448l4.37,3.394a8.169,8.169,0,0,1,7.7-5.616" transform="translate(-131.431)" fill="#eb4335"></path></g></svg>
-										Sign in with Google
-									</button>
-									<button class="social-login-btn">
-										<svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 27 27"><g transform="translate(0)"><circle cx="13.5" cy="13.5" r="13.5" transform="translate(0 0)" fill="#3b5998"></circle><path d="M851.461,383.684h-3.1c-1.841,0-3.889.735-3.889,3.266.009.882,0,1.727,0,2.678h-2.13v3.215h2.2V402.1h4.035v-9.316h2.663l.241-3.163H848.5s.007-1.407,0-1.816c0-1,1.1-.943,1.164-.943.522,0,1.538,0,1.8,0v-3.176Z" transform="translate(-833.401 -379.385)" fill="#fff"></path></g></svg>
-										Sign in with Facebook
-									</button>
-								</div>
+								
 								<div class="new-sign-link">
 									Already have an account?<a class="signup-link" href="sign_in.php">Sign In</a>
 								</div>
@@ -196,9 +194,7 @@ if(isset($_POST['submit'])) {
 						</div>
 					</div>
 				</div>
-				<div class="copyright-footer">
-					© 2024, Barren. All rights reserved. Powered by Gambolthemes
-				</div>
+				
 			</div>			
 		</div>
 	</div>
