@@ -46,7 +46,7 @@ include "include/nav_session.php";
 						<div class="hero-banner-content">
 							<h2>Le système de réservation d'événements en ligne et de billetterie le plus simple et le plus puissant</h2>
 							<p>Barren est une plate-forme de billetterie d'événements tout-en-un pour les organisateurs d'événements, les promoteurs et les gestionnaires.Créer, promouvoir et gérer facilement vos événements de tout type et taille.</p>
-							<a href="create.html" class="main-btn btn-hover">Créer un évènement <i class="fa-solid fa-arrow-right ms-3"></i></a>
+							<a href="create_venue_event.php" class="main-btn btn-hover">Créer un évènement <i class="fa-solid fa-arrow-right ms-3"></i></a>
 						</div>
 					</div>
 				</div>

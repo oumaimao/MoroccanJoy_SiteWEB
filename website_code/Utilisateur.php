@@ -45,7 +45,7 @@
 						<span class="collapse_menu--label"></span>
 					</button>
 					
-					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
+					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.php">
 						<div class="res-main-logo">
 							<img src="images/logo-icon.svg" alt="">
 						</div>
