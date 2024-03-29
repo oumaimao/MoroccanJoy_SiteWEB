@@ -27,7 +27,7 @@
 					
 					<div class="col-lg-4 col-md-6">
 						<div class="footer-content">
-							<h4>Follow Us</h4>
+							<h4>Suivez-nous Partout</h4>
 							<ul class="social-links">
 								<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
 								<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>

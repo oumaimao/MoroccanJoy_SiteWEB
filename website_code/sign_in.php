@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -75,7 +75,7 @@ if(isset($_POST['submit'])){
 					<img src="images/sign-logo.svg" alt="">
 				</div>
 				<div class="sign_sidebar_text">
-					<h1>The Easiest Way to Create Events and Sell More Tickets Online</h1>
+					<h1>Créer des événements et vendre plus de billets en ligne facilement en quelque clicks</h1>
 				</div>
 			</div>
 			<div class="app-form-content">
