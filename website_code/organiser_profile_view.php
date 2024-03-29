@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+include "include/nav_session.php";
+?>
+
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -285,7 +289,7 @@
 	</div>
 	<!-- About Details Model End-->
 	<!-- Header Start-->
-	<?php include"include/nav.php"?>
+	
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">
