@@ -51,7 +51,7 @@
 								
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Help
+										Support
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
 										<li><a class="dropdown-item" href="faq.php">FAQ</a></li>
@@ -84,7 +84,7 @@
 							</li>
 							<li>
 								<a href="sign_up.php" class="create-btn btn-hover ">
-									<span>Se déconnecter</span>
+									<span>Inscription</span>
 								</a>
 							</li>
 							<li>
