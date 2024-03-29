@@ -164,39 +164,62 @@
 									<th scope="col">Titre</th>
                                     <th scope="col">Description</th>
 									<th scope="col">image</th>
-                                    <th scope="col">Heur debut</th>
-									<th scope="col">Date Debut</th>
-                                    <th scope="col">Heur fin</th>
-									<th scope="col">Date fin</th>
-                                    <th scope="col">Nombre Tickets</th>
-									<th scope="col">Prix Ticket</th>
-                                    <th scope="col">Ville</th>
-                                    <th scope="col">zip_code</th>
-									<th scope="col">categorie_id</th>
-                                   
+                                    <th scope="col">event_date</th>
+									<th scope="col">event_time</th>
+                                    <th scope="col">event_duration</th>
+									
+                                    
+									
+                                    
+									<th scope="col" >venue</th>
+								
+									
+								
+									<th scope="col" >adress1</th>
+									<th scope="col" >adress2</th>
+									<th scope="col" >country</th>
+									<th scope="col" >state</th>
+									<th scope="col" >city</th>
+									<th scope="col" >zip</th>
+									<th scope="col" >gategorie</th>
+
 									<th scope="col" colspan="3">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>										
-									<td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-                                    <td>John Doe</td>
+								<?php 
+								require_once "connect/DataBase.php";
+						$demandes= $connection->query('SELECT * FROM `demande`')->fetchAll(PDO::FETCH_ASSOC);
+						foreach($demandes as $demande){
+
+																		
+																	
+																	?>
+								<tr>
+								<td><?php echo $demande['event_id']?></td>										
+									<td><?php echo $demande['event_id']?></td>	
+									<td><?php echo $demande['n_event']?></td>
+									<td><?php echo $demande['description']?></td>
+									<td><?php echo $demande['image']?></td>	
+                                    <td><?php echo $demande['event_date']?></td>	
+									<td><?php echo $demande['event_time']?></td>	
+                                    <td><?php echo $demande['event_duration']?></td>	
+									<td><?php echo $demande['venue']?></td>	
+                                    <td><?php echo $demande['adress1']?></td>	
+									<td><?php echo $demande['adress2']?></td>	
+                                    <td><?php echo $demande['country']?></td>	
+									<td><?php echo $demande['state']?></td>	
+                                    <td><?php echo $demande['city']?></td>	
+									<td><?php echo $demande['zip']?></td>	
+                                    
+                                    <td><?php echo $demande['gategorie']?></td>
                                     <td><span class="action-btn"><button class="btn btn-primary">Accepter</button><td><span class="action-btn"><button class="btn btn-danger">Refuser</button></span></td></td>	
 									
 										
 								</tr>
+								<?php
+																		} 
+																	?>
 								
 							</tbody>									
 						</table>

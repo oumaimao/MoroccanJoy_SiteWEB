@@ -139,26 +139,17 @@ include "include/nav_session.php";
 																<label class="form-label fs-16">Choose a category for your event.*</label>
 																<p class="mt-2 d-block fs-14 mb-3">Choosing relevant categories helps to improve the discoverability of your event. <a href="#" class="a-link">Learn more</a></p>
 																<select class="selectpicker"  data-selected-text-format="count > 4"  title="Select category" data-live-search="true" name="categorie">
-																	<option value="01">Arts</option>
-																	<option value="02">Business</option>
-																	<option value="03">Coaching and Consulting</option>
-																	<option value="04">Community and Culture</option>
-																	<option value="05">Entrepreneurship</option>
-																	<option value="06">Education and Training</option>
-																	<option value="07">Family and Friends</option>
-																	<option value="08">Fashion and Beauty</option>
-																	<option value="09">Film and Entertainment</option>
-																	<option value="10">Food and Drink</option>
-																	<option value="11">Government and Politics</option>
-																	<option value="12">Health and Wellbeing</option>
-																	<option value="13">Hobbies and Interest</option>
-																	<option value="14">Music and Theater</option>
-																	<option value="15">Religion and Spirituality</option>
-																	<option value="16">Science and Technology</option>
-																	<option value="17">Sports and Fitness</option>
-																	<option value="18">Travel and Outdoor</option>
-																	<option value="19">Visual Arts</option>
-																	<option value="20">Others</option>
+																	<?php 
+																		$gategoriess= $connection->query('SELECT * FROM `categorie`')->fetchAll(PDO::FETCH_ASSOC);
+																		foreach($gategoriess as $gatt){
+
+																		
+																	
+																	?>
+																	<option value=<?php echo $gatt['Categorie_id']?>><?php echo $gatt['Nom_cat']?></option>
+																	<?php
+																		} 
+																	?>
 																</select>
 															</div>
 															<div class="form-group border_bottom pt_30 pb_30">
