@@ -9,7 +9,7 @@ include "include/nav_session.php";
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Système de billetterie d'événements en ligne simple</title>
+		<title>MorrocanJoy - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -64,7 +64,7 @@ include "include/nav_session.php";
 									<h4>Réservation confirmée</h4>
 									<p class="ps-lg-4 pe-lg-4">Nous sommes heureux de vous informer que votre demande de réservation a été reçue et confirmée.</p>
 									<div class="add-calender-booking">
-										<h5>Add</h5>
+										<h5>Ajouter</h5>
 										<a href="#" class="cb-icon"><i class="fa-brands fa-windows"></i></a>
 										<a href="#" class="cb-icon"><i class="fa-brands fa-apple"></i></a>
 										<a href="#" class="cb-icon"><i class="fa-brands fa-google"></i></a>
@@ -78,7 +78,7 @@ include "include/nav_session.php";
 												<img src="images/event-imgs/img-7.jpg" alt="">
 											</div>
 											<div class="event-order-dt-content">
-												<h5>Tutorial Canvas Painting pour les débutants</h5>
+												<h5>tutorialCanvasPaintingPourLesDébutants</h5>
 												<span>Mer, 01 juin, 2022 5h30.Durée 1h</span>
 												<div class="buyer-name">John Doe</div>
 												<div class="booking-total-tickets">
