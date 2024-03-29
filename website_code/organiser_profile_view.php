@@ -323,15 +323,11 @@
 									<h4 class="user-name">John Doe<span class="verify-badge"><i class="fa-solid fa-circle-check"></i></span></h4>
 									<span class="user-email">johndoe@example.com</span>
 								</div>
-								<div class="ff-block">
-									<a href="#" class="" role="button" data-bs-toggle="modal" data-bs-target="#FFModal"><span>0</span>Followers</a>
-									<a href="#" class="" role="button" data-bs-toggle="modal" data-bs-target="#FFModal"><span>2</span>Following</a>
-								</div>
 								<div class="user-description">
 									<p>Hey I am a John Doe</p>
 								</div>
 								<div class="user-btns">
-									<a href="my_organisation_dashboard.html" class="co-main-btn co-btn-width min-width d-inline-block h_40">My Organisation<i class="fa-solid fa-right-left ms-3"></i></a>
+									<a href="my_organisation_dashboard.html" class="co-main-btn co-btn-width min-width d-inline-block h_40">My Organisation</a>
 								</div>
 								<div class="profile-social-link">
 									<h6>Find me on</h6>
@@ -488,113 +484,14 @@
 												<div class="col-lg-12">
 													<div class="main-card mt-4 p-0">
 														<div class="nav custom-tabs" role="tablist">
-															<button class="tab-link active" data-bs-toggle="tab" data-bs-target="#tab-01" type="button" role="tab" aria-controls="tab-01" aria-selected="true"><i class="fa-solid fa-envelope me-3"></i>Email Preferences</button>
-															<button class="tab-link" data-bs-toggle="tab" data-bs-target="#tab-02" type="button" role="tab" aria-controls="tab-02" aria-selected="false"><i class="fa-solid fa-key me-3"></i>Password Settings</button>
-															<button class="tab-link" data-bs-toggle="tab" data-bs-target="#tab-03" type="button" role="tab" aria-controls="tab-03" aria-selected="false"><i class="fa-solid fa-gear me-3"></i>Privacy Settings</button>
+															<span class="tab-link show active" data-bs-toggle="tab" data-bs-target="#tab-02"  role="tab" aria-controls="tab-02" aria-selected="false"><i class="fa-solid fa-key me-3"></i>Password Settings</span>
 														</div>
 													</div>
 												</div>
 												<div class="col-lg-12">
 													<div class="main-card mt-4">
 														<div class="tab-content">
-															<div class="tab-pane fade show active" id="tab-01" role="tabpanel">
-																<div class="bp-title">
-																	<h4>Email Preferences</h4>
-																</div>
-																<div class="profile-setting p-4">
-																	<div class="setting-step">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive order confirmation</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">On purchasing an event you will receive an order confirmation email.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive communication from event organisers for my purchased events</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">The organisations whose events you have bought will be able send you further follow up emails.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive event invitations from event organisers sent to my email address</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">Organisations will be able to send you Invitations in their events.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive reminder from Barren for my purchased events</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">After purchasing event you will receive reminder emails before the event starts so that you can get prepared.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive critical notifications on Barren service status and product updates</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">Get updates on new features and insights so that you can make the best use of Barren.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive newsletters from Barren with general and other information</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">Get more insights on Barren that can help to boost your event business.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive notification when someone follows me</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">We will notify you when someone starts following you or your organisation.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Review review notification when someone shares my events</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-0">We will notify you when someone shares event created by your organisation.</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Receive notification on review related activities</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-0">We will notify you when someone leaves review for your organisation.</p>
-																	</div>
-																</div>
-															</div>
-															<div class="tab-pane fade" id="tab-02" role="tabpanel">
+															<div class="tab-pane fade show active" id="tab-02" role="tabpanel">
 																<div class="bp-title">
 																	<h4>Password Settings</h4>
 																</div>
@@ -627,113 +524,6 @@
 																		</div>
 																		<button class="main-btn btn-hover w-100 mt-5" type="submit">Update Password</button>
 																	</div>
-																</div>
-															</div>
-															<div class="tab-pane fade" id="tab-03" role="tabpanel">
-																<div class="bp-title">
-																	<h4>Privacy Settings</h4>
-																</div>
-																<div class="privacy-setting p-4">
-																	<div class="setting-step">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Lock my user profile</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">Locking profile hides all kinds of user information, activities and interaction from public profile</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to contact me</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">People will be able to send you emails through Barren who visits your profile</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to find and invite me to relevant events</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">Based on your preferences event organisers will be able to send you invitations in their events</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to follow me</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">People will be able to follow you</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to see my followings</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">People will be able to see whom and which organisations you are following</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to see my join date</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">People will be able to see when you have started using Barren</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to see the events I attend</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-4">People will be able to see the events you have purchased</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to see the events I join as speaker</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-0">People will be able to see the events you have joined as Speaker</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Allow people to see the events I share</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox" checked="">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-0">People will be able to see the events you have shared in Barren</p>
-																	</div>
-																	<div class="setting-step pt-4">
-																		<div class="d-flex align-items-center justify-content-between">
-																			<h3 class="setting-title">Hide review interactions from public</h3>
-																			<label class="btn-switch m-0 ml-2">
-																				<input type="checkbox">
-																				<span class="checkbox-slider"></span>
-																			</label>
-																		</div>
-																		<p class="mt-1 mb-0">The reviews and ratings given by you will not appear in your public profile</p>
-																	</div>																	
 																</div>
 															</div>
 														</div>
