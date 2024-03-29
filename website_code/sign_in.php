@@ -3,22 +3,25 @@ $message = '';
 if(isset($_POST['submit'])){
 	$email = $_POST['email'];
 	$pass = $_POST['password'];
+
 	if(!empty($email) && !empty($pass)){
 		require 'connect/DataBase.php';
-		
-		$sql = 'SELECT * FROM `user` WHERE U_email = :email AND U_password = :pass' ;
-		$statement = $connection->prepare($sql);
-		$statement->execute([':email' => $email, ':pass' => $pass]);
-		// $user = $statement->fetch(PDO::FETCH_ASSOC);
-		if ($statement->rowCount() >=1){
+		$sql = 'SELECT * FROM `user` WHERE U_email = :email';
+        $statement = $connection->prepare($sql);
+        $statement->execute([':email' => $email]);
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+		$decpass = password_verify($pass, $user['U_password']);
+
+		if ($user && $decpass){
 			session_start();
-			$_SESSION['user'] = $statement->fetch();
+			$_SESSION['user'] = $user;
 			header('location: index.php');
 			
 		}else{
 			$message = '<div class="alert alert-danger" role="alert">
 						Les informations est incorecte
 					</div>';
+					
 		}
 
 	}else{
