@@ -101,7 +101,7 @@
 									<li class="profile-link">
 										<a href="my_organisation_dashboard.html" class="link-item">Notre organisation</a>
 										<a href="organiser_profile_view.html" class="link-item">Mon Profile</a>									
-										<a href="sign_in.html" class="link-item">S'inscrire</a>									
+										<a href="sign_in.html" class="link-item">Connexion</a>									
 									</li>
 								</ul>
 							</li>
