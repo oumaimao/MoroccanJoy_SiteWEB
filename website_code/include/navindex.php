@@ -77,7 +77,7 @@
 					<div class="right-header order-2">
 						<ul class="align-self-stretch">
 							<li>
-								<a href="create.php" class="create-btn btn-hover">
+								<a href="create_venue_event.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
 									<span>Create Event</span>
 								</a>

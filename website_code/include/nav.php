@@ -59,50 +59,7 @@
 										<li><a class="dropdown-item" href="contact_us.html">Contact Us</a></li>
 									</ul>
 								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Pages
-									</a>
-									<ul class="dropdown-menu dropdown-submenu">
-										<li>
-											<a class="dropdown-item submenu-item" href="#">Other Pages</a>
-											<ul class="submenu dropdown-menu">
-												<li><a class="dropdown-item pe-5" href="sign_in.html">Sign In</a></li>
-												<li><a class="dropdown-item pe-5" href="sign_up.html">Sign Up</a></li>
-												<li><a class="dropdown-item pe-5" href="forgot_password.html">Forgot Password</a></li>
-												<li><a class="dropdown-item pe-5" href="about_us.html">About Us</a></li>
-												<li><a class="dropdown-item pe-5" href="checkout.html">Checkout</a></li>
-												<li><a class="dropdown-item pe-5" href="checkout_premium.html">Checkout Premium</a></li>
-												<li><a class="dropdown-item pe-5" href="invoice.html">Invoice</a></li>
-												<li><a class="dropdown-item pe-5" href="coming_soon.html">Coming Soon</a></li>
-												<li><a class="dropdown-item pe-5" href="error_404.html">Error 404</a></li>
-											</ul>
-										</li>
-										<li>
-											<a class="dropdown-item submenu-item" href="#">Create Event</a>
-											<ul class="submenu dropdown-menu">
-												<li><a class="dropdown-item pe-5" href="create.html">Create</a></li>
-												<li><a class="dropdown-item pe-5" href="create_venue_event.html">Create Venue Event</a></li>
-												<li><a class="dropdown-item pe-5" href="create_online_event.html">Create Online Event</a></li>
-											</ul>
-										</li>
-										<li>
-											<a class="dropdown-item submenu-item" href="#">Events View</a>
-											<ul class="submenu dropdown-menu">
-												<li><a class="dropdown-item pe-5" href="online_event_detail_view.html">Online Event Detail View</a></li>
-												<li><a class="dropdown-item pe-5" href="venue_event_detail_view.html">Venue Event Detail View</a></li>
-											</ul>
-										</li>
-										<li><a class="dropdown-item" href="booking_confirmed.html">Booking Confirmed</a></li>
-										<li><a class="dropdown-item" href="attendee_profile_view.html">Attendee Profile View</a></li>
-										<li><a class="dropdown-item" href="organiser_profile_view.html">Organiser Profile View</a></li>
-										<li><a class="dropdown-item" href="my_organisation_dashboard.html">Organization Dashboard</a></li>
-										<li><a class="dropdown-item" href="sell_tickets_online.html">Sell Tickets Online</a></li>
-										<li><a class="dropdown-item" href="refer_a_friend.html">Refer a Friend</a></li>
-										<li><a class="dropdown-item" href="term_and_conditions.html">Terms & Conditions</a></li>
-										<li><a class="dropdown-item" href="privacy_policy.html">Privacy Policy</a></li>
-									</ul>
-								</li>
+								
 							</ul>
 						</div>
 						<div class="offcanvas-footer">
@@ -121,7 +78,7 @@
 					<div class="right-header order-2">
 						<ul class="align-self-stretch">
 							<li>
-								<a href="create.html" class="create-btn btn-hover">
+								<a href="create_venue_event.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
 									<span>Create Event</span>
 								</a>
