@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?php 
 	require_once "connect/DataBase.php";
 	if(isset($_POST['envoyer'])){
@@ -37,6 +38,12 @@
 
 
 ?>
+=======
+﻿<?php
+include "include/nav_session.php";
+?>
+
+>>>>>>> 3bdd652abdc0fe17fa851ad94739c2f6c7b9bc5e
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
@@ -73,10 +80,16 @@
 
 <body class="d-flex flex-column h-100">
 	
+<<<<<<< HEAD
 	<!-- Start Header-->
 	<?php include "include/nav.php";?>
 	<!-- Header End-->	
 
+=======
+	<!-- Header Start-->
+
+	<!-- Header End-->
+>>>>>>> 3bdd652abdc0fe17fa851ad94739c2f6c7b9bc5e
 	<!-- Body Start-->
 	
 	<div class="wrapper">

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+include "include/nav_session.php";
+?>
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -228,7 +231,7 @@
 	</div>
 	<!-- Add Organisation Model End-->
 	<!-- Header Start-->
-	<?php include"include/navdashbordvreator.php"?>
+
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
 	<nav class="vertical_nav">
