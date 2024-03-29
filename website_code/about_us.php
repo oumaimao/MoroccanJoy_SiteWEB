@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>MoroccanJoy - Système simple de billetterie d'événements en ligne </title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -69,7 +69,7 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12">
 						<div class="main-title checkout-title">
-							<h3>Our aim is to provide a powerful and affordable event ticketing solution that can handle events of any size and complexity without an issue.</h3>
+							<h3>Notre objectif est de fournir une solution de billetterie d'événements puissante et abordable qui peut gérer les événements de n'importe quelle taille et complexité sans problème.</h3>
 						</div>
 						<div class="about--description">
 							<p>Le logiciel de billetterie d'événements en ligne de Barren a été construit sur l'idée que quiconque, n'importe où dans le monde, souhaitant organiser un événement devrait avoir les outils pour le faire.Nous faisons la promotion de cette idée tous les jours grâce au dévouement d'une équipe basée à Melbourne, en Australie.</p>
@@ -180,7 +180,7 @@
 											<div class="col-12">
 												<div class="feature-item">
 													<h4>Un seul billet</h4>
-													<p>Vendez des billets standard à prix fixe à tous vos participants à venir aux événements.Vous avez un contrôle complet de la limitation des numéros de billets.De plus, vous pouvez configurer des types de billets illimités pour votre événement.</p>
+													<p>Vendez des billets standards à prix fixe à tous vos participants à venir aux événements.Vous avez un contrôle complet de la limitation des numéros de billets.De plus, vous pouvez configurer des types de billets illimités pour votre événement.</p>
 												</div>
 												<div class="feature-item">
 													<h4>Types de billets illimités</h4>
@@ -188,7 +188,7 @@
 												</div>
 												<div class="feature-item">
 													<h4>Billetterie de groupe</h4>
-													<p>There are unlimited ways of grouping tickets. You can create various types of tickets. You can set the limit for group ticket purchases from one person. Attendees can choose their seats as there are no seat restrictions on group tickets.</p>
+													<p>Il existe des moyens illimités de regrouper les billets.Vous pouvez créer différents types de billets.Vous pouvez fixer la limite pour les achats de billets de groupe auprès d'une personne.Les participants peuvent choisir leurs sièges car il n'y a pas de restrictions de siège sur les billets de groupe.</p>
 												</div>
 												<div class="feature-item">
 													<h4>Définissez vos règles</h4>

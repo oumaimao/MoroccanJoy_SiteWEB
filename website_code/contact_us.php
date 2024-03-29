@@ -121,7 +121,7 @@
 															<div class="contact-icon">
 																<i class="fa-solid fa-envelope fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;"></i>
 															</div>
-															<a href="#">contact@barren.com</a>
+															<a href="#">contact@MorrocanJoy.com</a>
 														</div>
 													</li>
 													<li>

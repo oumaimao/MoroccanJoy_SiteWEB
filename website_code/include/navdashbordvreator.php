@@ -34,26 +34,26 @@ $name = $_SESSION['user']['U_name'];
 								<div class="create-bg">
 									<a href="create_venue_event.php" class="offcanvas-create-btn">
 										<i class="fa-solid fa-calendar-days"></i>
-										<span>Create Event</span>
+										<span>Créer un évènement</span>
 									</a>
 								</div>
 							</div>
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
 									<a class="nav-link" href="organiser_profile_view.php">
-										My Home
+										Page d'acceuil
 									</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="explore_events.php">
-										<i class="fa-solid fa-compass me-2"></i>Explore Events
+										<i class="fa-solid fa-compass me-2"></i>Douverir les évènement
 									</a>
 								</li>
 							</ul>
 						</div>
 						<div class="offcanvas-footer">
 							<div class="offcanvas-social">
-								<h5>Follow Us</h5>
+								<h5>Suivez-nous</h5>
 								<ul class="social-links">
 									<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
 									</li><li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -69,7 +69,7 @@ $name = $_SESSION['user']['U_name'];
 							<li>
 								<a href="create_venue_event.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
-									<span>Create Event</span>
+									<span>Créer un évènement</span>
 								</a>
 							</li>
 							<li class="dropdown account-dropdown order-3">
@@ -88,8 +88,8 @@ $name = $_SESSION['user']['U_name'];
 										</div>
 									</li>
 									<li class="profile-link">
-										<a href="organiser_profile_view.php" class="link-item">My Profile</a>									
-										<a href="logout.php" class="link-item">Sign Out</a>									
+										<a href="organiser_profile_view.php" class="link-item">Mon profil</a>									
+										<a href="logout.php" class="link-item">Se déconnecter</a>									
 									</li>
 								</ul>
 							</li>

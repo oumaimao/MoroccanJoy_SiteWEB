@@ -30,22 +30,22 @@
 								<div class="create-bg">
 									<a href="create.php" class="offcanvas-create-btn">
 										<i class="fa-solid fa-calendar-days"></i>
-										<span>Create Event</span>
+										<span>Créer un évènement</span>
 									</a>
 								</div>
 							</div>							
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.php">Home</a>
+									<a class="nav-link active" aria-current="page" href="index.php">Acceuil</a>
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Explore Events
+										Découvrir les évènement
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="explore_events.php">Explore Events</a></li>
-										<li><a class="dropdown-item" href="venue_event_detail_view.php">Venue Event Detail View</a></li>
-										<li><a class="dropdown-item" href="online_event_detail_view.php">Online Event Detail View</a></li>
+										<li><a class="dropdown-item" href="explore_events.php">Découvrir les évènement</a></li>
+										<li><a class="dropdown-item" href="venue_event_detail_view.php">Vue détaillée  de l'événement </a></li>
+										<li><a class="dropdown-item" href="online_event_detail_view.php">Vue détaillée de l'événement en ligne</a></li>
 									</ul>
 								</li>
 								
@@ -55,15 +55,15 @@
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
 										<li><a class="dropdown-item" href="faq.php">FAQ</a></li>
-										<li><a class="dropdown-item" href="help_center.php">Help Center</a></li>
-										<li><a class="dropdown-item" href="contact_us.php">Contact Us</a></li>
+										<li><a class="dropdown-item" href="help_center.php">Centre de support</a></li>
+										<li><a class="dropdown-item" href="contact_us.php">Contactez-nous</a></li>
 									</ul>
 								</li>
 							</ul>
 						</div>
 						<div class="offcanvas-footer">
 							<div class="offcanvas-social">
-								<h5>Follow Us</h5>
+								<h5>suivez-nous</h5>
 								<ul class="social-links">
 									<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
 									<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -79,17 +79,17 @@
 							<li>
 								<a href="create_venue_event.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
-									<span>Create Event</span>
+									<span>Créer un évènement</span>
 								</a>
 							</li>
 							<li>
 								<a href="sign_up.php" class="create-btn btn-hover ">
-									<span>Sign-up</span>
+									<span>Se déconnecter</span>
 								</a>
 							</li>
 							<li>
 								<a href="sign_in.php" class="create-btn btn-hover">
-									<span>Sign-in</span>
+									<span>Connexion</span>
 								</a>
 							</li>
 							<li>

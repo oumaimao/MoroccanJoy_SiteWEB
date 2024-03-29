@@ -36,27 +36,27 @@
 							</div>							
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+									<a class="nav-link active" aria-current="page" href="index.html">Acceuil</a>
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Explore Events
+										Découvrir nouveaux évènement
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="explore_events.html">Explore Events</a></li>
-										<li><a class="dropdown-item" href="venue_event_detail_view.html">Venue Event Detail View</a></li>
-										<li><a class="dropdown-item" href="online_event_detail_view.html">Online Event Detail View</a></li>
+										<li><a class="dropdown-item" href="explore_events.html">Découvrir nouveaux évènement</a></li>
+										<li><a class="dropdown-item" href="venue_event_detail_view.html">Vue détaillée de lieu de l'événement </a></li>
+										<li><a class="dropdown-item" href="online_event_detail_view.html">Vue détaillée de l'événement en ligne</a></li>
 									</ul>
 								</li>
 								
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Help
+										Support
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
 										<li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-										<li><a class="dropdown-item" href="help_center.html">Help Center</a></li>
-										<li><a class="dropdown-item" href="contact_us.html">Contact Us</a></li>
+										<li><a class="dropdown-item" href="help_center.html">Centre de support</a></li>
+										<li><a class="dropdown-item" href="contact_us.html">Contactez-nous</a></li>
 									</ul>
 								</li>
 								
@@ -64,7 +64,7 @@
 						</div>
 						<div class="offcanvas-footer">
 							<div class="offcanvas-social">
-								<h5>Follow Us</h5>
+								<h5>Suivez-nous</h5>
 								<ul class="social-links">
 									<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
 									<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -80,7 +80,7 @@
 							<li>
 								<a href="create_venue_event.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
-									<span>Create Event</span>
+									<span>Creer un évènement</span>
 								</a>
 							</li>
 							<li class="dropdown account-dropdown">
@@ -99,9 +99,9 @@
 										</div>
 									</li>
 									<li class="profile-link">
-										<a href="my_organisation_dashboard.html" class="link-item">My Organisation</a>
-										<a href="organiser_profile_view.html" class="link-item">My Profile</a>									
-										<a href="sign_in.html" class="link-item">Sign Out</a>									
+										<a href="my_organisation_dashboard.html" class="link-item">Notre organisation</a>
+										<a href="organiser_profile_view.html" class="link-item">Mon Profile</a>									
+										<a href="sign_in.html" class="link-item">Se déconnecter</a>									
 									</li>
 								</ul>
 							</li>

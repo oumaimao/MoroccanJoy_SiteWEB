@@ -4,23 +4,23 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="footer-content">
-							<h4>Company</h4>
+							<h4>Société</h4>
 							<ul class="footer-link-list">
-								<li><a href="about_us.html" class="footer-link">About Us</a></li>
-								<li><a href="help_center.html" class="footer-link">Help Center</a></li>
+								<li><a href="about_us.html" class="footer-link">Qui sommes-nous</a></li>
+								<li><a href="help_center.html" class="footer-link">Centre de support</a></li>
 								<li><a href="faq.html" class="footer-link">FAQ</a></li>
-								<li><a href="contact_us.html" class="footer-link">Contact Us</a></li>
+								<li><a href="contact_us.html" class="footer-link">Contactez-nous</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="footer-content">
-							<h4>Useful Links</h4>
+							<h4>inportants liens</h4>
 							<ul class="footer-link-list">
-								<li><a href="create.html" class="footer-link">Create Event</a></li>
-								<li><a href="sell_tickets_online.html" class="footer-link">Sell Tickets Online</a></li>
-								<li><a href="privacy_policy.html" class="footer-link">Privacy Policy</a></li>
-								<li><a href="term_and_conditions.html" class="footer-link">Terms & Conditions</a></li>
+								<li><a href="create.html" class="footer-link">Creer un événement </a></li>
+								<li><a href="sell_tickets_online.html" class="footer-link">Vendre les billets en ligne</a></li>
+								<li><a href="privacy_policy.html" class="footer-link">politique de confidentialité</a></li>
+								<li><a href="term_and_conditions.html" class="footer-link">termes et conditions</a></li>
 							</ul>
 						</div>
 					</div>
@@ -46,7 +46,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="footer-copyright-text">
-							<p class="mb-0">© 2024, <strong>Barren</strong>. All rights reserved. Powered by Gambolthemes</p>
+							<p class="mb-0">© 2024, <strong>MorrocanJoy</strong>. Tous les droits sont réservés. Powered by OFPPT</p>
 						</div>
 					</div>
 				</div>
