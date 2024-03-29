@@ -167,14 +167,7 @@
                                     <th scope="col">event_date</th>
 									<th scope="col">event_time</th>
                                     <th scope="col">event_duration</th>
-									
-                                    
-									
-                                    
 									<th scope="col" >venue</th>
-								
-									
-								
 									<th scope="col" >adress1</th>
 									<th scope="col" >adress2</th>
 									<th scope="col" >country</th>
@@ -182,7 +175,6 @@
 									<th scope="col" >city</th>
 									<th scope="col" >zip</th>
 									<th scope="col" >gategorie</th>
-
 									<th scope="col" colspan="3">Opération</th>
 								</tr>
 							</thead>

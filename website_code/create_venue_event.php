@@ -25,7 +25,7 @@
 	
 		}
 	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"))
-        $sql->execute([$event_name,$datee,$timee,$Duration,$arr,$Venue,$Address1,$Address2,$Country,$Statee,$City,$Zip,$filename,$categorie]);
+        $sql->execute([$event_name,$datee,$timee,$Duration,$Venue,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie]);
 		$chk=True;
 	
 	
@@ -323,7 +323,7 @@ include "include/nav_session.php";
 																			<div class="col-md-12">
 																				<div class="form-group mt-1">
 																					<label class="form-label fs-6">Venue*</label>
-																					<input class="form-control h_50" type="text" placeholder="" value="" name="Venue">
+																					<input class="form-control " type="text" placeholder="" value="" name="Venue">
 																				</div>
 																			</div>
 																			<div class="col-md-6">
