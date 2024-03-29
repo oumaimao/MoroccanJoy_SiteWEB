@@ -30,7 +30,7 @@
 								<div class="create-bg">
 									<a href="create.html" class="offcanvas-create-btn">
 										<i class="fa-solid fa-calendar-days"></i>
-										<span>Create Event</span>
+										<span>Créer un évènement</span>
 									</a>
 								</div>
 							</div>							
@@ -101,7 +101,7 @@
 									<li class="profile-link">
 										<a href="my_organisation_dashboard.html" class="link-item">Notre organisation</a>
 										<a href="organiser_profile_view.html" class="link-item">Mon Profile</a>									
-										<a href="sign_in.html" class="link-item">Se déconnecter</a>									
+										<a href="sign_in.html" class="link-item">S'inscrire</a>									
 									</li>
 								</ul>
 							</li>
