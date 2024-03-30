@@ -116,6 +116,8 @@
 									<th scope="col" >city</th>
 									<th scope="col" >zip</th>
 									<th scope="col" >gategorie</th>
+									<th scope="col" >N_tickts</th>
+									<th scope="col" >P_tickts</th>
 									<th scope="col" colspan="3">Opération</th>
 								</tr>
 							</thead>
@@ -143,7 +145,9 @@
                                     <td><?php echo $demande['country']?></td>	
 									<td><?php echo $demande['state']?></td>	
                                     <td><?php echo $demande['city']?></td>	
-									<td><?php echo $demande['zip']?></td>	
+									<td><?php echo $demande['zip']?></td>
+									<td><?php echo $demande['$N_tickts']?></td>	
+									<td><?php echo $demande['P_tickts']?></td>	
                                     
                                     <td><?php echo $demande['gategorie']?></td>
                                     <td><span class="action-btn"><button class="btn btn-primary">Accepter</button><td><span class="action-btn"><button class="btn btn-danger">Refuser</button></span></td></td>	

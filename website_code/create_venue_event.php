@@ -15,6 +15,8 @@
 		$City=$_POST['City'];
 		$Zip=$_POST['Zip'];
         $arr=$_POST['arr'];
+		$N_tickts=$_POST['N_tickts'];
+        $P_tickts=$_POST['P_tickts'];
 		$filename="";
 		if(isset($_FILES['image'])){
 			$image=$_FILES['image']['name'];
@@ -24,8 +26,8 @@
 			
 	
 		}
-	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"))
-        $sql->execute([$event_name,$datee,$timee,$Duration,$Venue,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie]);
+	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"))
+        $sql->execute([$event_name,$datee,$timee,$Duration,$Venue,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie,$P_tickts,$N_tickts]);
 		$chk=True;
 	
 	
@@ -124,6 +126,16 @@
 																<label class="form-label fs-16">Give your event a name.</label>
 																<p class="mt-2 d-block fs-14 mb-3">See how your name appears on the event page and a list of all places where your event name will be used. <a href="#" class="a-link">Learn more</a></p>
 																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="event_name">
+															</div>
+															<div class="form-group border_bottom pb_30">
+																<label class="form-label fs-16">Give your prix_tickes.</label>
+																
+																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="P_tickts">
+															</div>
+															<div class="form-group border_bottom pb_30">
+																<label class="form-label fs-16">Give your number_tickes.</label>
+																<p class="mt-2 d-block fs-14 mb-3">See how your name appears on the event page and a list of all places where your event name will be used. <a href="#" class="a-link">Learn more</a></p>
+																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="N_tickts">
 															</div>
 															<div class="form-group border_bottom pt_30 pb_30">
 																<label class="form-label fs-16">Choose a category for your event.*</label>
