@@ -3,8 +3,8 @@
 $message = '';
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
-    $password = $_POST['password'];
-	$hash = password_hash($password, PASSWORD_DEFAULT);
+    $passw = $_POST['password'];
+	$hash = password_hash($passw, PASSWORD_DEFAULT);
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$phone = $_POST['Phone'];
@@ -15,12 +15,12 @@ if(isset($_POST['submit'])){
 
  
 
-	if(!empty($email) && !empty($password) && !empty($Confpassword) && !empty($firstname) && !empty($lastname) && !empty($phone) && !empty($bdate) && !empty($adresse)){
+	if(!empty($email) && !empty($passw) && !empty($Confpassword) && !empty($firstname) && !empty($lastname) && !empty($phone) && !empty($bdate) && !empty($adresse)){
 		require 'connect/DataBase.php';
 		$sql = 'INSERT INTO user(U_name, U_Prenom, U_email, U_password, U_telephone, U_adresse, U_dateNaissance) VALUES(:nom, :prenom, :email, :pass, :phone, :adresse, :datenaissance)'; 
 		$statement = $connection->prepare($sql); 
 
-		if($password === $Confpassword){
+		if($passw === $Confpassword){
 
 			if($statement->execute([':nom'=> $lastname, ':prenom'=> $firstname, ':email'=> $email ,':pass'=> $hash, ':phone'=>$phone, ':adresse'=>$adresse, ':datenaissance'=>$bdate]))
 			{ 
@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
 				</script>';
 			}else{
 				$message = '<div class="alert alert-danger" role="alert">
-								Touts les chanpts sont obligatoir
+								Essayer à nouveau
 							</div>';
 				
 			}

@@ -1,5 +1,42 @@
 ﻿<?php
 include "include/nav_session.php";
+
+$message = '';
+if(isset($_POST['submit'])){
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
+	$email = $_POST['email'];
+	$Country = $_POST['Country'];
+	$ville = $_POST['ville'];
+	$zip = $_POST['zip'];
+	$adresse = $_POST['adresse'];
+
+	if(!empty($fname) && !empty($lname) && !empty($email) && !empty($ville) && !empty($zip) && !empty($adresse)){
+		require 'connect/DataBase.php';
+		$sql = 'INSERT INTO reservation(R_Fname, R_Lname, R_email, R_adresse, R_country, R_city, R_Zipcode) VALUES(:fname , :lname, :email, :adresse, :country, :ville, :zip)';
+		$statement = $connection->prepare($sql); 
+
+		if($statement->execute([':fname'=>$fname, ':lname'=>$lname, ':email'=>$email, ':adresse'=>$adresse, 'country'=>$Country, ':ville'=>$ville, ':zip'=>$zip])){
+			$message = '<div class="alert alert-success" role="alert">
+								Donnée créée avec succès
+							</div>';
+			header('location: booking_confirmed.php');
+			
+		}else{
+			$message = '<div class="alert alert-danger" role="alert">
+								somthing wrong
+							</div>';
+		}
+		
+	}else{
+		$message = '<div class="alert alert-danger" role="alert">
+						Touts les chanpts sont obligatoir
+					</div>';
+		
+	}
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +97,7 @@ include "include/nav_session.php";
 							<h3>Confirmation de commande</h3>
 						</div>
 					</div>
+					<?php echo $message?>
 					<div class="col-xl-8 col-lg-12 col-md-12">
 						<div class="checkout-block">
 							<div class="main-card">

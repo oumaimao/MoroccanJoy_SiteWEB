@@ -112,19 +112,26 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>										
-									<td>John Doe</td>	
-									<td>johndoe@example.com</td>	
-									<td>Account Owner</td>	
-									<td>20 May 22, 10.27 AM</td>	
-									<td>No</td>	
-									<td>Account Owner</td>	
-									<td>20 May 22, 10.27 AM</td>	
-									<td>20 May 22, 10.27 AM</td>	
-									<td>No</td>	
+							<?php 
+								require_once "connect/DataBase.php";
+						$Reservations= $connection->query('SELECT * FROM `reservation`')->fetchAll(PDO::FETCH_ASSOC);
+						foreach($Reservations as $Reservation){						
+																	
+																	?>
+								<tr>
+									<td><?php echo $Reservation['Reservation_id']?></td>										
+									<td><?php echo $Reservation['R_Fname']?></td>	
+									<td><?php echo $Reservation['R_Lname']?></td>
+									<td><?php echo $Reservation['R_email']?></td>
+									<td><?php echo $Reservation['R_adresse']?></td>	
+                                    <td><?php echo $Reservation['R_country']?></td>	
+									<td><?php echo $Reservation['R_city']?></td>	
+                                    <td><?php echo $Reservation['R_Zipcode']?></td>	
+									<td><?php echo $Reservation['Ticket_id']?></td>	
 									<td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
 										
 								</tr>
+								<?php } ?>
 								
 							</tbody>									
 						</table>
