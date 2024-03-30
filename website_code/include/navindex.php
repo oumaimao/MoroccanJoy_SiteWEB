@@ -1,3 +1,4 @@
+
 <header class="header">
 		<div class="header-inner">
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
@@ -28,7 +29,7 @@
 						<div class="offcanvas-body">
 							<div class="offcanvas-top-area">
 								<div class="create-bg">
-									<a href="create.php" class="offcanvas-create-btn">
+									<a href=<?php session_start(); if(isset($_SESSION['user'])){echo 'sign-in.php';}else{echo 'create_venue_event.php';}?>class="offcanvas-create-btn">
 										<i class="fa-solid fa-calendar-days"></i>
 										<span>Créer un évènement</span>
 									</a>
