@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
@@ -35,24 +36,49 @@
 	<div class="modal fade" id="addorganisationModal" tabindex="-1" aria-labelledby="addorganisationLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
+				<form action="" method="post">
 				<div class="modal-header">
 					<h5 class="modal-title" id="addorganisationLabel">Admin details</h5>
 					<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 				</div>
 				<div class="modal-body">
+				<?php $message=''?>
+				<?php echo $message?>
 					<div class="model-content main-form">
+						<?php ;
+						if(isset($_POST['submit'])){
+						$email=$_POST['email'];
+						$psd=$_POST['psd'];
+						$hash = password_hash($psd, PASSWORD_DEFAULT);
+						if(!empty($email) && !empty($psd)){
+							require 'connect/DataBase.php';
+							$sql = 'INSERT INTO adminee (A_email,A_password) VALUES(:email, :psd)';
+							$statement = $connection->prepare($sql); 
+							if($statement->execute([':email'=>$email,':psd'=>$hash])){
+								$message = '<div class="alert alert-success" role="alert">
+								Donnée créée avec succès
+							</div>';
+							}else{
+								$message = '<div class="alert alert-danger" role="alert">
+								Touts les chanpts sont obligatoir
+							</div>';
+							}
+						}	
+					}
+						
+						?>
 						<div class="row">
 							
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Email</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="" name="email">																								
 								</div>
 							</div>
                             <div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Password</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="" name="psd">																								
 								</div>
 							</div>
 							
@@ -62,9 +88,11 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Cancel</button>
-					<button type="button" class="main-btn min-width btn-hover h_40">Add</button>
+					<button type="submit" class="main-btn min-width btn-hover h_40"  name="submit">Add</button>
 				</div>
 			</div>
+				</form>
+				</div>
 		</div>
 	</div>
 	<!-- Add Organisation Model End-->
@@ -149,14 +177,25 @@
 								</tr>
 							</thead>
 							<tbody>
+							<?php 
+								require_once "connect/DataBase.php";
+						$demandes= $connection->query('SELECT * FROM `adminee`')->fetchAll(PDO::FETCH_ASSOC);
+						foreach($demandes as $demande){
+
+																		
+																	
+																	?>
 								<tr>										
-									<td>John Doe</td>	
-									<td>No</td>	
+									<td><?php echo $demande['admin_id']?></td>	
+									<td><?php echo $demande['A_email']?></td>	
                                   
                                     <td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
 									
 										
 								</tr>
+								<?php
+																		} 
+																	?>
 								
 							</tbody>									
 						</table>

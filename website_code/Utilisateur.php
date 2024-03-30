@@ -111,17 +111,28 @@
 								</tr>
 							</thead>
 							<tbody>
+							<?php 
+								require_once "connect/DataBase.php";
+						$demandes= $connection->query('SELECT * FROM `user`')->fetchAll(PDO::FETCH_ASSOC);
+						foreach($demandes as $demande){
+
+																		
+																	
+																	?>
 								<tr>										
-									<td>John Doe</td>	
-									<td>johndoe@example.com</td>	
-									<td>Account Owner</td>	
-									<td>20 May 22, 10.27 AM</td>	
-									<td>No</td>	
-									<td>Account Owner</td>	
-									<td>20 May 22, 10.27 AM</td>	
-									<td>20 May 22, 10.27 AM</td>	
+									<td><?php echo $demande['User_id']?></td>	
+									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>	
+									<td><?php echo $demande['U_Prenom']?></td>	
+									<td><?php echo $demande['U_name']?></td>	
+									<td><?php echo $demande['U_email']?></td>	
+									<td><?php echo $demande['U_telephone']?></td>	
+									<td><?php echo $demande['U_adresse']?></td>	
+									<td><?php echo $demande['U_dateNaissance']?></td>	
 									<td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
 								</tr>
+								<?php
+																		} 
+																	?>
 								
 							</tbody>									
 						</table>

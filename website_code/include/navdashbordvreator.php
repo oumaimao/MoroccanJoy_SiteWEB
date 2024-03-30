@@ -1,6 +1,6 @@
 <?php
-$email = $_SESSION['user']['U_email'];
-$name = $_SESSION['user']['U_name'];
+$emaill = $_SESSION['user']['U_email'];
+$namee = $_SESSION['user']['U_name'];
 ?>
 <header class="header">
 		<div class="header-inner">		
@@ -83,8 +83,8 @@ $name = $_SESSION['user']['U_name'];
 											<div class="account-holder-avatar">
 												<img src="images/profile-imgs/img-13.jpg" alt="">
 											</div>
-											<h5><?php echo $name ?></h5>
-											<p><?php echo $email ?></p>
+											<h5><?php echo $namee ?></h5>
+											<p><?php echo $emaill ?></p>
 										</div>
 									</li>
 									<li class="profile-link">

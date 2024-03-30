@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Mar 29, 2024 at 04:03 AM
+-- Generation Time: Mar 30, 2024 at 05:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,20 +18,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `evente`
+-- Database: `eventss`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `adminee`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `adminee` (
   `admin_id` int(11) NOT NULL,
   `A_email` varchar(100) NOT NULL,
-  `A_password` varchar(30) NOT NULL
+  `A_password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `adminee`
+--
+
+INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
+(1, 'yassineabakhti@gmail.com', '1234'),
+(2, 'soufiane@gmail.com', '$2y$10$T/LYr3e4ZBiZTBngIJ.fWuv'),
+(3, 'yass@gmail.com', '$2y$10$kQ0Z1vMh8MhiR49vJTHcvul'),
+(4, 'user@gmail.com', '$2y$10$L2qlscxHH8zliSxQPFuLle0'),
+(5, 'omaima@gmail.com', '$2y$10$uGZdIR1ZhXfSpd2J/LfqP.mGghFaH.oMOCUew0H5KULZzIfDQcZFK');
 
 -- --------------------------------------------------------
 
@@ -72,25 +83,30 @@ CREATE TABLE `demande` (
   `zip` varchar(80) NOT NULL,
   `description` varchar(300) NOT NULL,
   `image` varchar(250) NOT NULL,
-  `gategorie` int(11) DEFAULT NULL
+  `gategorie` int(11) DEFAULT NULL,
+  `P_tickts` int(11) NOT NULL,
+  `$N_tickts` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `demande`
 --
 
-INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `venue`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`) VALUES
-(6, 'soufiane', '03/12/2024', '00:15', '30', 'gggggggggggg', 'kkkkkkkkkk', '3ewinaa', '3ewinaa', 'Argentina', 'Victoria', 'Melbourne', '3000', '660629a63676dBanned books-01.jpg', 1),
-(10, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062d4f224bbBanned books-01.jpg', 1),
-(12, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062da051b28Banned books-01.jpg', 1),
-(13, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062dc4eeb64Banned books-01.jpg', 1),
-(14, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062e480ba94Banned books-01.jpg', 1),
-(15, '', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062e52d03a9', 1),
-(16, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062e6d176ba', 1),
-(17, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062ede9ed63', 1),
-(18, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062ef4a2c47', 1),
-(19, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062f3196711', 1),
-(20, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062f65a6f90', 1);
+INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `venue`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `$N_tickts`) VALUES
+(6, 'soufiane', '03/12/2024', '00:15', '30', 'gggggggggggg', 'kkkkkkkkkk', '3ewinaa', '3ewinaa', 'Argentina', 'Victoria', 'Melbourne', '3000', '660629a63676dBanned books-01.jpg', 1, 0, 0),
+(10, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062d4f224bbBanned books-01.jpg', 1, 0, 0),
+(12, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062da051b28Banned books-01.jpg', 1, 0, 0),
+(13, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062dc4eeb64Banned books-01.jpg', 1, 0, 0),
+(14, 'soufianeeb', '', '10:00', '60', 'bbbbbbbbbbbbbbbbbb', 'narjisss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', '66062e480ba94Banned books-01.jpg', 1, 0, 0),
+(15, '', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062e52d03a9', 1, 0, 0),
+(16, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062e6d176ba', 1, 0, 0),
+(17, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062ede9ed63', 1, 0, 0),
+(18, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062ef4a2c47', 1, 0, 0),
+(19, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062f3196711', 1, 0, 0),
+(20, 'bb', '', '10:00', '60', '', '', '', '', 'Australia', 'Victoria', 'Melbourne', '3000', '66062f65a6f90', 1, 0, 0),
+(21, 'yyyyy', '03/12/2024', '10:00', '60', 'narjisss', '3ewinaa', '3ewinaa', 'Australia', 'Victoria', 'Melbourne', '3000', 'bbbbbbbbbbbbbbnnnnnnnnnnnnnnnnnnnnnnnnnnn', '660762f0e6aa1app-store.png', 1, 15, 14),
+(22, 'yassine', '02/26/2024', '00:15', '30', 'ddddddddddddd', 'ddddddddddd', 'ddddddddddddd', 'Argentina', 'Victoria', 'Melbourne', '3000', 'bbbbbbbbbbbbbbbbbbbbbbbbb', '660804bf8f800app-store.png', 1, 14, 15),
+(23, 'yassine', '02/26/2024', '00:15', '15', 'narjiss', '3ewinaa', 'llllllllllllllllllllll', 'Australia', 'Victoria', 'Melbourne', '3000', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbb', '66080a1852132banner.jpg', 1, 55, 44);
 
 -- --------------------------------------------------------
 
@@ -162,6 +178,17 @@ CREATE TABLE `reservation` (
   `Ticket_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R_adresse`, `R_country`, `R_city`, `R_Zipcode`, `Ticket_id`) VALUES
+(2, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', 'Argentina', 'hhh', '12', 0),
+(3, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0),
+(4, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0),
+(5, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0),
+(6, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -188,7 +215,7 @@ CREATE TABLE `user` (
   `U_name` varchar(30) NOT NULL,
   `U_Prenom` varchar(30) NOT NULL,
   `U_email` varchar(70) NOT NULL,
-  `U_password` varchar(20) NOT NULL,
+  `U_password` varchar(200) NOT NULL,
   `U_telephone` varchar(30) NOT NULL,
   `U_adresse` varchar(100) NOT NULL,
   `U_dateNaissance` date NOT NULL
@@ -199,16 +226,23 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U_telephone`, `U_adresse`, `U_dateNaissance`) VALUES
-(1, 'sliman', 'isslam', 'slimane@gmail.com', '$2y$10$CqBOM5wWQiB/4', '', '', '0000-00-00');
+(1, 'sliman', 'isslam', 'slimane@gmail.com', '$2y$10$CqBOM5wWQiB/4', '', '', '0000-00-00'),
+(2, 'mchachti', 'yassine', 'yassineabakhti@gmail.com', '$2y$10$YKM7PbCi..qDU', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-29'),
+(3, 'mchachti', 'yassine', 'soufiane@gmail.com', '$2y$10$GIs7G7DQlNcUn', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-12'),
+(4, 'mchachti', 'yassine', 'yassineabakhti@gmail.com', '$2y$10$9mshqDIPyeLXA', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-05'),
+(5, 'mchachti', 'yassine', 'yassineabakhti11@gmail.com', '$2y$10$NUCsOKnCvuIkn', 'yyyy', 'hhhhhhhhhhhhhhhhhhh', '2024-03-07'),
+(6, 'mchachti', 'yassine', 'yassineabakhti11@gmail.com', '$2y$10$MB89F1mhqA0si', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-01'),
+(7, 'mchachti', 'yassine', 'yassineabakhti@gmail.com', '$2y$10$necLF9V.gLZL.uLAXc/HceB7LwCpr4CuOuqfowQ3Rx7daHjCFBx8G', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-11'),
+(8, 'mchachti', 'yassine', 'yass@gmail.com', '$2y$10$5znCOetxryoLvwAl42I5FOVIFntUPo0iKy6geQlPdMC1A1eRD6QeC', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-02-28');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `adminee`
 --
-ALTER TABLE `admin`
+ALTER TABLE `adminee`
   ADD PRIMARY KEY (`admin_id`);
 
 --
@@ -272,10 +306,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `adminee`
 --
-ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `adminee`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categorie`
@@ -287,7 +321,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `event`
@@ -311,7 +345,7 @@ ALTER TABLE `reclamation`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ticket`
@@ -323,7 +357,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -353,12 +387,6 @@ ALTER TABLE `image`
 --
 ALTER TABLE `reclamation`
   ADD CONSTRAINT `reclamation_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `reservation`
---
-ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`Ticket_id`) REFERENCES `ticket` (`Ticket_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ticket`

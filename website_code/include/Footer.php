@@ -28,13 +28,14 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="footer-content">
 							<h4>Suivez-nous Partout</h4>
-							<ul class="social-links">
-								<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-								<li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-							</ul>
+							<div class="social-links">
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
+									</div>
 						</div>
 						
 					</div>
