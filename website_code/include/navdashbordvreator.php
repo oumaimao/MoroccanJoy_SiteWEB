@@ -67,7 +67,7 @@ $namee = $_SESSION['user']['U_name'];
 					<div class="right-header order-2">
 						<ul class="align-self-stretch">
 							<li>
-								<a href=<?php session_start(); if(!isset($_SESSION['user'])){echo "sign-in.php"}else{echo "create_venue_event.php"}?> class="create-btn btn-hover">
+								<a href="create_venue_event.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
 									<span>Créer un évènement</span>
 								</a>

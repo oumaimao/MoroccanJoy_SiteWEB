@@ -128,7 +128,7 @@
 									<td><?php echo $Reservation['R_city']?></td>	
                                     <td><?php echo $Reservation['R_Zipcode']?></td>	
 									<td><?php echo $Reservation['Ticket_id']?></td>	
-									<td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
+									<td><span class="action-btn "><a href="delete_Reservation.php?id=<?php echo $Reservation['Reservation_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $Reservation['R_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
 										
 								</tr>
 								<?php } ?>
