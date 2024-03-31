@@ -1,5 +1,6 @@
 <?php
 session_start();
-session_destroy();
+unset($_SESSION['user']['U_name']);
+unset($_SESSION['user']['U_email']);
 header("Location: sign_in.php");
 ?>

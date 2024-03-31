@@ -1,4 +1,9 @@
+<?php session_start();
 
+	if(!isset($_SESSION['admin'])){
+		header('location:sign-in-admin.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
@@ -124,6 +129,11 @@
                        
                         <div class="night_mode_switch__btn">
                             <div id="night-mode" class="fas fa-moon fa-sun"></div>
+							<li style="list-style: none;">
+								<a href="sign-out-admin.php" class="create-btn btn-hover">
+									<span>Se déconnecter</span>
+								</a>
+							</li>
                         </div>
                     </ul>
                     </li></div>
