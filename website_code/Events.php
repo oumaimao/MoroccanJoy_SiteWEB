@@ -222,39 +222,50 @@
 									<th scope="col">Titre</th>
                                     <th scope="col">Description</th>
 									<th scope="col">image</th>
-                                    <th scope="col">Heur debut</th>
-									<th scope="col">Date Debut</th>
-                                    <th scope="col">Heur fin</th>
-									<th scope="col">Date fin</th>
+                                    <th scope="col">Date</th>
+									<th scope="col">Heure</th>
+                                    <th scope="col">Duration</th>
                                     <th scope="col">Nombre Tickets</th>
 									<th scope="col">Prix Ticket</th>
                                     <th scope="col">Ville</th>
                                     <th scope="col">zip_code</th>
 									<th scope="col">categorie_id</th>
+                                    <th scope="col">adress1</th>
+									<th scope="col">adress2</th>
                                    
 									<th scope="col" colspan="3">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
+                            <?php 
+								require_once "connect/DataBase.php";
+						$demandes= $connection->query('SELECT * FROM `event`')->fetchAll(PDO::FETCH_ASSOC);
+						foreach($demandes as $demande){ ?>
+
 								<tr>										
-									<td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-									<td>No</td>	
-                                    <td>John Doe</td>	
-                                    <td>John Doe</td>
-                                    <td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
+                                <td><?php echo $demande['E_id']?></td>										
+									<td><?php echo $demande['E_id']?></td>	
+									<td><?php echo $demande['Titre']?></td>
+									<td><?php echo $demande['Description']?></td>
+									<td><?php echo $demande['Image']?></td>	
+                                    <td><?php echo $demande['Date_debut']?></td>	
+									<td><?php echo $demande['Heure_debut']?></td>	
+                                    <td><?php echo $demande['Heure_fin']?></td>	
+									<td><?php echo $demande['Nombre_tickets']?></td>	
+									<td><?php echo $demande['Prix_ticket']?></td>
+									<td><?php echo $demande['Ville']?></td>
+                                    <td><?php echo $demande['Zip_code']?></td>
+                                    <td><?php echo $demande['Categorie_id']?></td>
+                                    <td><?php echo $demande['adress1']?></td>
+                                    <td><?php echo $demande['adress2']?></td>
+										
+                                    <td><span class="action-btn "><a href="deleteevent.php?id=<?php echo $demande['E_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le eent <?php echo $demande['E_id']?>' );"><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
 									
 										
 								</tr>
+                                <?php
+																		} 
+																	?>
 								
 							</tbody>									
 						</table>

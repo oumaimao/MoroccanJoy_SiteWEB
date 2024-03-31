@@ -150,7 +150,7 @@
 									<td><?php echo $demande['P_tickts']?></td>	
                                     
                                     <td><?php echo $demande['gategorie']?></td>
-                                    <td><span class="action-btn"><button class="btn btn-primary">Accepter</button><td><span class="action-btn"><button class="btn btn-danger">Refuser</button></span></td></td>	
+                                    <td><span class="action-btn"><a  href="accepter_demande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Accepter</button></a><td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
 									
 										
 								</tr>
