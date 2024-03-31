@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+session_start();
+?>
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -31,7 +34,7 @@
 
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
-	<?php include "include/nav.php";?>
+	<?php include "include/navindex.php";?>
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">

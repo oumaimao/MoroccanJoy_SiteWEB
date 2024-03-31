@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<?php session_start();?>
+
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -49,7 +51,7 @@
 	</div>
 	<!-- About Barren Model End-->
 	<!-- Header Start-->
-		<?php include "include/nav.php";?>
+		<?php include "include/navindex.php";?>
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">

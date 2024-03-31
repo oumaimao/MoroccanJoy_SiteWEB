@@ -6,10 +6,10 @@
 						<div class="footer-content">
 							<h4>Société</h4>
 							<ul class="footer-link-list">
-								<li><a href="about_us.html" class="footer-link">Qui sommes-nous</a></li>
-								<li><a href="help_center.html" class="footer-link">Centre de support</a></li>
-								<li><a href="faq.html" class="footer-link">FAQ</a></li>
-								<li><a href="contact_us.html" class="footer-link">Contactez-nous</a></li>
+								<li><a href="about_us.php" class="footer-link">Qui sommes-nous</a></li>
+								<li><a href="help_center.php" class="footer-link">Centre de support</a></li>
+								<li><a href="faq.php" class="footer-link">FAQ</a></li>
+								<li><a href="contact_us.php" class="footer-link">Contactez-nous</a></li>
 							</ul>
 						</div>
 					</div>
@@ -17,10 +17,8 @@
 						<div class="footer-content">
 							<h4>Liens importants</h4>
 							<ul class="footer-link-list">
-								<li><a href="create.html" class="footer-link">Creer un événement </a></li>
-								<li><a href="sell_tickets_online.html" class="footer-link">Vendre les billets en ligne</a></li>
-								<li><a href="privacy_policy.html" class="footer-link">politique de confidentialité</a></li>
-								<li><a href="term_and_conditions.html" class="footer-link">termes et conditions</a></li>
+								<li><a href="create_venue_event.php" class="footer-link">Creer un événement </a></li>
+								<li><a href="privacy_policy.php" class="footer-link">politique de confidentialité</a></li>
 							</ul>
 						</div>
 					</div>
@@ -35,7 +33,7 @@
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
-									</div>
+							</div>
 						</div>
 						
 					</div>

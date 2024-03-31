@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+session_start();
+if(!isset($_SESSION['user']['U_email'])){
+	header('location:sign_in.php');
+}
+$emaill = $_SESSION['user']['U_email'];
+$namee = $_SESSION['user']['U_name'];
+
+
+
+?>
+
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -177,14 +189,14 @@
 											<div class="account-holder-avatar">
 												<img src="images/profile-imgs/img-13.jpg" alt="">
 											</div>
-											<h5>John Doe</h5>
-											<p>johndoe@example.com</p>
+											<h5><?php echo $namee ?></h5>
+											<p><?php echo $emaill?></p>
 										</div>
 									</li>
 									<li class="profile-link">
 										<a href="my_organisation_dashboard.html" class="link-item">Mon organisation</a>
 										<a href="organiser_profile_view.html" class="link-item"> Mon profil</a>																
-										<a href="sign_in.html" class="link-item">Connectez-vous </a>									
+										<a href="logout.php" class="link-item">Deconexion </a>									
 									</li>
 								</ul>
 							</li>

@@ -1,6 +1,12 @@
-﻿﻿<?php 
-	include "include/nav_session.php";
+﻿﻿<?php session_start();?>
+<?php 
+
+	if(!isset($_SESSION['user']['U_email'])){
+		header('location:sign_in.php');
+	}
+
 	require_once "connect/DataBase.php";
+
 	$chk=False;
 	$k=False;
 	if(isset($_POST['envoyer'])){
@@ -90,7 +96,9 @@
 <body class="d-flex flex-column h-100">
 	
 	<!-- Start Header-->
-
+	<?php
+		include "include/navindex.php";
+	?>
 	<!-- Header End-->	
 
 	<!-- Body Start-->

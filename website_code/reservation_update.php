@@ -127,12 +127,6 @@ if(isset($_POST['modifier'])){
 									
 				<div class="bp-content bp-form">
 					<div class="row">
-					<div class="col-lg-6 col-md-12">
-							<div class="form-group mt-4">
-								<label class="form-label">ID*</label>
-								<input class="form-control h_50" name="fname" type="text" placeholder="" value="<?php echo $data['Reservation_id']; ?>">																								
-							</div>
-						</div>
 						<div class="col-lg-6 col-md-12">
 							<div class="form-group mt-4">
 								<label class="form-label">Prénom*</label>
@@ -240,7 +234,10 @@ if(isset($_POST['modifier'])){
 									
 			</div>
 				<div class="container step-footer step-tab-pager mt-4">									
-					<input type="submit"  data-direction="finish" class="btn btn-default btn-hover btn-primary p-3" name="modifier" value="Modifier">
+					<input type="submit"  data-direction="finish" class="main-btn min-width btn-hover h_40" style="color:black;" name="modifier" value="Modifier">
+					<a href="resirvation.php"><button type="button" class="co-main-btn min-width btn-hover h_40">Annuler</button></a>
+					
+
 				</div>
 		</div>
 							
