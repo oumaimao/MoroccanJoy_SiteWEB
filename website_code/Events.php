@@ -233,20 +233,11 @@ session_start();
 									<th scope="col">Titre</th>
                                     <th scope="col">Description</th>
 									<th scope="col">image</th>
-<<<<<<< HEAD
-                                    <th scope="col">Heure de début</th>
-									<th scope="col">Date de Début</th>
-                                    <th scope="col">Heure de fin</th>
-									<th scope="col">Date de fin</th>
-                                    <th scope="col">Nombre de Tickets</th>
-									<th scope="col">Prix de Ticket</th>
-=======
                                     <th scope="col">Date</th>
 									<th scope="col">Heure</th>
                                     <th scope="col">Duration</th>
                                     <th scope="col">Nombre Tickets</th>
 									<th scope="col">Prix Ticket</th>
->>>>>>> 09f106253af222c176c5e2c03d9e189cb106b592
                                     <th scope="col">Ville</th>
                                     <th scope="col">zip_code</th>
 									<th scope="col">categorie_id</th>

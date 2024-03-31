@@ -119,7 +119,6 @@ session_start();
                                     <th scope="col">event_date</th>
 									<th scope="col">event_time</th>
                                     <th scope="col">event_duration</th>
-									<th scope="col" >venue</th>
 									<th scope="col" >adress1</th>
 									<th scope="col" >adress2</th>
 									<th scope="col" >country</th>
@@ -150,7 +149,6 @@ session_start();
                                     <td><?php echo $demande['event_date']?></td>	
 									<td><?php echo $demande['event_time']?></td>	
                                     <td><?php echo $demande['event_duration']?></td>	
-									<td><?php echo $demande['venue']?></td>	
                                     <td><?php echo $demande['adress1']?></td>	
 									<td><?php echo $demande['adress2']?></td>	
                                     <td><?php echo $demande['country']?></td>	
