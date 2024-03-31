@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Système de billetterie d'événements en ligne simple </title>
+		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple </title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -140,7 +140,7 @@
 											<div class="QR-scanner">
 												<img src="images/qr.png" alt="QR-Ticket-Scanner">
 											</div>
-											<p>Powered by Barren</p>
+											<p>Alimenté par MoroccanJoy</p>
 										</div>
 									</div>
 								</div>

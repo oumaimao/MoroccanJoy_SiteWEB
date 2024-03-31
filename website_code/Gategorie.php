@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Gategorie</title>
+		<title>Categorie</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -37,7 +37,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="addorganisationLabel">Gategorie details</h5>
+				<h5 class="modal-title" id="addorganisationLabel">details de Catégorie </h5>
 				<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 			</div>
 			<div class="modal-body">
@@ -60,8 +60,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Cancel</button>
-				<button type="button" class="main-btn min-width btn-hover h_40">Add</button>
+				<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Annuler</button>
+				<button type="button" class="main-btn min-width btn-hover h_40">Ajouter</button>
 			</div>
 		</div>
 	</div>
@@ -112,7 +112,7 @@
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Gategorie List</h5>
+		<h5 class="mb-4">Liste de Catégorie</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
@@ -123,7 +123,7 @@
 				</div>
 			</div>
 			<div class="ocard-right">
-				<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Create</button>
+				<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Créer</button>
 			</div>
 		</div>
 	</div>
@@ -145,7 +145,7 @@
 								<tr>										
 									<td>John Doe</td>	
 									
-									<td>No</td>	
+									<td>Non</td>	
 									<td><span class="action-btn "><i class="fa-solid fa-trash-can " style="color: red;"></i></td>	
 										
 								</tr>

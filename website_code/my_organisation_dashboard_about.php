@@ -10,7 +10,7 @@ include "include/nav_session.php";
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Système de billetterie d'événements en ligne simple</title>
+		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">

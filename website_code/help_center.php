@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Système de billetterie d'événements en ligne simple </title>
+		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple </title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -140,7 +140,7 @@
 							</div>
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+									<a class="nav-link active" aria-current="page" href="index.html">Acceuil</a>
 								</li>
 								
 							</ul>
@@ -228,7 +228,7 @@
 									<i class="fa-solid fa-calendar-days"></i>
 								</div>
 								<div class="help-item-content">
-									<h4>ISuis organisateur</h4>
+									<h4>Je Suis organisateur</h4>
 									<span>76 Des articles</span>
 								</div>
 							</a>
@@ -246,7 +246,7 @@
 									<i class="fa-solid fa-microphone"></i>
 								</div>
 								<div class="help-item-content">
-									<h4>Je suis un orateur </h4>
+									<h4>Je suis un client </h4>
 									<span>5 Des articles</span>
 								</div>
 							</a>

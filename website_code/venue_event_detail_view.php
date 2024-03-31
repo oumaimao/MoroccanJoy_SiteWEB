@@ -10,7 +10,7 @@ include "include/nav_session.php";
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Simple Online Event Ticketing System</title>
+		<title>MoroccanJoy - Simple Online Event Ticketing System</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -173,15 +173,15 @@ include "include/nav_session.php";
 								</div>
 							</div>
 							<div class="booking-btn">
-								<a href="checkout.html" class="main-btn btn-hover w-100">Book Now</a>
+								<a href="checkout.html" class="main-btn btn-hover w-100">Reserve maintenant</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="more-events">
 							<div class="main-title position-relative">
-								<h3>More Events</h3>
-								<a href="explore_events.html" class="view-all-link">Browse All<i class="fa-solid fa-right-long ms-2"></i></a>
+								<h3>Plus d'événements</h3>
+								<a href="explore_events.html" class="view-all-link">Parcourir tout<i class="fa-solid fa-right-long ms-2"></i></a>
 							</div>
 							<div class="owl-carousel moreEvents-slider owl-theme">
 								<div class="item">
@@ -193,7 +193,7 @@ include "include/nav_session.php";
 											<span class="bookmark-icon" title="Bookmark"></span>
 										</div>
 										<div class="event-content">
-											<a href="venue_event_detail_view.html" class="event-title">A New Way Of Life</a>
+											<a href="venue_event_detail_view.html" class="event-title">Un nouveau mode de vie</a>
 											<div class="duration-price-remaining">
 												<span class="duration-price">AUD $100.00*</span>
 												<span class="remaining"></span>
@@ -223,7 +223,7 @@ include "include/nav_session.php";
 											<a href="online_event_detail_view.html" class="event-title">Earrings Workshop with Bronwyn David</a>
 											<div class="duration-price-remaining">
 												<span class="duration-price">AUD $75.00*</span>
-												<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 Remaining</span>
+												<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i>6 Restantes</span>
 											</div>
 										</div>
 										<div class="event-footer">
@@ -249,7 +249,7 @@ include "include/nav_session.php";
 										<div class="event-content">
 											<a href="venue_event_detail_view.html" class="event-title">Spring Showcase Saturday April 30th 2022 at 7pm</a>
 											<div class="duration-price-remaining">
-												<span class="duration-price">Free*</span>
+												<span class="duration-price">Gratuit*</span>
 												<span class="remaining"></span>
 											</div>
 										</div>

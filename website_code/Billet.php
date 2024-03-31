@@ -80,7 +80,7 @@
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Billet List</h5>
+		<h5 class="mb-4">Liste des billets</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">

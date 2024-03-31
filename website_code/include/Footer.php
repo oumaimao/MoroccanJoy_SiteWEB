@@ -15,7 +15,7 @@
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="footer-content">
-							<h4>inportants liens</h4>
+							<h4>Liens importants</h4>
 							<ul class="footer-link-list">
 								<li><a href="create.html" class="footer-link">Creer un événement </a></li>
 								<li><a href="sell_tickets_online.html" class="footer-link">Vendre les billets en ligne</a></li>

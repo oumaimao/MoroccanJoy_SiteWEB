@@ -38,7 +38,7 @@
 			<div class="modal-content">
 				<form action="" method="post">
 				<div class="modal-header">
-					<h5 class="modal-title" id="addorganisationLabel">Admin details</h5>
+					<h5 class="modal-title" id="addorganisationLabel">Détails d'admin</h5>
 					<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 				</div>
 				<div class="modal-body">
@@ -77,7 +77,7 @@
 							</div>
                             <div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
-									<label class="form-label">Password</label>
+									<label class="form-label">Mot de Passe</label>
 									<input class="form-control h_40" type="text" placeholder="" value="" name="psd">																								
 								</div>
 							</div>
@@ -88,7 +88,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="main-btn min-width btn-hover h_40"  name="submit">Add</button>
+					<button type="submit" class="main-btn min-width btn-hover h_40"  name="submit">Ajouter</button>
 				</div>
 			</div>
 				</form>
@@ -144,7 +144,7 @@
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Admins List</h5>
+		<h5 class="mb-4">Listes des admins</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">

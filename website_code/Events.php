@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Events</title>
+		<title>Événements</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -37,7 +37,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addorganisationLabel">Admin details</h5>
+                <h5 class="modal-title" id="addorganisationLabel">Détails d'admin</h5>
                 <button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
             </div>
             <div class="modal-body">
@@ -86,37 +86,37 @@
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group mt-4">
-                                <label class="form-label">Heur debut</label>
+                                <label class="form-label">l'heure de début</label>
                                 <input class="form-control h_40" type="text" placeholder="" value="">																								
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group mt-4">
-                                <label class="form-label">Date Debut</label>
+                                <label class="form-label">Date de Début</label>
                                 <input class="form-control h_40" type="text" placeholder="" value="">																								
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group mt-4">
-                                <label class="form-label">Nombre Tickets</label>
+                                <label class="form-label">Nombre de Tickets</label>
                                 <input class="form-control h_40" type="text" placeholder="" value="">																								
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group mt-4">
-                                <label class="form-label">Date fin</label>
+                                <label class="form-label">Date de fin</label>
                                 <input class="form-control h_40" type="text" placeholder="" value="">																								
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group mt-4">
-                                <label class="form-label">Heur fin</label>
+                                <label class="form-label">Heure de fin</label>
                                 <input class="form-control h_40" type="text" placeholder="" value="">																								
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group mt-4">
-                                <label class="form-label">Prix Ticket</label>
+                                <label class="form-label">Prix de Ticket</label>
                                 <input class="form-control h_40" type="text" placeholder="" value="">																								
                             </div>
                         </div>
@@ -142,8 +142,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="main-btn min-width btn-hover h_40">Add</button>
+                <button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="main-btn min-width btn-hover h_40">ajouter</button>
             </div>
         </div>
     </div>
@@ -194,7 +194,7 @@
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Events List</h5>
+		<h5 class="mb-4">Liste d'Événements</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
@@ -205,7 +205,7 @@
 				</div>
 			</div>
 			<div class="ocard-right">
-				<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Create</button>
+				<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Créer</button>
 			</div>
 		</div>
 	</div>
@@ -222,12 +222,12 @@
 									<th scope="col">Titre</th>
                                     <th scope="col">Description</th>
 									<th scope="col">image</th>
-                                    <th scope="col">Heur debut</th>
-									<th scope="col">Date Debut</th>
-                                    <th scope="col">Heur fin</th>
-									<th scope="col">Date fin</th>
-                                    <th scope="col">Nombre Tickets</th>
-									<th scope="col">Prix Ticket</th>
+                                    <th scope="col">Heure de début</th>
+									<th scope="col">Date de Début</th>
+                                    <th scope="col">Heure de fin</th>
+									<th scope="col">Date de fin</th>
+                                    <th scope="col">Nombre de Tickets</th>
+									<th scope="col">Prix de Ticket</th>
                                     <th scope="col">Ville</th>
                                     <th scope="col">zip_code</th>
 									<th scope="col">categorie_id</th>

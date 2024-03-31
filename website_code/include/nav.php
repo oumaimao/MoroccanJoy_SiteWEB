@@ -44,8 +44,8 @@
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
 										<li><a class="dropdown-item" href="explore_events.html">Découvrir nouveaux évènement</a></li>
-										<li><a class="dropdown-item" href="venue_event_detail_view.html">Vue détaillée de lieu de l'événement </a></li>
-										<li><a class="dropdown-item" href="online_event_detail_view.html">Vue détaillée de l'événement en ligne</a></li>
+										<li><a class="dropdown-item" href="venue_event_detail_view.html">Vue détaillée Surplace </a></li>
+										<li><a class="dropdown-item" href="online_event_detail_view.html">Vue détaillée en ligne</a></li>
 									</ul>
 								</li>
 								

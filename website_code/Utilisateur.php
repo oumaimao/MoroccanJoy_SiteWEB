@@ -78,7 +78,7 @@
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Utilisateurs List</h5>
+		<h5 class="mb-4">Listes d'Utilisateurs </h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">

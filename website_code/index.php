@@ -10,7 +10,7 @@ include "include/nav_session.php";
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>BArren - Système de billetterie d'événements en ligne simple</title>
+		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -45,7 +45,7 @@ include "include/nav_session.php";
 					<div class="col-xl-7 col-lg-9 col-md-10">
 						<div class="hero-banner-content">
 							<h2>Le système de réservation d'événements en ligne et de billetterie le plus simple et le plus puissant</h2>
-							<p>Barren est une plate-forme de billetterie d'événements tout-en-un pour les organisateurs d'événements, les promoteurs et les gestionnaires.Créer, promouvoir et gérer facilement vos événements de tout type et taille.</p>
+							<p>MoroccanJoy est une plate-forme de billetterie d'événements tout-en-un pour les organisateurs d'événements, les promoteurs et les gestionnaires.Créer, promouvoir et gérer facilement vos événements de tout type et taille.</p>
 							<a href="create_venue_event.php" class="main-btn btn-hover">Créer un évènement <i class="fa-solid fa-arrow-right ms-3"></i></a>
 						</div>
 					</div>
@@ -57,7 +57,7 @@ include "include/nav_session.php";
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="main-title">
-							<h3>Explorer Aymane les événements </h3>
+							<h3>Explorer les événements </h3>
 						</div>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12">
@@ -333,7 +333,7 @@ include "include/nav_session.php";
 											<div class="host-img">
 												<img src="images/icons/venue-events.png" alt="">
 											</div>
-											<h4>Événements de lieu</h4>
+											<h4>Événements Surplace</h4>
 											<p>Créez une page d'événement exceptionnelle pour vos événements de lieu, attirez les participants et vendez plus de billets.</p>
 										</div>
 									</div>
@@ -344,7 +344,7 @@ include "include/nav_session.php";
 											<div class="host-img">
 												<img src="images/icons/webinar.png" alt="">
 											</div>
-											<h4>Séminaire en ligne</h4>
+											<h4>Séminaire enligne</h4>
 											<p>Les webinaires ont tendance à être des événements à sens unique.SARREN aide à les rendre plus engageants.</p>
 										</div>
 									</div>
@@ -414,7 +414,7 @@ include "include/nav_session.php";
 										<div class="feature-icon">
 											<img src="images/icons/feature-icon-2.png" alt="">
 										</div>
-										<h4>Événement de lieu</h4>
+										<h4>Événement Surplace</h4>
 										<p>Fonctionnalités faciles à utiliser pour créer et gérer vos événements de lieu.</p>
 									</div>
 								</div>
@@ -547,7 +547,7 @@ include "include/nav_session.php";
 												<div class="step-icon">
 													<img src="images/icons/step-icon-11.png" alt="">
 												</div>
-												<h4>Clone Past Event pour créer des événements similaires</h4>
+												<h4>cliquer des événements récents pour créer des événements similaires</h4>
 												<p>Utilisez notre fonctionnalité de clonage d'événements pour cloner l'événement passé et en créer un nouveau facilement en quelques clics.</p>
 											</div>
 										</div>

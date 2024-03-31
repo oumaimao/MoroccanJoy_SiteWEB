@@ -35,7 +35,7 @@
 		<div class="modal-dialog modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="FFModalLabel">Suivre des suiveurs</h5>
+					<h5 class="modal-title" id="FFModalLabel">Suivre des abbonés</h5>
 					<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 				</div>
 				<div class="modal-body">

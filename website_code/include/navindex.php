@@ -12,7 +12,7 @@
 							<img src="images/logo-icon.svg" alt="">
 						</div>
 						<div class="main-logo" id="logo">
-							<img src="images/logo.svg" alt="">
+							<img src="images/moroccanjoylogoLight.png" alt="">
 							<img class="logo-inverse" src="images/dark-logo.svg" alt="">
 						</div>
 					</a>

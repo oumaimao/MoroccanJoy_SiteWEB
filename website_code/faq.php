@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Système de billetterie d'événements en ligne simple</title>
+		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -53,7 +53,7 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12">
 						<div class="main-title checkout-title text-center">
-							<h3>Questions fréquemment posées</h3>
+							<h3>Questions Fréquentes</h3>
 							<p class="mb-0"> Trouvez des réponses aux questions communes posées sur stérile.</p>
 						</div>
 					</div>
@@ -96,7 +96,7 @@
 									<div class="accordion-item">
 										<h2 class="accordion-header" id="panelsOrgnaisersOpen-heading2">
 											<button class="accordion-btn pe-0 ps-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsOrgnaisersOpen-collapse2" aria-expanded="false" aria-controls="panelsOrgnaisersOpen-collapse2">
-												Barren propose-t-il une gestion d'événements ou un service client pour mon événement?
+												MoroccanJoy propose-t-il une gestion d'événements ou un service client pour mon événement?
 											</button>
 										</h2>
 										<div id="panelsOrgnaisersOpen-collapse2" class="accordion-collapse collapse" aria-labelledby="panelsOrgnaisersOpen-heading2" data-bs-parent="#accordionFAQforOrganisers">

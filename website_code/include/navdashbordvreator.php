@@ -46,7 +46,7 @@ $namee = $_SESSION['user']['U_name'];
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="explore_events.php">
-										<i class="fa-solid fa-compass me-2"></i>Douverir les évènement
+										<i class="fa-solid fa-compass me-2"></i>Découvrir les évènement
 									</a>
 								</li>
 							</ul>

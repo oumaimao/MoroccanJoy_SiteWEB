@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Barren - Système de billetterie d'événements en ligne simple </title>
+		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple </title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -59,7 +59,7 @@
 												<p class="mb-0 mt-1 text-start fs-12">Pas de spam, nous promettons.</p>
 											</form>
 											<div class="copyright-footer mt-5">
-												© 2024, stérile.Tous droits réservés.
+												© 2024.Tous droits réservés.
 											</div>
 										</div>
 									</div>

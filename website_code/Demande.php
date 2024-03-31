@@ -79,7 +79,7 @@
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Demande Events List</h5>
+		<h5 class="mb-4">Demande liste d'événements</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
@@ -115,7 +115,7 @@
 									<th scope="col" >state</th>
 									<th scope="col" >city</th>
 									<th scope="col" >zip</th>
-									<th scope="col" >gategorie</th>
+									<th scope="col" >categorie</th>
 									<th scope="col" >N_tickts</th>
 									<th scope="col" >P_tickts</th>
 									<th scope="col" colspan="3">Opération</th>
