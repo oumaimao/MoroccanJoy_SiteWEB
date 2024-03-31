@@ -10,7 +10,7 @@ include "include/nav_session.php";
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple</title>
+		<title>MoroccanJoy - Système en ligne de billetterie d'événements </title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -41,7 +41,7 @@ include "include/nav_session.php";
 		<div class="modal-dialog modal-medium-2 modal-dialog-scrollable modal-dialog-centered modal-sm-height modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="orgSettingsLabel">Privacy Settings</h5>
+					<h5 class="modal-title" id="orgSettingsLabel">Paramètres de confidentialité</h5>
 					<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 				</div>
 				<div class="modal-body p-bg">
@@ -49,13 +49,13 @@ include "include/nav_session.php";
 						<div class="mt-4">	
 							<div class="setting-step main-card p-4">
 								<div class="d-flex align-items-center justify-content-between">
-									<h3 class="setting-title">Allow Barren to Access My Organisation</h3>
+									<h3 class="setting-title">permttre MoroccanJoy d'acceder à mon Organisation</h3>
 									<label class="btn-switch m-0 ml-2">
 										<input type="checkbox">
 										<span class="checkbox-slider"></span>
 									</label>
 								</div>
-								<p class="mt-1">If you enable this, Eventbookings will be able to manage your organisation(s)</p>
+								<p class="mt-1">Si vous activez ceci, Eventbookings will be able to manage your organisation(s)</p>
 							</div>
 						</div>
 					</div>
