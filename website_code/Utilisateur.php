@@ -90,7 +90,7 @@ session_start();
 	<?php include 'include/VerticaleNav.php' ?>
 	<!-- Verticale nav -->
 <!-- Body Start -->
-
+<form action="" method="post">
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
@@ -99,10 +99,13 @@ session_start();
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
 					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="">
+						<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs" >
 						<i class="uil uil-search"></i>
 					</div>
 				</div>
+			</div>
+			<div class="ocard-right">
+				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
 			</div>
 			
 		</div>
@@ -127,6 +130,46 @@ session_start();
 								</tr>
 							</thead>
 							<tbody>
+							
+							<?php 
+							if(isset($_POST['sear'])){
+								require_once "connect/DataBase.php";
+								$sr = $_POST['crs'];
+								$demandes= $connection->query("SELECT * FROM user WHERE User_id like '%$sr%' or U_name like '%$sr%' or U_Prenom like '%$sr%' or U_email like '%$sr%' or U_telephone like '%$sr%' or U_adresse like '%$sr%' or U_dateNaissance like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
+								foreach($demandes as $demande){
+								
+
+								
+							?>
+								<tr>										
+									<td><?php echo $demande['User_id']?></td>	
+									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>	
+									<td><?php echo $demande['U_Prenom']?></td>	
+									<td><?php echo $demande['U_name']?></td>	
+									<td><?php echo $demande['U_email']?></td>	
+									<td><?php echo $demande['U_telephone']?></td>	
+									<td><?php echo $demande['U_adresse']?></td>	
+									<td><?php echo $demande['U_dateNaissance']?>
+									<td><span class="action-btn "><a href="delete.php?id=<?php echo $demande['User_id']?>" onclick="return confirm('Vous-voulez suppremer <?php echo $demande['User_id']?>')" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><a href="#"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+								</tr>
+								<?php
+																		} 
+																	?>
+							<?php
+							
+							
+							
+							
+							
+							}else{
+
+							
+							
+							
+							?>
+						
+
+
 							<?php 
 								require_once "connect/DataBase.php";
 						$demandes= $connection->query('SELECT * FROM `user`')->fetchAll(PDO::FETCH_ASSOC);
@@ -149,6 +192,9 @@ session_start();
 								<?php
 																		} 
 																	?>
+																	<?php
+																		} 
+																	?>
 								
 							</tbody>									
 						</table>
@@ -158,6 +204,7 @@ session_start();
 		</div>
     </div>
 </div>
+</form>
 <!-- Body End -->
 
     <script src="js/vertical-responsive-menu.min.js"></script>
