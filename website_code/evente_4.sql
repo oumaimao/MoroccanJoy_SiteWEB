@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2024 at 04:36 PM
+-- Generation Time: Mar 31, 2024 at 04:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `adminee`
+--
+
+CREATE TABLE `adminee` (
+  `admin_id` int(11) NOT NULL,
+  `A_email` varchar(100) NOT NULL,
+  `A_password` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `adminee`
+--
+
+INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
+(2, 'soufiane@gmail.com', '$2y$10$T/LYr3e4ZBiZTBngIJ.fWuv'),
+(5, 'omaima@gmail.com', '$2y$10$uGZdIR1ZhXfSpd2J/LfqP.mGghFaH.oMOCUew0H5KULZzIfDQcZFK'),
+(7, 'test@gmail.com', '$2y$10$8b4ngU7KHiwm04ko4YJe1euDszEw0g93ED8NG1z2jn0L7vMMpZsN.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categorie`
 --
 
@@ -38,6 +59,38 @@ CREATE TABLE `categorie` (
 
 INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
 (1, 'art');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `demande`
+--
+
+CREATE TABLE `demande` (
+  `event_id` int(11) NOT NULL,
+  `n_event` varchar(50) NOT NULL,
+  `event_date` varchar(200) NOT NULL,
+  `event_time` varchar(50) NOT NULL,
+  `event_duration` varchar(50) NOT NULL,
+  `adress1` varchar(100) NOT NULL,
+  `adress2` varchar(100) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `zip` varchar(80) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  `gategorie` int(11) DEFAULT NULL,
+  `P_tickts` int(11) NOT NULL,
+  `$N_tickts` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `demande`
+--
+
+INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `$N_tickts`) VALUES
+(28, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Australia', 'Victoria', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -189,10 +242,23 @@ INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U
 --
 
 --
+-- Indexes for table `adminee`
+--
+ALTER TABLE `adminee`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`Categorie_id`);
+
+--
+-- Indexes for table `demande`
+--
+ALTER TABLE `demande`
+  ADD PRIMARY KEY (`event_id`),
+  ADD KEY `gategorie` (`gategorie`);
 
 --
 -- Indexes for table `event`
@@ -242,10 +308,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `adminee`
+--
+ALTER TABLE `adminee`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
   MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `demande`
+--
+ALTER TABLE `demande`
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `event`

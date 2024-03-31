@@ -144,7 +144,7 @@ session_start();
 									<td><?php echo $demande['U_telephone']?></td>	
 									<td><?php echo $demande['U_adresse']?></td>	
 									<td><?php echo $demande['U_dateNaissance']?>
-									<td><span class="action-btn "><a  ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><a href="delete.php?id=<?php echo $demande['User_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+									<td><span class="action-btn "><a href="delete.php?id=<?php echo $demande['User_id']?>" onclick="return confirm('Vous-voulez suppremer <?php echo $demande['User_id']?>')" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><a href="#"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
 								</tr>
 								<?php
 																		} 
