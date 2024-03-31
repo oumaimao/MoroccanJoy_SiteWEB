@@ -1,10 +1,13 @@
 
 
 <?php
+
 $message = '';
 if(isset($_POST['submit'])){
 	$email = $_POST['email'];
 	$pass = $_POST['pass'];
+	session_start();
+$_SESSION['admin']=$email;
 
 	if(!empty($email) && !empty($pass)){
 		require 'connect/DataBase.php';

@@ -1,3 +1,9 @@
+<?php 
+session_start();
+	if(!isset($_SESSION['admin'])){
+		header('location:sign-in-admin.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
@@ -45,6 +51,7 @@
 						<span class="collapse_menu--label"></span>
 					</button>
 					
+					
 					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.php">
 						<div class="res-main-logo">
 							<img src="images/logo-icon.svg" alt="">
@@ -55,16 +62,25 @@
 						</div>
 					</a>
 					<div class="right-header order-2">
+						
                         <ul class="align-self-stretch">
                         <li>
+							
                        
                         <div class="night_mode_switch__btn">
                             <div id="night-mode" class="fas fa-moon fa-sun"></div>
+							<li style="list-style: none;">
+								<a href="sign-out-admin.php" class="create-btn btn-hover">
+									<span>Se déconnecter</span>
+								</a>
+							</li>
                         </div>
+						
                     </ul>
                     </li>
-				</div>
 					
+				</div>
+				
 				</div>
 			</nav>
 			<div class="overlay"></div>
@@ -127,8 +143,8 @@
 									<td><?php echo $demande['U_email']?></td>	
 									<td><?php echo $demande['U_telephone']?></td>	
 									<td><?php echo $demande['U_adresse']?></td>	
-									<td><?php echo $demande['U_dateNaissance']?></td>	
-									<td><span class="action-btn "><a href="delete.php?id=<?php echo $demande['User_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le utilisateur <?php echo $demande['U_name']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><a href="delete.php?id=<?php echo $demande['User_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+									<td><?php echo $demande['U_dateNaissance']?>
+									<td><span class="action-btn "><a  ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><a href="delete.php?id=<?php echo $demande['User_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
 								</tr>
 								<?php
 																		} 

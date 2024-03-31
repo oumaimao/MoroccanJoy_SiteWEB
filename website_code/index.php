@@ -57,7 +57,11 @@ include "include/nav_session.php";
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="main-title">
+<<<<<<< HEAD
 							<h3>Explorer les événements </h3>
+=======
+							<h3>Explorer  les événements </h3>
+>>>>>>> 09f106253af222c176c5e2c03d9e189cb106b592
 						</div>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12">

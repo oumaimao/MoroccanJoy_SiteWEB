@@ -1,3 +1,9 @@
+<?php 
+session_start();
+	if(!isset($_SESSION['admin'])){
+		header('location:sign-in-admin.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
@@ -60,6 +66,11 @@
                        
                         <div class="night_mode_switch__btn">
                             <div id="night-mode" class="fas fa-moon fa-sun"></div>
+							<li style="list-style: none;">
+								<a href="sign-out-admin.php" class="create-btn btn-hover">
+									<span>Se déconnecter</span>
+								</a>
+							</li>
                         </div>
                     </ul>
                     </li></div>
@@ -150,7 +161,7 @@
 									<td><?php echo $demande['P_tickts']?></td>	
                                     
                                     <td><?php echo $demande['gategorie']?></td>
-                                    <td><span class="action-btn"><button class="btn btn-primary">Accepter</button><td><span class="action-btn"><button class="btn btn-danger">Refuser</button></span></td></td>	
+                                    <td><span class="action-btn"><a  href="accepter_demande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Accepter</button></a><td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
 									
 										
 								</tr>
