@@ -1,4 +1,4 @@
-<footer class="footer mt-auto">
+<footer id = "footercolor" class="footer mt-auto">
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
