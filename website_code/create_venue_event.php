@@ -1,14 +1,15 @@
-﻿﻿<?php
-	
+﻿﻿<?php 
 	include "include/nav_session.php";
 	require_once "connect/DataBase.php";
+	$chk=False;
+	$k=False;
 	if(isset($_POST['envoyer'])){
-		$event_name=$_POST['event_name'];
+		if(!empty($_POST['event_name'])&& !empty($_POST['categorie'])&& !empty($_POST['date'])&& !empty($_POST['time'])&& !empty($_POST['Duration'])&& !empty($_POST['Address1'])&& !empty($_POST['Address2'])&& !empty($_POST['State']) && !empty($_POST['Country']) && !empty($_POST['City']) && !empty($_POST['State']) && !empty($_POST['arr']) && !empty($_POST['Zip']) && !empty($_POST['P_tickts'])&& !empty($_POST['N_tickts'])){
+			$event_name=$_POST['event_name'];
 		$categorie=$_POST['categorie'];
 		$datee=$_POST['date'];
 		$timee=$_POST['time'];
 		$Duration=$_POST['Duration'];
-		$Venue=$_POST['Venue'];
 		$Address1=$_POST['Address1'];
 		$Address2=$_POST['Address2'];
 		$Country=$_POST['Country'];
@@ -19,6 +20,7 @@
 		$N_tickts=$_POST['N_tickts'];
         $P_tickts=$_POST['P_tickts'];
 		$filename="";
+		
 		if(isset($_FILES['image'])){
 			$image=$_FILES['image']['name'];
 			$filename=uniqid().$image;
@@ -27,15 +29,23 @@
 			
 	
 		}
-	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"))
-        $sql->execute([$event_name,$datee,$timee,$Duration,$Venue,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie,$P_tickts,$N_tickts]);
+	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")){
+        $sql->execute([$event_name,$datee,$timee,$Duration,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie,$P_tickts,$N_tickts]);
 		$chk=True;
 	
 	
 
 	}else{
-		$chk=FALSE;
+		$chk=True;
 	}
+		}else{
+			
+				$k=True;
+			
+		}
+			
+}
+		
 
 
 
@@ -51,7 +61,7 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>MoroccanJoy - Simple Online Event Ticketing System</title>
+		<title>Barren - Simple Online Event Ticketing System</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -112,7 +122,9 @@
 							<div id="add-event-tab" >
 								<?php if($chk){echo '<div class="alert alert-success" role="alert">
   demande est envoyer
-</div>';}?>
+</div>';}else {if($k){echo '<div class="alert alert-danger" role="alert">
+	les champs sont obligatoire
+  </div>';}}?>
 								<div class="step-content">
 									<div class="step-tab-panel step-tab-info active" id="tab_step1"> 
 										<div class="tab-from-content">
@@ -135,7 +147,7 @@
 															</div>
 															<div class="form-group border_bottom pb_30">
 																<label class="form-label fs-16">Give your number_tickes.</label>
-																<p class="mt-2 d-block fs-14 mb-3">See how your name appears on the event page and a list of all places where your event name will be used. <a href="#" class="a-link">Learn more</a></p>
+																
 																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="N_tickts">
 															</div>
 															<div class="form-group border_bottom pt_30 pb_30">
@@ -323,12 +335,7 @@
 																	<div class="content-holder template-selector">
 																		<div class="row g-4">
 																			
-																			<div class="col-md-12">
-																				<div class="form-group mt-1">
-																					<label class="form-label fs-6">Venue*</label>
-																					<input class="form-control " type="text" placeholder="" value="" name="Venue">
-																				</div>
-																			</div>
+																			
 																			<div class="col-md-6">
 																				<div class="form-group mt-1">
 																					<label class="form-label fs-6">Address line 1*</label>
