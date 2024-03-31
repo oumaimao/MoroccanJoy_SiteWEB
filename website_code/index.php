@@ -57,7 +57,7 @@ include "include/nav_session.php";
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="main-title">
-							<h3>Explorer Aymane les événements </h3>
+							<h3>Explorer  les événements </h3>
 						</div>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12">
