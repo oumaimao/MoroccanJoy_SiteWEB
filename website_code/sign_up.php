@@ -118,7 +118,7 @@ if(isset($_POST['submit'])){
 									<?php echo $message?>
 							
 								<form method="post">
-									<h2 class="registration-title">Sign up to Barren</h2>
+									<h2 class="registration-title">Sign up to MoroccanJoy</h2>
 									<div class="row mt-3">
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">

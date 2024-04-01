@@ -1,5 +1,43 @@
 ﻿<?php 
 session_start();
+
+$message = '';
+if(isset($_POST['submit'])){
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+
+
+ 
+
+	if(!empty($message) && !empty($phone) && !empty($email) && !empty($last_name) && !empty($first_name)){
+		require 'connect/DataBase.php';
+		$sql = 'INSERT INTO contact_us(c_nom,	c_prenom,	c_email,	c_message,c_phone	) VALUES(:nom, :prenom, :email, :phone, :mesage)'; 
+		$statement = $connection->prepare($sql); 
+
+			if($statement->execute([':nom'=> $last_name, ':prenom'=> $first_name, ':email'=> $email ,':phone'=> $phone, ':mesage'=>$message]))
+			{ 
+		
+				$message = '<div class="alert alert-success" role="alert">
+								Donnée créée avec succès
+							</div>';
+			}else{
+				$message = '<div class="alert alert-danger" role="alert">
+								Essayer à nouveau
+							</div>';
+				
+			}
+	
+ 	}else{
+		$message = '<div class="alert alert-danger" role="alert">
+						Touts les chanpts sont obligatoir
+					</div>';
+		
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -65,43 +103,45 @@ session_start();
 							<div class="row">
 								<div class="col-xl-7 col-lg-12 col-md-12 order-lg-2">
 									<div class="contact-form bp-form p-lg-5 ps-lg-4 pt-lg-4 pb-5 p-4">
+										<form method="post">
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group mt-4">
 													<label class="form-label">Prénom*</label>
-													<input class="form-control h_50" type="text" placeholder="" value="">																								
+													<input class="form-control h_50" type="text" name="first_name" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group mt-4">
 													<label class="form-label">Nom de famille*</label>
-													<input class="form-control h_50" type="text" placeholder="" value="">																								
+													<input class="form-control h_50" type="text" name="last_name" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group mt-4">
 													<label class="form-label">E-mail*</label>
-													<input class="form-control h_50" type="Email" placeholder="" value="">																								
+													<input class="form-control h_50" type="Email" name="email" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group mt-4">
 													<label class="form-label">Téléphone*</label>
-													<input class="form-control h_50" type="text" placeholder="" value="">																								
+													<input class="form-control h_50" type="text" name="phone" placeholder="" value="">																								
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group mt-4">
 													<label class="form-label">message*</label>
-													<textarea class="form-textarea" placeholder="About"></textarea>																								
+													<textarea class="form-textarea" name="message" placeholder="About"></textarea>																								
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="text-center mt-4">
-													<button class="main-btn btn-hover h_50 w-100" type="submit">Soumettre</button>
+													<button class="main-btn btn-hover h_50 w-100" type="submit" name="submit">Soumettre</button>
 												</div>
 											</div>
 										</div>
+										</form>
 									</div>
 								</div>
 								<div class="col-xl-5 col-lg-12 col-md-12 order-lg-1 d-none d-xl-block">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2024 at 04:48 PM
+-- Generation Time: Apr 01, 2024 at 05:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,7 +38,6 @@ CREATE TABLE `adminee` (
 --
 
 INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
-(2, 'soufiane@gmail.com', '$2y$10$T/LYr3e4ZBiZTBngIJ.fWuv'),
 (5, 'omaima@gmail.com', '$2y$10$uGZdIR1ZhXfSpd2J/LfqP.mGghFaH.oMOCUew0H5KULZzIfDQcZFK'),
 (7, 'test@gmail.com', '$2y$10$8b4ngU7KHiwm04ko4YJe1euDszEw0g93ED8NG1z2jn0L7vMMpZsN.');
 
@@ -59,6 +58,33 @@ CREATE TABLE `categorie` (
 
 INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
 (1, 'art');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `contact_id` int(11) NOT NULL,
+  `c_nom` varchar(30) NOT NULL,
+  `c_prenom` varchar(30) NOT NULL,
+  `c_email` varchar(100) NOT NULL,
+  `c_message` varchar(300) NOT NULL,
+  `c_phone` varchar(30) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_email`, `c_message`, `c_phone`, `user_id`) VALUES
+(1, 'retyu', 'rt', 'ertyui@GMAIIL.COM', '234567', 'esryul', 0),
+(2, 'retyu', 'rt', 'ertyui@GMAIIL.COM', '234567', 'esryul', 0),
+(3, 'rtyu', 'ertyu', 'rtyu@fghj.com', 'rtyu', 'ertyu', 0),
+(4, 'rtyu', 'ertyu', 'rtyu@fghj.com', 'rtyu', 'ertyu', 0),
+(5, 'zertyu', 'rtyuz', 'ertyui@GMAIIL.COM', 'rtyu', 'ertyu', 0);
 
 -- --------------------------------------------------------
 
@@ -121,7 +147,6 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Date_debut`, `Heure_fin`, `Prix_ticket`, `Nombre_tickets`, `Ville`, `Zip_code`, `Categorie_id`, `User_id`, `adress1`, `adress2`) VALUES
-(23, 'yassine', 'bbbbbbbbbbbbbbbbbbbbbbbbb', '660804bf8f800app-store.png', '00:15:00', '0000-00-00', '00:00:30', 14, 15, 'Melbourne', '3000', 1, 22, 'ddddddddddd', 'ddddddddddddd'),
 (24, 'soufiane', '3000', '660629a63676dBanned books-01.jpg', '00:15:00', '0000-00-00', '00:00:30', 0, 0, 'Victoria', 'Melbourne', 1, 6, 'kkkkkkkkkk', '3ewinaa'),
 (25, 'soufiane', '3000', '660629a63676dBanned books-01.jpg', '00:15:00', '0000-00-00', '00:00:30', 0, 0, 'Victoria', 'Melbourne', 1, 6, 'kkkkkkkkkk', '3ewinaa'),
 (26, 'soufianeeb', '3000', '66062d4f224bbBanned books-01.jpg', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'Victoria', 'Melbourne', 1, 10, 'narjisss', '3ewinaa'),
@@ -191,9 +216,8 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R_adresse`, `R_country`, `R_city`, `R_Zipcode`, `Ticket_id`) VALUES
-(3, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0),
-(5, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0),
-(6, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0);
+(6, 'John', 'yassine', 'ya saaaa', 'ghjk', '', 'hhh', '12', 0),
+(7, 'John', 'Doe', 'johndoe@example.com', 'jhkl', '', 'ghj', 'ghjkl:', 0);
 
 -- --------------------------------------------------------
 
@@ -232,10 +256,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U_telephone`, `U_adresse`, `U_dateNaissance`) VALUES
-(3, 'mchachti', 'yassine', 'soufiane@gmail.com', '$2y$10$GIs7G7DQlNcUn', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-12'),
-(4, 'mchachti', 'yassine', 'yassineabakhti@gmail.com', '$2y$10$9mshqDIPyeLXA', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-05'),
-(7, 'mchachti', 'yassine', 'yassineabakhti@gmail.com', '$2y$10$necLF9V.gLZL.uLAXc/HceB7LwCpr4CuOuqfowQ3Rx7daHjCFBx8G', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-11'),
-(9, 'mchachti', 'yassine', 'test@gmail.com', '$2y$10$VYBwIo0rAgx/oEgks6NMieufgOZYIlay8pj80/..auydk3I.Y/QF2', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-13');
+(9, 'yassine', 'mchachti', 'yassine@gmail.com', '$2y$10$VYBwIo0rAgx/oEgks6NMieufgOZYIlay8pj80/..auydk3I.Y/QF2', '062345678', 'NARJIS FES', '1991-06-13'),
+(10, 'test', 'zert', 'ffafafa@gmail.com', '$2y$10$kSmWy7qQGFgU03k1cCo7z.sHbmM0IAk.jRqZBpliXWbRrDA2pHJuq', 'ryu', 'ZERTY', '2024-03-20');
 
 --
 -- Indexes for dumped tables
@@ -252,6 +274,12 @@ ALTER TABLE `adminee`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`Categorie_id`);
+
+--
+-- Indexes for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`contact_id`);
 
 --
 -- Indexes for table `demande`
@@ -320,6 +348,12 @@ ALTER TABLE `categorie`
   MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
@@ -347,7 +381,7 @@ ALTER TABLE `reclamation`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `ticket`
@@ -359,7 +393,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

@@ -90,7 +90,7 @@ if(isset($_POST['submit'])){
 									</div>
 								</a>
 								<div class="app-top-right-link">
-									New to Barren?<a class="sidebar-register-link" href="sign_up.php">Sign up</a>
+									New to MoroccanJoy?<a class="sidebar-register-link" href="sign_up.php">Sign up</a>
 								</div>
 							</div>
 						</div>
@@ -98,7 +98,7 @@ if(isset($_POST['submit'])){
 							<div class="registration">
 								<?php echo $message?>
 								<form method="post">
-									<h2 class="registration-title">Sign in to Barren</h2>
+									<h2 class="registration-title">Sign in to MoroccanJoy</h2>
 									<div class="form-group mt-5">
 										<label class="form-label">Your Email*</label>
 										<input class="form-control h_50" type="email" name="email" placeholder="Enter your email" value="">																								
@@ -129,14 +129,14 @@ if(isset($_POST['submit'])){
 									</button>
 								</div>
 								<div class="new-sign-link">
-									New to Barren?<a class="signup-link" href="sign_up.php">Sign up</a>
+									New to MoroccanJoy?<a class="signup-link" href="sign_up.php">Sign up</a>
 								</div>
 							</div>							
 						</div>
 					</div>
 				</div>
 				<div class="copyright-footer">
-					© 2024, Barren. All rights reserved. Powered by Gambolthemes
+					© 2024, MoroccanJoy. All rights reserved. Powered by Gambolthemes
 				</div>
 			</div>			
 		</div>
