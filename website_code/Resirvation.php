@@ -85,7 +85,7 @@ session_start();
 	<!-- Verticale nav -->
 
 <!-- Body Start -->
-
+<form action="" method="post">
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
@@ -94,10 +94,13 @@ session_start();
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
 					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="">
+						<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs">
 						<i class="uil uil-search"></i>
 					</div>
 				</div>
+			</div>
+			<div class="ocard-right">
+				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="bbb">Search</button>
 			</div>
 		
 		</div>
@@ -124,6 +127,61 @@ session_start();
 							</thead>
 							<tbody>
 							<?php 
+							if(isset($_POST['bbb'])){
+								require_once "connect/DataBase.php";
+								$hh = $_POST['crs'];
+								$Reservations= $connection->query("SELECT * FROM reservation WHERE Reservation_id like '%$hh%' or R_Fname like '%$hh%' or R_Lname like '%$hh%' or R_adresse like '%$hh%' or R_country like '%$hh%' or R_city like '%$hh%' or R_Zipcode like '%$hh%' or Ticket_id like '%$hh%'")->fetchAll(PDO::FETCH_ASSOC);
+								foreach($Reservations as $Reservation){
+								
+
+								
+							?>
+							
+							<tr>
+									<td><?php echo $Reservation['Reservation_id']?></td>										
+									<td><?php echo $Reservation['R_Fname']?></td>	
+									<td><?php echo $Reservation['R_Lname']?></td>
+									<td><?php echo $Reservation['R_email']?></td>
+									<td><?php echo $Reservation['R_adresse']?></td>	
+                                    <td><?php echo $Reservation['R_country']?></td>	
+									<td><?php echo $Reservation['R_city']?></td>	
+                                    <td><?php echo $Reservation['R_Zipcode']?></td>	
+									<td><?php echo $Reservation['Ticket_id']?></td>	
+									<td><span class="action-btn "><a href="delete_Reservation.php?id=<?php echo $Reservation['Reservation_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $Reservation['R_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
+									<td><span class="action-btn"><a href="reservation_update.php?id=<?php echo $Reservation['Reservation_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+										
+								</tr>
+								<?php
+																		} 
+																	?>
+
+<?php
+							
+							
+							
+							
+							
+							}else{
+
+							
+							
+							
+							?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<?php 
 								require_once "connect/DataBase.php";
 						$Reservations= $connection->query('SELECT * FROM `reservation`')->fetchAll(PDO::FETCH_ASSOC);
 						foreach($Reservations as $Reservation){						
@@ -144,6 +202,9 @@ session_start();
 										
 								</tr>
 								<?php } ?>
+								<?php
+																		} 
+																	?>
 								
 							</tbody>									
 						</table>
@@ -153,6 +214,7 @@ session_start();
 		</div>
     </div>
 </div>
+</form>
 <!-- Body End -->
 
     <script src="js/vertical-responsive-menu.min.js"></script>

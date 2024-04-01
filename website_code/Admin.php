@@ -156,15 +156,24 @@
 	<div class="dashboard-wrap-content p-4">
 		<h5 class="mb-4">Listes des admins</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
+
 			<div class="dashboard-date-wrap">
+			<form action="Admin.php" method="post">
 				<div class="form-group">
 					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="">
+						<input class="form-control h_40" type="text" placeholder="Search by name" style=" display: inline-block;" value="" name="crs">
 						<i class="uil uil-search"></i>
 					</div>
+					<div class="ocard-right">
+				<button class="pe-4 ps-4 main-btn h_40 w-50 m-3" type="submit" name="bbb">Search</button>
+				
+			</div>
+			</form>
 				</div>
 			</div>
-            
+           
+				
+			
 			<div class="ocard-right">
 				<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Create</button>
 			</div>
@@ -188,6 +197,51 @@
 							</thead>
 							<tbody>
 							<?php 
+							if(isset($_POST['bbb'])){
+								require_once "connect/DataBase.php";
+								$hh = $_POST['crs'];
+								$demandes= $connection->query("SELECT * FROM adminee WHERE admin_id like '%$hh%' or A_email like '%$hh%'")->fetchAll(PDO::FETCH_ASSOC);
+								foreach($demandes as $demande){
+								
+
+								
+							?>
+<tr>										
+									<td><?php echo $demande['admin_id']?></td>	
+									<td><?php echo $demande['A_email']?></td>	
+                                  
+                                    <td><span class="action-btn "><a href="deleteAD.php?id=<?php echo $demande['admin_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $demande['A_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
+									
+									
+								</tr>
+
+
+								<?php
+																		} 
+																	?>
+
+<?php
+							
+							
+							
+							
+							
+						}else{
+
+						
+						
+						
+						?>
+
+
+
+
+
+
+
+
+
+							<?php 
 								require_once "connect/DataBase.php";
 						$demandes= $connection->query('SELECT * FROM `adminee`')->fetchAll(PDO::FETCH_ASSOC);
 						foreach($demandes as $demande){
@@ -206,6 +260,9 @@
 								<?php
 																		} 
 																	?>
+																	<?php
+																		} 
+																	?>
 								
 							</tbody>									
 						</table>
@@ -215,6 +272,8 @@
 		</div>
     </div>
 </div>
+
+
 <!-- Body End -->
     <script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery.min.js"></script>
