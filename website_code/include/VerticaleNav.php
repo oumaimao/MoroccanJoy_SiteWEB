@@ -43,6 +43,12 @@
 						</a>
 					</li>
 					<li class="menu--item">
+						<a href="Contact.php" class="menu--link" title="Subscription" data-bs-toggle="tooltip" data-bs-placement="right">
+							<i class="fa-solid fa-bahai menu--icon"></i>
+							<span class="menu--label">Contact us</span>
+						</a>
+					</li>
+					<li class="menu--item">
 						<a href="Demande.php" class="menu--link" title="Conversion Setup" data-bs-toggle="tooltip" data-bs-placement="right">
 							<i class="fa-solid fa-square-plus menu--icon"></i>
 							<span class="menu--label">Demande d'approuvement</span>

@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 			{ 
 		
 				$message = '<div class="alert alert-success" role="alert">
-								Donnée créée avec succès
+								Message envoyer
 							</div>';
 			}else{
 				$message = '<div class="alert alert-danger" role="alert">
@@ -98,7 +98,9 @@ if(isset($_POST['submit'])){
 							<p class="mb-0">Avez-vous des questions?Nous aimerions recevoir de vos nouvelles.</p>
 						</div>
 					</div>
+					
 					<div class="col-lg-10">
+					<?php echo $message ?>
 						<div class="main-card mt-5">
 							<div class="row">
 								<div class="col-xl-7 col-lg-12 col-md-12 order-lg-2">

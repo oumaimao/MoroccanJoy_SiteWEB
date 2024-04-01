@@ -12,7 +12,7 @@ session_start();
 		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 		<meta name="description" content="Gambolthemes">
 		<meta name="author" content="Gambolthemes">		
-		<title>Utilisateurs</title>
+		<title>Reclamation</title>
 		
 		<!-- Favicon Icon -->
 		<link rel="icon" type="image/png" href="images/fav.png">
@@ -37,8 +37,8 @@ session_start();
 		
 	</head>
     <body class="d-flex flex-column h-100">
-        
-		  
+         
+ 
     <header class="header">
 		<div class="header-inner">		
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">
@@ -51,7 +51,6 @@ session_start();
 						<span class="collapse_menu--label"></span>
 					</button>
 					
-					
 					<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.php">
 						<div class="res-main-logo">
 							<img src="images/logo-icon.svg" alt="">
@@ -62,12 +61,10 @@ session_start();
 						</div>
 					</a>
 					<div class="right-header order-2">
-						
                         <ul class="align-self-stretch">
                         <li>
-							
                        
-                        <div class="night_mode_switch__btn">
+						<div class="night_mode_switch__btn">
                             <div id="night-mode" class="fas fa-moon fa-sun"></div>
 							<li style="list-style: none;">
 								<a href="sign-out-admin.php" class="create-btn btn-hover">
@@ -75,12 +72,9 @@ session_start();
 								</a>
 							</li>
                         </div>
-						
                     </ul>
-                    </li>
+                    </li></div>
 					
-				</div>
-				
 				</div>
 			</nav>
 			<div class="overlay"></div>
@@ -94,12 +88,12 @@ session_start();
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Listes d'Utilisateurs </h5>
+		<h5 class="mb-4">Reclamation List</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
 					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs" >
+                        <input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs" >
 						<i class="uil uil-search"></i>
 					</div>
 				</div>
@@ -107,7 +101,6 @@ session_start();
 			<div class="ocard-right">
 				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
 			</div>
-			
 		</div>
 	</div>
 	<div class="tab-content">
@@ -119,39 +112,38 @@ session_start();
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">ID</th>
-									<th scope="col">Utilisateur</th>
-									<th scope="col">Prenom</th>
-									<th scope="col">Nom	</th>
+									<th scope="col">Contact Nom</th>
+                                    <th scope="col">Contact Prenom</th>
+                                    <th scope="col">Contact Phone</th>
 									<th scope="col">Email</th>
-									<th scope="col">Telephone</th>
-									<th scope="col">Adresse	</th>
-									<th scope="col">Date Naissance</th>
+									<th scope="col">Message	</th>
+									<th scope="col">User_ID</th>
 									<th scope="col" colspan="2">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
-							
-							<?php 
+                            <?php 
 							if(isset($_POST['sear'])){
 								require_once "connect/DataBase.php";
 								$sr = $_POST['crs'];
-								$demandes= $connection->query("SELECT * FROM user WHERE User_id like '%$sr%' or U_name like '%$sr%' or U_Prenom like '%$sr%' or U_email like '%$sr%' or U_telephone like '%$sr%' or U_adresse like '%$sr%' or U_dateNaissance like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
+								$demandes= $connection->query("SELECT * FROM contact_us WHERE contact_id like '%$sr%' or c_nom like '%$sr%' or c_prenom like '%$sr%' or c_phone like '%$sr%' or c_email like '%$sr%' or c_message like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
 								foreach($demandes as $demande){
 								
 
 								
 							?>
 								<tr>										
-									<td><?php echo $demande['User_id']?></td>	
-									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_name']?></td>	
-									<td><?php echo $demande['U_email']?></td>	
-									<td><?php echo $demande['U_telephone']?></td>	
-									<td><?php echo $demande['U_adresse']?></td>	
-									<td><?php echo $demande['U_dateNaissance']?>
-									<td><span class="action-btn "><a href="delete.php?id=<?php echo $demande['User_id']?>" onclick="return confirm('Vous-voulez suppremer <?php echo $demande['User_id']?>')" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
-									<td><span class="action-btn"><a href="#"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+                                <td><?php echo $demande['contact_id']?></td>	
+									<td><?php echo $demande['c_nom']?></td>	
+									<td><?php echo $demande['c_prenom']?></td>	
+									<td><?php echo $demande['c_phone']?></td>	
+									<td><?php echo $demande['c_email']?></td>	
+									<td><?php echo $demande['c_message']?></td>	
+									<td><?php echo $demande['user_id']?></td>
+                                    <td><span class="action-btn"><a  href="#" ><button class="btn btn-primary">Accepter</button></a>
+                                    <td><span class="action-btn"><a href="refuser_contact.php?id=<?php echo $demande['contact_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le contact de <?php echo $demande['c_email']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
+
+	
 								</tr>
 								<?php
 																		} 
@@ -173,23 +165,20 @@ session_start();
 
 							<?php 
 								require_once "connect/DataBase.php";
-						$demandes= $connection->query('SELECT * FROM `user`')->fetchAll(PDO::FETCH_ASSOC);
-						foreach($demandes as $demande){
-
-																		
-																	
+						$demandes= $connection->query('SELECT * FROM `contact_us`')->fetchAll(PDO::FETCH_ASSOC);
+						foreach($demandes as $demande){																											
 																	?>
 								<tr>										
-									<td><?php echo $demande['User_id']?></td>	
-									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_name']?></td>	
-									<td><?php echo $demande['U_email']?></td>	
-									<td><?php echo $demande['U_telephone']?></td>	
-									<td><?php echo $demande['U_adresse']?></td>	
-									<td><?php echo $demande['U_dateNaissance']?>
-									<td><span class="action-btn "><a href="delete.php?id=<?php echo $demande['User_id']?>" onclick="return confirm('Vous-voulez suppremer <?php echo $demande['User_id']?>')" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
-									<td><span class="action-btn"><a href="Utilisateur_update.php?id=<?php echo$demande['User_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+									<td><?php echo $demande['contact_id']?></td>	
+									<td><?php echo $demande['c_nom']?></td>	
+									<td><?php echo $demande['c_prenom']?></td>	
+									<td><?php echo $demande['c_phone']?></td>	
+									<td><?php echo $demande['c_email']?></td>	
+									<td><?php echo $demande['c_message']?></td>	
+									<td><?php echo $demande['user_id']?></td>	
+                                    <td><span class="action-btn"><a  href="#" ><button class="btn btn-primary">Accepter</button></a>
+                                    <td><span class="action-btn"><a href="refuser_contact.php?id=<?php echo $demande['contact_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le contact de <?php echo $demande['c_email']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
+
 
 								</tr>
 								<?php
