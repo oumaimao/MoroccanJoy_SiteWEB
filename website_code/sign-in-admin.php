@@ -15,7 +15,14 @@ $_SESSION['admin']=$email;
         $statement = $connection->prepare($sql);
         $statement->execute([':email' => $email]);
         $user = $statement->fetch(PDO::FETCH_ASSOC);
-		$decpass = password_verify($pass, $user['A_password']);
+		if(isset($user['A_password'])){
+			$decpass = password_verify($pass, $user['A_password']);
+		}else{
+			$message = '<div class="alert alert-danger" role="alert">
+						Cette utilisateur nexiste pas
+					</div>';		
+		}
+		
 
 		if ($user && $decpass){
 			

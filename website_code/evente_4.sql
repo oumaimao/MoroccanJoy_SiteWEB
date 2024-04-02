@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 05:28 AM
+-- Generation Time: Apr 03, 2024 at 12:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,7 +39,10 @@ CREATE TABLE `adminee` (
 
 INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
 (5, 'omaima@gmail.com', '$2y$10$uGZdIR1ZhXfSpd2J/LfqP.mGghFaH.oMOCUew0H5KULZzIfDQcZFK'),
-(7, 'test@gmail.com', '$2y$10$8b4ngU7KHiwm04ko4YJe1euDszEw0g93ED8NG1z2jn0L7vMMpZsN.');
+(8, 'soufiane@gmail.com', '$2y$10$2eee2wbhURDGfJnKR8C.5..4SYKZOsdR6o8yPTuRZKlx/RiJiWN52'),
+(9, 'yassine@gmail.com', '$2y$10$geZ/MWKar7o8uCTopBFIV.IzQEGLQDoec5bOy7H0VrKxX/Yt/LJ0O'),
+(10, 'aymane@gmail.com', '$2y$10$OSB3HOJFKVKUrOtGjQLocOHSp.eMIRa.YVpbysNd7LYM/VVRlhU/2'),
+(11, 'amine@gmail.com', '$2y$10$gque6Nxs2HwkUTFPllFTMeV2G8ebSpBq8egxE2K3KHvxJEopR5Otm');
 
 -- --------------------------------------------------------
 
@@ -84,7 +87,15 @@ INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_email`, `c_messa
 (2, 'retyu', 'rt', 'ertyui@GMAIIL.COM', '234567', 'esryul', 0),
 (3, 'rtyu', 'ertyu', 'rtyu@fghj.com', 'rtyu', 'ertyu', 0),
 (4, 'rtyu', 'ertyu', 'rtyu@fghj.com', 'rtyu', 'ertyu', 0),
-(5, 'zertyu', 'rtyuz', 'ertyui@GMAIIL.COM', 'rtyu', 'ertyu', 0);
+(5, 'zertyu', 'rtyuz', 'ertyui@GMAIIL.COM', 'rtyu', 'ertyu', 0),
+(6, 'ahmadi', 'yassine', 'ahmadi@gmail.com', '345678', 'AHLAN WA SAHLAN', 0),
+(7, 'zerty', 'sdf', 'zerty@dfg.com', 'gz', 'edf', 0),
+(8, 'zerty', 'sdf', 'zerty@dfg.com', 'gz', 'edf', 0),
+(9, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
+(10, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
+(11, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
+(12, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
+(13, 'zertyu', 'yassine', 'rtyu@fghj.com', 'rtyu', 'huiigui', 0);
 
 -- --------------------------------------------------------
 
@@ -116,7 +127,7 @@ CREATE TABLE `demande` (
 --
 
 INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `$N_tickts`) VALUES
-(28, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Australia', 'Victoria', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0);
+(32, 'gggs', '', 'szs', '', 'dddddddddddddd', '', 'szszs', '', '', 'szsz', '', '', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -163,7 +174,8 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (37, 'soufianeeb', '3000', '66062da051b28Banned books-01.jpg', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'Victoria', 'Melbourne', 1, 12, 'narjisss', '3ewinaa'),
 (38, 'soufianeeb', '3000', '66062e480ba94Banned books-01.jpg', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'Victoria', 'Melbourne', 1, 14, 'narjisss', '3ewinaa'),
 (39, '', '', '66097177b8689', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'Melbourne', '3000', 0, 24, '', ''),
-(40, 'tata', 'dfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghj', '66097498143e09665.png', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'fes', '3000', 1, 29, 'fes', 'narjiss');
+(40, 'tata', 'dfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghj', '66097498143e09665.png', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'fes', '3000', 1, 29, 'fes', 'narjiss'),
+(41, 'gggs', '', '', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '', 'szsz', NULL, 31, 'dddddddddddddd', '');
 
 -- --------------------------------------------------------
 
@@ -256,8 +268,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U_telephone`, `U_adresse`, `U_dateNaissance`) VALUES
-(9, 'yassine', 'mchachti', 'yassine@gmail.com', '$2y$10$VYBwIo0rAgx/oEgks6NMieufgOZYIlay8pj80/..auydk3I.Y/QF2', '062345678', 'NARJIS FES', '1991-06-13'),
-(10, 'test', 'zert', 'ffafafa@gmail.com', '$2y$10$kSmWy7qQGFgU03k1cCo7z.sHbmM0IAk.jRqZBpliXWbRrDA2pHJuq', 'ryu', 'ZERTY', '2024-03-20');
+(10, 'salim', 'test', 'ffafafa@gmail.com', '$2y$10$kSmWy7qQGFgU03k1cCo7z.sHbmM0IAk.jRqZBpliXWbRrDA2pHJuq', 'ryu', 'ZERTY', '2024-03-20');
 
 --
 -- Indexes for dumped tables
@@ -339,7 +350,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `adminee`
 --
 ALTER TABLE `adminee`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `categorie`
@@ -351,19 +362,19 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `image`
