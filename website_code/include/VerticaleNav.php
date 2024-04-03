@@ -60,6 +60,12 @@
 							<span class="menu--label">Adminstrateurs</span>
 						</a>
 					</li>
+					<li class="menu--item">
+						<a href="Archive.php" class="menu--link " title="About" data-bs-toggle="tooltip" data-bs-placement="right">
+							<i class="fa-solid fa-circle-info menu--icon"></i>
+							<span class="menu--label">Archive demande</span>
+						</a>
+					</li>
 					
 				</ul>
 			</div>

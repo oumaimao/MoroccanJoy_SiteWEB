@@ -11,4 +11,4 @@ $sqlState = $connection->prepare('SELECT * FROM demande WHERE event_id=?');
 
 $sqlstate=$connection->prepare('DELETE FROM demande WHERE event_id=?');
 $deletee=$sqlstate->execute([$id]);
-                header('location: Events.php');
+                header('location:Events.php');
