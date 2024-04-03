@@ -17,27 +17,26 @@ $_SESSION['admin']=$email;
         $user = $statement->fetch(PDO::FETCH_ASSOC);
 		if(isset($user['A_password'])){
 			$decpass = password_verify($pass, $user['A_password']);
-		}else{
-			$message = '<div class="alert alert-danger" role="alert">
-						Cette utilisateur nexiste pas
-					</div>';		
-		}
 		
-
-		if ($user && $decpass){
-			
-			header('location: Admin.php');
-			
-		}else{
-			$message = '<div class="alert alert-danger" role="alert">
-						Les informations est incorecte
-					</div>';
+				if ($user && $decpass){
 					
-		}
+					header('location: Admin.php');
+					
+				}else{
+					$message = '<div class="alert alert-danger" role="alert">
+								Les informations est incorecte
+							</div>';
+							
+				}
+		}else{
+				$message = '<div class="alert alert-danger" role="alert">
+								Cette utilisateur nexiste pas
+						</div>';		
+			}
 
 	}else{
 		$message = '<div class="alert alert-danger" role="alert">
-						Touts les chanpts sont obligatoir
+						Tous les chants sont obligatoir
 					</div>';
 	}
 }

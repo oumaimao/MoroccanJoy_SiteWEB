@@ -10,23 +10,30 @@ if(isset($_POST['submit'])){
         $statement = $connection->prepare($sql);
         $statement->execute([':email' => $email]);
         $user = $statement->fetch(PDO::FETCH_ASSOC);
-		$decpass = password_verify($pass, $user['U_password']);
-
-		if ($user && $decpass){
-			session_start();
-			$_SESSION['user'] = $user;
-			header('location: index.php');
-			
-		}else{
-			$message = '<div class="alert alert-danger" role="alert">
-						Les informations est incorecte
-					</div>';
-					
+		
+		if(isset($user['U_password'])){
+			$decpass = password_verify($pass, $user['U_password']);
+		
+	
+			if ($user && $decpass){
+				session_start();
+				$_SESSION['user'] = $user;
+				header('location: index.php');
+				
+			}else{
+					$message = '<div class="alert alert-danger" role="alert">
+										Les informations est incorecte
+								</div>';						
+				}
+		}else if(!isset($user['U_password']) && !isset($user['U_email'])){
+						$message = '<div class="alert alert-danger" role="alert">
+										Cette utilisateur nexiste pas
+									</div>';	
 		}
 
 	}else{
 		$message = '<div class="alert alert-danger" role="alert">
-						Touts les chanpts sont obligatoir
+						Tous les chants sont obligatoir
 					</div>';
 	}
 }

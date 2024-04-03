@@ -17,37 +17,51 @@ if(isset($_POST['submit'])){
 
 	if(!empty($email) && !empty($passw) && !empty($Confpassword) && !empty($firstname) && !empty($lastname) && !empty($phone) && !empty($bdate) && !empty($adresse)){
 		require 'connect/DataBase.php';
-		$sql = 'INSERT INTO user(U_name, U_Prenom, U_email, U_password, U_telephone, U_adresse, U_dateNaissance) VALUES(:nom, :prenom, :email, :pass, :phone, :adresse, :datenaissance)'; 
-		$statement = $connection->prepare($sql); 
-
-		if($passw === $Confpassword){
-
-			if($statement->execute([':nom'=> $lastname, ':prenom'=> $firstname, ':email'=> $email ,':pass'=> $hash, ':phone'=>$phone, ':adresse'=>$adresse, ':datenaissance'=>$bdate]))
-			{ 
 		
-				$message = '<div class="alert alert-success" role="alert">
-								Donnée créée avec succès
-							</div>';
-				echo '<script type="text/javascript">
-				setTimeout(function () {
-					window.location.href= \'sign_in.php\';
-				},1000);
-				</script>';
-			}else{
-				$message = '<div class="alert alert-danger" role="alert">
-								Essayer à nouveau
-							</div>';
+		$sqlcnx = 'SELECT U_email FROM `user` WHERE U_email = :email';
+        $statemail = $connection->prepare($sqlcnx);
+        $statemail->execute([':email' => $email]);
+        $useremail = $statemail->fetch(PDO::FETCH_ASSOC);
+
+
+		if(!isset($useremail['U_email'])){
+			
+			$sql = 'INSERT INTO user(U_name, U_Prenom, U_email, U_password, U_telephone, U_adresse, U_dateNaissance) VALUES(:nom, :prenom, :email, :pass, :phone, :adresse, :datenaissance)'; 
+			$statement = $connection->prepare($sql); 
+		
+				if($passw === $Confpassword){
+
+					if($statement->execute([':nom'=> $lastname, ':prenom'=> $firstname, ':email'=> $email ,':pass'=> $hash, ':phone'=>$phone, ':adresse'=>$adresse, ':datenaissance'=>$bdate]))
+					{ 
 				
-			}
+						$message = '<div class="alert alert-success" role="alert">
+										Donnée créée avec succès
+									</div>';
+						echo '<script type="text/javascript">
+						setTimeout(function () {
+							window.location.href= \'sign_in.php\';
+						},1000);
+						</script>';
+					}else{
+						$message = '<div class="alert alert-danger" role="alert">
+										Essayer à nouveau
+									</div>';
+						
+					}
+				}else{
+					$message = '<div class="alert alert-danger" role="alert">
+									Mot de passe est incorrecte
+									</div>';
+				}
 		}else{
 			$message = '<div class="alert alert-danger" role="alert">
-								Mot de passe est incorecte
-							</div>';
+							Cette utilisateur déjà existé
+					</div>';		
 		}
 	
  	}else{
 		$message = '<div class="alert alert-danger" role="alert">
-						Touts les chanpts sont obligatoir
+						Tous les chants sont obligatoir
 					</div>';
 		
 	}
