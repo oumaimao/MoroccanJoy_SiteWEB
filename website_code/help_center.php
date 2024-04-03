@@ -123,7 +123,7 @@ $namee = $_SESSION['user']['U_name'];
 							<i class="fa-solid fa-bars"></i>
 						</span>
 					</button>
-					<a class="navbar-brand d-flex align-center order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
+					<a class="navbar-brand d-flex align-center order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.php">
 						<div class="res-main-logo">
 							<img src="images/logo-icon.svg" alt="">
 						</div>
@@ -152,7 +152,7 @@ $namee = $_SESSION['user']['U_name'];
 							</div>
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.html">Acceuil</a>
+									<a class="nav-link active" aria-current="page" href="index.php">Acceuil</a>
 								</li>
 								
 							</ul>

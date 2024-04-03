@@ -1,6 +1,6 @@
 <header class="header">
 		<div class="header-inner">
-		<?php if(!$_SESSION['user']['U_name']){
+		<?php if(!$_SESSION['user']){
 						
 						
 						?>
