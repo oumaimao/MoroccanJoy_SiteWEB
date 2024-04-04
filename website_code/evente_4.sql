@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 03, 2024 at 12:26 AM
+-- Host: 127.0.0.1:3307
+-- Generation Time: Apr 04, 2024 at 02:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,11 +38,40 @@ CREATE TABLE `adminee` (
 --
 
 INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
+(2, 'soufiane@gmail.com', '$2y$10$T/LYr3e4ZBiZTBngIJ.fWuv'),
 (5, 'omaima@gmail.com', '$2y$10$uGZdIR1ZhXfSpd2J/LfqP.mGghFaH.oMOCUew0H5KULZzIfDQcZFK'),
-(8, 'soufiane@gmail.com', '$2y$10$2eee2wbhURDGfJnKR8C.5..4SYKZOsdR6o8yPTuRZKlx/RiJiWN52'),
-(9, 'yassine@gmail.com', '$2y$10$geZ/MWKar7o8uCTopBFIV.IzQEGLQDoec5bOy7H0VrKxX/Yt/LJ0O'),
-(10, 'aymane@gmail.com', '$2y$10$OSB3HOJFKVKUrOtGjQLocOHSp.eMIRa.YVpbysNd7LYM/VVRlhU/2'),
-(11, 'amine@gmail.com', '$2y$10$gque6Nxs2HwkUTFPllFTMeV2G8ebSpBq8egxE2K3KHvxJEopR5Otm');
+(7, 'test@gmail.com', '$2y$10$8b4ngU7KHiwm04ko4YJe1euDszEw0g93ED8NG1z2jn0L7vMMpZsN.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `archive_demande`
+--
+
+CREATE TABLE `archive_demande` (
+  `event_id` int(11) NOT NULL,
+  `n_event` varchar(100) NOT NULL,
+  `event_date` varchar(200) NOT NULL,
+  `event_time` varchar(200) NOT NULL,
+  `event_duration` varchar(200) NOT NULL,
+  `adress1` varchar(300) NOT NULL,
+  `adress2` varchar(300) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `zip` int(11) NOT NULL,
+  `description` varchar(400) NOT NULL,
+  `image` varchar(400) NOT NULL,
+  `gategorie` varchar(100) NOT NULL,
+  `P_tickts` int(255) NOT NULL,
+  `N_tickts` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `archive_demande`
+--
+
+INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`) VALUES
+(42, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -61,41 +90,6 @@ CREATE TABLE `categorie` (
 
 INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
 (1, 'art');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `contact_us`
---
-
-CREATE TABLE `contact_us` (
-  `contact_id` int(11) NOT NULL,
-  `c_nom` varchar(30) NOT NULL,
-  `c_prenom` varchar(30) NOT NULL,
-  `c_email` varchar(100) NOT NULL,
-  `c_message` varchar(300) NOT NULL,
-  `c_phone` varchar(30) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `contact_us`
---
-
-INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_email`, `c_message`, `c_phone`, `user_id`) VALUES
-(1, 'retyu', 'rt', 'ertyui@GMAIIL.COM', '234567', 'esryul', 0),
-(2, 'retyu', 'rt', 'ertyui@GMAIIL.COM', '234567', 'esryul', 0),
-(3, 'rtyu', 'ertyu', 'rtyu@fghj.com', 'rtyu', 'ertyu', 0),
-(4, 'rtyu', 'ertyu', 'rtyu@fghj.com', 'rtyu', 'ertyu', 0),
-(5, 'zertyu', 'rtyuz', 'ertyui@GMAIIL.COM', 'rtyu', 'ertyu', 0),
-(6, 'ahmadi', 'yassine', 'ahmadi@gmail.com', '345678', 'AHLAN WA SAHLAN', 0),
-(7, 'zerty', 'sdf', 'zerty@dfg.com', 'gz', 'edf', 0),
-(8, 'zerty', 'sdf', 'zerty@dfg.com', 'gz', 'edf', 0),
-(9, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
-(10, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
-(11, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
-(12, 'ahmadi', 'yassine', 'rtyu@fghj.com', '234567', 'jkoinlj,l,', 0),
-(13, 'zertyu', 'yassine', 'rtyu@fghj.com', 'rtyu', 'huiigui', 0);
 
 -- --------------------------------------------------------
 
@@ -127,7 +121,10 @@ CREATE TABLE `demande` (
 --
 
 INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `$N_tickts`) VALUES
-(32, 'gggs', '', 'szs', '', 'dddddddddddddd', '', 'szszs', '', '', 'szsz', '', '', NULL, 0, 0);
+(44, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
+(45, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
+(46, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
+(47, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -175,7 +172,16 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (38, 'soufianeeb', '3000', '66062e480ba94Banned books-01.jpg', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'Victoria', 'Melbourne', 1, 14, 'narjisss', '3ewinaa'),
 (39, '', '', '66097177b8689', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'Melbourne', '3000', 0, 24, '', ''),
 (40, 'tata', 'dfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghjdfghjkldfghj', '66097498143e09665.png', '10:00:00', '0000-00-00', '00:00:00', 0, 0, 'fes', '3000', 1, 29, 'fes', 'narjiss'),
-(41, 'gggs', '', '', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '', 'szsz', NULL, 31, 'dddddddddddddd', '');
+(41, 'ggagagag', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 31, 'etryui', 'erty'),
+(42, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(43, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(44, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(45, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(46, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(47, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(48, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(49, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
+(50, 'ggagagag', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 43, 'etryui', 'erty');
 
 -- --------------------------------------------------------
 
@@ -228,8 +234,8 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R_adresse`, `R_country`, `R_city`, `R_Zipcode`, `Ticket_id`) VALUES
-(6, 'John', 'yassine', 'ya saaaa', 'ghjk', '', 'hhh', '12', 0),
-(7, 'John', 'Doe', 'johndoe@example.com', 'jhkl', '', 'ghj', 'ghjkl:', 0);
+(5, 'Johnjk', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0),
+(6, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0);
 
 -- --------------------------------------------------------
 
@@ -268,7 +274,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U_telephone`, `U_adresse`, `U_dateNaissance`) VALUES
-(10, 'salim', 'test', 'ffafafa@gmail.com', '$2y$10$kSmWy7qQGFgU03k1cCo7z.sHbmM0IAk.jRqZBpliXWbRrDA2pHJuq', 'ryu', 'ZERTY', '2024-03-20');
+(4, 'mchachti', 'yassine', 'yassineabakhti@gmail.com', '$2y$10$9mshqDIPyeLXA', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-05'),
+(10, 'oumjli', 'soufiane', 'soufinaeonjli@gmail.com', '$2y$10$WhhkHM.XzesJO732deO85Odj0l6Oa17iD2bKl8U.TlR.jMdf6VmkG', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-13'),
+(11, 'oumjli', 'yassine', 'testt@gmail.com', '$2y$10$m1tKOGWIILs6n7o5fsN9HuSRCnQ8RWimj9DAfyOEO5LWozFHxWZHS', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-04-27');
 
 --
 -- Indexes for dumped tables
@@ -285,12 +293,6 @@ ALTER TABLE `adminee`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`Categorie_id`);
-
---
--- Indexes for table `contact_us`
---
-ALTER TABLE `contact_us`
-  ADD PRIMARY KEY (`contact_id`);
 
 --
 -- Indexes for table `demande`
@@ -350,7 +352,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `adminee`
 --
 ALTER TABLE `adminee`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `categorie`
@@ -359,22 +361,16 @@ ALTER TABLE `categorie`
   MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `contact_us`
---
-ALTER TABLE `contact_us`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `image`
@@ -392,7 +388,7 @@ ALTER TABLE `reclamation`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ticket`
@@ -404,7 +400,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
