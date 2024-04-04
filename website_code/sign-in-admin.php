@@ -96,9 +96,6 @@ $_SESSION['admin']=$email;
 										<img class="logo-inverse" src="images/dark-logo.svg" alt="">
 									</div>
 								</a>
-								<div class="app-top-right-link">
-									Nouveau sur MoroccanJoy?<a class="sidebar-register-link" href="sign_up.php">Inscris-Toi</a>
-								</div>
 							</div>
 						</div>
 						<div class="col-xl-5 col-lg-6 col-md-7">
@@ -116,8 +113,8 @@ $_SESSION['admin']=$email;
 											<a class="forgot-pass-link" href="forgot_password.html">Mot De Passe oublié?</a>
 										</div>
 										<div class="loc-group position-relative">
-											<input class="form-control h_50" type="password" name="pass"  placeholder="Enter your password">
-											<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+											<input class="form-control h_50" type="password" id="passw" name="pass"  placeholder="Enter your password">
+											<span class="pass-show-eye" onclick="pass()"><i class="fas fa-eye-slash" id="eye_slash"></i></span>
 										</div>
 									</div>
 									<button class="main-btn btn-hover w-100 mt-4" type="submit" name="submit">Se connecter <i class="fas fa-sign-in-alt ms-2"></i></button>
@@ -134,9 +131,6 @@ $_SESSION['admin']=$email;
 										<svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 27 27"><g transform="translate(0)"><circle cx="13.5" cy="13.5" r="13.5" transform="translate(0 0)" fill="#3b5998"></circle><path d="M851.461,383.684h-3.1c-1.841,0-3.889.735-3.889,3.266.009.882,0,1.727,0,2.678h-2.13v3.215h2.2V402.1h4.035v-9.316h2.663l.241-3.163H848.5s.007-1.407,0-1.816c0-1,1.1-.943,1.164-.943.522,0,1.538,0,1.8,0v-3.176Z" transform="translate(-833.401 -379.385)" fill="#fff"></path></g></svg>
 										Se connecter avec Facebook
 									</button>
-								</div>
-								<div class="new-sign-link">
-									Nouveau sur MoroccanJoy?<a class="signup-link" href="sign_up.php">Inscris-Toi</a>
 								</div>
 							</div>							
 						</div>
@@ -155,6 +149,9 @@ $_SESSION['admin']=$email;
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
+
+	<script src="js/password_signup.js"></script>
+
 
 </body>
 </html>

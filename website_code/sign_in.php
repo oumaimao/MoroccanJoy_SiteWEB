@@ -116,8 +116,8 @@ if(isset($_POST['submit'])){
 											<a class="forgot-pass-link" href="forgot_password.html">Forgot Password?</a>
 										</div>
 										<div class="loc-group position-relative">
-											<input class="form-control h_50" type="password" name="password"  placeholder="Enter your password">
-											<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+											<input class="form-control h_50" type="password" id="passw" name="password"  placeholder="Enter your password">
+											<span class="pass-show-eye" onclick="pass()"><i class="fas fa-eye-slash" id="eye_slash"></i></span>
 										</div>
 									</div>
 									<button class="main-btn btn-hover w-100 mt-4" type="submit" name="submit">Sign In <i class="fas fa-sign-in-alt ms-2"></i></button>
@@ -155,6 +155,8 @@ if(isset($_POST['submit'])){
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
+
+	<script src="js/password_signup.js"></script>
 
 </body>
 </html>

@@ -158,8 +158,8 @@ if(isset($_POST['submit'])){
 													<label class="form-label">Password*</label>
 												</div>
 												<div class="loc-group position-relative">
-													<input class="form-control h_50" type="password" name="password" placeholder="">
-													<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+													<input class="form-control h_50" type="password" id="passw" name="password" placeholder="">
+													<span class="pass-show-eye" onclick="pass()"><i class="fas fa-eye-slash" id="eye_slash"></i></span>
 												</div>
 											</div>
 										</div>
@@ -169,8 +169,8 @@ if(isset($_POST['submit'])){
 													<label class="form-label">Confirme Password*</label>
 												</div>
 												<div class="loc-group position-relative">
-													<input class="form-control h_50" type="password" name="Confpassword" placeholder="">
-													<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+												<input class="form-control h_50" type="password" id="conf_passw" name="password" placeholder="">
+													<span class="pass-show-eye" onclick="conf_pass()"><i class="fas fa-eye-slash" id="conf_eye_slash"></i></span>
 												</div>
 											</div>
 										</div>
@@ -219,6 +219,8 @@ if(isset($_POST['submit'])){
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
+	
+	<script src="js/password_signup.js"></script>
 
 </body>
 </html>
