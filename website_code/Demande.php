@@ -86,26 +86,27 @@ session_start();
 	<!-- Verticale nav -->
 
 <!-- Body Start -->
-<form action="" method="post">
+
 <div class="wrapper wrapper-body">
-    
-	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Demande liste d'événements</h5>
-		<div class="d-md-flex flex-wrap align-items-center">
-			<div class="dashboard-date-wrap">
-				<div class="form-group">
-					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs">
-						<i class="uil uil-search"></i>
+	<form action="" method="post">
+		<div class="dashboard-wrap-content p-4">
+			<h5 class="mb-4">Demande liste d'événements</h5>
+			<div class="d-md-flex flex-wrap align-items-center">
+				<div class="dashboard-date-wrap">
+					<div class="form-group">
+						<div class="relative-input position-relative">
+							<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs">
+							<i class="uil uil-search"></i>
+						</div>
 					</div>
 				</div>
+				<div class="ocard-right">
+					<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
+				</div>
+				
 			</div>
-			<div class="ocard-right">
-				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
-			</div>
-			
 		</div>
-	</div>
+	</form>
 	<div class="tab-content">
 		<div class="tab-pane fade active show" id="overview-tab" role="tabpanel">
 			<div class="table-card mt-4">
@@ -146,7 +147,7 @@ session_start();
 								
 							?>
 <tr>
-								<td><?php echo $demande['event_id']?></td>										
+								<td><?php echo $demande['User_id']?></td>										
 									<td><?php echo $demande['event_id']?></td>	
 									<td><?php echo $demande['n_event']?></td>
 									<td><?php echo $demande['description']?></td>
@@ -160,7 +161,7 @@ session_start();
 									<td><?php echo $demande['state']?></td>	
                                     <td><?php echo $demande['city']?></td>	
 									<td><?php echo $demande['zip']?></td>
-									<td><?php echo $demande['$N_tickts']?></td>	
+									<td><?php echo $demande['N_tickts']?></td>	
 									<td><?php echo $demande['P_tickts']?></td>	
                                     
                                     <td><?php echo $demande['gategorie']?></td>
@@ -186,21 +187,6 @@ session_start();
 							?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 							<?php 
 								require_once "connect/DataBase.php";
 						$demandes= $connection->query('SELECT * FROM `demande`')->fetchAll(PDO::FETCH_ASSOC);
@@ -210,7 +196,7 @@ session_start();
 																	
 																	?>
 								<tr>
-								<td><?php echo $demande['event_id']?></td>										
+								<td><?php echo $demande['User_id']?></td>										
 									<td><?php echo $demande['event_id']?></td>	
 									<td><?php echo $demande['n_event']?></td>
 									<td><?php echo $demande['description']?></td>
@@ -224,7 +210,7 @@ session_start();
 									<td><?php echo $demande['state']?></td>	
                                     <td><?php echo $demande['city']?></td>	
 									<td><?php echo $demande['zip']?></td>
-									<td><?php echo $demande['$N_tickts']?></td>	
+									<td><?php echo $demande['N_tickts']?></td>	
 									<td><?php echo $demande['P_tickts']?></td>	
                                     
                                     <td><?php echo $demande['gategorie']?></td>
@@ -246,7 +232,7 @@ session_start();
 		</div>
     </div>
 </div>
-</form>
+
 <!-- Body End -->
     <script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery.min.js"></script>
