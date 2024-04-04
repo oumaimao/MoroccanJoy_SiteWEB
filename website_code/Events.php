@@ -201,7 +201,7 @@ session_start();
 	<?php include 'include/VerticaleNav.php' ?>
 	<!-- Verticale nav -->
 <!-- Body Start -->
-
+<form action="" method="post">
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
@@ -210,13 +210,13 @@ session_start();
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
 					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="">
+						<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs">
 						<i class="uil uil-search"></i>
 					</div>
 				</div>
 			</div>
 			<div class="ocard-right">
-				<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Créer</button>
+				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
 			</div>
 		</div>
 	</div>
@@ -248,7 +248,66 @@ session_start();
 								</tr>
 							</thead>
 							<tbody>
-                            <?php 
+                          
+							<?php 
+							if(isset($_POST['sear'])){
+								require_once "connect/DataBase.php";
+								$sr = $_POST['crs'];
+								$demandes= $connection->query("SELECT * FROM event WHERE E_id like '%$sr%' or Titre like '%$sr%' or `Description` like '%$sr%' or Date_debut like '%$sr%' or Heure_debut like '%$sr%' or Heure_fin like '%$sr%' or Nombre_tickets like '%$sr%'or adress1 like '%$sr%' or adress2 like '%$sr%' or Ville like '%$sr%' or Zip_code like '%$sr%' or Categorie_id like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
+								foreach($demandes as $demande){
+								
+
+								
+							?>
+
+<tr>										
+                                <td><?php echo $demande['E_id']?></td>										
+									<td><?php echo $demande['E_id']?></td>	
+									<td><?php echo $demande['Titre']?></td>
+									<td><?php echo $demande['Description']?></td>
+									<td><?php echo $demande['Image']?></td>	
+                                    <td><?php echo $demande['Date_debut']?></td>	
+									<td><?php echo $demande['Heure_debut']?></td>	
+                                    <td><?php echo $demande['Heure_fin']?></td>	
+									<td><?php echo $demande['Nombre_tickets']?></td>	
+									<td><?php echo $demande['Prix_ticket']?></td>
+									<td><?php echo $demande['Ville']?></td>
+                                    <td><?php echo $demande['Zip_code']?></td>
+                                    <td><?php echo $demande['Categorie_id']?></td>
+                                    <td><?php echo $demande['adress1']?></td>
+                                    <td><?php echo $demande['adress2']?></td>
+										
+                                    <td><span class="action-btn "><a href="deleteevent.php?id=<?php echo $demande['E_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le eent <?php echo $demande['E_id']?>' );"><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
+									<td><span class="action-btn"><a href="event_update.php?id=<?php echo $demande['E_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>		
+								</tr>
+								<?php
+																		} 
+																	?>
+	<?php
+							
+							
+							
+							
+							
+						}else{
+
+						
+						
+						
+						?>
+
+
+
+
+
+
+
+
+
+
+
+
+							<?php 
 								require_once "connect/DataBase.php";
 						$demandes= $connection->query('SELECT * FROM `event`')->fetchAll(PDO::FETCH_ASSOC);
 						foreach($demandes as $demande){ ?>
@@ -276,7 +335,9 @@ session_start();
                                 <?php
 																		} 
 																	?>
-								
+									<?php
+																		} 
+																	?>
 							</tbody>									
 						</table>
 					</div>
@@ -285,6 +346,7 @@ session_start();
 		</div>
     </div>
 </div>
+</form>
 <!-- Body End -->
     <script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery.min.js"></script>

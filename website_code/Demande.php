@@ -86,7 +86,7 @@ session_start();
 	<!-- Verticale nav -->
 
 <!-- Body Start -->
-
+<form action="" method="post">
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
@@ -95,10 +95,13 @@ session_start();
 			<div class="dashboard-date-wrap">
 				<div class="form-group">
 					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="">
+						<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs">
 						<i class="uil uil-search"></i>
 					</div>
 				</div>
+			</div>
+			<div class="ocard-right">
+				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
 			</div>
 			
 		</div>
@@ -132,7 +135,73 @@ session_start();
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
+							<?php 
+							if(isset($_POST['sear'])){
+								require_once "connect/DataBase.php";
+								$sr = $_POST['crs'];
+								$demandes= $connection->query("SELECT * FROM demande WHERE event_id like '%$sr%' or n_event like '%$sr%' or P_tickts like '%$sr%' or zip like '%$sr%' or city like '%$sr%' or country like '%$sr%' or `description` like '%$sr%' or adress2 like '%$sr%' or event_duration like '%$sr%'  or event_date like '%$sr%' or event_time like '%$sr%' or adress1 like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
+								foreach($demandes as $demande){
+								
+
+								
+							?>
+<tr>
+								<td><?php echo $demande['event_id']?></td>										
+									<td><?php echo $demande['event_id']?></td>	
+									<td><?php echo $demande['n_event']?></td>
+									<td><?php echo $demande['description']?></td>
+									<td><?php echo $demande['image']?></td>	
+                                    <td><?php echo $demande['event_date']?></td>	
+									<td><?php echo $demande['event_time']?></td>	
+                                    <td><?php echo $demande['event_duration']?></td>	
+                                    <td><?php echo $demande['adress1']?></td>	
+									<td><?php echo $demande['adress2']?></td>	
+                                    <td><?php echo $demande['country']?></td>	
+									<td><?php echo $demande['state']?></td>	
+                                    <td><?php echo $demande['city']?></td>	
+									<td><?php echo $demande['zip']?></td>
+									<td><?php echo $demande['$N_tickts']?></td>	
+									<td><?php echo $demande['P_tickts']?></td>	
+                                    
+                                    <td><?php echo $demande['gategorie']?></td>
+                                    <td><span class="action-btn"><a  href="accepter_demande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Accepter</button></a><td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
+									
+										
+								</tr>
+
+								<?php
+																		} 
+																	?>
+							<?php
+							
+							
+							
+							
+							
+							}else{
+
+							
+							
+							
+							?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<?php 
 								require_once "connect/DataBase.php";
 						$demandes= $connection->query('SELECT * FROM `demande`')->fetchAll(PDO::FETCH_ASSOC);
 						foreach($demandes as $demande){
@@ -166,7 +235,9 @@ session_start();
 								<?php
 																		} 
 																	?>
-								
+								<?php
+																		} 
+																	?>
 							</tbody>									
 						</table>
 					</div>
@@ -175,6 +246,7 @@ session_start();
 		</div>
     </div>
 </div>
+</form>
 <!-- Body End -->
     <script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery.min.js"></script>
