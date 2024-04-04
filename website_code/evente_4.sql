@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Apr 04, 2024 at 02:17 AM
+-- Host: 127.0.0.1
+-- Generation Time: Apr 04, 2024 at 04:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,7 +71,10 @@ CREATE TABLE `archive_demande` (
 --
 
 INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`) VALUES
-(42, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0);
+(45, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0),
+(46, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0),
+(47, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0),
+(48, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -90,6 +93,36 @@ CREATE TABLE `categorie` (
 
 INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
 (1, 'art');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `contact_id` int(11) NOT NULL,
+  `c_nom` varchar(30) NOT NULL,
+  `c_prenom` varchar(30) NOT NULL,
+  `c_phone` varchar(30) NOT NULL,
+  `c_email` varchar(100) NOT NULL,
+  `c_message` varchar(500) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_phone`, `c_email`, `c_message`, `user_id`) VALUES
+(1, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(2, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(3, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(4, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(5, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(6, 'amine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(7, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(8, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11);
 
 -- --------------------------------------------------------
 
@@ -124,7 +157,11 @@ INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event
 (44, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
 (45, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
 (46, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(47, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0);
+(47, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
+(48, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
+(49, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
+(50, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
+(51, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -211,6 +248,60 @@ CREATE TABLE `reclamation` (
   `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `reclamation`
+--
+
+INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
+(23, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(24, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(25, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(26, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(27, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(29, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(30, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(31, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(32, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(33, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(34, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(35, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(36, 'aymane', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(37, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(38, 'ahmad', 'taha@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(39, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(40, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(41, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(42, 'ahmad', 'amine@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(43, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(44, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(56, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(63, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reclamation_archive`
+--
+
+CREATE TABLE `reclamation_archive` (
+  `Reclammation_id` int(11) NOT NULL,
+  `Contact_Name` varchar(30) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Subject` varchar(100) NOT NULL,
+  `Description` varchar(250) NOT NULL,
+  `User_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reclamation_archive`
+--
+
+INSERT INTO `reclamation_archive` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
+(47, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(48, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
+(51, 'yassine', 'yassine@gmail.com', 'WAAAAAAAAAAAAAAAA333333333', 'this a problm about testing database', 11),
+(54, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11);
+
 -- --------------------------------------------------------
 
 --
@@ -289,10 +380,22 @@ ALTER TABLE `adminee`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `archive_demande`
+--
+ALTER TABLE `archive_demande`
+  ADD PRIMARY KEY (`event_id`);
+
+--
 -- Indexes for table `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`Categorie_id`);
+
+--
+-- Indexes for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`contact_id`);
 
 --
 -- Indexes for table `demande`
@@ -322,6 +425,12 @@ ALTER TABLE `image`
 ALTER TABLE `reclamation`
   ADD PRIMARY KEY (`Reclammation_id`),
   ADD KEY `User_id` (`User_id`);
+
+--
+-- Indexes for table `reclamation_archive`
+--
+ALTER TABLE `reclamation_archive`
+  ADD PRIMARY KEY (`Reclammation_id`);
 
 --
 -- Indexes for table `reservation`
@@ -355,16 +464,28 @@ ALTER TABLE `adminee`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `archive_demande`
+--
+ALTER TABLE `archive_demande`
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
 -- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
   MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `event`
@@ -382,7 +503,13 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `reclamation`
 --
 ALTER TABLE `reclamation`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT for table `reclamation_archive`
+--
+ALTER TABLE `reclamation_archive`
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `reservation`

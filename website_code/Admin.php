@@ -206,12 +206,13 @@
 
 								
 							?>
-<tr>										
+								<tr>										
 									<td><?php echo $demande['admin_id']?></td>	
 									<td><?php echo $demande['A_email']?></td>	
                                   
-                                    <td><span class="action-btn "><a href="deleteAD.php?id=<?php echo $demande['admin_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $demande['A_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
-									
+                                    <td><span class="action-btn "><a href="deleteAD.php?id=<?php echo $demande['admin_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $demande['A_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
+									<td><span class="action-btn"><a href="Admin_update.php?id=<?php echo$demande['admin_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+
 									
 								</tr>
 
@@ -219,27 +220,12 @@
 								<?php
 																		} 
 																	?>
-
-<?php
+						<?php
 							
-							
-							
-							
-							
+						
 						}else{
-
-						
-						
-						
+		
 						?>
-
-
-
-
-
-
-
-
 
 							<?php 
 								require_once "connect/DataBase.php";
@@ -253,17 +239,17 @@
 									<td><?php echo $demande['admin_id']?></td>	
 									<td><?php echo $demande['A_email']?></td>	
                                   
-                                    <td><span class="action-btn "><a href="deleteAD.php?id=<?php echo $demande['admin_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $demande['A_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a><td><span class="action-btn"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></span></td></td>
+                                    <td><span class="action-btn "><a href="deleteAD.php?id=<?php echo $demande['admin_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $demande['A_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
+									<td><span class="action-btn"><a href="Admin_update.php?id=<?php echo$demande['admin_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
 									
 									
 								</tr>
 								<?php
-																		} 
-																	?>
-																	<?php
-																		} 
-																	?>
-								
+									} 
+								?>
+								<?php
+									} 
+								?>
 							</tbody>									
 						</table>
 					</div>

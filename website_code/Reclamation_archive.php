@@ -3,6 +3,7 @@ session_start();
 	if(!isset($_SESSION['admin'])){
 		header('location:sign-in-admin.php');
 	}
+    
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -84,7 +85,7 @@ session_start();
 	<?php include 'include/VerticaleNav.php' ?>
 	<!-- Verticale nav -->
 <!-- Body Start -->
-<form action="" method="post">
+<form method="post">
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
@@ -98,7 +99,7 @@ session_start();
 					</div>
 				</div>
 			</div>
-			<div class="ocard-right">
+            <div class="ocard-right">
 				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
 			</div>
 			
@@ -122,43 +123,18 @@ session_start();
 								</tr>
 							</thead>
 							<tbody>
-							<tbody>
-							<?php 
+                            <?php 
 							if(isset($_POST['sear'])){
 								require_once "connect/DataBase.php";
 								$sr = $_POST['crs'];
-								$reclamations= $connection->query("SELECT * FROM reclamation WHERE Reclammation_id like '%$sr%' or Contact_Name like '%$sr%' or Email like '%$sr%' or `Subject` like '%$sr%' or `Description` like '%$sr%' or User_id like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
-								foreach($reclamations as $reclam){
-
-							?>
-								<tr>										
-									<td><?php echo $reclam['Reclammation_id'];?></td>	
-									<td><?php echo $reclam['Contact_Name'];?></td>	
-									<td><?php echo $reclam['Email'];?></td>	
-									<td><?php echo $reclam['Subject'];?></td>	
-									<td><?php echo $reclam['Description'];?></td>	
-                                    <td><?php echo $reclam['User_id'];?></td>	
-									
-									
-                                    <td><span class="action-btn "><a href="Reclamation_delete.php?id=<?php echo $reclam['Reclammation_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le eent <?php echo $reclam['Email']?>' );"><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
-										
-								</tr>
-								<?php
-									} 
-								?>
-								
-								<?php
+								$reclamtions= $connection->query("SELECT * FROM `reclamation_archive` WHERE Reclammation_id like '%$sr%' or Contact_Name like '%$sr%' or Email like '%$sr%' or `Subject` like '%$sr%' or `Description` like '%$sr%' or User_id like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
 							
-							}else{
-
-								?>
-
-                                <?php
-                                    require_once "connect/DataBase.php";
-
-                                    $reclamations = $connection->query('SELECT * FROM `reclamation`')->fetchAll(PDO::FETCH_ASSOC);
-
-                                    foreach($reclamations as $reclam){
+							}
+                            else{
+                                require_once "connect/DataBase.php";
+                                $reclamtions = $connection->query('SELECT * FROM `reclamation_archive`')->fetchAll(PDO::FETCH_ASSOC);
+                            }
+                            foreach($reclamtions as $reclam){
   	
                                 ?>
 								<tr>										
@@ -168,19 +144,15 @@ session_start();
 									<td><?php echo $reclam['Subject'];?></td>	
 									<td><?php echo $reclam['Description'];?></td>	
                                     <td><?php echo $reclam['User_id'];?></td>	
-									
-									
-                                    <td><span class="action-btn "><a href="Reclamation_delete.php?id=<?php echo $reclam['Reclammation_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le eent <?php echo $reclam['Email']?>' );"><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
+
+                                    <td><span class="action-btn btn btn-primary"><a href="Reclamation_return.php?id=<?php echo $reclam['Reclammation_id']?>" >Return</a></span>
+                                    <td><span class="action-btn btn btn-danger" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $reclam['Email']?>');"><a href="Reclamation_archive_delete.php?id=<?php echo $reclam['Reclammation_id']?>">Supprimer</a></span></td>	
+
 										
 								</tr>
-								<?php
-																		} 
-																	?>
-																	<?php
-																		} 
-																	?>
-							</tbody>	
-								
+                                <?php
+                                    } 
+                                ?>
 							</tbody>									
 						</table>
 					</div>
@@ -189,7 +161,7 @@ session_start();
 		</div>
     </div>
 </div>
-</form>
+<form>
 <!-- Body End -->
 
     <script src="js/vertical-responsive-menu.min.js"></script>
