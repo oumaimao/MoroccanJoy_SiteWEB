@@ -115,7 +115,7 @@ session_start();
 								<tr>
 									<th scope="col">Reclamation ID</th>
 									<th scope="col" class="w-50">Email</th>
-									<th scope="col" colspan="2" class="w-25">Opération</th>
+									<th scope="col" colspan="2">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
