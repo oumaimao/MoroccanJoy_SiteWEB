@@ -113,13 +113,10 @@ session_start();
 						<table class="table">
 							<thead class="thead-dark">
 								<tr>
-									<th scope="col">ID</th>
-									<th scope="col">Contact Name</th>
+									<th scope="col">Reclamation ID</th>
 									<th scope="col">Email</th>
-									<th scope="col">Subject	</th>
-									<th scope="col">Description</th>
-									<th scope="col">User_ID</th>
-									<th scope="col" colspan="2">Opération</th>
+
+									<th scope="col" colspan="3" class="w-25">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -139,12 +136,10 @@ session_start();
                                 ?>
 								<tr>										
 									<td><?php echo $reclam['Reclammation_id'];?></td>	
-									<td><?php echo $reclam['Contact_Name'];?></td>	
 									<td><?php echo $reclam['Email'];?></td>	
-									<td><?php echo $reclam['Subject'];?></td>	
-									<td><?php echo $reclam['Description'];?></td>	
-                                    <td><?php echo $reclam['User_id'];?></td>	
 
+
+									<td><span class="action-btn btn btn-primary"><a href="Reclamation_archive_detaille.php?id=<?php echo $reclam['Reclammation_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn btn btn-primary"><a href="Reclamation_return.php?id=<?php echo $reclam['Reclammation_id']?>" >Return</a></span>
                                     <td><span class="action-btn btn btn-danger" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $reclam['Email']?>');"><a href="Reclamation_archive_delete.php?id=<?php echo $reclam['Reclammation_id']?>">Supprimer</a></span></td>	
 

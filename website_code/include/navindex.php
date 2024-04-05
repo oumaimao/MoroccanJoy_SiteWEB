@@ -1,11 +1,11 @@
 <header class="header">
-		<div class="header-inner">
-		<?php if(!$_SESSION['user']){
-						
-						
-						?>
+	<div class="header-inner">
+		<?php if (!$_SESSION['user']) {
+
+
+		?>
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
-				<div class="container-fluid ">	
+				<div class="container-fluid ">
 					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 						<span class="navbar-toggler-icon">
 							<i class="fa-solid fa-bars"></i>
@@ -30,14 +30,7 @@
 							</button>
 						</div>
 						<div class="offcanvas-body">
-							<div class="offcanvas-top-area">
-								<div class="create-bg">
-									<a href="create.php" class="offcanvas-create-btn">
-										<i class="fa-solid fa-calendar-days"></i>
-										<span>Créer un évènement</span>
-									</a>
-								</div>
-							</div>							
+
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
 									<a class="nav-link active" aria-current="page" href="index.php">Acceuil</a>
@@ -47,7 +40,7 @@
 										Nos évènements
 									</a>
 								</li>
-								
+
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Support
@@ -58,7 +51,7 @@
 										<li><a class="dropdown-item" href="contact_us.php">Contactez-nous</a></li>
 									</ul>
 								</li>
-								
+
 							</ul>
 						</div>
 						<div class="offcanvas-footer">
@@ -74,7 +67,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 					<div class="right-header order-2">
 						<ul class="align-self-stretch">
 							<li>
@@ -100,15 +93,15 @@
 							</li>
 						</ul>
 					</div>
-					
+
 				</div>
 			</nav>
-			<?php }else{ 
+		<?php } else {
 
-$emaill = $_SESSION['user']['U_email'];
-$namee = $_SESSION['user']['U_name'];
-  ?>
-				<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">
+			$emaill = $_SESSION['user']['U_email'];
+			$namee = $_SESSION['user']['U_name'];
+		?>
+			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">
 				<div class="container">
 					<button class="navbar-toggler order-3 ms-2 pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 						<span class="navbar-toggler-icon">
@@ -134,14 +127,7 @@ $namee = $_SESSION['user']['U_name'];
 							</button>
 						</div>
 						<div class="offcanvas-body">
-							<div class="offcanvas-top-area">
-								<div class="create-bg">
-									<a href="create_venue_event.php" class="offcanvas-create-btn">
-										<i class="fa-solid fa-calendar-days"></i>
-										<span>Créer un évènement</span>
-									</a>
-								</div>
-							</div>
+
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
 									<a class="nav-link" href="index.php">
@@ -160,22 +146,22 @@ $namee = $_SESSION['user']['U_name'];
 								<h5>Suivez-nous</h5>
 								<ul class="social-links">
 									<li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
-									</li><li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-									</li><li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-									</li><li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-									</li><li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-								</li></ul>
+									</li>
+									<li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+									</li>
+									<li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+									</li>
+									<li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+									</li>
+									<li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="right-header order-2">
 						<ul class="align-self-stretch">
-							<li>
-								<a href="create_venue_event.php" class="create-btn btn-hover">
-									<i class="fa-solid fa-calendar-days"></i>
-									<span>Créer un évènement</span>
-								</a>
-							</li>
+
 							<li class="dropdown account-dropdown order-3">
 								<a href="#" class="account-link" role="button" id="accountClick" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
 									<img src="images/profile-imgs/img-13.jpg" alt="">
@@ -192,8 +178,8 @@ $namee = $_SESSION['user']['U_name'];
 										</div>
 									</li>
 									<li class="profile-link">
-										<a href="organiser_profile_view.php" class="link-item">Mon profil</a>									
-										<a href="logout.php" class="link-item">Se déconnecter</a>									
+										<a href="organiser_profile_view.php" class="link-item">Mon profil</a>
+										<a href="logout.php" class="link-item">Se déconnecter</a>
 									</li>
 								</ul>
 							</li>
@@ -206,7 +192,7 @@ $namee = $_SESSION['user']['U_name'];
 					</div>
 				</div>
 			</nav>
-			<?php }?>
-			<div class="overlay"></div>
-		</div>
-	</header>
+		<?php } ?>
+		<div class="overlay"></div>
+	</div>
+</header>

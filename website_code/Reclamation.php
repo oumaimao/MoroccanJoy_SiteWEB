@@ -113,7 +113,7 @@ session_start();
 						<table class="table">
 							<thead class="thead-dark">
 								<tr>
-									<th scope="col">ID</th>
+									<th scope="col">Reclamation ID</th>
 									<th scope="col" class="w-50">Email</th>
 									<th scope="col" colspan="2" class="w-25">Opération</th>
 								</tr>

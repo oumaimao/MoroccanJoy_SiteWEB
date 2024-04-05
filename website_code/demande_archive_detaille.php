@@ -1,7 +1,7 @@
 <?php
 require_once "connect/DataBase.php";
 
-$sqlstate = $connection->prepare('SELECT * FROM `demande` WHERE event_id=?');
+$sqlstate = $connection->prepare('SELECT * FROM `archive_demande` WHERE event_id=?');
 $id = $_GET['id'];
 $sqlstate->execute([$id]);
 
@@ -152,7 +152,7 @@ $data = $sqlstate->fetch(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                         <div class="container step-footer step-tab-pager mt-4">
-                            <a href="Demande.php"><button type="button" class="main-btn min-width btn-hover h_40" style="color:black;">Retourner</button></a>
+                            <a href="archive.php"><button type="button" class="main-btn min-width btn-hover h_40" style="color:black;">Retourner</button></a>
                         </div>
                     </div>
 

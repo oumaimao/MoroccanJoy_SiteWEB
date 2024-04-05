@@ -111,14 +111,9 @@ session_start();
 						<table class="table">
 							<thead class="thead-dark">
 								<tr>
-									<th scope="col">ID</th>
-									<th scope="col">Contact Nom</th>
-                                    <th scope="col">Contact Prenom</th>
-                                    <th scope="col">Contact Phone</th>
+									<th scope="col">Contact ID</th>
 									<th scope="col">Email</th>
-									<th scope="col">Message	</th>
-									<th scope="col">User_ID</th>
-									<th scope="col" colspan="2">Opération</th>
+									<th scope="col" colspan="3" class="w-25">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -133,13 +128,10 @@ session_start();
 								
 							?>
 								<tr>										
-                                <td><?php echo $demande['contact_id']?></td>	
-									<td><?php echo $demande['c_nom']?></td>	
-									<td><?php echo $demande['c_prenom']?></td>	
-									<td><?php echo $demande['c_phone']?></td>	
+                                <td><?php echo $demande['contact_id']?></td>		
 									<td><?php echo $demande['c_email']?></td>	
-									<td><?php echo $demande['c_message']?></td>	
-									<td><?php echo $demande['user_id']?></td>
+
+									<td><span class="action-btn btn btn-primary"><a href="Contact_detaille.php?id=<?php echo $demande['contact_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn"><a  href="#" ><button class="btn btn-primary">Accepter</button></a>
                                     <td><span class="action-btn"><a href="refuser_contact.php?id=<?php echo $demande['contact_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le contact de <?php echo $demande['c_email']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
 
@@ -170,12 +162,10 @@ session_start();
 																	?>
 								<tr>										
 									<td><?php echo $demande['contact_id']?></td>	
-									<td><?php echo $demande['c_nom']?></td>	
-									<td><?php echo $demande['c_prenom']?></td>	
-									<td><?php echo $demande['c_phone']?></td>	
 									<td><?php echo $demande['c_email']?></td>	
-									<td><?php echo $demande['c_message']?></td>	
-									<td><?php echo $demande['user_id']?></td>	
+
+
+									<td><span class="action-btn btn btn-primary"><a href="Contact_detaille.php?id=<?php echo $demande['contact_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn"><a  href="#" ><button class="btn btn-primary">Accepter</button></a>
                                     <td><span class="action-btn"><a href="refuser_contact.php?id=<?php echo $demande['contact_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le contact de <?php echo $demande['c_email']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
 

@@ -117,22 +117,9 @@ session_start();
 								<tr>
                                     <th scope="col">User_ID</th>
 									<th scope="col">ID</th>
-									<th scope="col">Titre</th>
-                                    <th scope="col">Description</th>
-									<th scope="col">image</th>
-                                    <th scope="col">event_date</th>
-									<th scope="col">event_time</th>
-                                    <th scope="col">event_duration</th>
-									<th scope="col" >adress1</th>
-									<th scope="col" >adress2</th>
-									<th scope="col" >country</th>
-									<th scope="col" >state</th>
-									<th scope="col" >city</th>
-									<th scope="col" >zip</th>
-									<th scope="col" >categorie</th>
-									<th scope="col" >N_tickts</th>
-									<th scope="col" >P_tickts</th>
-									<th scope="col" colspan="3">Opération</th>
+									<th scope="col" >Titre</th>
+
+									<th scope="col" colspan="3" class="w-25">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -150,21 +137,7 @@ session_start();
 								<td><?php echo $demande['User_id']?></td>										
 									<td><?php echo $demande['event_id']?></td>	
 									<td><?php echo $demande['n_event']?></td>
-									<td><?php echo $demande['description']?></td>
-									<td><?php echo $demande['image']?></td>	
-                                    <td><?php echo $demande['event_date']?></td>	
-									<td><?php echo $demande['event_time']?></td>	
-                                    <td><?php echo $demande['event_duration']?></td>	
-                                    <td><?php echo $demande['adress1']?></td>	
-									<td><?php echo $demande['adress2']?></td>	
-                                    <td><?php echo $demande['country']?></td>	
-									<td><?php echo $demande['state']?></td>	
-                                    <td><?php echo $demande['city']?></td>	
-									<td><?php echo $demande['zip']?></td>
-									<td><?php echo $demande['N_tickts']?></td>	
-									<td><?php echo $demande['P_tickts']?></td>	
-                                    
-                                    <td><?php echo $demande['gategorie']?></td>
+
 									<td><span class="action-btn btn btn-primary"><a href="demande_detaille.php?id=<?php echo $demande['event_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn"><a  href="accepter_demande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Accepter</button></a><td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
 									
@@ -200,20 +173,7 @@ session_start();
 								<td><?php echo $demande['User_id']?></td>										
 									<td><?php echo $demande['event_id']?></td>	
 									<td><?php echo $demande['n_event']?></td>
-									<td><?php echo $demande['description']?></td>
-									<td><?php echo $demande['image']?></td>	
-                                    <td><?php echo $demande['event_date']?></td>	
-									<td><?php echo $demande['event_time']?></td>	
-                                    <td><?php echo $demande['event_duration']?></td>	
-                                    <td><?php echo $demande['adress1']?></td>	
-									<td><?php echo $demande['adress2']?></td>	
-                                    <td><?php echo $demande['country']?></td>	
-									<td><?php echo $demande['state']?></td>	
-                                    <td><?php echo $demande['city']?></td>	
-									<td><?php echo $demande['zip']?></td>
-									<td><?php echo $demande['N_tickts']?></td>	
-									<td><?php echo $demande['P_tickts']?></td>	
-                                    <td><?php echo $demande['gategorie']?></td>
+
 									<td><span class="action-btn btn btn-primary"><a href="demande_detaille.php?id=<?php echo $demande['event_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn"><a  href="accepter_demande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Accepter</button></a>
 									<td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	

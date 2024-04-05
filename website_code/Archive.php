@@ -119,7 +119,7 @@ session_start();
 									<th scope="col">ID</th>
 									<th scope="col">Titre</th>
                                   
-									<th scope="col" colspan="3">Opération</th>
+									<th scope="col" colspan="3" class="w-25">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -143,6 +143,7 @@ session_start();
 									<td><?php echo $demande['event_id']?></td>	
 									<td><?php echo $demande['n_event']?></td>
 									
+									<td><span class="action-btn btn btn-primary"><a href="demande_archive_detaille.php?id=<?php echo $demande['event_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn"><a  href="returntodemande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Return</button></a><td><span class="action-btn"><a href="demande_archive_suprimer.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Supprimer</button></a></span></td></td>	
 									
                                 <?php
