@@ -90,7 +90,7 @@ session_start();
 <div class="wrapper wrapper-body">
 	<form action="" method="post">
 		<div class="dashboard-wrap-content p-4">
-			<h5 class="mb-4">Evénements demandés</h5>
+			<h5 class="mb-4">Demande liste d'événements</h5>
 			<div class="d-md-flex flex-wrap align-items-center">
 				<div class="dashboard-date-wrap">
 					<div class="form-group">
@@ -101,7 +101,7 @@ session_start();
 					</div>
 				</div>
 				<div class="ocard-right">
-					<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Chercher</button>
+					<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
 				</div>
 				
 			</div>
@@ -165,6 +165,7 @@ session_start();
 									<td><?php echo $demande['P_tickts']?></td>	
                                     
                                     <td><?php echo $demande['gategorie']?></td>
+									<td><span class="action-btn btn btn-primary"><a href="demande_detaille.php?id=<?php echo $demande['event_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn"><a  href="accepter_demande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Accepter</button></a><td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
 									
 										
@@ -213,7 +214,7 @@ session_start();
 									<td><?php echo $demande['N_tickts']?></td>	
 									<td><?php echo $demande['P_tickts']?></td>	
                                     <td><?php echo $demande['gategorie']?></td>
-
+									<td><span class="action-btn btn btn-primary"><a href="demande_detaille.php?id=<?php echo $demande['event_id']?>" >Détaille</a></span></td>
                                     <td><span class="action-btn"><a  href="accepter_demande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Accepter</button></a>
 									<td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Refuser</button></a></span></td></td>	
 									

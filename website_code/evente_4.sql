@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2024 at 04:14 AM
+-- Generation Time: Apr 05, 2024 at 04:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -245,8 +245,9 @@ CREATE TABLE `reclamation` (
 --
 
 INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
-(72, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12),
-(73, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12);
+(87, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12),
+(88, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12),
+(89, 'yassine', 'yassine@gmail.com', 'WAAAAAAAAAAAAAAAA333333333', 'this a problm about testing database', 10);
 
 -- --------------------------------------------------------
 
@@ -262,14 +263,6 @@ CREATE TABLE `reclamation_archive` (
   `Description` varchar(250) NOT NULL,
   `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `reclamation_archive`
---
-
-INSERT INTO `reclamation_archive` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
-(61, 'yassine', 'yassine@gmail.com', 'WAAAAAAAAAAAAAAAA333333333', 'this a problm about testing database', 11),
-(64, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12);
 
 -- --------------------------------------------------------
 
@@ -478,13 +471,13 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `reclamation`
 --
 ALTER TABLE `reclamation`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `reclamation_archive`
 --
 ALTER TABLE `reclamation_archive`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `reservation`
