@@ -90,10 +90,11 @@ session_start();
 	<?php include 'include/VerticaleNav.php' ?>
 	<!-- Verticale nav -->
 <!-- Body Start -->
-<form action="" method="post">
+
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
+		<form action="" method="post">
 		<h5 class="mb-4">Listes d'Utilisateurs </h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
@@ -109,6 +110,7 @@ session_start();
 			</div>
 			
 		</div>
+		</form>
 	</div>
 	<div class="tab-content">
 		<div class="tab-pane fade active show" id="overview-tab" role="tabpanel">
@@ -120,13 +122,8 @@ session_start();
 								<tr>
 									<th scope="col">ID</th>
 									<th scope="col">Utilisateur</th>
-									<th scope="col">Prenom</th>
-									<th scope="col">Nom	</th>
 									<th scope="col">Email</th>
-									<th scope="col">Telephone</th>
-									<th scope="col">Adresse	</th>
-									<th scope="col">Date Naissance</th>
-									<th scope="col" colspan="2">Opération</th>
+									<th scope="col" colspan="3">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -143,15 +140,12 @@ session_start();
 							?>
 								<tr>										
 									<td><?php echo $demande['User_id']?></td>	
-									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_name']?></td>	
+									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>		
 									<td><?php echo $demande['U_email']?></td>	
-									<td><?php echo $demande['U_telephone']?></td>	
-									<td><?php echo $demande['U_adresse']?></td>	
-									<td><?php echo $demande['U_dateNaissance']?>
+									
+									<td><span class="action-btn btn btn-primary"><a href="Utilisateur_detaille.php.php?id=<?php echo $demande['User_id']?>" >Détaille</a></span></td>
 									<td><span class="action-btn "><a href="delete.php?id=<?php echo $demande['User_id']?>" onclick="return confirm('Vous-voulez suppremer <?php echo $demande['User_id']?>')" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
-									<td><span class="action-btn"><a href="#"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
+									<td><span class="action-btn"><a href="Utilisateur_update.php?id=<?php echo$demande['User_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
 								</tr>
 								<?php
 																		} 
@@ -181,13 +175,11 @@ session_start();
 																	?>
 								<tr>										
 									<td><?php echo $demande['User_id']?></td>	
-									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_Prenom']?></td>	
-									<td><?php echo $demande['U_name']?></td>	
+									<td><?php echo $demande['U_name'] .' '.$demande['U_Prenom']?></td>		
 									<td><?php echo $demande['U_email']?></td>	
-									<td><?php echo $demande['U_telephone']?></td>	
-									<td><?php echo $demande['U_adresse']?></td>	
-									<td><?php echo $demande['U_dateNaissance']?>
+
+
+									<td><span class="action-btn btn btn-primary"><a href="Utilisateur_detaille.php?id=<?php echo $demande['User_id']?>" >Détaille</a></span></td>
 									<td><span class="action-btn "><a href="delete.php?id=<?php echo $demande['User_id']?>" onclick="return confirm('Vous-voulez suppremer <?php echo $demande['User_id']?>')" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
 									<td><span class="action-btn"><a href="Utilisateur_update.php?id=<?php echo$demande['User_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
 
@@ -207,7 +199,7 @@ session_start();
 		</div>
     </div>
 </div>
-</form>
+
 <!-- Body End -->
 
     <script src="js/vertical-responsive-menu.min.js"></script>

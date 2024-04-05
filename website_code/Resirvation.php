@@ -85,10 +85,11 @@ session_start();
 	<!-- Verticale nav -->
 
 <!-- Body Start -->
-<form action="" method="post">
+
 <div class="wrapper wrapper-body">
     
 	<div class="dashboard-wrap-content p-4">
+		<form action="" method="post">
 		<h5 class="mb-4">Liste de réservation</h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 			<div class="dashboard-date-wrap">
@@ -104,6 +105,7 @@ session_start();
 			</div>
 		
 		</div>
+		</form>
 	</div>
 	<div class="tab-content">
 		<div class="tab-pane fade active show" id="overview-tab" role="tabpanel">
@@ -114,15 +116,8 @@ session_start();
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">ID</th>
-									<th scope="col">Prenom</th>
-									<th scope="col">Nom</th>
-									<th scope="col">Email	</th>
-									<th scope="col">Adresse</th>
-									<th scope="col">Country</th>
-									<th scope="col">City	</th>
-									<th scope="col">zip_code</th>
-									<th scope="col">Ticket_ID</th>
-									<th scope="col" colspan="2">Opération</th>
+									<th scope="col" class="w-50">Email</th>
+									<th scope="col" colspan="3" class="w-25">Opération</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -139,14 +134,10 @@ session_start();
 							
 							<tr>
 									<td><?php echo $Reservation['Reservation_id']?></td>										
-									<td><?php echo $Reservation['R_Fname']?></td>	
-									<td><?php echo $Reservation['R_Lname']?></td>
 									<td><?php echo $Reservation['R_email']?></td>
-									<td><?php echo $Reservation['R_adresse']?></td>	
-                                    <td><?php echo $Reservation['R_country']?></td>	
-									<td><?php echo $Reservation['R_city']?></td>	
-                                    <td><?php echo $Reservation['R_Zipcode']?></td>	
-									<td><?php echo $Reservation['Ticket_id']?></td>	
+
+
+									<td><span class="action-btn btn btn-primary"><a href="reservation_detaille.php?id=<?php echo $Reservation['Reservation_id']?>" >Détaille</a></span></td>
 									<td><span class="action-btn "><a href="delete_Reservation.php?id=<?php echo $Reservation['Reservation_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $Reservation['R_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
 									<td><span class="action-btn"><a href="reservation_update.php?id=<?php echo $Reservation['Reservation_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
 										
@@ -189,14 +180,10 @@ session_start();
 																	?>
 								<tr>
 									<td><?php echo $Reservation['Reservation_id']?></td>										
-									<td><?php echo $Reservation['R_Fname']?></td>	
-									<td><?php echo $Reservation['R_Lname']?></td>
 									<td><?php echo $Reservation['R_email']?></td>
-									<td><?php echo $Reservation['R_adresse']?></td>	
-                                    <td><?php echo $Reservation['R_country']?></td>	
-									<td><?php echo $Reservation['R_city']?></td>	
-                                    <td><?php echo $Reservation['R_Zipcode']?></td>	
-									<td><?php echo $Reservation['Ticket_id']?></td>	
+
+
+									<td><span class="action-btn btn btn-primary"><a href="reservation_detaille.php?id=<?php echo $Reservation['Reservation_id']?>" >Détaille</a></span></td>
 									<td><span class="action-btn "><a href="delete_Reservation.php?id=<?php echo $Reservation['Reservation_id']?>" onclick= "return confirm( 'Voulez vous vraiment supprimer le admin <?php echo $Reservation['R_email']?>' );" ><i class="fa-solid fa-trash-can " style="color: red;"></i></a>
 									<td><span class="action-btn"><a href="reservation_update.php?id=<?php echo $Reservation['Reservation_id']?>"><i class="fa-solid fa-pen-to-square" style="color: blue;"></i></a></span></td></td>
 										
@@ -214,7 +201,7 @@ session_start();
 		</div>
     </div>
 </div>
-</form>
+
 <!-- Body End -->
 
     <script src="js/vertical-responsive-menu.min.js"></script>

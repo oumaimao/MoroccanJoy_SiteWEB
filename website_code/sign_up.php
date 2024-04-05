@@ -169,8 +169,7 @@ if(isset($_POST['submit'])){
 													<label class="form-label">Confirmer le mot de passe*</label>
 												</div>
 												<div class="loc-group position-relative">
-												<input class="form-control h_50" type="password" id="conf_passw" name="password" placeholder="">
-													<span class="pass-show-eye" onclick="conf_pass()"><i class="fas fa-eye-slash" id="conf_eye_slash"></i></span>
+												<input class="form-control h_50" type="password" id="conf_passw" name="Confpassword" placeholder="">													<span class="pass-show-eye" onclick="conf_pass()"><i class="fas fa-eye-slash" id="conf_eye_slash"></i></span>
 												</div>
 											</div>
 										</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2024 at 04:37 AM
+-- Generation Time: Apr 05, 2024 at 04:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,9 +38,10 @@ CREATE TABLE `adminee` (
 --
 
 INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
-(2, 'soufiane@gmail.com', '$2y$10$T/LYr3e4ZBiZTBngIJ.fWuv'),
 (5, 'omaima@gmail.com', '$2y$10$uGZdIR1ZhXfSpd2J/LfqP.mGghFaH.oMOCUew0H5KULZzIfDQcZFK'),
-(7, 'test@gmail.com', '$2y$10$8b4ngU7KHiwm04ko4YJe1euDszEw0g93ED8NG1z2jn0L7vMMpZsN.');
+(7, 'test@gmail.com', '$2y$10$8b4ngU7KHiwm04ko4YJe1euDszEw0g93ED8NG1z2jn0L7vMMpZsN.'),
+(9, 'soufiane@gmail.com', '$2y$10$YOf6GvalMhQHO1iHagXJl.9nBmdrc3SMBCkRGsfJgGiUS8o46xe1S'),
+(10, 'aymane@gmail.com', '$2y$10$NZYGFABob3T9Gq719J32POoT4.ulCN8AlgGemeHhMIqG/DBT2sifS');
 
 -- --------------------------------------------------------
 
@@ -63,18 +64,9 @@ CREATE TABLE `archive_demande` (
   `image` varchar(400) NOT NULL,
   `gategorie` varchar(100) NOT NULL,
   `P_tickts` int(255) NOT NULL,
-  `N_tickts` int(255) NOT NULL
+  `N_tickts` int(255) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `archive_demande`
---
-
-INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`) VALUES
-(45, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0),
-(46, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0),
-(47, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0),
-(48, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 3000, 'zertyuioertyu', '66097451e005c6202.png', '1', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -122,7 +114,8 @@ INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_phone`, `c_email
 (5, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
 (6, 'amine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
 (7, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
-(8, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11);
+(8, 'yassine', 'yoss', '06123456', 'yass@gmail.com', 'this message is for you please helpe me', 11),
+(9, 'ahmadi', 'hamid', 'this a message for nothing', 'hamid@gmail.com', '023456789', 0);
 
 -- --------------------------------------------------------
 
@@ -146,22 +139,16 @@ CREATE TABLE `demande` (
   `image` varchar(250) NOT NULL,
   `gategorie` int(11) DEFAULT NULL,
   `P_tickts` int(11) NOT NULL,
-  `$N_tickts` int(11) NOT NULL
+  `N_tickts` int(11) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `demande`
 --
 
-INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `$N_tickts`) VALUES
-(44, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(45, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(46, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(47, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(48, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(49, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(50, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0),
-(51, 'ggagagag', '03/07/2024', '00:30', '45', 'etryui', 'erty', 'Melbourne', 'Melbourne', 'Melbourne', '3000', 'zertyuioertyu', '66097451e005c6202.png', 1, 0, 0);
+INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`, `User_id`) VALUES
+(66, 'moroco event', '05/04/2024', '00:30', '45', 'fes moroco', 'narjis hay lala mina', 'fes', 'fes', 'fes', '30060', 'this a test descritionthis a test descritionthis a test descritionthis a test descritionthis a test descritionthis a test descritionthis a test descrition', '660f256cbc4462359.png', 1, 100, 120, 12);
 
 -- --------------------------------------------------------
 
@@ -218,7 +205,12 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (47, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
 (48, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
 (49, '03/07/2024', '00:30', '45', '00:00:00', '0000-00-00', '00:00:00', 0, 0, '3000', 'zertyuioertyu', 2147483647, 1, '0', '0'),
-(50, 'ggagagag', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 43, 'etryui', 'erty');
+(50, 'ggagagag', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 43, 'etryui', 'erty'),
+(51, 'ggagagag', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 47, 'etryui', 'erty'),
+(52, 'yassine', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 48, 'etryui', 'erty'),
+(53, 'amine', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 53, 'etryui', 'erty'),
+(54, 'ggagagag', 'zertyuioertyu', '66097451e005c6202.png', '00:30:00', '0000-00-00', '00:00:45', 0, 0, 'Melbourne', '3000', 1, 51, 'etryui', 'erty'),
+(59, 'test', 'zertzertzertzertzertzertzertzertzertzertzert', '660f4461b6de31.PNG', '00:45:00', '0000-00-00', '00:00:00', 20, 120, 'Melbourne', '3000', 1, 12, 'fes', 'hahahahahah');
 
 -- --------------------------------------------------------
 
@@ -253,29 +245,8 @@ CREATE TABLE `reclamation` (
 --
 
 INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
-(23, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(24, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(25, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(26, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(27, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(29, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(30, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(31, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(32, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(33, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(34, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(35, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(36, 'aymane', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(37, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(38, 'ahmad', 'taha@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(39, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(40, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(41, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(42, 'ahmad', 'amine@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(43, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(44, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(56, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(63, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11);
+(72, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12),
+(73, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12);
 
 -- --------------------------------------------------------
 
@@ -297,10 +268,8 @@ CREATE TABLE `reclamation_archive` (
 --
 
 INSERT INTO `reclamation_archive` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
-(47, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(48, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11),
-(51, 'yassine', 'yassine@gmail.com', 'WAAAAAAAAAAAAAAAA333333333', 'this a problm about testing database', 11),
-(54, 'ahmad', 'ahmad@gmail.com', 'testing a roblem', 'this a problm about testing database', 11);
+(61, 'yassine', 'yassine@gmail.com', 'WAAAAAAAAAAAAAAAA333333333', 'this a problm about testing database', 11),
+(64, 'yassine', 'soufiane@gmail.com', 'this is a test', 'a test description', 12);
 
 -- --------------------------------------------------------
 
@@ -317,16 +286,20 @@ CREATE TABLE `reservation` (
   `R_country` varchar(30) NOT NULL,
   `R_city` varchar(30) NOT NULL,
   `R_Zipcode` varchar(20) NOT NULL,
-  `Ticket_id` int(11) NOT NULL
+  `Ticket_id` int(11) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R_adresse`, `R_country`, `R_city`, `R_Zipcode`, `Ticket_id`) VALUES
-(5, 'Johnjk', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0),
-(6, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0);
+INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R_adresse`, `R_country`, `R_city`, `R_Zipcode`, `Ticket_id`, `User_id`) VALUES
+(5, 'Johnjk', 'Doe', 'johndoe@example.com', 'zertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyui', 'Austria', 'melbourn', '12', 0, 11),
+(6, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 2),
+(7, 'John', 'Doe', 'johndoe@example.com', 'ZERTY', '', 'fhgjh', '13000', 0, 12),
+(8, 'John', 'Doe', 'johndoe@example.com', 'deded', 'Algeria', 'dee', 'ded', 0, 3),
+(9, 'John', 'Doe', 'johndoe@example.com', 'deded', 'Algeria', 'dee', 'ded', 0, 6);
 
 -- --------------------------------------------------------
 
@@ -365,9 +338,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U_telephone`, `U_adresse`, `U_dateNaissance`) VALUES
-(4, 'mchachti', 'yassine', 'yassineabakhti@gmail.com', '$2y$10$9mshqDIPyeLXA', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-05'),
-(10, 'oumjli', 'soufiane', 'soufinaeonjli@gmail.com', '$2y$10$WhhkHM.XzesJO732deO85Odj0l6Oa17iD2bKl8U.TlR.jMdf6VmkG', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-13'),
-(11, 'oumjli', 'yassine', 'testt@gmail.com', '$2y$10$m1tKOGWIILs6n7o5fsN9HuSRCnQ8RWimj9DAfyOEO5LWozFHxWZHS', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-04-27');
+(10, 'tata', 'oumjli', 'soufinaeonjli@gmail.com', '$2y$10$WhhkHM.XzesJO732deO85Odj0l6Oa17iD2bKl8U.TlR.jMdf6VmkG', '1111111111132', 'hhhhhhhhhhhhhhhhhhh', '2024-03-13'),
+(12, 'oumaima', 'ouenjli', 'oumaima@gmail.com', '$2y$10$8lq/iqYQiayjsViD/E.kSuMl3P5PsKsrUX0ZQ0UyBV6fhhmtfQL0e', '062345678', 'this is a test adresse ', '1999-04-26'),
+(13, 'ertyu', 'soufiane', 'soufiane@gmail.com', '$2y$10$yka8wmqVUzPaw1rfltGG/.d2qqvCSINcs.WM/IWEaHU400t71703W', 'ryu', 'zerty', '2024-04-16');
 
 --
 -- Indexes for dumped tables
@@ -383,7 +356,8 @@ ALTER TABLE `adminee`
 -- Indexes for table `archive_demande`
 --
 ALTER TABLE `archive_demande`
-  ADD PRIMARY KEY (`event_id`);
+  ADD PRIMARY KEY (`event_id`),
+  ADD KEY `User_id` (`User_id`);
 
 --
 -- Indexes for table `categorie`
@@ -402,7 +376,8 @@ ALTER TABLE `contact_us`
 --
 ALTER TABLE `demande`
   ADD PRIMARY KEY (`event_id`),
-  ADD KEY `gategorie` (`gategorie`);
+  ADD KEY `gategorie` (`gategorie`),
+  ADD KEY `User_id` (`User_id`);
 
 --
 -- Indexes for table `event`
@@ -461,13 +436,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `adminee`
 --
 ALTER TABLE `adminee`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `archive_demande`
 --
 ALTER TABLE `archive_demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `categorie`
@@ -479,19 +454,19 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `image`
@@ -503,19 +478,19 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `reclamation`
 --
 ALTER TABLE `reclamation`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `reclamation_archive`
 --
 ALTER TABLE `reclamation_archive`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ticket`
@@ -527,11 +502,23 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `archive_demande`
+--
+ALTER TABLE `archive_demande`
+  ADD CONSTRAINT `archive_demande_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `demande`
+--
+ALTER TABLE `demande`
+  ADD CONSTRAINT `demande_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image`
