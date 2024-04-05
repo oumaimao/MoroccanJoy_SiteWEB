@@ -90,7 +90,7 @@ session_start();
 <div class="wrapper wrapper-body">
 	<form action="" method="post">
 		<div class="dashboard-wrap-content p-4">
-			<h5 class="mb-4">Demande liste d'événements</h5>
+			<h5 class="mb-4">Evénements demandés</h5>
 			<div class="d-md-flex flex-wrap align-items-center">
 				<div class="dashboard-date-wrap">
 					<div class="form-group">
@@ -101,7 +101,7 @@ session_start();
 					</div>
 				</div>
 				<div class="ocard-right">
-					<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
+					<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Chercher</button>
 				</div>
 				
 			</div>

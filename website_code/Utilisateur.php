@@ -106,7 +106,7 @@ session_start();
 				</div>
 			</div>
 			<div class="ocard-right">
-				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
+				<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Chercher</button>
 			</div>
 			
 		</div>
