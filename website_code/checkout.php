@@ -1,5 +1,8 @@
 ﻿<?php
-include "include/nav_session.php";
+session_start();
+if(!isset($_SESSION['admin'])){
+	header('location:sign-in-admin.php');
+}
 
 $message = '';
 if(isset($_POST['submit'])){
@@ -20,7 +23,7 @@ if(isset($_POST['submit'])){
 			$message = '<div class="alert alert-success" role="alert">
 								Donnée créée avec succès
 							</div>';
-			header('location: booking_confirmed.php');
+			header('location:booking_confirmed.php');
 			
 		}else{
 			$message = '<div class="alert alert-danger" role="alert">
@@ -72,7 +75,7 @@ if(isset($_POST['submit'])){
 
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
-
+	<?php include "include/navindex.php"; ?>
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">

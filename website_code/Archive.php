@@ -88,21 +88,25 @@ session_start();
 <!-- Body Start -->
 
 <div class="wrapper wrapper-body">
-    
-	<div class="dashboard-wrap-content p-4">
-		<h5 class="mb-4">Archive Demande liste d'événements</h5>
-		<div class="d-md-flex flex-wrap align-items-center">
-			<div class="dashboard-date-wrap">
-				<div class="form-group">
-					<div class="relative-input position-relative">
-						<input class="form-control h_40" type="text" placeholder="Search by name" value="">
-						<i class="uil uil-search"></i>
+	<form action="" method="post">
+		<div class="dashboard-wrap-content p-4">
+			<h5 class="mb-4">Archive Demande liste d'événements</h5>
+			<div class="d-md-flex flex-wrap align-items-center">
+				<div class="dashboard-date-wrap">
+					<div class="form-group">
+						<div class="relative-input position-relative">
+							<input class="form-control h_40" type="text" placeholder="Search by name" value="" name="crs">
+							<i class="uil uil-search"></i>
+						</div>
 					</div>
+				</div>
+				<div class="ocard-right">
+					<button class="pe-4 ps-4 main-btn h_40 w-100" type="submit" name="sear">Search</button>
 				</div>
 			</div>
 			
 		</div>
-	</div>
+	</form>
 	<div class="tab-content">
 		<div class="tab-pane fade active show" id="overview-tab" role="tabpanel">
 			<div class="table-card mt-4">
@@ -119,28 +123,31 @@ session_start();
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
+							<?php 
+							if(isset($_POST['sear'])){
 								require_once "connect/DataBase.php";
-						$demandes= $connection->query('SELECT * FROM `archive_demande`')->fetchAll(PDO::FETCH_ASSOC);
-						foreach($demandes as $demande){
-
-																		
-																	
-																	?>
+								$sr = $_POST['crs'];
+								$demandes= $connection->query("SELECT * FROM `archive_demande` WHERE event_id like '%$sr%' or User_id like '%$sr%' or n_event like '%$sr%'")->fetchAll(PDO::FETCH_ASSOC);
+							
+							}
+                            else{
+                                require_once "connect/DataBase.php";
+								$demandes= $connection->query('SELECT * FROM `archive_demande`')->fetchAll(PDO::FETCH_ASSOC);
+						
+                            }
+								foreach($demandes as $demande){
+  	
+                                ?>
 								<tr>
-								<td><?php echo $demande['event_id']?></td>										
+								<td><?php echo $demande['User_id']?></td>										
 									<td><?php echo $demande['event_id']?></td>	
 									<td><?php echo $demande['n_event']?></td>
 									
+                                    <td><span class="action-btn"><a  href="returntodemande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Return</button></a><td><span class="action-btn"><a href="demande_archive_suprimer.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Supprimer</button></a></span></td></td>	
 									
-            
-                                    <td><span class="action-btn"><a  href="returntodemande.php?id=<?php echo $demande['event_id']?>" ><button class="btn btn-primary">Return</button></a><td><span class="action-btn"><a href="refuser.php?id=<?php echo $demande['event_id']?>" onclick= "return confirm( 'Voulez vous vraiment Refuser le event <?php echo $demande['n_event']?>' );"><button class="btn btn-danger">Supprimer</button></a></span></td></td>	
-									
-										
-								</tr>
-								<?php
-																		} 
-																	?>
+                                <?php
+                                    } 
+                                ?>
 								
 							</tbody>									
 						</table>

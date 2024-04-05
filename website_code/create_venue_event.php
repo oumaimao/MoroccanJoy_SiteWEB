@@ -25,6 +25,7 @@
         $arr=$_POST['arr'];
 		$N_tickts=$_POST['N_tickts'];
         $P_tickts=$_POST['P_tickts'];
+		$user_id = $_SESSION['user']['User_id'];
 		$filename="";
 		
 		if(isset($_FILES['image'])){
@@ -35,8 +36,8 @@
 			
 	
 		}
-	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")){
-        $sql->execute([$event_name,$datee,$timee,$Duration,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie,$P_tickts,$N_tickts]);
+	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")){
+        $sql->execute([$event_name,$datee,$timee,$Duration,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie,$P_tickts,$N_tickts,$user_id]);
 		$chk=True;
 	
 	

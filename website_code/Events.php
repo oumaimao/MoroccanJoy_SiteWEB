@@ -261,7 +261,7 @@ session_start();
 							?>
 
 <tr>										
-                                <td><?php echo $demande['E_id']?></td>										
+                                <td><?php echo $demande['User_id']?></td>										
 									<td><?php echo $demande['E_id']?></td>	
 									<td><?php echo $demande['Titre']?></td>
 									<td><?php echo $demande['Description']?></td>
@@ -313,7 +313,7 @@ session_start();
 						foreach($demandes as $demande){ ?>
 
 								<tr>										
-                                <td><?php echo $demande['E_id']?></td>										
+                                <td><?php echo $demande['User_id']?></td>										
 									<td><?php echo $demande['E_id']?></td>	
 									<td><?php echo $demande['Titre']?></td>
 									<td><?php echo $demande['Description']?></td>
