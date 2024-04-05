@@ -40,10 +40,10 @@
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Découvrir nouveaux évènement
+										Nos évènements
 									</a>
 									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="explore_events.html">Découvrir nouveaux évènement</a></li>
+										<li><a class="dropdown-item" href="explore_events.html">Nos évènement</a></li>
 										<li><a class="dropdown-item" href="venue_event_detail_view.html">Vue détaillée Surplace </a></li>
 										<li><a class="dropdown-item" href="online_event_detail_view.html">Vue détaillée en ligne</a></li>
 									</ul>
@@ -80,7 +80,7 @@
 							<li>
 								<a href="create_venue_event.php" class="create-btn btn-hover">
 									<i class="fa-solid fa-calendar-days"></i>
-									<span>Creer un évènement</span>
+									<span>Créer un évènement</span>
 								</a>
 							</li>
 							<li class="dropdown account-dropdown">

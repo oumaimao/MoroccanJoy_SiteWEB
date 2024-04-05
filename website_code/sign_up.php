@@ -107,7 +107,7 @@ if(isset($_POST['submit'])){
 					<img src="images/sign-logo.svg" alt="">
 				</div>
 				<div class="sign_sidebar_text">
-					<h1>The Easiest Way to Create Events and Sell More Tickets Online</h1>
+					<h1>Le site-web le plus simple de créer des événements et de vendre des billets en ligne</h1>
 				</div>
 			</div>
 			<div class="app-form-content">
@@ -122,7 +122,7 @@ if(isset($_POST['submit'])){
 									</div>
 								</a>
 								<div class="app-top-right-link">
-									Already have an account?<a class="sidebar-register-link" href="sign_in.php">Sign In</a>
+								Avez-vous déjà un compte ?<a class="sidebar-register-link" href="sign_in.php">Connectez-vous</a>
 								</div>
 							</div>
 						</div>
@@ -132,30 +132,30 @@ if(isset($_POST['submit'])){
 									<?php echo $message?>
 							
 								<form method="post">
-									<h2 class="registration-title">Sign up to MoroccanJoy</h2>
+									<h2 class="registration-title">S'inscrire sur MoroccanJoy</h2>
 									<div class="row mt-3">
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">First Name*</label>
+												<label class="form-label">Nom*</label>
 												<input class="form-control h_50" type="text" name="firstname" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Last Name*</label>
+												<label class="form-label">Prénom*</label>
 												<input class="form-control h_50" type="text" name="lastname" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Your Email*</label>
+												<label class="form-label">Email*</label>
 												<input class="form-control h_50" type="email" name="email" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">	
 											<div class="form-group mt-4">
 												<div class="field-password">
-													<label class="form-label">Password*</label>
+													<label class="form-label">Mot De Passe*</label>
 												</div>
 												<div class="loc-group position-relative">
 													<input class="form-control h_50" type="password" id="passw" name="password" placeholder="">
@@ -166,7 +166,7 @@ if(isset($_POST['submit'])){
 										<div class="col-lg-12 col-md-12">	
 											<div class="form-group mt-4">
 												<div class="field-password">
-													<label class="form-label">Confirme Password*</label>
+													<label class="form-label">Confirmer le mot de passe*</label>
 												</div>
 												<div class="loc-group position-relative">
 												<input class="form-control h_50" type="password" id="conf_passw" name="password" placeholder="">
@@ -176,24 +176,24 @@ if(isset($_POST['submit'])){
 										</div>
 										<div class="col-lg-12 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Your Adresse*</label>
+												<label class="form-label">Adresse*</label>
 												<input class="form-control h_50" type="text" name="adresse" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Your Phone*</label>
+												<label class="form-label">Téléphone*</label>
 												<input class="form-control h_50" type="text" name="Phone" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">
 											<div class="form-group mt-4">
-												<label class="form-label">Your Birthdate*</label>
+												<label class="form-label">Date de Naissance*</label>
 												<input class="form-control h_50" type="date" name="Bdate" placeholder="" value="">																								
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12">		
-											<button class="main-btn btn-hover w-100 mt-4" name="submit" type="submit">Sign Up</button>
+											<button class="main-btn btn-hover w-100 mt-4" name="submit" type="submit">S'inscrire</button>
 										</div>
 									</div>
 								</form>
@@ -202,7 +202,7 @@ if(isset($_POST['submit'])){
 								</div>								
 								
 								<div class="new-sign-link">
-									Already have an account?<a class="signup-link" href="sign_in.php">Sign In</a>
+								        Avez-vous déjà un compte?<a class="signup-link" href="sign_in.php">Connectez-vous</a>
 								</div>
 							</div>							
 						</div>

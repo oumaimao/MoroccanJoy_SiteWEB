@@ -172,7 +172,7 @@ if(isset($_POST['modifier'])){
 							</div>
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label mt-3 fs-6">Date de debut*</label>																
+                            <label class="form-label mt-3 fs-6">Date de début*</label>																
                             <div class="loc-group position-relative">
                                 <input class="form-control datepicker-here" data-language="en" type="text" placeholder="MM/DD/YYYY" value="<?php echo $data['Date_debut']; ?>" name="date">
                                 <span class="absolute-icon"><i class="fa-solid fa-calendar-days"></i></span>
@@ -180,7 +180,7 @@ if(isset($_POST['modifier'])){
                         </div>
                         <div class="col-md-6">
                                 <div class="clock-icon">
-                                    <label class="form-label mt-3 fs-6">Heure de debut</label>	
+                                    <label class="form-label mt-3 fs-6">Heure de début</label>	
                                     <select class="selectpicker" data-size="5" data-live-search="true" name="time">
                                         <option value="00:00"><?php echo $data['Heure_debut']; ?></option>
                                         <option value="00:00">12:00 AM</option>
@@ -283,7 +283,7 @@ if(isset($_POST['modifier'])){
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label mt-3 Z">Duration</label>	
+                                <label class="form-label mt-3 Z">Durée</label>	
                                 <select class="selectpicker" data-size="5" data-live-search="true" name="Duration">
                                     <option value="15"><?php echo $data['Heure_fin']; ?></option>
                                     <option value="15">15m</option>
@@ -329,7 +329,7 @@ if(isset($_POST['modifier'])){
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group mt-4">
-                                <label class="form-label fs-16">Modifier la categorie pour l'event*</label>
+                                <label class="form-label fs-16">Modifier la categorie pour l'évènement*</label>
                                 <select class="selectpicker " data-selected-text-format="count > 4"  title="Select category" data-live-search="true" name="categorie">
                                     <option value="15"><?php echo $data['Categorie_id']; ?></option>
 

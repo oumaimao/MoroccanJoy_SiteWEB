@@ -51,7 +51,7 @@
 									<div class="col-lg-5 col-md-12">
 										<div class="form-group search-category">
 											<select class="selectpicker" data-width="100%" data-size="5">
-												<option value="browse_all" data-icon="fa-solid fa-tower-broadcast" selected>Parcourir tout</option>
+												<option value="browse_all" data-icon="fa-solid fa-tower-broadcast" selected>Voir tout</option>
 												<option value="online_events" data-icon="fa-solid fa-video">Événements en ligne</option>
 												<option value="venue_events" data-icon="fa-solid fa-location-dot">Événements Surpalce</option>
 											</select>
@@ -60,7 +60,7 @@
 									<div class="col-lg-5 col-md-12">
 										<div class="form-group">
 											<select class="selectpicker" data-width="100%" data-size="5" data-live-search="true">
-												<option value="01" selected>Toute</option>
+												<option value="01" selected>Tout</option>
 												<option value="02">arts</option>
 												<option value="03">Entreprise</option>
 												<option value="04">Coaching et consultation</option>
@@ -99,30 +99,17 @@
 						<div class="event-filter-items">
 							<div class="featured-controls">
 								<div class="filter-tag">
-									<a href="explore_events_by_date.html" class="active">Toute</a>
+									<a href="explore_events_by_date.html" class="active">Tout</a>
 									<a href="explore_events_by_date.html">Aujourd'hui</a>
 									<a href="explore_events_by_date.html">Demain</a>
 									<a href="explore_events_by_date.html">Cette semaine</a>
-									<a href="explore_events_by_date.html">Cette fin de semaine</a>
+									<a href="explore_events_by_date.html">Ce week-end</a>
 									<a href="explore_events_by_date.html">La semaine prochaine</a>
-									<a href="explore_events_by_date.html">Le week-end prochain </a>
-									<a href="explore_events_by_date.html">Tson mois </a>
+									<a href="explore_events_by_date.html">Ce mois </a>
 									<a href="explore_events_by_date.html">Le mois prochain </a>
 									<a href="explore_events_by_date.html"> Cette année </a>
-									<a href="explore_events_by_date.html">L'année prochaine</a>
 								</div>
-								<div class="controls">
-									<button type="button" class="control" data-filter="all">Toute</button>
-									<button type="button" class="control" data-filter=".arts">arts</button>
-									<button type="button" class="control" data-filter=".business">Entreprise</button>
-									<button type="button" class="control" data-filter=".concert">concert</button>
-									<button type="button" class="control" data-filter=".workshops">Ateliers</button>
-									<button type="button" class="control" data-filter=".coaching_consulting">Ccoaching et consultation</button>
-									<button type="button" class="control" data-filter=".health_Wellness">Santé et bien-être</button>									
-									<button type="button" class="control" data-filter=".volunteer">Bénévole</button>
-									<button type="button" class="control" data-filter=".sports">Des sports</button>
-									<button type="button" class="control" data-filter=".free">Gratuite</button>	
-								</div>
+								
 								<div class="row" data-ref="event-filter-content">
 									<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix arts concert workshops volunteer sports health_Wellness" data-ref="mixitup-target">
 										<div class="main-card mt-4">

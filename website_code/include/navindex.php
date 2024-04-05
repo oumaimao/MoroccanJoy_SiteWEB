@@ -44,7 +44,7 @@
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link" href="explore_events.php" role="button" aria-expanded="false">
-										Découvrir nouveaux évènement
+										Nos évènements
 									</a>
 								</li>
 								
@@ -145,12 +145,12 @@ $namee = $_SESSION['user']['U_name'];
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
 									<a class="nav-link" href="index.php">
-										Page d'acceuil
+										Acceuil
 									</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="explore_events.php">
-										<i class="fa-solid fa-compass me-2"></i>Découvrir les évènement
+										<i class="fa-solid fa-compass me-2"></i>Nouveauté
 									</a>
 								</li>
 							</ul>

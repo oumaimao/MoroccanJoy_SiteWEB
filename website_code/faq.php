@@ -71,7 +71,7 @@
 								</ul>
 								<div class="cant-ans-box pt_30">
 									<h4><i class="fa-solid fa-circle-question me-2 fs-18"></i>Vous ne trouvez pas de réponse? </h4>
-									<a href="help_center.html">Visiter le centre d'aide</a>
+									<a href="help_center.php">Visiter le centre d'aide</a>
 								</div>
 							</div>
 						</div>

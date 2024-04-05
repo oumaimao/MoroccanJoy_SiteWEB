@@ -57,25 +57,13 @@
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="main-title">
-							<h3>Explorer les événements </h3>
+							<h3>Nouveauté</h3>
 						</div>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="event-filter-items">
 							<div class="featured-controls">
-								<div class="filter-tag">
-									<a href="explore_events_by_date.html" class="active">Toute</a>
-									<a href="explore_events_by_date.html">Aujourd'hui</a>
-									<a href="explore_events_by_date.html">Demain</a>
-									<a href="explore_events_by_date.html">Cette semaine</a>
-									<a href="explore_events_by_date.html">Ce week-end </a>
-									<a href="explore_events_by_date.html">La semaine prochaine </a>
-									<a href="explore_events_by_date.html">Le weekend prochain</a>
-									<a href="explore_events_by_date.html">Ce mois-ci </a>
-									<a href="explore_events_by_date.html">Le mois prochain </a>
-									<a href="explore_events_by_date.html"> Cette année</a>
-									<a href="explore_events_by_date.html">L'année prochaine</a>
-								</div>
+
 								<div class="controls">
 									<button type="button" class="control" data-filter="all">Toute</button>
 									<button type="button" class="control" data-filter=".arts">arts</button>
@@ -307,7 +295,7 @@
 									</div>
 								</div>
 								<div class="browse-btn">
-									<a href="explore_events.html" class="main-btn btn-hover "> Parcourir tout</a>
+									<a href="explore_events.php" class="main-btn btn-hover ">Voir tout</a>
 								</div>
 							</div>
 						</div>
@@ -320,8 +308,8 @@
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="main-title">
-							<h3>Hôte de s'engager en ligne et des événements de lieu avec stérile</h3>
-							<p>Organisez des événements de lieu et organisez des événements en ligne avec des possibilités illimitées à l'aide de notre plate-forme d'événements virtuelles intégrée.Construisez une expérience d'événement unique pour vous et vos participants.</p>
+							<h3>Engagez-vous en ligne et organisez des événements mémorables avec notre équipe experte!</h3>
+							<p>Des événements de lieu et des événements en ligne avec des possibilités illimitées à l'aide de notre plate-forme d'événements virtuelles .Construisez une expérience d'événement unique pour vous et vos participants.</p>
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -393,8 +381,8 @@
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="main-title">
-							<h3>Aucune surcharge de fonctionnalité, obtenez exactement ce dont vous avez besoin</h3>
-							<p>En plus d'être l'outil d'enregistrement d'événements en ligne le plus abordable et l'un des meilleurs systèmes de billetterie d'événements en ligne en Australie, Barren est super facile à utiliser et construit avec une disposition simpliste qui est totalement pratique pour les organisateurs.</p>
+							<h3>Nos Services</h3>
+							<p>Transformez vos rêves d'événements en réalité dès aujourd'hui avec notre expertise en organisation! Créez un moment inoubliable pour vous et vos invités avec notre équipe passionnée. Lancez-vous dès maintenant!</p>
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -448,16 +436,16 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="main-title text-center">
-							<h3 >Être un animateur d'événement vedette en 3 étapes faciles</h3>
-							<p>Utilisez des réductions sur les oiseaux précoces, des coupons et une billetterie de groupe pour doubler votre vente de billets.Être payé rapidement et en toute sécurité.</p>
+							<h3 >Deviens un organisateur d'événement vedette en 3 étapes </h3>
+							<p>Utilisez des réductions , des coupons et une billetterie de groupe pour doubler votre vente de billets.Le payment est en toute sécurité.</p>
 						</div>
 					</div>
 					<div class="col-lg-12 text-center ">
 						<div class="easy-steps-tab">
 							<div class="nav step-tabs justify-content-md-center " role="tablist">
-								<button class="step-link active" data-bs-toggle="tab" data-bs-target="#step-01" type="button" role="tab" aria-controls="step-01" aria-selected="true">Step 01<span>Create Your Event</span></button>
-								<button class="step-link" data-bs-toggle="tab" data-bs-target="#step-02" type="button" role="tab" aria-controls="step-02" aria-selected="false">Step 02<span>Sell Tickets and  Get Paid</span></button>
-								<button class="step-link" data-bs-toggle="tab" data-bs-target="#step-04" type="button" role="tab" aria-controls="step-04" aria-selected="false">Step 03<span>Repeat and Grow</span></button>
+								<button class="step-link active" data-bs-toggle="tab" data-bs-target="#step-01" type="button" role="tab" aria-controls="step-01" aria-selected="true">Étape 01<span>Créer un évènement</span></button>
+								<button class="step-link" data-bs-toggle="tab" data-bs-target="#step-02" type="button" role="tab" aria-controls="step-02" aria-selected="false">Étape 02<span>Vendre Vos tickets</span></button>
+								<button class="step-link" data-bs-toggle="tab" data-bs-target="#step-04" type="button" role="tab" aria-controls="step-04" aria-selected="false">Étape 03<span>Répéter et progresser</span></button>
 							</div>
 							<div class="tab-content">
 								<div class="tab-pane fade show active" id="step-01" role="tabpanel">

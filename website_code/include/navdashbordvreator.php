@@ -41,7 +41,7 @@ $namee = $_SESSION['user']['U_name'];
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
 									<a class="nav-link" href="organiser_profile_view.php">
-										Page d'acceuil
+										acceuil
 									</a>
 								</li>
 								<li class="nav-item">
