@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="header-inner">
 		<?php 
-			session_start();
+			
 			if(isset($_SESSION['user']) && isset($_SESSION['user']['U_email']) && isset($_SESSION['user']['U_name'])) {
 				// Access session variables safely
 				$emaill = $_SESSION['user']['U_email'];

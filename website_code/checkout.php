@@ -1,10 +1,20 @@
 ﻿<?php
 session_start();
-if(!isset($_SESSION['admin'])){
-	header('location:sign-in-admin.php');
+if(!isset($_SESSION['user']['U_email'])){
+	header('location:sign_in.php');
 }
 
 $message = '';
+$evid = $_POST['evid'];
+$nbrtkt = $_POST['nbrtkt'];
+$prtkt = $_POST['pticket'];
+
+require_once 'connect/DataBase.php';
+$sqlevent = $connection->query("SELECT * FROM `event` WHERE E_id = $evid")->fetch(PDO::FETCH_ASSOC);
+
+
+
+
 if(isset($_POST['submit'])){
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
@@ -13,13 +23,32 @@ if(isset($_POST['submit'])){
 	$ville = $_POST['ville'];
 	$zip = $_POST['zip'];
 	$adresse = $_POST['adresse'];
+	$stat = "valid";
+	$evide = $_POST['evid'];
+	$nbrtkte = $_POST['nbrtkt'];
+	$user_id = $_SESSION['user']['User_id'];
+
+// This code is generate QRCODE ticket
+	require_once 'phpqrcode/qrlib.php';
+	$path = 'images/QRCODE/';
+	$str=rand();
+	$result = md5($str)."qrcode".".png";
+	$qrcode = $path.$result;
+	$cod=uniqid().md5($str);
+	QRcode :: png($cod, $qrcode, 'H', 10, 10);
+// This code is generate QRCODE ticket
 
 	if(!empty($fname) && !empty($lname) && !empty($email) && !empty($ville) && !empty($zip) && !empty($adresse)){
 		require 'connect/DataBase.php';
 		$sql = 'INSERT INTO reservation(R_Fname, R_Lname, R_email, R_adresse, R_country, R_city, R_Zipcode) VALUES(:fname , :lname, :email, :adresse, :country, :ville, :zip)';
 		$statement = $connection->prepare($sql); 
+			
+		$ticketsql = 'INSERT INTO ticket(Nombre_ticket, QR_code, QR_image, Statu, User_id, E_id) VALUES (:Nombr_ticke, :QRcode, :QRimage, :Statu, :Userid, :Evid)';
+		$statticket = $connection->prepare($ticketsql);
 
-		if($statement->execute([':fname'=>$fname, ':lname'=>$lname, ':email'=>$email, ':adresse'=>$adresse, 'country'=>$Country, ':ville'=>$ville, ':zip'=>$zip])){
+		if($statement->execute([':fname'=>$fname, ':lname'=>$lname, ':email'=>$email, ':adresse'=>$adresse, 'country'=>$Country, ':ville'=>$ville, ':zip'=>$zip])
+		&&  $statticket->execute([':Nombr_ticke'=>$nbrtkte, ':QRcode'=>$cod, ':QRimage'=>$result, ':Statu'=>$stat,':Userid'=>$user_id, ':Evid'=>$evide])){
+
 			$message = '<div class="alert alert-success" role="alert">
 								Donnée créée avec succès
 							</div>';
@@ -39,6 +68,7 @@ if(isset($_POST['submit'])){
 	}
 
 }
+ 
 
 ?>
 
@@ -94,13 +124,14 @@ if(isset($_POST['submit'])){
 		</div>
 		<div class="event-dt-block p-80">
 			<div class="container">
-				<form method="post">
+				<form action="booking_confirmed.php" method="post">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
 							<div class="main-title checkout-title">
 								<h3>Confirmation de commande</h3>
 							</div>
 						</div>
+						<?php var_dump($sqlevent); ?>
 						<?php echo $message?>
 						<div class="col-xl-8 col-lg-12 col-md-12">
 							<div class="checkout-block">
@@ -212,8 +243,9 @@ if(isset($_POST['submit'])){
 														<input class="form-control h_50" name="adresse" type="text" placeholder="" value="">																								
 													</div>
 												</div>
-												
-												
+												<input type="text" name="evid" value="<?php echo $evid; ?>" hidden>
+												<input type="text" name="nbrtkt" value="<?php echo $nbrtkt; ?>" hidden>
+
 											</div>
 										</div>
 									
@@ -261,27 +293,39 @@ if(isset($_POST['submit'])){
 								<div class="order-summary-content p_30">
 									<div class="event-order-dt">
 										<div class="event-thumbnail-img">
-											<img src="images/event-imgs/img-7.jpg" alt="">
+											<img src="upload/images/<?php echo $sqlevent['Image'] ?>" alt="">
 										</div>
 										<div class="event-order-dt-content">
-											<h5>Tutorial Canvas Peinture pour les débutants</h5>
-											<span>Mer, 01 juin, 2022 5h30</span>
-											<div class="category-type">Événement en ligne</div>
+											<h5><?php echo $sqlevent['Titre']; ?></h5>
+											<span><?php 
+														$timestamp = strtotime($sqlevent['Date_debut']);
+														$dayAbbreviation = date('D', $timestamp);
+														$monthAbbreviation = date('M', $timestamp);
+														$day = date('d', $timestamp);
+														$year = date('Y', $timestamp);
+			
+														echo "$dayAbbreviation, ";
+														echo "$monthAbbreviation ";
+														echo "$day, ";
+														echo "$year ";
+														?>
+											</span>
+											<!-- <div class="category-type">Événement en ligne</div> -->
 										</div>
 									</div>
 									<div class="order-total-block">
 										<div class="order-total-dt">
 											<div class="order-text">Billet total</div>
-											<div class="order-number">1</div>
+											<div class="order-number"><?php echo $nbrtkt ?></div>
 										</div>
 										<div class="order-total-dt">
 											<div class="order-text">Sous-total</div>
-											<div class="order-number">$50.00</div>
+											<div class="order-number"><?php echo $prtkt*$nbrtkt ?></div>
 										</div>
 										<div class="divider-line"></div>
 										<div class="order-total-dt">
 											<div class="order-text">Totale</div>
-											<div class="order-number ttl-clr">AUD $50.00</div>
+											<div class="order-number ttl-clr">AUD <?php echo $prtkt*$nbrtkt ?></div>
 										</div>
 									</div>
 									<div class="coupon-code-block">

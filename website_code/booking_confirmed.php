@@ -90,7 +90,7 @@ include "include/nav_session.php";
 												</div>
 											</div>
 										</div>
-										<a href="invoice.html" class="main-btn btn-hover h_50 w-100 mt-5"><i class="fa-solid fa-ticket rotate-icon me-3"></i>Afficher le ticket</a>
+										<a href="invoice.php" class="main-btn btn-hover h_50 w-100 mt-5"><i class="fa-solid fa-ticket rotate-icon me-3"></i>Afficher le ticket</a>
 									</div>
 								</div>
 							</div>

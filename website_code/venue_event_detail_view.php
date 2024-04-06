@@ -1,5 +1,11 @@
 ﻿<?php session_start(); ?>
+<?php
+if (isset($_POST['Booknow'])) {
+	header('location:checkout.php');
+	
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -155,7 +161,7 @@
 									<div class="event-dt-right-content">
 										<h4>Organised by</h4>
 										<h5>The Teeny Rabbit</h5>
-										<a href="attendee_profile_view.html">View Profile</a>
+										<a href="attendee_profile_view.php">View Profile</a>
 									</div>
 								</div>
 								<div class="event-dt-right-group">
@@ -199,27 +205,32 @@
 										<a href="#"><i class="fa-solid fa-location-dot me-2"></i>View Map</a>
 									</div>
 								</div>
-								<div class="select-tickets-block">
-									<h6>Select Tickets</h6>
-									<div class="select-ticket-action">
-										<div class="ticket-price">MAD <?php echo $row['Prix_ticket']; ?></div>
-										<div class="quantity">
-											<div class="counter">
-												<span class="down" onClick='decreaseCount(event, this)'>-</span>
-												<input type="text" value="0">
-												<span class="up" onClick='increaseCount(event, this)'>+</span>
+
+								<form action="checkout.php" method="post">
+									<div class="select-tickets-block">
+										<h6>Select Tickets</h6>
+										<div class="select-ticket-action">
+											<div class="ticket-price">MAD <?php echo $row['Prix_ticket']; ?></div>
+											<div class="quantity">
+												<div class="counter">
+													<span class="down" onClick='decreaseCount(event, this)'>-</span>
+													<input type="text" name="nbrtkt" value="1">
+													<span class="up" onClick='increaseCount(event, this)'>+</span>
+												</div>
+												<input type="text" name="evid" value="<?php echo $row['E_id']; ?>" hidden>
 											</div>
 										</div>
+										<p>2 x pair hand painted leather earrings 1 x glass of bubbles / or coffee Individual grazing box / fruit cup</p>
+										<div class="xtotel-tickets-count">
+											<div class="x-title">1x Ticket</div>
+											<h4>MAD <span><?php echo $row['Prix_ticket'];?></span></h4>
+										</div>
+										<input type="text" name="pticket" value="<?php echo $row['Prix_ticket']; ?>" hidden>
 									</div>
-									<p>2 x pair hand painted leather earrings 1 x glass of bubbles / or coffee Individual grazing box / fruit cup</p>
-									<div class="xtotel-tickets-count">
-										<div class="x-title">1x Ticket(s)</div>
-										<h4>AUD <span>$0.00</span></h4>
+									<div class="booking-btn">
+										<input type="submit" value="Book Now" name="Booknow" class="main-btn btn-hover w-100">
 									</div>
-								</div>
-								<div class="booking-btn">
-									<a href="checkout.html" class="main-btn btn-hover w-100">Book Now</a>
-								</div>
+								</form>
 							</div>
 						</div>
 					<?php endforeach; ?>
@@ -229,7 +240,7 @@
 								<h3>More Events</h3>
 								<a href="index.php" class="view-all-link">Browse All<i class="fa-solid fa-right-long ms-2"></i></a>
 							</div>
-							<div >
+							<div>
 								<div class="row" data-ref="event-filter-content">
 									<?php
 									require_once './connect/DataBase.php';
@@ -247,7 +258,7 @@
 													<span class="bookmark-icon" title="Bookmark"></span>
 												</div>
 												<div class="event-content">
-													<a href="venue_event_detail_view.html" class="event-title"><?php echo $row['Titre']; ?></a>
+													<a href="venue_event_detail_view.php" class="event-title"><?php echo $row['Titre']; ?></a>
 													<div class="duration-price-remaining">
 														<span class="duration-price">MAD <?php echo $row['Prix_ticket']; ?></span>
 														<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i><?php echo $row['Nombre_tickets']; ?> Restante</span>
