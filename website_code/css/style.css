@@ -1823,7 +1823,7 @@ body {
 }
 
 .agree-text a:hover {
-    color: #7ad254 !important;
+    color: #CDC92C !important;
 	text-decoration: underline !important;
 }
 
@@ -2066,7 +2066,7 @@ body {
 }
 
 .event-dt-right-content a:hover {
-    color: #7ad254 !important;
+    color: #CDC92C !important;
 }
 
 .booking-btn {
@@ -2469,7 +2469,7 @@ body {
 }
 
 .upload-cover .cover-img-btn [type="file"] + label:hover {
-	background: #7ad254;
+	background: #CDC92C;
 	color: #fff;
 }
 
@@ -2526,7 +2526,7 @@ body {
 }
 
 .avatar-img-btn [type="file"] + label:hover {
-	background: #7ad254;
+	background: #CDC92C;
 	color: #fff;
 }
 
@@ -2868,7 +2868,7 @@ body {
 }
 
 .card-dt-text a:hover {
-    color: #7ad254 !important;
+    color: #CDC92C !important;
 }
 
 .edit-btn {
@@ -3098,7 +3098,7 @@ body {
 .saved-btn:hover {
 	color: #fff !important;
     border: 1px solid #CDC92C !important;
-    background: #7ad254 !important;
+    background: #CDC92C !important;
 }
 
 .ff-tablist {
@@ -4502,7 +4502,7 @@ body {
 
 .datepicker--cell.-selected-, .datepicker--cell.-selected-.-current- {
     color: #fff;
-    background: #7ad254 !important;
+    background: #CDC92C !important;
 }
 
 .datepicker--cell.-current- {
@@ -4616,7 +4616,7 @@ body {
 }
 
 .default-event-thumb-btn .thumb-change-btn [type="file"] + label:hover {
-	background: #7ad254;
+	background: #CDC92C;
 	color: #fff;
 }
 
@@ -4693,7 +4693,7 @@ body {
 
 .steps_btn:hover {
 	color: #fff !important;
-	background: #7ad254 !important;
+	background: #CDC92C !important;
 }
 
 .steps_btn:focus {
@@ -5311,7 +5311,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .cant-ans-box a:hover {
-    color: #7ad254 !important;
+    color: #CDC92C !important;
 }
 
 .faq-accordion-title h4 {
@@ -5661,7 +5661,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .share-link:hover {
-    color: #7ad254 !important;
+    color: #CDC92C !important;
 }
 
 /* --- Help Center Page --- */
@@ -5757,7 +5757,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .upload-btn [type="file"] + label:hover {
 	color: #fff !important;
-	background: #7ad254;
+	background: #CDC92C;
 }
 
 .upload-file-dt span{
@@ -5834,7 +5834,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .helpful-btn:hover {
-    color: #7ad254 !important;
+    color: #CDC92C !important;
 }
 
 .helpful-btn span {
@@ -6234,7 +6234,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .terms-tabs .term-link:hover {
-    color: #7ad254 !important;
+    color: #CDC92C !important;
 }
 
 .terms-tabs .term-link.active:hover {
