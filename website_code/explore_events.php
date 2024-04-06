@@ -106,14 +106,15 @@
 									<?php
 									require_once './connect/DataBase.php';
 
-									$Categorie_id = $_POST['cat'];
-									if (isset($_POST['nametrouve']) && $Categorie_id != 0) {
-
+									
+									if (isset($_POST['nametrouve']) && $_POST['cat']!= 0) {
+										$Categorie_id = $_POST['cat'];
 										$sqlState = $connection->prepare("SELECT * FROM `event` WHERE Categorie_id=?");
 										$sqlState->execute([$Categorie_id]);
 										$events = $sqlState->fetchAll(PDO::FETCH_ASSOC);
 									} else {
 										$events = $connection->query("SELECT * FROM `event`")->fetchAll(PDO::FETCH_ASSOC);
+										
 									}
 
 									foreach ($events as $row) : ?>
