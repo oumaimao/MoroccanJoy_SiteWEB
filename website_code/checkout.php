@@ -6,7 +6,6 @@ if(!isset($_SESSION['user']['U_email'])){
 
 $message = '';
 $evid = $_SESSION['E_id'];
-
 $prtkt =$_SESSION['Prix_ticket'];
 
 
@@ -25,8 +24,8 @@ if(isset($_POST['submit'])){
 	$zip = $_POST['zip'];
 	$adresse = $_POST['adresse'];
 	$stat = "valid";
-	$evide = $_POST['evid'];
-	$nbrtkte = $_POST['nbrtkt'];
+
+
 	$user_id = $_SESSION['user']['User_id'];
 
 // This code is generate QRCODE ticket
@@ -46,11 +45,11 @@ if(isset($_POST['submit'])){
 		$sql = 'INSERT INTO reservation(R_Fname, R_Lname, R_email, R_adresse, R_country, R_city, R_Zipcode) VALUES(:fname , :lname, :email, :adresse, :country, :ville, :zip)';
 		$statement = $connection->prepare($sql); 
 			
-		$ticketsql = 'INSERT INTO ticket(Nombre_ticket, QR_code, QR_image, Statu, User_id, E_id) VALUES (:Nombr_ticke, :QRcode, :QRimage, :Statu, :Userid, :Evid)';
+		$ticketsql = 'INSERT INTO ticket(QR_code, QR_image, Statu, User_id, E_id,prix_tickt) VALUES (:QRcode, :QRimage, :Statu, :Userid, :Evid,:prix_tickt)';
 		$statticket = $connection->prepare($ticketsql);
 
 		if($statement->execute([':fname'=>$fname, ':lname'=>$lname, ':email'=>$email, ':adresse'=>$adresse, 'country'=>$Country, ':ville'=>$ville, ':zip'=>$zip])
-		&&  $statticket->execute([':Nombr_ticke'=>$nbrtkte, ':QRcode'=>$cod, ':QRimage'=>$result, ':Statu'=>$stat,':Userid'=>$user_id, ':Evid'=>$evide])){
+		&&  $statticket->execute([ ':QRcode'=>$cod, ':QRimage'=>$result, ':Statu'=>$stat,':Userid'=>$user_id, ':Evid'=>$evid,':prix_tickt'=>$prtkt])){
 
 			$message = '<div class="alert alert-success" role="alert">
 								Donnée créée avec succès
@@ -246,8 +245,8 @@ if(isset($_POST['submit'])){
 														<input class="form-control h_50" name="adresse" type="text" placeholder="" value="">																								
 													</div>
 												</div>
-												<input type="text" name="evid" value="<?php echo $evid; ?>" hidden>
-												<input type="text" name="nbrtkt" value="<?php echo $nbrtkt; ?>" hidden>
+			
+	
 
 											</div>
 										</div>
@@ -326,7 +325,7 @@ if(isset($_POST['submit'])){
 										<div class="divider-line"></div>
 										<div class="order-total-dt">
 											<div class="order-text">Prix</div>
-											<div class="order-number ttl-clr">AUD <?php echo $prtkt ?></div>
+											<div class="order-number ttl-clr">MAD<?php echo $prtkt ?></div>
 										</div>
 									</div>
 									<div class="coupon-code-block">

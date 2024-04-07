@@ -3,7 +3,7 @@ session_start();
 $evid = $_SESSION['E_id'];
 
 $prtkt =$_SESSION['Prix_ticket'];
-$totalprix=$_SESSION['Totalprix'];
+
 $nameevent=$_SESSION['eventname'];
 $name=$_SESSION['user']['U_name'];
 $imgevent=$_SESSION['imageevent'];
@@ -89,7 +89,7 @@ $imgevent=$_SESSION['imageevent'];
 												<div class="buyer-name"><?php echo $name; ?></div>
 												
 												<div class="booking-total-grand">
-													Prix : <span>$<?php echo $totalprix ?></span>
+													Prix : <span><?php echo $prtkt ?> MAD</span>
 												</div>
 											</div>
 										</div>

@@ -3,14 +3,21 @@ session_start();
 $evid = $_SESSION['E_id'];
 
 $prtkt =$_SESSION['Prix_ticket'];
-$totalprix=$_SESSION['Totalprix'];
 $nameevent=$_SESSION['eventname'];
 $name=$_SESSION['user']['U_name'];
 $imgevent=$_SESSION['imageevent'];
 $qrcode=$_SESSION['qrcode'];
 $devent=$_SESSION['date'];
+$ndate=getdate();
 
+
+
+require_once 'dompdf/autoload.inc.php';
+
+;
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -54,7 +61,7 @@ $devent=$_SESSION['date'];
 							<img src="images/dark-logo.svg" alt="invoice-logo">
 						</div>
 						<div class="invoice-header-text">
-							<a href="#" class="download-link">Télécharger</a>
+							<button href="#"  class="download-link">Télécharger</button>
 						</div>
 					</div>
 					<div class="invoice-body">
@@ -67,18 +74,17 @@ $devent=$_SESSION['date'];
 									<div class="vhls140">
 										<ul>
 											<li><div class="vdt-list">Facture à <?php echo $name ?></div></li>
-											<li><div class="vdt-list">140 St Kilda Rd</div></li>
-											<li><div class="vdt-list">Melbourne, Victoria</div></li>
-											<li><div class="vdt-list">3000, Australie</div></li>
+											
 										</ul>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="vhls140">
 										<ul>
-											<li><div class="vdt-list">ID de facture : YCCURW-000000</div></li>
-											<li><div class="vdt-list">Date de commande: 10/05/2022</div></li>
-											<li><div class="vdt-list">Près du centre commercial MBD,</div></li>
+											
+											<li><div class="vdt-list">Date de commande: <?php echo $ndate['mday']."/".$ndate['mon']."/".$ndate['year'] ;
+											?></div></li>
+											
 										</ul>
 									</div>
 								</div>
@@ -91,26 +97,24 @@ $devent=$_SESSION['date'];
 										<tr>
 											<th scope="col">#</th>
 											<th scope="col">Détails de l'évènement</th>
-											<th scope="col">Taper</th>
-											<th scope="col">Qté</th>
-											<th scope="col">Prix ​​unitaire</th>
-											<th scope="col">Totale</th>
+										
+											<th scope="col">Prix</th>
+										
 										</tr>
 									</thead>
 									<tbody>
 										<tr>										
 											<td>1</td>	
-											<td><a href="#" target="_blank">Tutorial Canvas Peinture pour les débutants</a></td>	
-											<td>En ligne</td>	
-											<td>1</td>
-											<td>$75.00</td>
-											<td>$75.00</td>
+											<td><a href="#" target="_blank"><?php echo $nameevent ?></a></td>	
+											
+											<td><?php echo $prtkt?> MAD</td>
+											
 										</tr>
 										<tr>
 											<td colspan="1"></td>
 											<td colspan="5">
 												<div class="user_dt_trans text-end pe-xl-4">
-													<div class="totalinv2">Total de facture: USD <?php echo $totalprix?></div>
+													<div class="totalinv2">Total de facture: <?php echo $prtkt?> MAD</div>
 													<p>Payé via paypal</p>
 												</div>
 											</td>
@@ -136,7 +140,7 @@ $devent=$_SESSION['date'];
 												<div class="buyer-name"><?php echo $name?></div>
 												
 												<div class="booking-total-grand">
-													Prix : <span><?php echo $totalprix?></span>
+													Prix : <span><?php echo $prtkt?> MAD</span>
 												</div>
 											</div>
 										</div>
@@ -166,7 +170,9 @@ $devent=$_SESSION['date'];
 		</div>
 	</div>
 	<!-- Invoice End-->
+	<?php
 	
+?>
 	
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2024 at 09:12 AM
+-- Generation Time: Apr 07, 2024 at 12:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -144,7 +144,8 @@ INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_phone`, `c_email
 (16, 'Martinez', 'Robert', '3214567890', 'robert@example.com', 'Need technical support for your software.', 0),
 (17, 'Garcia', 'Jennifer', '9876541230', 'jennifer@example.com', 'Interested in your upcoming events.', 0),
 (18, 'Rodriguez', 'Daniel', '5552223333', 'daniel@example.com', 'Feedback on your customer service.', 0),
-(19, 'Hernandez', 'Amanda', '7778889999', 'amanda@example.com', 'Question about your pricing plans.', 0);
+(19, 'Hernandez', 'Amanda', '7778889999', 'amanda@example.com', 'Question about your pricing plans.', 0),
+(20, 'Newton', 'Anika', 'Maiores magna alias ', 'kigapikug@mailinator.com', '+1 (398) 873-1366', 0);
 
 -- --------------------------------------------------------
 
@@ -177,8 +178,6 @@ CREATE TABLE `demande` (
 --
 
 INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`, `User_id`) VALUES
-(74, 'Event 5', '2024-04-09', '14:30:00', '2 hours', '222 Maple Street', 'Apt 301', 'Miami', 'Miami', 'Miami', '33101', 'Description for Event 5', 'image5.jpg', 0, 50, 25, 16),
-(75, 'Event 6', '2024-04-10', '17:30:00', '1 hour', '333 Cedar Street', '', 'Seattle', 'Seattle', 'Seattle', '98101', 'Description for Event 6', 'image6.jpg', 0, 60, 30, 17),
 (76, 'Event 7', '2024-04-11', '10:00:00', '3 hours', '444 Walnut Street', '', 'San Francisco', 'San Francisco', 'San Francisco', '94101', 'Description for Event 7', 'image7.jpg', 0, 70, 35, 18),
 (77, 'Event 8', '2024-04-12', '13:00:00', '2.5 hours', '555 Oak Street', 'Suite 401', 'Boston', 'Boston', 'Boston', '2101', 'Description for Event 8', 'image8.jpg', 0, 80, 40, 19),
 (78, 'Event 9', '2024-04-13', '16:30:00', '1.5 hours', '666 Elm Street', '', 'Philadelphia', 'Philadelphia', 'Philadelphia', '19101', 'Description for Event 9', 'image9.jpg', 0, 90, 45, 20),
@@ -186,7 +185,8 @@ INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event
 (80, 'Event 1', '2024-04-10', '09:00:00', '9 hours', '123 Main St', 'Apt 101', 'USA', 'New York', 'New York City', '10001', 'Description for Event 1', 'image1.jpg', 0, 100, 50, 12),
 (81, 'Event 2', '2024-04-15', '10:00:00', '10 hours', '456 Oak St', '', 'USA', 'California', 'Los Angeles', '90001', 'Description for Event 2', 'image2.jpg', 0, 150, 75, 13),
 (82, 'Event 3', '2024-04-20', '11:00:00', '11 hours', '789 Elm St', '', 'USA', 'Illinois', 'Chicago', '60601', 'Description for Event 3', 'image3.jpg', 0, 200, 100, 14),
-(83, 'Event 4', '2024-04-25', '12:00:00', '12 hours', '1010 Pine St', '', 'USA', 'Texas', 'Houston', '77001', 'Description for Event 4', 'image4.jpg', 0, 250, 125, 15);
+(83, 'Event 4', '2024-04-25', '12:00:00', '12 hours', '1010 Pine St', '', 'USA', 'Texas', 'Houston', '77001', 'Description for Event 4', 'image4.jpg', 0, 250, 125, 15),
+(84, 'Event 6', '2024-04-10', '17:30:00', '1 hour', '333 Cedar Street', '', 'Seattle', 'Seattle', 'Seattle', '98101', 'Description for Event 6', 'image6.jpg', 0, 60, 30, 17);
 
 -- --------------------------------------------------------
 
@@ -226,7 +226,8 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (67, 'Event 7', 'Description for Event 7', 'image7.jpg', '15:00:00', '2024-04-18', '18:30:00', 40, 250, 'City 7', '78901', 7, 18, 'Address 7', 'Street 7'),
 (68, 'Event 8', 'Description for Event 8', 'image8.jpg', '16:30:00', '2024-04-20', '20:00:00', 45, 300, 'City 8', '89012', 8, 19, 'Address 8', 'Street 8'),
 (69, 'Event 9', 'Description for Event 9', 'image9.jpg', '17:00:00', '2024-04-22', '22:30:00', 50, 180, 'City 9', '90123', 9, 20, 'Address 9', 'Street 9'),
-(70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10');
+(70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10'),
+(71, 'Event 5', 'Description for Event 5', 'image5.jpg', '14:30:00', '2024-04-09', '00:00:02', 50, 25, 'Miami', '33101', 0, 16, '222 Maple Street', 'Apt 301');
 
 -- --------------------------------------------------------
 
@@ -261,7 +262,6 @@ CREATE TABLE `reclamation` (
 --
 
 INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
-(98, 'Amanda Smith', 'amanda@example.com', 'Website Navigation Issue', 'I am having trouble navigating through your website.', 21),
 (99, 'Daniel Hernandez', 'daniel@example.com', 'Feedback on Customer Service', 'I have some feedback about your customer service.', 20),
 (100, 'Jennifer Rodriguez', 'jennifer@example.com', 'Event Registration Problem', 'I am unable to register for your upcoming event.', 19),
 (101, 'Robert Garcia', 'robert@example.com', 'Issue with Software', 'Your software is not working properly.', 18),
@@ -272,7 +272,8 @@ INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`
 (107, 'Jennifer Rodriguez', 'jennifer@example.com', 'Event Registration Problem', 'I am unable to register for your upcoming event.', 19),
 (108, 'Robert Garcia', 'robert@example.com', 'Issue with Software', 'Your software is not working properly.', 18),
 (109, 'Sarah Martinez', 'sarah@example.com', 'Service Inquiry', 'I would like more information about your services.', 17),
-(110, 'David Jones', 'david@example.com', 'Billing Query', 'I have a query regarding my billing statement.', 16);
+(110, 'David Jones', 'david@example.com', 'Billing Query', 'I have a query regarding my billing statement.', 16),
+(112, 'Amanda Smith', 'amanda@example.com', 'Website Navigation Issue', 'I am having trouble navigating through your website.', 21);
 
 -- --------------------------------------------------------
 
@@ -329,7 +330,6 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R_adresse`, `R_country`, `R_city`, `R_Zipcode`, `Ticket_id`, `User_id`) VALUES
-(10, 'John', 'Smith', 'john@example.com', '123 Main St', 'USA', 'New York', '10001', 1, 12),
 (11, 'Alice', 'Johnson', 'alice@example.com', '456 Oak St', 'USA', 'Los Angeles', '90001', 2, 13),
 (12, 'Michael', 'Brown', 'michael@example.com', '789 Elm St', 'USA', 'Chicago', '60601', 3, 14),
 (13, 'Emily', 'Taylor', 'emily@example.com', '1010 Pine St', 'USA', 'Houston', '77001', 4, 15),
@@ -338,7 +338,43 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 (16, 'Robert', 'Garcia', 'robert@example.com', '333 Elm St', 'USA', 'Seattle', '98101', 7, 18),
 (17, 'Jennifer', 'Rodriguez', 'jennifer@example.com', '444 Pine St', 'USA', 'Dallas', '75201', 8, 19),
 (18, 'Daniel', 'Hernandez', 'daniel@example.com', '555 Maple St', 'USA', 'Boston', '02101', 9, 20),
-(19, 'Amanda', 'Smith', 'amanda@example.com', '666 Oak St', 'USA', 'Atlanta', '30301', 10, 21);
+(19, 'Amanda', 'Smith', 'amanda@example.com', '666 Oak St', 'USA', 'Atlanta', '30301', 10, 21),
+(20, 'John', 'Doe', 'johndoe@example.com', 'zertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyui', '', 'ertyu', 'ghjkl:', 0, 0),
+(21, 'Madeson Lott', 'Nayda Butler', 'lole@mailinator.com', 'Deserunt eum fugiat', 'Nepal', 'Itaque odit reprehen', '58100', 0, 0),
+(22, 'Nicholas Hamilton', 'Jolene Foster', 'sygeq@mailinator.com', 'Earum eius similique', 'France', 'Incidunt id omnis o', '87460', 0, 0),
+(23, 'Otto Ray', 'Devin Sykes', 'gocedef@mailinator.com', 'Ut quod dolore vel e', 'Singapore', 'Consequatur blanditi', '67826', 0, 0),
+(24, 'Gwendolyn Reid', 'Fulton Pearson', 'hyqejezip@mailinator.com', 'Est quaerat enim inv', 'Costa Rica', 'Aperiam molestiae do', '55473', 0, 0),
+(25, 'Brent Holloway', 'Paul Nixon', 'bebyr@mailinator.com', 'Sit deserunt fugit', 'New Zealand', 'Magna illum quos in', '15543', 0, 0),
+(26, 'Brittany Monroe', 'Phillip Watts', 'sihumoreni@mailinator.com', 'Distinctio Eos mag', 'Thailand', 'Sit reprehenderit a', '34821', 0, 0),
+(27, 'Meredith Osborne', 'Deacon Gill', 'myvebu@mailinator.com', 'Hic debitis harum do', 'Slovenia', 'Numquam sed libero d', '26688', 0, 0),
+(28, 'Shelly Dunlap', 'Astra Jordan', 'nylytawe@mailinator.com', 'Laborum Ea ducimus', 'Italy', 'Repudiandae ut modi ', '79800', 0, 0),
+(29, 'Francis Tanner', 'Donovan Gallagher', 'cizeca@mailinator.com', 'Sequi id ut dolor de', 'India', 'Irure excepturi quod', '99523', 0, 0),
+(30, 'Maile Walker', 'Barbara Santos', 'lawaz@mailinator.com', 'Aut in maiores ut la', 'Malaysia', 'In et et non sed qui', '23704', 0, 0),
+(31, 'Nomlanga Green', 'Odessa Simpson', 'maqupixij@mailinator.com', 'Quo odio assumenda t', 'Philippines', 'Earum dolor voluptas', '42627', 0, 0),
+(32, 'Felicia Velasquez', 'Willa England', 'lofyjinu@mailinator.com', 'Quos quam nisi repre', 'Philippines', 'Quis reprehenderit ', '67123', 0, 0),
+(33, 'Susan Estrada', 'Genevieve Vaughn', 'lofoxepe@mailinator.com', 'Quis delectus rerum', 'Malaysia', 'Beatae eveniet temp', '45600', 0, 0),
+(34, 'Ivory Matthews', 'Rajah Herrera', 'hufo@mailinator.com', 'Id consequatur dolo', 'Slovakia', 'Animi voluptas pers', '25063', 0, 0),
+(35, 'Charity Bowman', 'Keane Holloway', 'cuxucybac@mailinator.com', 'Excepturi itaque qui', 'Norway', 'Sed assumenda dolore', '71956', 0, 0),
+(36, 'Fay Kerr', 'Kyra Mayo', 'funy@mailinator.com', 'Cum dicta sit dolori', 'Argentina', 'Quod qui assumenda a', '78568', 0, 0),
+(37, 'Violet Adkins', 'Selma Justice', 'qyvefacen@mailinator.com', 'Soluta tempore moll', 'Portugal', 'Ut sed et molestiae ', '92442', 0, 0),
+(38, 'Ryder Rhodes', 'Aurora Cross', 'godosezyq@mailinator.com', 'Aliquam et sint duci', 'Lithuania', 'Occaecat aut quos lo', '14968', 0, 0),
+(39, 'Ryder Rhodes', 'Aurora Cross', 'godosezyq@mailinator.com', 'Aliquam et sint duci', 'Lithuania', 'Occaecat aut quos lo', '14968', 0, 0),
+(40, 'Silas Merritt', 'Kyla Wise', 'sabekek@mailinator.com', 'Non sunt obcaecati ', 'Costa Rica', 'Asperiores cumque co', '33186', 0, 0),
+(41, 'Joelle Parks', 'Chastity Hensley', 'popi@mailinator.com', 'Soluta repellendus ', 'Greece', 'Aut perferendis repr', '12365', 0, 0),
+(42, 'soufiane', 'ouenjli', 'soufiane@example.com', 'hay lalmina adarissa narjiss fes morocco', 'Czech Republic', 'fes', '30000', 0, 0),
+(43, 'Dawn Slater', 'Hu Gilbert', 'hojogigoda@mailinator.com', 'Molestiae odio offic', 'Slovakia', 'Reprehenderit qui il', '88744', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `saveevent`
+--
+
+CREATE TABLE `saveevent` (
+  `S_id` int(11) NOT NULL,
+  `User_id` int(11) NOT NULL,
+  `E_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -349,8 +385,9 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 CREATE TABLE `ticket` (
   `Ticket_id` int(11) NOT NULL,
   `Nombre_ticket` int(11) NOT NULL,
-  `QR_code` varchar(100) NOT NULL,
-  `Statu` tinyint(1) NOT NULL,
+  `QR_code` varchar(500) NOT NULL,
+  `QR_image` varchar(500) NOT NULL,
+  `Statu` varchar(20) NOT NULL,
   `User_id` int(11) NOT NULL,
   `E_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -359,17 +396,19 @@ CREATE TABLE `ticket` (
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`Ticket_id`, `Nombre_ticket`, `QR_code`, `Statu`, `User_id`, `E_id`) VALUES
-(31, 0, 'qr_code_1', 0, 12, 61),
-(32, 0, 'qr_code_2', 0, 13, 62),
-(33, 0, 'qr_code_3', 0, 14, 63),
-(34, 0, 'qr_code_4', 0, 15, 64),
-(35, 0, 'qr_code_5', 0, 16, 65),
-(36, 0, 'qr_code_6', 0, 17, 66),
-(37, 0, 'qr_code_7', 0, 18, 67),
-(38, 0, 'qr_code_8', 0, 19, 68),
-(39, 0, 'qr_code_9', 0, 20, 69),
-(40, 0, 'qr_code_10', 0, 21, 70);
+INSERT INTO `ticket` (`Ticket_id`, `Nombre_ticket`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E_id`) VALUES
+(31, 0, 'qr_code_1', '', '0', 12, 61),
+(32, 0, 'qr_code_2', '', '0', 13, 62),
+(33, 0, 'qr_code_3', '', '0', 14, 63),
+(34, 0, 'qr_code_4', '', '0', 15, 64),
+(35, 0, 'qr_code_5', '', '0', 16, 65),
+(36, 0, 'qr_code_6', '', '0', 17, 66),
+(37, 0, 'qr_code_7', '', '0', 18, 67),
+(38, 0, 'qr_code_8', '', '0', 19, 68),
+(39, 0, 'qr_code_9', '', '0', 20, 69),
+(40, 0, 'qr_code_10', '', '0', 21, 70),
+(43, 17, '661167ed35dcd799ade0b0672985aec0ccbcb036d2ef9', '799ade0b0672985aec0ccbcb036d2ef9qrcode.png', 'valid', 27, 67),
+(44, 17, '661168b5799ebae35de283a6140092954c57d83924acc', 'ae35de283a6140092954c57d83924accqrcode.png', 'valid', 27, 67);
 
 -- --------------------------------------------------------
 
@@ -405,7 +444,10 @@ INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U
 (21, 'David', 'Martinez', 'david.martinez@example.com', 'password7', '+16667778888', '444 Walnut Street', '1991-02-18'),
 (22, 'Emma', 'Anderson', 'emma.anderson@example.com', 'password8', '+18889990000', '555 Oak Street', '1994-12-05'),
 (23, 'Daniel', 'Thomas', 'daniel.thomas@example.com', 'password9', '+12233445566', '666 Elm Street', '1987-08-12'),
-(24, 'Olivia', 'Garcia', 'olivia.garcia@example.com', 'password10', '+19998887776', '777 Pine Street', '1996-04-28');
+(24, 'Olivia', 'Garcia', 'olivia.garcia@example.com', 'password10', '+19998887776', '777 Pine Street', '1996-04-28'),
+(25, 'Hays', 'Dieter', 'nakixovewy@mailinator.com', '$2y$10$GFlbO.sms5uIXidDv2TLiesMp.PdQIIoGKv/7huzhsHohsJ1R/w4W', '+1 (929) 543-2935', 'Ducimus non impedit', '2017-10-27'),
+(26, 'Jacobson', 'Josiah', 'xiso@mailinator.com', '$2y$10$dGY6dsOAj3lYLRRgKwRfLOA1P59fWprWT.OWmuqWaHakDYmDgSxLW', '+1 (286) 512-9676', 'Veritatis assumenda ', '2014-02-15'),
+(27, 'test', 'soufiane', 'soufiane@gmail.com', '$2y$10$fKY3DVEwSqtj7WYt6Gz.U.dX1arOHWZpeRIVg7PF5TVftfF6UJ.dq', 'zertyuio', 'zertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyui', '2024-04-26');
 
 --
 -- Indexes for dumped tables
@@ -480,6 +522,14 @@ ALTER TABLE `reservation`
   ADD KEY `Ticket_Of_id` (`Ticket_id`);
 
 --
+-- Indexes for table `saveevent`
+--
+ALTER TABLE `saveevent`
+  ADD PRIMARY KEY (`S_id`),
+  ADD KEY `User_id` (`User_id`),
+  ADD KEY `E_id` (`E_id`);
+
+--
 -- Indexes for table `ticket`
 --
 ALTER TABLE `ticket`
@@ -519,19 +569,19 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `image`
@@ -543,31 +593,37 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `reclamation`
 --
 ALTER TABLE `reclamation`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `reclamation_archive`
 --
 ALTER TABLE `reclamation_archive`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
+-- AUTO_INCREMENT for table `saveevent`
+--
+ALTER TABLE `saveevent`
+  MODIFY `S_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
@@ -596,6 +652,13 @@ ALTER TABLE `image`
 --
 ALTER TABLE `reclamation`
   ADD CONSTRAINT `reclamation_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `saveevent`
+--
+ALTER TABLE `saveevent`
+  ADD CONSTRAINT `saveevent_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `saveevent_ibfk_2` FOREIGN KEY (`E_id`) REFERENCES `event` (`E_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ticket`
