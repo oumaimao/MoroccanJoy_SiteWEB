@@ -6,6 +6,7 @@
 				// Access session variables safely
 				$emaill = $_SESSION['user']['U_email'];
 				$namee = $_SESSION['user']['U_name'];
+				
 
 		?>
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">

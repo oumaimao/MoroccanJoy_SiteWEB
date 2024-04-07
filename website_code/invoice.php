@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+$evid = $_SESSION['E_id'];
+
+$prtkt =$_SESSION['Prix_ticket'];
+$totalprix=$_SESSION['Totalprix'];
+$nameevent=$_SESSION['eventname'];
+$name=$_SESSION['user']['U_name'];
+$imgevent=$_SESSION['imageevent'];
+$qrcode=$_SESSION['qrcode'];
+$devent=$_SESSION['date'];
+
+?>
+
+<!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
 		<meta charset="utf-8">
@@ -52,7 +66,7 @@
 								<div class="col-md-6">
 									<div class="vhls140">
 										<ul>
-											<li><div class="vdt-list">Facture à John Doe</div></li>
+											<li><div class="vdt-list">Facture à <?php echo $name ?></div></li>
 											<li><div class="vdt-list">140 St Kilda Rd</div></li>
 											<li><div class="vdt-list">Melbourne, Victoria</div></li>
 											<li><div class="vdt-list">3000, Australie</div></li>
@@ -96,7 +110,7 @@
 											<td colspan="1"></td>
 											<td colspan="5">
 												<div class="user_dt_trans text-end pe-xl-4">
-													<div class="totalinv2">Total de facture: USD $36.00</div>
+													<div class="totalinv2">Total de facture: USD <?php echo $totalprix?></div>
 													<p>Payé via paypal</p>
 												</div>
 											</td>
@@ -117,15 +131,12 @@
 												<img src="images/event-imgs/img-7.jpg" alt="">
 											</div>
 											<div class="event-order-dt-content">
-												<h5>Tutorial Canvas Peinture pour les débutants </h5>
-												<span>Wed, Jun 01, 2022 5:30 AM. Durée 1h</span>
-												<div class="buyer-name">John Doe</div>
-												<div class="booking-total-tickets">
-													<i class="fa-solid fa-ticket rotate-icon"></i>
-													<span class="booking-count-tickets mx-2">1</span>x Ticket
-												</div>
+												<h5><?php echo $nameevent?></h5>
+												<span><?php echo $devent?></span>
+												<div class="buyer-name"><?php echo $name?></div>
+												
 												<div class="booking-total-grand">
-													Total : <span>$75.00</span>
+													Prix : <span><?php echo $totalprix?></span>
 												</div>
 											</div>
 										</div>
@@ -133,12 +144,12 @@
 									<div class="col-lg-5">
 										<div class="QR-dt p-4">
 											<ul class="QR-counter-type">
-												<li>En ligne</li>
-												<li>Comptoir</li>
-												<li>0000000001</li>
+										
+											
+												
 											</ul>
 											<div class="QR-scanner">
-												<img src="images/qr.png" alt="QR-Ticket-Scanner">
+												<img src="<?php echo $qrcode; ?>" alt="QR-Ticket-Scanner">
 											</div>
 											<p>Alimenté par MoroccanJoy</p>
 										</div>

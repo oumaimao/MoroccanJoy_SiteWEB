@@ -1,5 +1,12 @@
 ﻿<?php
-include "include/nav_session.php";
+session_start();
+$evid = $_SESSION['E_id'];
+
+$prtkt =$_SESSION['Prix_ticket'];
+$totalprix=$_SESSION['Totalprix'];
+$nameevent=$_SESSION['eventname'];
+$name=$_SESSION['user']['U_name'];
+$imgevent=$_SESSION['imageevent'];
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -34,7 +41,7 @@ include "include/nav_session.php";
 
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
-
+	<?php include "include/navindex.php"; ?>
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">
@@ -75,18 +82,14 @@ include "include/nav_session.php";
 									<div class="booking-confirmed-bottom-bg p_30">
 										<div class="event-order-dt">
 											<div class="event-thumbnail-img">
-												<img src="images/event-imgs/img-7.jpg" alt="">
+												<img src="upload/images/<?php echo $imgevent;?>" alt="">
 											</div>
 											<div class="event-order-dt-content">
-												<h5>tutorialCanvasPaintingPourLesDébutants</h5>
-												<span>Mer, 01 juin, 2022 5h30.Durée 1h</span>
-												<div class="buyer-name">John Doe</div>
-												<div class="booking-total-tickets">
-													<i class="fa-solid fa-ticket rotate-icon"></i>
-													<span class="booking-count-tickets mx-2">1</span>x Billet
-												</div>
+												<h5><?php echo $nameevent ?></h5>
+												<div class="buyer-name"><?php echo $name; ?></div>
+												
 												<div class="booking-total-grand">
-													Total : <span>$75.00</span>
+													Prix : <span>$<?php echo $totalprix ?></span>
 												</div>
 											</div>
 										</div>

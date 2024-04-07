@@ -1,15 +1,17 @@
 ﻿<?php session_start(); ?>
 <?php
 if (isset($_POST['Booknow'])) {
+
 	header('location:checkout.php');
 	
 }
+
+
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,6 +70,7 @@ if (isset($_POST['Booknow'])) {
 					require_once './connect/DataBase.php';
 
 					$E_id = $_GET['event_id'];
+					$_SESSION['E_id']=$E_id;
 					$stmt = $connection->prepare("SELECT * FROM `event` WHERE E_id = :E_id");
 
 					$stmt->bindParam(':E_id', $E_id);
@@ -91,7 +94,8 @@ if (isset($_POST['Booknow'])) {
 																?></span>
 								</div>
 								<div class="event-top-dt">
-									<h3 class="event-main-title"><?php echo $row['Titre']; ?></h3>
+									<h3 class="event-main-title"><?php echo $row['Titre'];
+									$_SESSION['eventname'] =$row['Titre']?></h3>
 									<div class="event-top-info-status">
 										<span class="event-type-name"><i class="fa-solid fa-location-dot"></i>Venue Event</span>
 										<span class="event-type-name details-hr">Starts on <span class="ev-event-date"><?php
@@ -105,8 +109,10 @@ if (isset($_POST['Booknow'])) {
 																														echo "$monthAbbreviation ";
 																														echo "$day, ";
 																														echo "$year ";
+																														
 																														?>
-												<?php echo $row['Heure_debut']; ?> PM</span></span>
+												<?php echo $row['Heure_debut'];
+												$_SESSION['date']=$dayAbbreviation.",  ".$monthAbbreviation."/".$day."/".$year." Durée: ".$row['Heure_fin']; ?> PM</span></span>
 										<span class="event-type-name details-hr"><?php echo $row['Heure_fin']; ?>h</span>
 									</div>
 								</div>
@@ -159,8 +165,14 @@ if (isset($_POST['Booknow'])) {
 										<i class="fa-solid fa-circle-user"></i>
 									</div>
 									<div class="event-dt-right-content">
-										<h4>Organised by</h4>
-										<h5>The Teeny Rabbit</h5>
+									<h4>Organised by</h4>
+                                        <?php
+                                        $stmt = $connection->prepare("SELECT U_name, U_Prenom FROM user WHERE User_id = :user_id");
+                                        $stmt->bindParam(":user_id", $row['User_id']);
+                                        $stmt->execute();
+                                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                                        ?>
+                                        <h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
 										<a href="attendee_profile_view.php">View Profile</a>
 									</div>
 								</div>
@@ -206,26 +218,16 @@ if (isset($_POST['Booknow'])) {
 									</div>
 								</div>
 
-								<form action="checkout.php" method="post">
+								<form action="" method="post">
 									<div class="select-tickets-block">
-										<h6>Select Tickets</h6>
-										<div class="select-ticket-action">
-											<div class="ticket-price">MAD <?php echo $row['Prix_ticket']; ?></div>
-											<div class="quantity">
-												<div class="counter">
-													<span class="down" onClick='decreaseCount(event, this)'>-</span>
-													<input type="text" name="nbrtkt" value="1">
-													<span class="up" onClick='increaseCount(event, this)'>+</span>
-												</div>
-												<input type="text" name="evid" value="<?php echo $row['E_id']; ?>" hidden>
-											</div>
-										</div>
-										<p>2 x pair hand painted leather earrings 1 x glass of bubbles / or coffee Individual grazing box / fruit cup</p>
+										
+										
 										<div class="xtotel-tickets-count">
-											<div class="x-title">1x Ticket</div>
-											<h4>MAD <span><?php echo $row['Prix_ticket'];?></span></h4>
+											<div class="x-title">Ticket</div>
+											<h4>MAD <span><?php echo $row['Prix_ticket'];
+											$_SESSION['Prix_ticket']= $row['Prix_ticket'];?></span></h4>
 										</div>
-										<input type="text" name="pticket" value="<?php echo $row['Prix_ticket']; ?>" hidden>
+										
 									</div>
 									<div class="booking-btn">
 										<input type="submit" value="Book Now" name="Booknow" class="main-btn btn-hover w-100">

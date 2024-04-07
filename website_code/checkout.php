@@ -5,9 +5,10 @@ if(!isset($_SESSION['user']['U_email'])){
 }
 
 $message = '';
-$evid = $_POST['evid'];
-$nbrtkt = $_POST['nbrtkt'];
-$prtkt = $_POST['pticket'];
+$evid = $_SESSION['E_id'];
+
+$prtkt =$_SESSION['Prix_ticket'];
+
 
 require_once 'connect/DataBase.php';
 $sqlevent = $connection->query("SELECT * FROM `event` WHERE E_id = $evid")->fetch(PDO::FETCH_ASSOC);
@@ -33,9 +34,11 @@ if(isset($_POST['submit'])){
 	$path = 'images/QRCODE/';
 	$str=rand();
 	$result = md5($str)."qrcode".".png";
+	
 	$qrcode = $path.$result;
 	$cod=uniqid().md5($str);
-	QRcode :: png($cod, $qrcode, 'H', 10, 10);
+	QRcode :: png($cod, $qrcode, 'H', 2, 1);
+	$_SESSION['qrcode']=$qrcode;
 // This code is generate QRCODE ticket
 
 	if(!empty($fname) && !empty($lname) && !empty($email) && !empty($ville) && !empty($zip) && !empty($adresse)){
@@ -124,14 +127,14 @@ if(isset($_POST['submit'])){
 		</div>
 		<div class="event-dt-block p-80">
 			<div class="container">
-				<form action="booking_confirmed.php" method="post">
+				<form action="" method="post">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
 							<div class="main-title checkout-title">
 								<h3>Confirmation de commande</h3>
 							</div>
 						</div>
-						<?php var_dump($sqlevent); ?>
+						<?php  ?>
 						<?php echo $message?>
 						<div class="col-xl-8 col-lg-12 col-md-12">
 							<div class="checkout-block">
@@ -293,7 +296,8 @@ if(isset($_POST['submit'])){
 								<div class="order-summary-content p_30">
 									<div class="event-order-dt">
 										<div class="event-thumbnail-img">
-											<img src="upload/images/<?php echo $sqlevent['Image'] ?>" alt="">
+											<img src="upload/images/<?php echo $sqlevent['Image'];
+											$_SESSION['imageevent']=$sqlevent['Image']; ?>" alt="">
 										</div>
 										<div class="event-order-dt-content">
 											<h5><?php echo $sqlevent['Titre']; ?></h5>
@@ -315,17 +319,14 @@ if(isset($_POST['submit'])){
 									</div>
 									<div class="order-total-block">
 										<div class="order-total-dt">
-											<div class="order-text">Billet total</div>
-											<div class="order-number"><?php echo $nbrtkt ?></div>
+											<div class="order-text">Billet Prix</div>
+											<div class="order-number"></div>
 										</div>
-										<div class="order-total-dt">
-											<div class="order-text">Sous-total</div>
-											<div class="order-number"><?php echo $prtkt*$nbrtkt ?></div>
-										</div>
+									
 										<div class="divider-line"></div>
 										<div class="order-total-dt">
-											<div class="order-text">Totale</div>
-											<div class="order-number ttl-clr">AUD <?php echo $prtkt*$nbrtkt ?></div>
+											<div class="order-text">Prix</div>
+											<div class="order-number ttl-clr">AUD <?php echo $prtkt ?></div>
 										</div>
 									</div>
 									<div class="coupon-code-block">
