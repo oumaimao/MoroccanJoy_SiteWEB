@@ -260,7 +260,7 @@ if (isset($_POST['Booknow'])) {
 													<span class="bookmark-icon" title="Bookmark"></span>
 												</div>
 												<div class="event-content">
-													<a href="venue_event_detail_view.php" class="event-title"><?php echo $row['Titre']; ?></a>
+													<a href="venue_event_detail_view.php?event_id=<?php echo $row['E_id']; ?>" class="event-title"><?php echo $row['Titre']; ?></a>
 													<div class="duration-price-remaining">
 														<span class="duration-price">MAD <?php echo $row['Prix_ticket']; ?></span>
 														<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i><?php echo $row['Nombre_tickets']; ?> Restante</span>

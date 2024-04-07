@@ -10,10 +10,6 @@ $qrcode=$_SESSION['qrcode'];
 $devent=$_SESSION['date'];
 $ndate=getdate();
 
-
-
-require_once 'dompdf/autoload.inc.php';
-
 ;
 ?>
 

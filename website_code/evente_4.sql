@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 07, 2024 at 12:12 AM
+-- Host: 127.0.0.1:3307
+-- Generation Time: Apr 07, 2024 at 05:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -73,7 +73,6 @@ CREATE TABLE `archive_demande` (
 --
 
 INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`, `User_id`) VALUES
-(82, 'event-12', '2024-04-10', '09:00:00', '9 hours', '123 Main St', 'Apt 101', 'USA', 'New York City', 10001, 'Description for Event 1', 'image1.jpg', 'Category A', 100, 50, 12),
 (83, 'event-13', '2024-04-15', '10:00:00', '10 hours', '456 Oak St', '', 'USA', 'Los Angeles', 90001, 'Description for Event 2', 'image2.jpg', 'Category B', 150, 75, 13),
 (84, 'event-14', '2024-04-20', '11:00:00', '11 hours', '789 Elm St', '', 'USA', 'Chicago', 60601, 'Description for Event 3', 'image3.jpg', 'Category C', 200, 100, 14),
 (85, 'event-15', '2024-04-25', '12:00:00', '12 hours', '1010 Pine St', '', 'USA', 'Houston', 77001, 'Description for Event 4', 'image4.jpg', 'Category D', 250, 125, 15),
@@ -178,8 +177,6 @@ CREATE TABLE `demande` (
 --
 
 INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`, `User_id`) VALUES
-(76, 'Event 7', '2024-04-11', '10:00:00', '3 hours', '444 Walnut Street', '', 'San Francisco', 'San Francisco', 'San Francisco', '94101', 'Description for Event 7', 'image7.jpg', 0, 70, 35, 18),
-(77, 'Event 8', '2024-04-12', '13:00:00', '2.5 hours', '555 Oak Street', 'Suite 401', 'Boston', 'Boston', 'Boston', '2101', 'Description for Event 8', 'image8.jpg', 0, 80, 40, 19),
 (78, 'Event 9', '2024-04-13', '16:30:00', '1.5 hours', '666 Elm Street', '', 'Philadelphia', 'Philadelphia', 'Philadelphia', '19101', 'Description for Event 9', 'image9.jpg', 0, 90, 45, 20),
 (79, 'Event 10', '2024-04-14', '19:00:00', '2 hours', '777 Pine Street', '', 'Washington, D.C.', 'Washington, D.C.', 'Washington, D.C.', '20001', 'Description for Event 10', 'image10.jpg', 0, 100, 50, 21),
 (80, 'Event 1', '2024-04-10', '09:00:00', '9 hours', '123 Main St', 'Apt 101', 'USA', 'New York', 'New York City', '10001', 'Description for Event 1', 'image1.jpg', 0, 100, 50, 12),
@@ -227,7 +224,11 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (68, 'Event 8', 'Description for Event 8', 'image8.jpg', '16:30:00', '2024-04-20', '20:00:00', 45, 300, 'City 8', '89012', 8, 19, 'Address 8', 'Street 8'),
 (69, 'Event 9', 'Description for Event 9', 'image9.jpg', '17:00:00', '2024-04-22', '22:30:00', 50, 180, 'City 9', '90123', 9, 20, 'Address 9', 'Street 9'),
 (70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10'),
-(71, 'Event 5', 'Description for Event 5', 'image5.jpg', '14:30:00', '2024-04-09', '00:00:02', 50, 25, 'Miami', '33101', 0, 16, '222 Maple Street', 'Apt 301');
+(71, 'Event 5', 'Description for Event 5', 'image5.jpg', '14:30:00', '2024-04-09', '00:00:02', 50, 25, 'Miami', '33101', 0, 16, '222 Maple Street', 'Apt 301'),
+(72, 'Event 7', 'Description for Event 7', 'image7.jpg', '10:00:00', '2024-04-11', '00:00:03', 70, 35, 'San Francisco', '94101', 0, 18, '444 Walnut Street', ''),
+(73, 'Event 8', 'Description for Event 8', 'image8.jpg', '13:00:00', '2024-04-12', '00:00:02', 80, 40, 'Boston', '2101', 0, 19, '555 Oak Street', 'Suite 401'),
+(74, 'event-12', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-10', '00:00:09', 100, 50, 'New York City', '10001', 0, 12, '123 Main St', 'Apt 101'),
+(75, 'Zachery Wiggins', 'Animi porro adipisi', '6611f767f2636image2.jpg', '01:00:00', '0000-00-00', '00:00:00', 0, 0, 'Cupidatat ex quos cu', '15255', 1, 27, '219 First Road', 'Laborum Qui id unde');
 
 -- --------------------------------------------------------
 
@@ -362,7 +363,17 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 (40, 'Silas Merritt', 'Kyla Wise', 'sabekek@mailinator.com', 'Non sunt obcaecati ', 'Costa Rica', 'Asperiores cumque co', '33186', 0, 0),
 (41, 'Joelle Parks', 'Chastity Hensley', 'popi@mailinator.com', 'Soluta repellendus ', 'Greece', 'Aut perferendis repr', '12365', 0, 0),
 (42, 'soufiane', 'ouenjli', 'soufiane@example.com', 'hay lalmina adarissa narjiss fes morocco', 'Czech Republic', 'fes', '30000', 0, 0),
-(43, 'Dawn Slater', 'Hu Gilbert', 'hojogigoda@mailinator.com', 'Molestiae odio offic', 'Slovakia', 'Reprehenderit qui il', '88744', 0, 0);
+(43, 'Dawn Slater', 'Hu Gilbert', 'hojogigoda@mailinator.com', 'Molestiae odio offic', 'Slovakia', 'Reprehenderit qui il', '88744', 0, 0),
+(44, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(45, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(46, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(47, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(48, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(49, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(50, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(51, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(52, 'John', 'Doe', 'johndoe@example.com', 'hhhhhhhhhhhhhhhhhhh', '', 'hhh', '12', 0, 0),
+(53, 'Urielle Walton', 'Harding Salinas', 'pilodyd@mailinator.com', 'Voluptatem velit acc', 'Belgium', 'Et ad sed quis ipsa', '54451', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -384,31 +395,39 @@ CREATE TABLE `saveevent` (
 
 CREATE TABLE `ticket` (
   `Ticket_id` int(11) NOT NULL,
-  `Nombre_ticket` int(11) NOT NULL,
   `QR_code` varchar(500) NOT NULL,
   `QR_image` varchar(500) NOT NULL,
   `Statu` varchar(20) NOT NULL,
   `User_id` int(11) NOT NULL,
-  `E_id` int(11) NOT NULL
+  `E_id` int(11) NOT NULL,
+  `prix_tickt` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`Ticket_id`, `Nombre_ticket`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E_id`) VALUES
-(31, 0, 'qr_code_1', '', '0', 12, 61),
-(32, 0, 'qr_code_2', '', '0', 13, 62),
-(33, 0, 'qr_code_3', '', '0', 14, 63),
-(34, 0, 'qr_code_4', '', '0', 15, 64),
-(35, 0, 'qr_code_5', '', '0', 16, 65),
-(36, 0, 'qr_code_6', '', '0', 17, 66),
-(37, 0, 'qr_code_7', '', '0', 18, 67),
-(38, 0, 'qr_code_8', '', '0', 19, 68),
-(39, 0, 'qr_code_9', '', '0', 20, 69),
-(40, 0, 'qr_code_10', '', '0', 21, 70),
-(43, 17, '661167ed35dcd799ade0b0672985aec0ccbcb036d2ef9', '799ade0b0672985aec0ccbcb036d2ef9qrcode.png', 'valid', 27, 67),
-(44, 17, '661168b5799ebae35de283a6140092954c57d83924acc', 'ae35de283a6140092954c57d83924accqrcode.png', 'valid', 27, 67);
+INSERT INTO `ticket` (`Ticket_id`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E_id`, `prix_tickt`) VALUES
+(31, 'qr_code_1', '', '0', 12, 61, 0),
+(32, 'qr_code_2', '', '0', 13, 62, 0),
+(33, 'qr_code_3', '', '0', 14, 63, 0),
+(34, 'qr_code_4', '', '0', 15, 64, 0),
+(35, 'qr_code_5', '', '0', 16, 65, 0),
+(36, 'qr_code_6', '', '0', 17, 66, 0),
+(37, 'qr_code_7', '', '0', 18, 67, 0),
+(38, 'qr_code_8', '', '0', 19, 68, 0),
+(39, 'qr_code_9', '', '0', 20, 69, 0),
+(40, 'qr_code_10', '', '0', 21, 70, 0),
+(43, '661167ed35dcd799ade0b0672985aec0ccbcb036d2ef9', '799ade0b0672985aec0ccbcb036d2ef9qrcode.png', 'valid', 27, 67, 0),
+(44, '661168b5799ebae35de283a6140092954c57d83924acc', 'ae35de283a6140092954c57d83924accqrcode.png', 'valid', 27, 67, 0),
+(45, '6611ecf8cf8a92d26d1c0628d6b0d49de5d703256d0ae', '2d26d1c0628d6b0d49de5d703256d0aeqrcode.png', 'valid', 27, 61, 0),
+(46, '6611ed08663f9c4e7bdd201d98da6333afb076bf5e2de', 'c4e7bdd201d98da6333afb076bf5e2deqrcode.png', 'valid', 27, 61, 0),
+(47, '6611ee273236b0a4dde44c50e1019eca06f18492ffd10', '0a4dde44c50e1019eca06f18492ffd10qrcode.png', 'valid', 27, 61, 0),
+(48, '6611ee7ec9e1f1e189d664dc094bdd7f87c2520e2926d', '1e189d664dc094bdd7f87c2520e2926dqrcode.png', 'valid', 27, 61, 0),
+(49, '6611efc17f9feb4e9cbb9eea7a8f22da1819c92e4835f', 'b4e9cbb9eea7a8f22da1819c92e4835fqrcode.png', 'valid', 27, 62, 0),
+(50, '6611f079b08a2644c2b2e73fa2f25ed27d5d18c7f9b60', '644c2b2e73fa2f25ed27d5d18c7f9b60qrcode.png', 'valid', 27, 66, 35),
+(51, '6611f4935fe7b05f562a5b32c04821d014bb36ec42399', '05f562a5b32c04821d014bb36ec42399qrcode.png', 'valid', 27, 66, 35),
+(52, '6611f813afff9620692e86b964f1e6bbb661e11b13620', '620692e86b964f1e6bbb661e11b13620qrcode.png', 'valid', 27, 63, 20);
 
 -- --------------------------------------------------------
 
@@ -563,7 +582,7 @@ ALTER TABLE `archive_demande`
 -- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
@@ -575,13 +594,13 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `image`
@@ -605,7 +624,7 @@ ALTER TABLE `reclamation_archive`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `saveevent`
@@ -617,7 +636,7 @@ ALTER TABLE `saveevent`
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `user`

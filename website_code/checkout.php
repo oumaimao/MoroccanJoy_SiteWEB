@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 	$ville = $_POST['ville'];
 	$zip = $_POST['zip'];
 	$adresse = $_POST['adresse'];
-	$stat = "valid";
+	$stat = "Non valide";
 
 
 	$user_id = $_SESSION['user']['User_id'];
