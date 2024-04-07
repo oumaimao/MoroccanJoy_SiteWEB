@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
 	
 	$qrcode = $path.$result;
 	$cod=uniqid().md5(uniqid()).md5($str);
-	QRcode :: png($cod, $qrcode, 'H', 2, 1);
+	QRcode :: png($cod, $qrcode, 'H', 15, 1);
 	$_SESSION['qrcode']=$qrcode;
 // This code is generate QRCODE ticket
 

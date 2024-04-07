@@ -42,11 +42,32 @@ $ndate=getdate();
 		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
 		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">		
+		<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>	
 		
 	</head>
 
 <body class="d-flex flex-column h-100">
+<script>
+window.onload = function () {
+    document.getElementById("download")
+        .addEventListener("click", () => {
+            const invoice = this.document.getElementById("invoice");
+            console.log(invoice);
+            console.log(window);
+            var opt = {
+                margin: 0.5,
+                filename: 'Tickt.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(invoice).set(opt).save();
+        })
+}
+
+
+</script>	
 	<!-- Invoice Start-->
 	<div class="invoice clearfix">
 		<div class="container">
@@ -57,10 +78,10 @@ $ndate=getdate();
 							<img src="images/dark-logo.svg" alt="invoice-logo">
 						</div>
 						<div class="invoice-header-text">
-							<button href="#"  class="download-link">Télécharger</button>
+							<a href="#"  id="download"class="download-link">Télécharger</a>
 						</div>
 					</div>
-					<div class="invoice-body">
+					<div class="invoice-body" id="invoice">
 						<div class="invoice_dts">
 							<div class="row">
 								<div class="col-md-12">
