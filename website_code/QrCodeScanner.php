@@ -53,42 +53,64 @@ include "include/nav_session.php";
                             <h3><i class="fa-solid fa-circle-info me-3"></i>About My Organisation</h3>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-12">
                         <div class="conversion-setup">
                             <div class="main-card mt-5">
-                                <div class="bp-title position-relative">
-                                    <h4>About</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                            <style>
-                                main {
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                }
+                                <div class="bp-title position-relative QRCODE">
 
-                                #reader {
-                                    width: 600px;
-                                }
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                                    <style>
+                                        main {
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
 
-                                #result {
-                                    text-align: center;
-                                    font-size: 1.5rem;
-                                }
-                            </style>
-                            <form action="" method="post">
-                                <div id="reader"></div>
-                                <input id="result" name="r" hidden>
-                                <input type="submit" name="s">
-                            </form>
+                                        #reader {
+                                            width: 400px;
+                                        }
 
-                             <?php
-                            
+                                        #result {
+                                            text-align: center;
+                                            font-size: 1.5rem;
+                                        }
 
-                            echo "
+                                        .row {
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+
+                                        .QRCODE {
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            padding: 10px;
+                                        }
+                                        #frm{
+                                            display: flex;
+                                            flex-direction: column;
+                                            row-gap: 10px;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+                                        .msg{
+                                            padding: 10px;
+                                        }
+                                    </style>
+                                    <form action="" method="post" id="frm">
+                                        <div id="reader"></div>
+                                        <input id="result" name="r" hidden>
+
+                                        <button type="submit" name="s" class="main-btn btn-hover h_40 w-100" data-bs-toggle="modal" data-bs-target="#trackingModal">Scanne</button>
+
+                                    </form>
+
+                                    <?php
+
+
+                                    echo "
                             <script>
                             const scanner = new Html5QrcodeScanner('reader', {
                                 qrbox: {
@@ -111,50 +133,64 @@ include "include/nav_session.php";
                                 console.error(err);
                             }
                             </script>";
-                            // <p><a href="${result}">${result}</a></p>
+                                    // <p><a href="${result}">${result}</a></p>
 
-                            require_once "connect/DataBase.php";
-                            if (isset($_POST['s'])) {
+                                    require_once "connect/DataBase.php";
+                                    if (isset($_POST['s'])) {
 
-                                if(isset($_POST['r'])){
-                                    $a = $_POST['r'];
-                                    // Prepare a select statement
-                                    $sql = "SELECT * FROM ticket WHERE QR_code = ?";
-        
-                                    $stmt = $connection->prepare($sql);
-                                    $stmt->execute([$a]);
-        
-                                    // $result = $stmt->fetch();
-                                    // $tt = $stmt->rowCount();
-                                    // var_dump($tt);
-        
-                                    if ($stmt->rowCount() > 0) {
-        
-                                        $sqlt = "SELECT * FROM ticket WHERE QR_code = ? AND Statu = 'Valide'";
-                                        $stmtt = $connection->prepare($sqlt);
-                                        $stmtt->execute([$a]);
-        
-                                        if ($stmtt->rowCount() > 0) {
-                                            echo "<h1>WA waaaaaaa3 wa sir b7alk haadi ra bladna!</h1>";
-                                        } else {
-                                            // Update the 'verif' column to 'verified'
-                                            $sql = "UPDATE ticket SET Statu = 'Valide' WHERE QR_code = ?";
+                                        if (isset($_POST['r'])) {
+                                            $a = $_POST['r'];
+                                            // Prepare a select statement
+                                            $sql = "SELECT * FROM ticket WHERE QR_code = ?";
+
                                             $stmt = $connection->prepare($sql);
                                             $stmt->execute([$a]);
-                                            echo "<h2>Success!</h2>";
+
+                                            // $result = $stmt->fetch();
+                                            // $tt = $stmt->rowCount();
+                                            // var_dump($tt);
+
+                                            if ($stmt->rowCount() > 0) {
+
+                                                $sqlt = "SELECT * FROM ticket WHERE QR_code = ? AND Statu = 'Valide'";
+                                                $stmtt = $connection->prepare($sqlt);
+                                                $stmtt->execute([$a]);
+
+                                                if ($stmtt->rowCount() > 0) {
+                                                    echo "<h3 class='msg'>WA waaaaaaa3 wa sir b7alk haadi ra bladna!</h3>";
+                                                } else {
+                                                    // Update the 'verif' column to 'verified'
+                                                    $sql = "UPDATE ticket SET Statu = 'Valide' WHERE QR_code = ?";
+                                                    $stmt = $connection->prepare($sql);
+                                                    $stmt->execute([$a]);
+                                                    echo "<h2>Success!</h2>";
+                                                }
+                                            } else {
+
+                                                echo '<div class="alert alert-danger" id="message" role="alert" >
+                                                    <h3 style="color:black;">No ticket found with that QR code.</h3>
+                                                </div>';
+
+
+                                                echo "<script>
+                                                    setTimeout(function() {
+                                                        document.getElementById('message').style.display = 'none';
+                                                    }, 3000);  // The message will be hidden after 2 seconds
+                                                </script>";
+                                            }
                                         }
                                     } else {
-                                        echo "<h1>No ticket found with that QR code.</h1>";
+                                        echo "<h3 class='msg'>Scanner votre QR code et clicker en submit</h3>";
                                     }
-                                }
-                           
-                            }else{
-                                echo "<h1>Scanner votre QR code et clicker en submit</h1>";
-                            }
 
-                            // $stmt->close();
-                            // $connection->close();
-                             ?>
+                                    // $stmt->close();
+                                    // $connection->close();
+                                    ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
