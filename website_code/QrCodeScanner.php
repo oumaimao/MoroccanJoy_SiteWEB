@@ -116,6 +116,16 @@ include "include/nav_session.php";
                                         #html5-qrcode-anchor-scan-type-change:hover{
                                             color: #CDC92C;
                                         }
+                                        #html5-qrcode-button-file-selection{
+                                              background-color: black;
+                                            color: white;
+                                            border: 1px solid black;
+                                            border-radius: 5px;
+                                            padding :2px 4px;
+                                            margin-bottom: 2px;
+                                            cursor: pointer;
+                                            text-decoration: none;
+                                        }
                                         #frm{
                                             display: flex;
                                             flex-direction: column;
@@ -125,6 +135,10 @@ include "include/nav_session.php";
                                         }
                                         .msg{
                                             padding: 10px;
+                                        }
+                                        #message{
+                                            padding: 3px 10px;
+                                            margin-top:5px ;
                                         }
                                     </style>
                                     <form action="" method="post" id="frm">
@@ -185,13 +199,24 @@ include "include/nav_session.php";
                                                 $stmtt->execute([$a]);
 
                                                 if ($stmtt->rowCount() > 0) {
-                                                    echo "<h3 class='msg'>WA waaaaaaa3 wa sir b7alk haadi ra bladna!</h3>";
+                                                    echo '<h3 id="msgggg" style="color:red;">WA waaaaaaa3 wa sir b7alk haadi ra bladna!</h3>';
+                                                    echo "<script>
+                                                    setTimeout(function() {
+                                                        document.getElementById('msgggg').style.display = 'none';
+                                                    }, 3000);  // The message will be hidden after 2 seconds
+                                                </script>";
+
                                                 } else {
                                                     // Update the 'verif' column to 'verified'
                                                     $sql = "UPDATE ticket SET Statu = 'Valide' WHERE QR_code = ?";
                                                     $stmt = $connection->prepare($sql);
                                                     $stmt->execute([$a]);
-                                                    echo "<h2>Success!</h2>";
+                                                    echo '<h2  id="messageee" style="color:green;">Success!</h2>';
+                                                    echo "<script>
+                                                    setTimeout(function() {
+                                                        document.getElementById('messageee').style.display = 'none';
+                                                    }, 5000);  // The message will be hidden after 2 seconds
+                                                </script>";
                                                 }
                                             } else {
 
@@ -209,6 +234,11 @@ include "include/nav_session.php";
                                         }
                                     } else {
                                         echo "<h3 class='msg'>Scanner votre QR code et clicker en submit</h3>";
+                                        echo "<script>
+                                                    setTimeout(function() {
+                                                        document.getElementById('message').style.display = 'none';
+                                                    }, 3000);  // The message will be hidden after 2 seconds
+                                                </script>";
                                     }
 
                                     // $stmt->close();
