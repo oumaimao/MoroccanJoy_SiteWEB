@@ -50,7 +50,7 @@ include "include/nav_session.php";
                 <div class="row">
                     <div class="col-md-12">
                         <div class="d-main-title">
-                            <h3><i class="fa-solid fa-circle-info me-3"></i>About My Organisation</h3>
+                            <h3><i class="fa-solid fa-circle-info me-3"></i>Scanner Tickt My Organisation</h3>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
@@ -68,6 +68,9 @@ include "include/nav_session.php";
 
                                         #reader {
                                             width: 400px;
+                                            background-color:  #CDC92C;
+                                           
+
                                         }
 
                                         #result {
@@ -87,6 +90,31 @@ include "include/nav_session.php";
                                             justify-content: center;
                                             align-items: center;
                                             padding: 10px;
+                                        }
+                                        #html5-qrcode-button-camera-permission{
+                                            background-color: black;
+                                            color: white;
+                                            border: 1px solid black;
+                                            border-radius: 5px;
+                                            padding :2px 4px;
+                                            margin-bottom: 4px;
+                                        }
+                                        #html5-qrcode-button-camera-permission:hover{
+                                            color: #CDC92C;
+                                        }
+                                        
+                                        #html5-qrcode-anchor-scan-type-change{
+                                            background-color: black;
+                                            color: white;
+                                            border: 1px solid black;
+                                            border-radius: 5px;
+                                            padding :2px 4px;
+                                            margin-bottom: 2px;
+                                            cursor: pointer;
+                                            text-decoration: none;
+                                        }
+                                        #html5-qrcode-anchor-scan-type-change:hover{
+                                            color: #CDC92C;
                                         }
                                         #frm{
                                             display: flex;

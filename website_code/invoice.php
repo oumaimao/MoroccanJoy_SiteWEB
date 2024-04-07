@@ -128,7 +128,7 @@ $ndate=getdate();
 									<div class="col-lg-7">
 										<div class="event-order-dt p-4">
 											<div class="event-thumbnail-img">
-												<img src="images/event-imgs/img-7.jpg" alt="">
+												<img src="upload/images/<?php echo $imgevent;?> alt="">
 											</div>
 											<div class="event-order-dt-content">
 												<h5><?php echo $nameevent?></h5>
