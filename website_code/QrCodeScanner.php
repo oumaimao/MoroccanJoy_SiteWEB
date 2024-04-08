@@ -1,5 +1,15 @@
 <?php
 include "include/nav_session.php";
+
+require_once "connect/DataBase.php";
+
+$sqlstate=$connection->prepare('SELECT * FROM `event` WHERE E_id=?');
+$id=$_GET['id'];
+$sqlstate->execute([$id]);
+
+$data = $sqlstate->fetch(PDO::FETCH_ASSOC);
+
+$eventid =$data['E_id'];
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +63,7 @@ include "include/nav_session.php";
                             <h3><i class="fa-solid fa-circle-info me-3"></i>Scanner Tickt My Organisation</h3>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-7 col-md-12">
                         <div class="conversion-setup">
                             <div class="main-card mt-5">
                                 <div class="bp-title position-relative QRCODE">
@@ -69,8 +79,7 @@ include "include/nav_session.php";
                                         #reader {
                                             width: 400px;
                                             background-color:  #CDC92C;
-                                           
-
+ 
                                         }
 
                                         #result {
@@ -136,7 +145,7 @@ include "include/nav_session.php";
                                         .msg{
                                             padding: 10px;
                                         }
-                                        #message{
+                                        #message, #utilise, #Success{
                                             padding: 3px 10px;
                                             margin-top:5px ;
                                         }
@@ -148,7 +157,7 @@ include "include/nav_session.php";
                                         <button type="submit" name="s" class="main-btn btn-hover h_40 w-100" data-bs-toggle="modal" data-bs-target="#trackingModal">Scanne</button>
 
                                     </form>
-
+                                    
                                     <?php
 
 
@@ -183,7 +192,7 @@ include "include/nav_session.php";
                                         if (isset($_POST['r'])) {
                                             $a = $_POST['r'];
                                             // Prepare a select statement
-                                            $sql = "SELECT * FROM ticket WHERE QR_code = ?";
+                                            $sql = "SELECT * FROM ticket WHERE QR_code = ? and E_id = '$eventid'";
 
                                             $stmt = $connection->prepare($sql);
                                             $stmt->execute([$a]);
@@ -199,48 +208,47 @@ include "include/nav_session.php";
                                                 $stmtt->execute([$a]);
 
                                                 if ($stmtt->rowCount() > 0) {
-                                                    echo '<h3 id="msgggg" style="color:red;">WA waaaaaaa3 wa sir b7alk haadi ra bladna!</h3>';
+                                                    echo '<div class="alert alert-danger" id="utilise" role="alert" >
+                                                                    <h3 style="color:black;">Cette tickete est déjà utilisé!</h3>
+                                                            </div>';                                                    
                                                     echo "<script>
-                                                    setTimeout(function() {
-                                                        document.getElementById('msgggg').style.display = 'none';
-                                                    }, 3000);  // The message will be hidden after 2 seconds
-                                                </script>";
+                                                                setTimeout(function() {
+                                                                    document.getElementById('utilise').style.display = 'none';
+                                                                }, 5000);  
+                                                             </script>";
 
                                                 } else {
                                                     // Update the 'verif' column to 'verified'
                                                     $sql = "UPDATE ticket SET Statu = 'Valide' WHERE QR_code = ?";
                                                     $stmt = $connection->prepare($sql);
                                                     $stmt->execute([$a]);
-                                                    echo '<h2  id="messageee" style="color:green;">Success!</h2>';
+                                                    echo '<div class="alert alert-success" id="Success" role="alert" >
+                                                                    <h3 style="color:black;">Success!</h3>
+                                                            </div>';
                                                     echo "<script>
                                                     setTimeout(function() {
-                                                        document.getElementById('messageee').style.display = 'none';
-                                                    }, 5000);  // The message will be hidden after 2 seconds
+                                                        document.getElementById('Success').style.display = 'none';
+                                                    }, 5000);  
                                                 </script>";
                                                 }
                                             } else {
 
                                                 echo '<div class="alert alert-danger" id="message" role="alert" >
-                                                    <h3 style="color:black;">No ticket found with that QR code.</h3>
+                                                    <h3 style="color:black;">Cette tickete n`existe pas</h3>
                                                 </div>';
 
 
                                                 echo "<script>
                                                     setTimeout(function() {
                                                         document.getElementById('message').style.display = 'none';
-                                                    }, 3000);  // The message will be hidden after 2 seconds
+                                                    }, 3000);  
                                                 </script>";
                                             }
                                         }
                                     } else {
-                                        echo "<h3 class='msg'>Scanner votre QR code et clicker en submit</h3>";
-                                        echo "<script>
-                                                    setTimeout(function() {
-                                                        document.getElementById('message').style.display = 'none';
-                                                    }, 3000);  // The message will be hidden after 2 seconds
-                                                </script>";
+                                        echo "<h3 class='msg'>Scanner votre QR code et cliquer sur Scanner</h3>";
+                                        
                                     }
-
                                     // $stmt->close();
                                     // $connection->close();
                                     ?>
