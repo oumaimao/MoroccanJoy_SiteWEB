@@ -1,5 +1,10 @@
 ﻿<?php
-include "include/nav_session.php";
+session_start();
+if(!isset($_SESSION['user']['U_email'])){
+	header('location:sign_in.php');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -144,7 +149,9 @@ include "include/nav_session.php";
 	</div>
 	<!-- Create Coupon Model End-->
 	<!-- Header Start-->
-
+	<?php
+		include "include/navindex.php";
+	?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
 	<?php include 'include/CreateureVerticaleNav.php' ?>

@@ -149,6 +149,28 @@ $eventid =$data['E_id'];
                                             padding: 3px 10px;
                                             margin-top:5px ;
                                         }
+                                        #html5-qrcode-button-camera-start{
+                                            background-color: black;
+                                            color: white;
+                                            border: 1px solid black;
+                                            border-radius: 5px;
+                                            padding :2px 4px;
+                                            margin-bottom: 2px;
+                                            cursor: pointer;
+                                            text-decoration: none;
+
+                                        }
+                                        #html5-qrcode-button-camera-stop{
+                                            background-color: black;
+                                            color: white;
+                                            border: 1px solid black;
+                                            border-radius: 5px;
+                                            padding :2px 4px;
+                                            margin-bottom: 2px;
+                                            cursor: pointer;
+                                            text-decoration: none;
+                                        }
+
                                     </style>
                                     <form action="" method="post" id="frm">
                                         <div id="reader"></div>

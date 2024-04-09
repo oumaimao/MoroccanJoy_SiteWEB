@@ -1,5 +1,9 @@
 ﻿<?php
-include "include/nav_session.php";
+session_start();
+if(!isset($_SESSION['user']['U_email'])){
+	header('location:sign_in.php');
+}
+
 
 $userid = $_SESSION['user']['User_id'];
 require 'connect/DataBase.php';
@@ -45,7 +49,9 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
-
+	<?php
+		include "include/navindex.php";
+	?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
 	<?php include 'include/CreateureVerticaleNav.php' ?>

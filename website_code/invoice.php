@@ -56,7 +56,7 @@ window.onload = function () {
             console.log(invoice);
             console.log(window);
             var opt = {
-                margin: 0.5,
+                margin: 0,
                 filename: 'Tickt.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
