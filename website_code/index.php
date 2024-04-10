@@ -107,7 +107,7 @@
 
 														<img src="upload/images/<?php echo $row['Image']; ?>" alt="Event Image">
 													</a>
-													<span class="bookmark-icon" title="Bookmark"></span>
+													<!-- <span class="bookmark-icon" title="Bookmark"></span> -->
 												</div>
 												<div class="event-content">
 													<a href="venue_event_detail_view.php?event_id=<?php echo $row['E_id']; ?>" class="event-title"><?php echo $row['Titre']; ?></a>

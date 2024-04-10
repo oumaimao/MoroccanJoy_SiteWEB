@@ -1,17 +1,9 @@
 ﻿<?php session_start(); ?>
-<?php
-if (isset($_POST['Booknow'])) {
 
-	header('location:checkout.php');
-	
-}
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +62,6 @@ if (isset($_POST['Booknow'])) {
 					require_once './connect/DataBase.php';
 
 					$E_id = $_GET['event_id'];
-					$_SESSION['E_id']=$E_id;
 					$stmt = $connection->prepare("SELECT * FROM `event` WHERE E_id = :E_id");
 
 					$stmt->bindParam(':E_id', $E_id);
@@ -94,8 +85,7 @@ if (isset($_POST['Booknow'])) {
 																?></span>
 								</div>
 								<div class="event-top-dt">
-									<h3 class="event-main-title"><?php echo $row['Titre'];
-									$_SESSION['eventname'] =$row['Titre']?></h3>
+									<h3 class="event-main-title"><?php echo $row['Titre']; ?></h3>
 									<div class="event-top-info-status">
 										<span class="event-type-name"><i class="fa-solid fa-location-dot"></i>Venue Event</span>
 										<span class="event-type-name details-hr">Starts on <span class="ev-event-date"><?php
@@ -109,10 +99,8 @@ if (isset($_POST['Booknow'])) {
 																														echo "$monthAbbreviation ";
 																														echo "$day, ";
 																														echo "$year ";
-																														
 																														?>
-												<?php echo $row['Heure_debut'];
-												$_SESSION['date']=$dayAbbreviation.",  ".$monthAbbreviation."/".$day."/".$year." Durée: ".$row['Heure_fin']; ?> PM</span></span>
+												<?php echo $row['Heure_debut']; ?> PM</span></span>
 										<span class="event-type-name details-hr"><?php echo $row['Heure_fin']; ?>h</span>
 									</div>
 								</div>
@@ -123,8 +111,46 @@ if (isset($_POST['Booknow'])) {
 								<div class="event-img">
 									<img src="upload/images/<?php echo $row['Image']; ?>" alt="Event Image">
 								</div>
+
 								<div class="share-save-btns dropdown">
-									<button class="sv-btn me-2"><i class="fa-regular fa-bookmark me-2"></i>Save</button>
+									<?php
+									require_once './connect/DataBase.php';
+
+									if (isset($_SESSION['user']['User_id'])) {
+										$user_id = $_SESSION['user']['User_id'];
+
+										if (isset($_GET['event_id'])) {
+											$event_id = $_GET['event_id'];
+										} else {
+											echo "Event ID not provided in the URL";
+											exit;
+										}
+									} else {
+										echo "User not logged in";
+										exit;
+									}
+									?>
+
+									<form id="saveEventForm" action="" method="post">
+										<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+										<input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
+										<?php
+										// Check if the event is already saved
+										$check_query = "SELECT * FROM `saveevent` WHERE User_id = :user_id AND E_id = :event_id";
+										$check_statement = $connection->prepare($check_query);
+										$check_statement->bindParam(':user_id', $user_id);
+										$check_statement->bindParam(':event_id', $event_id);
+										$check_statement->execute();
+
+										if ($check_statement->rowCount() > 0) {
+											// Event already saved, show delete button
+											echo '<button type="button" class="sv-btn me-2" name="delete_event"><i class="fa-solid fa-bookmark me-2"></i>Saved</button>';
+										} else {
+											// Event not saved yet, show add button
+											echo '<button type="button" class="sv-btn me-2" name="add_event"><i class="fa-regular fa-bookmark me-2"></i>Save</button>';
+										}
+										?>
+										<!-- <button class="sv-btn me-2"><i class="fa-regular fa-bookmark me-2"></i>Save</button> -->
 									<button class="sv-btn" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-share-nodes me-2"></i>Share</button>
 									<ul class="dropdown-menu">
 										<li><a class="dropdown-item" href="#"><i class="fa-brands fa-facebook me-3"></i>Facebook</a></li>
@@ -132,6 +158,89 @@ if (isset($_POST['Booknow'])) {
 										<li><a class="dropdown-item" href="#"><i class="fa-brands fa-linkedin-in me-3"></i>LinkedIn</a></li>
 										<li><a class="dropdown-item" href="#"><i class="fa-regular fa-envelope me-3"></i>Email</a></li>
 									</ul>
+									</form>
+
+
+									<script>
+										document.addEventListener('DOMContentLoaded', function() {
+											document.querySelectorAll('.sv-btn').forEach(function(button) {
+												button.addEventListener('click', function(event) {
+													event.preventDefault(); // Prevent default form submission behavior
+
+													var form = event.target.closest('form');
+
+													if (button.name === 'add_event') {
+														// Add event
+														var formData = new FormData(form);
+														formData.append('add_event', '1'); // Indicate add_event button clicked
+
+														fetch(form.action, {
+																method: 'POST',
+																body: formData
+															})
+															.then(response => response.text())
+															.then(data => {
+																console.log(data); // Handle response from server
+																location.reload(); // Reload the page after saving
+															})
+															.catch(error => {
+																console.error('Error:', error);
+															});
+													} else if (button.name === 'delete_event') {
+														// Delete event
+														var formData = new FormData(form);
+														formData.append('delete_event', '1'); // Indicate delete_event button clicked
+
+														fetch(form.action, {
+																method: 'POST',
+																body: formData
+															})
+															.then(response => response.text())
+															.then(data => {
+																console.log(data); // Handle response from server
+																location.reload(); // Reload the page after saving
+															})
+															.catch(error => {
+																console.error('Error:', error);
+															});
+													}
+												});
+											});
+										});
+									</script>
+
+									<?php
+									// Handle form submission
+									if ($_SERVER["REQUEST_METHOD"] == "POST") {
+										try {
+											if (isset($_POST['add_event'])) {
+												// Add the event to saveevent table
+												$insert_query = "INSERT INTO `saveevent` (User_id, E_id) VALUES (:user_id, :event_id)";
+												$insert_statement = $connection->prepare($insert_query);
+												$insert_statement->bindParam(':user_id', $_POST['user_id']);
+												$insert_statement->bindParam(':event_id', $_POST['event_id']);
+												$insert_statement->execute();
+
+												echo "Event added to saved events successfully";
+											} elseif (isset($_POST['delete_event'])) {
+												// Delete the event from saveevent table
+												$delete_query = "DELETE FROM `saveevent` WHERE User_id = :user_id AND E_id = :event_id";
+												$delete_statement = $connection->prepare($delete_query);
+												$delete_statement->bindParam(':user_id', $_POST['user_id']);
+												$delete_statement->bindParam(':event_id', $_POST['event_id']);
+												$delete_statement->execute();
+
+												echo "Event removed from saved events successfully";
+											}
+										} catch (PDOException $e) {
+											echo "Database error: " . $e->getMessage(); // Handle database errors
+										}
+									}
+									?>
+
+
+
+									
 								</div>
 								<div class="main-event-content">
 									<h4>About This Event</h4>
@@ -165,15 +274,15 @@ if (isset($_POST['Booknow'])) {
 										<i class="fa-solid fa-circle-user"></i>
 									</div>
 									<div class="event-dt-right-content">
-									<h4>Organised by</h4>
-                                        <?php
-                                        $stmt = $connection->prepare("SELECT U_name, U_Prenom FROM user WHERE User_id = :user_id");
-                                        $stmt->bindParam(":user_id", $row['User_id']);
-                                        $stmt->execute();
-                                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                                        ?>
-                                        <h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
-										<a href="attendee_profile_view.php">View Profile</a>
+										<h4>Organised by</h4>
+										<?php
+										$stmt = $connection->prepare("SELECT U_name, U_Prenom FROM `user` WHERE User_id = :user_id");
+										$stmt->bindParam(":user_id", $row['User_id']);
+										$stmt->execute();
+										$user = $stmt->fetch(PDO::FETCH_ASSOC);
+										?>
+										<h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
+										<a href="attendee_profile_view.html">View Profile</a>
 									</div>
 								</div>
 								<div class="event-dt-right-group">
@@ -217,22 +326,27 @@ if (isset($_POST['Booknow'])) {
 										<a href="#"><i class="fa-solid fa-location-dot me-2"></i>View Map</a>
 									</div>
 								</div>
-
-								<form action="" method="post">
-									<div class="select-tickets-block">
-										
-										
-										<div class="xtotel-tickets-count">
-											<div class="x-title">Ticket</div>
-											<h4>MAD <span><?php echo $row['Prix_ticket'];
-											$_SESSION['Prix_ticket']= $row['Prix_ticket'];?></span></h4>
+								<div class="select-tickets-block">
+									<h6>Select Tickets</h6>
+									<div class="select-ticket-action">
+										<div class="ticket-price">MAD <?php echo $row['Prix_ticket']; ?></div>
+										<div class="quantity">
+											<div class="counter">
+												<span class="down" onClick='decreaseCount(event, this)'>-</span>
+												<input type="text" value="0">
+												<span class="up" onClick='increaseCount(event, this)'>+</span>
+											</div>
 										</div>
-										
 									</div>
-									<div class="booking-btn">
-										<input type="submit" value="Book Now" name="Booknow" class="main-btn btn-hover w-100">
+									<p>2 x pair hand painted leather earrings 1 x glass of bubbles / or coffee Individual grazing box / fruit cup</p>
+									<div class="xtotel-tickets-count">
+										<div class="x-title">1x Ticket(s)</div>
+										<h4>AUD <span>$0.00</span></h4>
 									</div>
-								</form>
+								</div>
+								<div class="booking-btn">
+									<a href="checkout.html" class="main-btn btn-hover w-100">Book Now</a>
+								</div>
 							</div>
 						</div>
 					<?php endforeach; ?>
@@ -257,10 +371,10 @@ if (isset($_POST['Booknow'])) {
 
 														<img src="upload/images/<?php echo $row['Image']; ?>" alt="Event Image">
 													</a>
-													<span class="bookmark-icon" title="Bookmark"></span>
+													<!-- <span class="bookmark-icon" title="Bookmark"></span> -->
 												</div>
 												<div class="event-content">
-													<a href="venue_event_detail_view.php?event_id=<?php echo $row['E_id']; ?>" class="event-title"><?php echo $row['Titre']; ?></a>
+													<a href="venue_event_detail_view.html" class="event-title"><?php echo $row['Titre']; ?></a>
 													<div class="duration-price-remaining">
 														<span class="duration-price">MAD <?php echo $row['Prix_ticket']; ?></span>
 														<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i><?php echo $row['Nombre_tickets']; ?> Restante</span>

@@ -1,6 +1,6 @@
-﻿<?php 
+﻿<?php
 session_start();
-if(!isset($_SESSION['user']['U_email'])){
+if (!isset($_SESSION['user']['U_email'])) {
 	header('location:sign_in.php');
 }
 
@@ -9,34 +9,35 @@ if(!isset($_SESSION['user']['U_email'])){
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
-		<meta name="description" content="Gambolthemes">
-		<meta name="author" content="Gambolthemes">		
-		<title>MoroccanJoy - Système en ligne de billetterie d'événements</title>
-		
-		<!-- Favicon Icon -->
-		<link rel="icon" type="image/png" href="images/fav.png">
-		
-		<!-- Stylesheets -->
-		<link rel="preconnect" href="https://fonts.googleapis.com/">
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
-		<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/responsive.css" rel="stylesheet">
-		<link href="css/night-mode.css" rel="stylesheet">
-		
-		<!-- Vendor Stylesheets -->
-		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">		
-		
-	</head>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+	<meta name="description" content="Gambolthemes">
+	<meta name="author" content="Gambolthemes">
+	<title>MoroccanJoy - Système en ligne de billetterie d'événements</title>
+
+	<!-- Favicon Icon -->
+	<link rel="icon" type="image/png" href="images/fav.png">
+
+	<!-- Stylesheets -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+	<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link href="css/night-mode.css" rel="stylesheet">
+
+	<!-- Vendor Stylesheets -->
+	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+	<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+
+</head>
 
 <body class="d-flex flex-column h-100">
 	<!-- Follow People Model Start-->
@@ -54,12 +55,12 @@ if(!isset($_SESSION['user']['U_email'])){
 								<li class="nav-item d-flex me-4">
 									<a class="nav-link px-0 pt-0 pb-3 active" id="pills-following-tab" data-bs-toggle="pill" href="#following" role="tab" aria-controls="following" aria-selected="true">Following <span class="following_count">(2)</span></a>
 								</li>
-										<li class="nav-item d-flex">
-									<a class="nav-link px-0 pt-0 pb-3" id="pills-followers-tab" data-bs-toggle="pill" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Followers  </a>
+								<li class="nav-item d-flex">
+									<a class="nav-link px-0 pt-0 pb-3" id="pills-followers-tab" data-bs-toggle="pill" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Followers </a>
 								</li>
 							</ul>
 							<div class="tab-content mt-4">
-								<div class="tab-pane fade active show" id="following" role="tabpanel" aria-labelledby="pills-following-tab">							
+								<div class="tab-pane fade active show" id="following" role="tabpanel" aria-labelledby="pills-following-tab">
 									<div class="users-list min-height-430">
 										<div class="user-follow-card mb-4">
 											<div class="follow-card-left">
@@ -91,7 +92,7 @@ if(!isset($_SESSION['user']['U_email'])){
 										</div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="pills-followers-tab">							
+								<div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="pills-followers-tab">
 									<div id="followers-empty-state" class="d-flex align-items-center justify-content-center flex-column min-height-430">
 										<span>
 											<svg width="60" height="47" viewBox="0 0 60 47" fill="none">
@@ -123,67 +124,67 @@ if(!isset($_SESSION['user']['U_email'])){
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">First Name*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="John">																								
+									<input class="form-control h_40" type="text" placeholder="" value="John">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Last Name*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="Doe">																								
+									<input class="form-control h_40" type="text" placeholder="" value="Doe">
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Bio*</label>
-									<textarea class="form-textarea"  placeholder=""></textarea>																							
+									<textarea class="form-textarea" placeholder=""></textarea>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Email*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="Johndoe@example.com">																								
+									<input class="form-control h_40" type="text" placeholder="" value="Johndoe@example.com">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Phone*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Website*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Facebook*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Instagram*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Twitter*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">LinkedIn*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Youtube*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
@@ -192,13 +193,13 @@ if(!isset($_SESSION['user']['U_email'])){
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Address 1*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Address 2*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
@@ -260,26 +261,26 @@ if(!isset($_SESSION['user']['U_email'])){
 										<option value="Turkey">Turkey</option>
 										<option value="United Kingdom">United Kingdom</option>
 										<option value="United States">United States</option>
-										<option value="Vietnam">Vietnam</option>																					
+										<option value="Vietnam">Vietnam</option>
 									</select>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">State*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">City/Suburb*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Zip/Post Code*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 						</div>
@@ -295,7 +296,7 @@ if(!isset($_SESSION['user']['U_email'])){
 	<!-- About Details Model End-->
 	<!-- Header Start-->
 	<?php
-		include "include/navindex.php";
+	include "include/navindex.php";
 	?>
 	<!-- Header End-->
 	<!-- Body Start-->
@@ -303,7 +304,7 @@ if(!isset($_SESSION['user']['U_email'])){
 		<div class="profile-banner">
 			<div class="hero-cover-block">
 				<div class="hero-cover">
-					<div class="hero-cover-img"></div>	
+					<div class="hero-cover-img"></div>
 				</div>
 				<div class="upload-cover">
 					<div class="container">
@@ -379,29 +380,81 @@ if(!isset($_SESSION['user']['U_email'])){
 											</div>
 											<div class="tab-content">
 												<div class="tab-pane fade show active" id="saved" role="tabpanel">
-													<div class="row">	
-														<div class="col-md-12">														
-															<div class="main-card mt-4">
-																<div class="card-top p-4">
-																	<div class="card-event-img">
-																		<img src="images/event-imgs/img-6.jpg" alt="">
-																	</div>
-																	<div class="card-event-dt">
-																		<h5>Step Up Open Mic Show</h5>
-																		<div class="evnt-time">Thu, Jun 30, 2022 4:30 AM</div>
-																		<div class="event-btn-group">
-																			<button class="esv-btn saved-btn me-2"><i class="fa-regular fa-bookmark me-2"></i>Save</button>
-																			<button class="esv-btn me-2" onclick="window.location.href='online_event_detail_view.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View</button>
+													<div class="row">
+														<?php
+														require_once './connect/DataBase.php';
+
+
+														$stmt = $connection->prepare("SELECT e.*, se.* FROM saveevent se JOIN event e ON se.E_id = e.E_id;");
+														$stmt->execute();
+														$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+														// var_dump($events);
+														?>
+
+														<?php foreach ($events as $event) : ?>
+															<div class="col-md-12">
+																<div class="main-card mt-4">
+																	<div class="card-top p-4">
+																		<div class="card-event-img">
+
+																			<img src="upload/images/<?php echo $event['Image']; ?>" alt="">
+																		</div>
+																		<div class="card-event-dt">
+																			<h5><?php echo $event['Titre']; ?></h5>
+																			<div class="evnt-time">
+																				<?php
+																				// Convert date string to timestamp and format it
+																				$timestamp = strtotime($event['Date_debut']);
+																				$dayAbbreviation = date('D', $timestamp);
+																				$monthAbbreviation = date('M', $timestamp);
+																				$day = date('d', $timestamp);
+																				$year = date('Y', $timestamp);
+
+																				echo "$dayAbbreviation, ";
+																				echo "$monthAbbreviation ";
+																				echo "$day, ";
+																				echo "$year ";
+																				?>
+																				<?php echo $event['Heure_debut']; ?>
+																			</div>
+
+																			<div class="event-btn-group d-flex">
+																				<form action="" method="POST">
+																					<input type="hidden" name="sid" value="<?php echo $event['S_id']; ?>">
+																					<button type="submit" class="esv-btn delete-btn me-2"><i class="fa-regular fa-trash-alt me-2"></i>Delete</button>
+																				</form>
+																				<button class="esv-btn me-2" onclick="window.location.href='venue_event_detail_view.php?event_id=<?php echo $event['E_id']; ?>'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View</button>
+
+																				<?php
+																				require_once './connect/DataBase.php';
+
+																				if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['sid'])) {
+																					$sid = $_POST['sid'];
+
+																					$stmt = $connection->prepare("DELETE FROM `saveevent` WHERE S_id = :sid");
+																					$stmt->bindParam(":sid", $sid);
+																					$stmt->execute();
+																				} else {
+																					http_response_code(400);
+																					echo "Bad request";
+																					exit();
+																				}
+																				?>
+																			</div>
+
 																		</div>
 																	</div>
-																</div>																
+																</div>
 															</div>
-														</div>
+														<?php endforeach; ?>
 													</div>
 												</div>
+
+
+
 												<div class="tab-pane fade" id="organised" role="tabpanel">
-													<div class="row">	
-														<div class="col-md-12">														
+													<div class="row">
+														<div class="col-md-12">
 															<div class="main-card mt-4">
 																<div class="card-top p-4">
 																	<div class="card-event-img">
@@ -414,7 +467,7 @@ if(!isset($_SESSION['user']['U_email'])){
 																			<button class="esv-btn me-2" onclick="window.location.href='create_online_event.html'"><i class="fa-solid fa-gear me-2"></i>Manage Event</button>
 																		</div>
 																	</div>
-																</div>																
+																</div>
 															</div>
 															<div class="main-card mt-4">
 																<div class="card-top p-4">
@@ -428,14 +481,14 @@ if(!isset($_SESSION['user']['U_email'])){
 																			<button class="esv-btn me-2" onclick="window.location.href='create_online_event.html'"><i class="fa-solid fa-gear me-2"></i>Manage Event</button>
 																		</div>
 																	</div>
-																</div>																
+																</div>
 															</div>
-														</div>												
+														</div>
 													</div>
 												</div>
 												<div class="tab-pane fade" id="attending" role="tabpanel">
-													<div class="row">	
-														<div class="col-md-12">														
+													<div class="row">
+														<div class="col-md-12">
 															<div class="main-card mt-4">
 																<div class="card-top p-4">
 																	<div class="card-event-img">
@@ -448,7 +501,7 @@ if(!isset($_SESSION['user']['U_email'])){
 																			<button class="esv-btn me-2" onclick="window.location.href='invoice.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View Ticket</button>
 																		</div>
 																	</div>
-																</div>																
+																</div>
 															</div>
 														</div>
 													</div>
@@ -495,7 +548,7 @@ if(!isset($_SESSION['user']['U_email'])){
 												<div class="col-lg-12">
 													<div class="main-card mt-4 p-0">
 														<div class="nav custom-tabs" role="tablist">
-															<span class="tab-link show active" data-bs-toggle="tab" data-bs-target="#tab-02"  role="tab" aria-controls="tab-02" aria-selected="false"><i class="fa-solid fa-key me-3"></i>Password Settings</span>
+															<span class="tab-link show active" data-bs-toggle="tab" data-bs-target="#tab-02" role="tab" aria-controls="tab-02" aria-selected="false"><i class="fa-solid fa-key me-3"></i>Password Settings</span>
 														</div>
 													</div>
 												</div>
@@ -605,16 +658,17 @@ if(!isset($_SESSION['user']['U_email'])){
 	</div>
 	<!-- Body End-->
 	<!-- Footer Start-->
-	<?php include "include/Footer.php";?>
+	<?php include "include/Footer.php"; ?>
 	<!-- Footer End-->
-	
-	
-	
+
+
+
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="vendor/OwlCarousel/owl.carousel.js"></script>
-	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
 </body>
+
 </html>
