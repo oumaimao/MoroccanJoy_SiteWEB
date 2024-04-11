@@ -239,6 +239,7 @@ if (!isset($_SESSION['user']['U_email'])) {
 										<option value="Luxembourg">Luxembourg</option>
 										<option value="Malaysia">Malaysia</option>
 										<option value="Mexico">Mexico</option>
+										<option value="Morocco">Morocco</option>
 										<option value="Nepal">Nepal</option>
 										<option value="Netherlands">Netherlands</option>
 										<option value="New Zealand">New Zealand</option>
@@ -327,19 +328,33 @@ if (!isset($_SESSION['user']['U_email'])) {
 								<div class="user-avatar-img">
 									<img src="images/profile-imgs/img-13.jpg" alt="">
 									<div class="avatar-img-btn">
-										<input type="file" id="avatar-img">
+										<input type="file" id="avatar-img" name="image">
 										<label for="avatar-img"><i class="fa-solid fa-camera"></i></label>
 									</div>
 								</div>
 								<div class="user-dts">
-									<h4 class="user-name">John Doe<span class="verify-badge"><i class="fa-solid fa-circle-check"></i></span></h4>
-									<span class="user-email">johndoe@example.com</span>
+									<?php
+									require_once './connect/DataBase.php';
+									$emaill = $_SESSION['user']['U_email'];
+									$user_id = $_SESSION['user']['User_id'];
+									$stmt = $connection->prepare("SELECT U_name, U_Prenom FROM `user` WHERE User_id= :user_id");
+									$stmt->bindParam(":user_id", $user_id);
+									$stmt->execute();
+									$user = $stmt->fetch(PDO::FETCH_ASSOC);
+									?>
+									<h4 class="user-name"><?php if (is_array($user)) {
+																echo $user['U_Prenom'] . " " . $user['U_name'];
+															} else {
+																echo "User data not available";
+															}
+															?><span class="verify-badge"><i class="fa-solid fa-circle-check"></i></span></h4>
+									<span class="user-email"><?php echo $emaill ?></span>
 								</div>
 								<div class="user-description">
-									<p>Hey I am a John Doe</p>
+									<p>Hey I am a <?php echo $user['U_Prenom'] . " " . $user['U_name']; ?></p>
 								</div>
 								<div class="user-btns">
-									<a href="my_organisation_dashboard.html" class="co-main-btn co-btn-width min-width d-inline-block h_40">My Organisation</a>
+									<a href="my_organisation_dashboard.php" class="co-main-btn co-btn-width min-width d-inline-block h_40">My Organisation</a>
 								</div>
 								<div class="profile-social-link">
 									<h6>Find me on</h6>
@@ -436,8 +451,6 @@ if (!isset($_SESSION['user']['U_email'])) {
 																					$stmt->execute();
 																				} else {
 																					http_response_code(400);
-																					echo "Bad request";
-																					exit();
 																				}
 																				?>
 																			</div>

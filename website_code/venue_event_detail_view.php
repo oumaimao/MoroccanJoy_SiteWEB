@@ -1,9 +1,17 @@
 ﻿<?php session_start(); ?>
+<?php
+if (isset($_POST['Booknow'])) {
 
+	header('location:checkout.php');
+	
+}
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,6 +70,7 @@
 					require_once './connect/DataBase.php';
 
 					$E_id = $_GET['event_id'];
+					$_SESSION['E_id']=$E_id;
 					$stmt = $connection->prepare("SELECT * FROM `event` WHERE E_id = :E_id");
 
 					$stmt->bindParam(':E_id', $E_id);
@@ -69,6 +78,12 @@
 					$stmt->execute();
 
 					$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+					
+										// Query to update page views
+										$sql = "UPDATE `event` SET vue = vue + 1 WHERE E_id = '$E_id' ";
+										if ($connection->query($sql) === TRUE) {
+											echo "Page views updated successfully";
+										} 
 
 					?>
 					<?php foreach ($results as $row) : ?>
@@ -85,7 +100,8 @@
 																?></span>
 								</div>
 								<div class="event-top-dt">
-									<h3 class="event-main-title"><?php echo $row['Titre']; ?></h3>
+									<h3 class="event-main-title"><?php echo $row['Titre'];
+									$_SESSION['eventname'] =$row['Titre']?></h3>
 									<div class="event-top-info-status">
 										<span class="event-type-name"><i class="fa-solid fa-location-dot"></i>Venue Event</span>
 										<span class="event-type-name details-hr">Starts on <span class="ev-event-date"><?php
@@ -99,8 +115,10 @@
 																														echo "$monthAbbreviation ";
 																														echo "$day, ";
 																														echo "$year ";
+																														
 																														?>
-												<?php echo $row['Heure_debut']; ?> PM</span></span>
+												<?php echo $row['Heure_debut'];
+												$_SESSION['date']=$dayAbbreviation.",  ".$monthAbbreviation."/".$day."/".$year." Durée: ".$row['Heure_fin']; ?> PM</span></span>
 										<span class="event-type-name details-hr"><?php echo $row['Heure_fin']; ?>h</span>
 									</div>
 								</div>
@@ -111,7 +129,6 @@
 								<div class="event-img">
 									<img src="upload/images/<?php echo $row['Image']; ?>" alt="Event Image">
 								</div>
-
 								<div class="share-save-btns dropdown">
 									<?php
 									require_once './connect/DataBase.php';
@@ -274,15 +291,15 @@
 										<i class="fa-solid fa-circle-user"></i>
 									</div>
 									<div class="event-dt-right-content">
-										<h4>Organised by</h4>
-										<?php
-										$stmt = $connection->prepare("SELECT U_name, U_Prenom FROM `user` WHERE User_id = :user_id");
-										$stmt->bindParam(":user_id", $row['User_id']);
-										$stmt->execute();
-										$user = $stmt->fetch(PDO::FETCH_ASSOC);
-										?>
-										<h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
-										<a href="attendee_profile_view.html">View Profile</a>
+									<h4>Organised by</h4>
+                                        <?php
+                                        $stmt = $connection->prepare("SELECT U_name, U_Prenom FROM user WHERE User_id = :user_id");
+                                        $stmt->bindParam(":user_id", $row['User_id']);
+                                        $stmt->execute();
+                                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                                        ?>
+                                        <h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
+										<a href="attendee_profile_view.php">View Profile</a>
 									</div>
 								</div>
 								<div class="event-dt-right-group">
@@ -326,27 +343,22 @@
 										<a href="#"><i class="fa-solid fa-location-dot me-2"></i>View Map</a>
 									</div>
 								</div>
-								<div class="select-tickets-block">
-									<h6>Select Tickets</h6>
-									<div class="select-ticket-action">
-										<div class="ticket-price">MAD <?php echo $row['Prix_ticket']; ?></div>
-										<div class="quantity">
-											<div class="counter">
-												<span class="down" onClick='decreaseCount(event, this)'>-</span>
-												<input type="text" value="0">
-												<span class="up" onClick='increaseCount(event, this)'>+</span>
-											</div>
+
+								<form action="" method="post">
+									<div class="select-tickets-block">
+										
+										
+										<div class="xtotel-tickets-count">
+											<div class="x-title">Ticket</div>
+											<h4>MAD <span><?php echo $row['Prix_ticket'];
+											$_SESSION['Prix_ticket']= $row['Prix_ticket'];?></span></h4>
 										</div>
+										
 									</div>
-									<p>2 x pair hand painted leather earrings 1 x glass of bubbles / or coffee Individual grazing box / fruit cup</p>
-									<div class="xtotel-tickets-count">
-										<div class="x-title">1x Ticket(s)</div>
-										<h4>AUD <span>$0.00</span></h4>
+									<div class="booking-btn">
+										<input type="submit" value="Book Now" name="Booknow" class="main-btn btn-hover w-100">
 									</div>
-								</div>
-								<div class="booking-btn">
-									<a href="checkout.html" class="main-btn btn-hover w-100">Book Now</a>
-								</div>
+								</form>
 							</div>
 						</div>
 					<?php endforeach; ?>
@@ -371,10 +383,10 @@
 
 														<img src="upload/images/<?php echo $row['Image']; ?>" alt="Event Image">
 													</a>
-													<!-- <span class="bookmark-icon" title="Bookmark"></span> -->
+													<span class="bookmark-icon" title="Bookmark"></span>
 												</div>
 												<div class="event-content">
-													<a href="venue_event_detail_view.html" class="event-title"><?php echo $row['Titre']; ?></a>
+													<a href="venue_event_detail_view.php?event_id=<?php echo $row['E_id']; ?>" class="event-title"><?php echo $row['Titre']; ?></a>
 													<div class="duration-price-remaining">
 														<span class="duration-price">MAD <?php echo $row['Prix_ticket']; ?></span>
 														<span class="remaining"><i class="fa-solid fa-ticket fa-rotate-90"></i><?php echo $row['Nombre_tickets']; ?> Restante</span>

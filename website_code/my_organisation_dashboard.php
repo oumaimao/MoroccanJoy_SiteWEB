@@ -3,6 +3,11 @@ session_start();
 if(!isset($_SESSION['user']['U_email'])){
 	header('location:sign_in.php');
 }
+$emaill = $_SESSION['user']['U_email'];
+$namee = $_SESSION['user']['U_name'];
+require_once "connect/DataBase.php";
+
+
 
 ?>
 <!DOCTYPE html>
@@ -259,7 +264,7 @@ if(!isset($_SESSION['user']['U_email'])){
 									<img src="images/profile-imgs/img-13.jpg" alt="">
 								</div>
 								<div class="ocard-name">
-									<h4>John Doe</h4>
+									<h4><?php echo $namee ?></h4>
 									<span>My Organisation</span>
 								</div>
 							</div>
@@ -281,29 +286,72 @@ if(!isset($_SESSION['user']['U_email'])){
 											<span>30th April, 2022</span>
 										</h5>
 									</div>
+									<form action="" method="post">
 									<div class="rs">
 										<div class="dropdown dropdown-text event-list-dropdown">
-											<button class="dropdown-toggle event-list-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<!-- <button class="dropdown-toggle event-list-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 												<span>Selected Events (1)</span>
-											</button>
-											<ul class="dropdown-menu">
+											</button> -->
+											<!-- <ul class="dropdown-menu">
 												<li><a class="dropdown-item" href="#">1</a></li>
-											</ul>
+											</ul> -->
+																										<?php 
+															$userid = $_SESSION['user']['User_id'];
+															require 'connect/DataBase.php';
+															$sql = 'SELECT * FROM `event` WHERE User_id = :userid';
+															$statement = $connection->prepare($sql);
+															$statement->execute([':userid' => $userid]);
+															$users = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
+											<select class="d-inline form-select w-50 py-1 px-4 dark mx-0" name="ev" id="">
+												<option selected value="0">All</option>
+											<?php foreach ($users as $user) : ?>
+											
+												<option class="dropdown-item"  value="<?php echo $user['E_id'] ?>"><?php echo $user['Titre'] ?></option>
+												<?php endforeach; ?>
+											</select>
+											<input type="submit" class="btn btn-dark  " value="trouve" name="submiit">
 										</div>
 									</div>
+									</form>
 								</div>
 								<div class="dashboard-report-content">
 									<div class="row">
-										<div class="col-xl-3 col-lg-6 col-md-6">
+										<div class="col-xl-4 col-lg-6 col-md-6">
 											<div class="dashboard-report-card purple">
 												<div class="card-content">
 													<div class="card-content">
-														<span class="card-title fs-6">Revenue (AUD)</span>
-														<span class="card-sub-title fs-3">$550.00</span>
+														<?php
+													if(isset($_POST['ev']) && $_POST['ev']!=0 ){
+															
+														if($_POST['ev']!=0){
+															$evv=$_POST['ev'];
+														$sql = "SELECT sum(prix_tickt) as R FROM ticket WHERE  E_id = '$evv'";
+														$result = $connection->query($sql);													
+														if ($result->rowCount() > 0)
+														{
+																																											
+														$rowr = $result->fetch(PDO::FETCH_ASSOC);																										
+																																											
+																													}
+														}
+													}else{
+				$sql = "SELECT sum(prix_tickt) as R FROM ticket WHERE E_id in (SELECT E_id FROM `event` WHERE User_id = '$userid')";
+															$result = $connection->query($sql);													
+															if ($result->rowCount() > 0)
+															{
+																																												
+															$rowr = $result->fetch(PDO::FETCH_ASSOC);																										
+																																												
+															}
+																		
+													}											
+														
+														?>
+														<span class="card-title fs-6">Revenue (MAD)</span>
+														<span class="card-sub-title fs-3"><?php if($rowr['R']>0){echo $rowr['R'];}else{echo '0';}?></span>
 														<div class="d-flex align-items-center">
-															<span><i class="fa-solid fa-arrow-trend-up"></i></span>
-															<span class="text-Light font-12 ms-2 me-2">0.00%</span>
-															<span class="font-12 color-body text-nowrap">From Previous Period</span>
+															
+															
 														</div>
 													</div>
 													<div class="card-media">
@@ -312,34 +360,57 @@ if(!isset($_SESSION['user']['U_email'])){
 												</div>
 											</div>
 										</div>
-										<div class="col-xl-3 col-lg-6 col-md-6">
-											<div class="dashboard-report-card red">
-												<div class="card-content">
-													<div class="card-content">
-														<span class="card-title fs-6">Orders</span>
-														<span class="card-sub-title fs-3">2</span>
-														<div class="d-flex align-items-center">
-															<span><i class="fa-solid fa-arrow-trend-up"></i></span>
-															<span class="text-Light font-12 ms-2 me-2">0.00%</span>
-															<span class="font-12 color-body text-nowrap">From Previous Period</span>
-														</div>
-													</div>
-													<div class="card-media">
-														<i class="fa-solid fa-box"></i>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-xl-3 col-lg-6 col-md-6">
+										
+										<div class="col-xl-4 col-lg-6 col-md-6">
 											<div class="dashboard-report-card info">
 												<div class="card-content">
+													<?php
+													if(isset($_POST['ev'])&& $_POST['ev']!=0){
+														$iddd=$_POST['ev'];
+														// Query to fetch page views
+														$sql = "SELECT vue as vew FROM event WHERE E_id = '$iddd'";
+														$result = $connection->query($sql);
+
+														if ($result->rowCount() > 0)
+														 {
+															
+															$row = $result->fetch(PDO::FETCH_ASSOC);
+																
+														}
+													}else{
+														$sql = "SELECT sum(vue) as vew FROM event WHERE User_id = '$userid'";
+														$result = $connection->query($sql);
+
+														if ($result->rowCount() > 0)
+														 {
+															
+															$row = $result->fetch(PDO::FETCH_ASSOC);
+															
+																
+														}
+
+													}
+													
+													
+													
+													
+													
+													?>
 													<div class="card-content">
 														<span class="card-title fs-6">Page Views</span>
-														<span class="card-sub-title fs-3">30</span>
+														<span class="card-sub-title fs-3"><?php if($row['vew']>0){echo $row['vew'];}else{echo '0';}
+
+
+														
+														
+														
+													
+												
+											?>
+														</span>
 														<div class="d-flex align-items-center">
-															<span><i class="fa-solid fa-arrow-trend-up"></i></span>
-															<span class="text-Light font-12 ms-2 me-2">0.00%</span>
-															<span class="font-12 color-body text-nowrap">From Previous Period</span>
+													
+															
 														</div>
 													</div>
 													<div class="card-media">
@@ -348,16 +419,42 @@ if(!isset($_SESSION['user']['U_email'])){
 												</div>
 											</div>
 										</div>
-										<div class="col-xl-3 col-lg-6 col-md-6">
+										<div class="col-xl-4 col-lg-6 col-md-6">
 											<div class="dashboard-report-card success">
 												<div class="card-content">
 													<div class="card-content">
+														<?php
+if(isset($_POST['ev']) && $_POST['ev']!=0)		{
+	if($_POST['ev']!=0){
+		$sql = "SELECT count(*) as ti FROM ticket WHERE  E_id = '$iddd'";
+	$result = $connection->query($sql);													
+	if ($result->rowCount() > 0)
+	{
+																														
+	$rowtt = $result->fetch(PDO::FETCH_ASSOC);																										
+																														
+	}
+}	
+	}else{
+		$sql = "SELECT count(*) as ti FROM ticket WHERE E_id in (SELECT E_id FROM `event` WHERE User_id = '$userid')";
+	$result = $connection->query($sql);													
+	if ($result->rowCount() > 0)
+	{
+																														
+	$rowtt = $result->fetch(PDO::FETCH_ASSOC);																										
+																														
+	}
+	}
+			
+	
+														
+														
+														?>
 														<span class="card-title fs-6">Ticket Sales</span>
-														<span class="card-sub-title fs-3">3</span>
+														<span class="card-sub-title fs-3"><?php  echo $rowtt['ti'] ;?></span>
 														<div class="d-flex align-items-center">
-															<span><i class="fa-solid fa-arrow-trend-up"></i></span>
-															<span class="text-Light font-12 ms-2 me-2">0.00%</span>
-															<span class="font-12 color-body text-nowrap">From Previous Period</span>
+														
+															
 														</div>
 													</div>
 													<div class="card-media">

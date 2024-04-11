@@ -6,7 +6,7 @@ $sqlState = $connection->prepare('SELECT * FROM demande WHERE event_id=?');
 
     $evt = $sqlState->fetch(PDO::FETCH_ASSOC);
 
-    $sqlState = $connection->prepare('INSERT INTO event VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+    $sqlState = $connection->prepare('INSERT INTO event VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0)');
     $sqlState->execute([$evt['n_event'],$evt['description'],$evt['image'],$evt['event_time'],$evt['event_date'],$evt['event_duration'],$evt['P_tickts'],$evt['N_tickts'],$evt['city'],$evt['zip'],$evt['gategorie'],$evt['User_id'],$evt['adress1'],$evt['adress2']]);
 
 $sqlstate=$connection->prepare('DELETE FROM demande WHERE event_id=?');

@@ -140,7 +140,7 @@ session_start();
                                 ?>
 								<tr>
 								<td><?php echo $demande['User_id']?></td>										
-									<td><?php echo $demande['event_id']?></td>	
+									<td><?php echo $demande['eventd_id']?></td>	
 									<td><?php echo $demande['n_event']?></td>
 									
 									<td><span class="action-btn btn btn-primary"><a href="demande_archive_detaille.php?id=<?php echo $demande['event_id']?>" >Détaille</a></span></td>
