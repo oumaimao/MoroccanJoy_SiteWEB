@@ -5,6 +5,9 @@ if (isset($_POST['Booknow'])) {
 	header('location:checkout.php');
 	
 }
+if(!isset($_SESSION['user']['U_email'])){
+	header('location:sign_in.php');
+}
 
 
 
