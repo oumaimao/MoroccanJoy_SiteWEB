@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-if(!isset($_SESSION['user']['U_email'])){
+if (!isset($_SESSION['user']['U_email'])) {
 	header('location:sign_in.php');
 }
 
@@ -50,7 +50,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
 	<?php
-		include "include/navindex.php";
+	include "include/navindex.php";
 	?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
@@ -67,27 +67,42 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 						</div>
 					</div>
 					<div class="col-md-12">
-						<div class="main-card mt-5">
-							<div class="dashboard-wrap-content p-4">
-								<h5 class="mb-4">Events (1)</h5>
-								<div class="d-md-flex flex-wrap align-items-center">
-									<div class="dashboard-date-wrap">
-										<div class="form-group">
-											<div class="relative-input position-relative">
-												<input class="form-control h_40" type="text" placeholder="Search by event name, status" value="">
-												<i class="uil uil-search"></i>
+						<form action="" method="post">
+							<div class="main-card mt-5">
+								<div class="dashboard-wrap-content p-4">
+									<div class="d-md-flex flex-wrap align-items-center">
+										<div class="dashboard-date-wrap">
+											<div class="form-group">
+												<div class="relative-input position-relative">
+													<input class="form-control h_40" type="text" placeholder="Search by event name, status" value="" name="chr">
+													<i class="uil uil-search"></i>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="rs ms-auto mt_r4">
-										<div class="nav custom2-tabs btn-group" role="tablist">
-											<button class="tab-link active" data-bs-toggle="tab" data-bs-target="#all-tab" type="button" role="tab" aria-controls="all-tab" aria-selected="true">All Event (<span class="total_event_counter">1</span>)</button>
+										<div class="rs ms-auto mt_r4">
+											<div class="nav custom2-tabs btn-group" role="tablist">
+												<button class="tab-link btn-hover" data-bs-toggle="tab" data-bs-target="#all-tab" type="submit" role="tab" aria-controls="all-tab" aria-selected="true" name="Chercher">Chercher</button>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<?php foreach ($users as $user) : ?>
+						</form>
+						<?php
+						if(isset($_POST['Chercher'])){
+							require_once "connect/DataBase.php";
+							$Search = $_POST['chr'];
+							$users= $connection->query("SELECT * FROM `event` WHERE  User_id = '$userid' and (E_id like '%$Search%' or Titre like '%$Search%' or `Description` like '%$Search%' or Date_debut like '%$Search%' or adress1 like '%$Search%' or Ville like '%$Search%' or Zip_code like '%$Search%' or Categorie_id like '%$Search%')")->fetchAll(PDO::FETCH_ASSOC);
+						}else{
+								require 'connect/DataBase.php';
+								// $sql = 'SELECT * FROM `event` WHERE User_id = :userid';
+								//$statement = $connection->prepare($sql);
+
+								$users= $connection->query("SELECT * FROM `event` WHERE User_id = '$userid'");
+						}
+							
+						foreach ($users as $user){?>
+
 							<div class="event-list">
 								<div class="tab-content">
 									<div class="tab-pane fade show active" id="all-tab" role="tabpanel">
@@ -104,14 +119,13 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 													</div>
 													<div class="dropdown">
 
-														<a href="QrCodeScanner.php?id=<?php echo $user['E_id'] ?>"><button type="button" class="main-btn min-width btn-hover h_40">Scanner</button></a>
+														<a href="QrCodeScanner.php?id=<?php echo $user['E_id'] ?>"><button type="button" class="main-btn  btn-hover h_40">Scanner</button></a>
 
 														<button class="option-btn" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></button>
 														<div class="dropdown-menu dropdown-menu-right">
-															<a href="#" class="dropdown-item"><i class="fa-solid fa-gear me-3"></i>Manage</a>
-															<a href="#" class="dropdown-item"><i class="fa-solid fa-eye me-3"></i>Preview Event</a>
-															<a href="#" class="dropdown-item"><i class="fa-solid fa-clone me-3"></i>Duplicate</a>
-															<a href="#" class="dropdown-item delete-event"><i class="fa-solid fa-trash-can me-3"></i>Delete</a>
+															<a href="event_update.php?id=<?php echo $user['E_id'] ?>" class="dropdown-item"><i class="fa-solid fa-gear me-3"></i>Modifier Event</a>
+															<a href="Event_Cr_detaille.php?id=<?php echo $user['E_id'] ?>" class="dropdown-item"><i class="fa-solid fa-eye me-3"></i>Détaille</a>
+															<a href="Event_Cr_Delete.php?id=<?php echo $user['E_id'] ?>" class="dropdown-item delete-event" onclick="return confirm( 'Voulez vous vraiment supprimer:  <?php echo $user['Titre'] ?>' );"><i class="fa-solid fa-trash-can me-3 text-danger"></i>supprimer</a>
 														</div>
 													</div>
 												</div>
@@ -164,7 +178,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 									</div>
 								</div>
 							</div>
-						<?php endforeach; ?>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
