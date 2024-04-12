@@ -69,7 +69,7 @@ if (!isset($_SESSION['admin'])) {
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="main-btn min-width btn-hover h_40">Add</button>
+					<button type="submit" name="add" class="main-btn min-width btn-hover h_40">Add</button>
 				</div>
 			</div>
 		</form>
@@ -117,7 +117,7 @@ if (!isset($_SESSION['admin'])) {
 	<?php
 	require_once './connect/DataBase.php';
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if (isset($_POST['add'])) {
 		$category_name = $_POST['category_name'];
 
 		$sql = "INSERT INTO categorie (Nom_cat) VALUES (?)";
@@ -152,21 +152,27 @@ if (!isset($_SESSION['admin'])) {
 	<!-- Body Start -->
 
 	<div class="wrapper wrapper-body">
-
+	
 		<div class="dashboard-wrap-content p-4">
 			<h5 class="mb-4">Liste des catégories</h5>
+			<div class="d-flex justify-content-end ocard-right my-3">
+				<button class=" pe-4 ps-4 main-btn h_40 mw-25" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Create</button>
+			</div>
 			<div class="d-md-flex flex-wrap align-items-center">
 				<div class="dashboard-date-wrap">
-					<div class="form-group">
-						<div class="relative-input position-relative">
-							<input class="form-control h_40" type="text" placeholder="Search by name" value="">
-							<i class="uil uil-search"></i>
-						</div>
+				<form action="Gategorie.php" method="post">
+				<div class="form-group">
+					<div class="relative-input position-relative">
+						<input class="form-control h_40" type="text" placeholder="Search by name" style=" display: inline-block;" value="" name="crs">
+						<i class="uil uil-search"></i>
 					</div>
+					<div class="ocard-right">
+				<button class="d-inline pe-4 ps-4 main-btn h_40 mw-25 m-3" type="submit" name="bbb">Chercher</button>
+				
+			</div>
+			</form>
 				</div>
-				<div class="ocard-right">
-					<button class="pe-4 ps-4 main-btn h_40 w-100" data-bs-toggle="modal" data-bs-target="#addorganisationModal">Create</button>
-				</div>
+				
 			</div>
 		</div>
 		<div class="tab-content">
@@ -176,8 +182,14 @@ if (!isset($_SESSION['admin'])) {
 						<div class="table-responsive">
 							<?php
 							require_once './connect/DataBase.php';
-
-							$categories = $connection->query('SELECT * FROM categorie')->fetchAll(PDO::FETCH_ASSOC);
+							if(isset($_POST['bbb'])){
+								require_once "connect/DataBase.php";
+								$hh = $_POST['crs'];
+								$categories= $connection->query("SELECT * FROM categorie WHERE Categorie_id like '%$hh%' or Nom_cat like '%$hh%'")->fetchAll(PDO::FETCH_ASSOC);
+							}else{
+								$categories = $connection->query('SELECT * FROM categorie')->fetchAll(PDO::FETCH_ASSOC);
+							}
+						
 
 							if (!empty($categories)) {
 								echo "<table class='table'>";
