@@ -135,7 +135,7 @@ use Google\Client as Google_Client;
 // init configuration
 $clientID = '42106599543-l7vlav11n3icidf3fo0hammbhuk2esd9.apps.googleusercontent.com';
 $clientSecret = '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';
-$redirectUri = 'http://localhost/joy/';
+$redirectUri = 'https://google.com';
 
 // create Client Request to access Google API
 $client = new Google_Client();
