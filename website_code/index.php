@@ -68,7 +68,7 @@
 
 								<!-- Categorie -->
 								<?php
-								require_once './connect/DataBase.php';
+								require_once 'connect/DataBase.php';
 								$categoryId = $_GET['categorie_id'] ?? NULL;
 								$categories = $connection->query("SELECT * FROM categorie")->fetchAll(PDO::FETCH_ASSOC);
 								if (!is_null($categoryId)) {
