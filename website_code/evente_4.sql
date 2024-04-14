@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Apr 12, 2024 at 12:52 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost
+-- Generation Time: Apr 14, 2024 at 12:35 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `adminee` (
-  `admin_id` int(11) NOT NULL,
-  `A_email` varchar(100) NOT NULL,
-  `A_password` varchar(200) NOT NULL
+  `admin_id` int NOT NULL,
+  `A_email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `A_password` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -50,23 +50,23 @@ INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
 --
 
 CREATE TABLE `archive_demande` (
-  `event_id` int(11) NOT NULL,
-  `n_event` varchar(100) DEFAULT NULL,
-  `event_date` varchar(200) NOT NULL,
-  `event_time` varchar(200) NOT NULL,
-  `event_duration` varchar(200) NOT NULL,
-  `adress1` varchar(300) NOT NULL,
-  `adress2` varchar(300) NOT NULL,
-  `country` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL,
-  `zip` int(11) NOT NULL,
-  `description` varchar(400) NOT NULL,
-  `image` varchar(400) NOT NULL,
-  `gategorie` varchar(100) NOT NULL,
-  `P_tickts` int(255) NOT NULL,
-  `N_tickts` int(255) NOT NULL,
-  `User_id` int(11) NOT NULL,
-  `eventd_id` int(11) DEFAULT NULL
+  `event_id` int NOT NULL,
+  `n_event` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `event_date` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `event_time` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `event_duration` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `adress1` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `adress2` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `country` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `city` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `zip` int NOT NULL,
+  `description` varchar(400) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(400) COLLATE utf8mb4_general_ci NOT NULL,
+  `gategorie` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `P_tickts` int NOT NULL,
+  `N_tickts` int NOT NULL,
+  `User_id` int NOT NULL,
+  `eventd_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -84,8 +84,8 @@ INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`
 --
 
 CREATE TABLE `categorie` (
-  `Categorie_id` int(11) NOT NULL,
-  `Nom_cat` varchar(30) NOT NULL
+  `Categorie_id` int NOT NULL,
+  `Nom_cat` varchar(30) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -111,13 +111,13 @@ INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
 --
 
 CREATE TABLE `contact_us` (
-  `contact_id` int(11) NOT NULL,
-  `c_nom` varchar(30) NOT NULL,
-  `c_prenom` varchar(30) NOT NULL,
-  `c_phone` varchar(30) NOT NULL,
-  `c_email` varchar(100) NOT NULL,
-  `c_message` varchar(500) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `contact_id` int NOT NULL,
+  `c_nom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `c_prenom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `c_phone` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `c_email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `c_message` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -144,23 +144,23 @@ INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_phone`, `c_email
 --
 
 CREATE TABLE `demande` (
-  `event_id` int(11) NOT NULL,
-  `n_event` varchar(50) NOT NULL,
-  `event_date` varchar(200) NOT NULL,
-  `event_time` varchar(50) NOT NULL,
-  `event_duration` varchar(50) NOT NULL,
-  `adress1` varchar(100) NOT NULL,
-  `adress2` varchar(100) NOT NULL,
-  `country` varchar(50) NOT NULL,
-  `state` varchar(50) NOT NULL,
-  `city` varchar(50) NOT NULL,
-  `zip` varchar(80) NOT NULL,
-  `description` varchar(300) NOT NULL,
-  `image` varchar(250) NOT NULL,
-  `gategorie` int(11) DEFAULT NULL,
-  `P_tickts` int(11) NOT NULL,
-  `N_tickts` int(11) NOT NULL,
-  `User_id` int(11) NOT NULL
+  `event_id` int NOT NULL,
+  `n_event` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `event_date` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `event_time` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `event_duration` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `adress1` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `adress2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `country` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `state` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `city` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `zip` varchar(80) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `gategorie` int DEFAULT NULL,
+  `P_tickts` int NOT NULL,
+  `N_tickts` int NOT NULL,
+  `User_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -179,22 +179,22 @@ INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event
 --
 
 CREATE TABLE `event` (
-  `E_id` int(11) NOT NULL,
-  `Titre` varchar(100) DEFAULT NULL,
-  `Description` varchar(200) NOT NULL,
-  `Image` varchar(500) NOT NULL,
+  `E_id` int NOT NULL,
+  `Titre` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Description` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `Image` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
   `Heure_debut` time NOT NULL,
   `Date_debut` date NOT NULL,
   `Heure_fin` time NOT NULL,
   `Prix_ticket` float NOT NULL,
-  `Nombre_tickets` int(11) NOT NULL,
-  `Ville` varchar(30) NOT NULL,
-  `Zip_code` varchar(30) NOT NULL,
-  `Categorie_id` int(11) DEFAULT NULL,
-  `User_id` int(11) NOT NULL,
-  `adress1` varchar(200) NOT NULL,
-  `adress2` varchar(200) NOT NULL,
-  `vue` int(11) DEFAULT 0
+  `Nombre_tickets` int NOT NULL,
+  `Ville` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `Zip_code` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `Categorie_id` int DEFAULT NULL,
+  `User_id` int NOT NULL,
+  `adress1` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `adress2` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `vue` int DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -202,12 +202,12 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Date_debut`, `Heure_fin`, `Prix_ticket`, `Nombre_tickets`, `Ville`, `Zip_code`, `Categorie_id`, `User_id`, `adress1`, `adress2`, `vue`) VALUES
-(61, 'Event 1', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-06', '17:00:00', 10, 100, 'City 1', '12345', 1, 12, 'Address 1', 'Street 1', 0),
-(62, 'Event 2', 'Description for Event 2', 'image2.jpg', '10:30:00', '2024-04-08', '20:00:00', 15, 80, 'City 2', '23456', 2, 13, 'Address 2', 'Street 2', 15),
+(61, 'Event 1', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-06', '17:00:00', 10, 100, 'City 1', '12345', 1, 12, 'Address 1', 'Street 1', 2),
+(62, 'Event 2', 'Description for Event 2', 'image2.jpg', '10:30:00', '2024-04-08', '20:00:00', 15, 80, 'City 2', '23456', 2, 13, 'Address 2', 'Street 2', 17),
 (63, 'Event 3', 'Description for Event 3', 'image3.jpg', '11:00:00', '2024-04-10', '18:30:00', 20, 120, 'City 3', '34567', 3, 14, 'Address 3', 'Street 3', 2),
 (64, 'Event 4', 'Description for Event 4', 'image4.jpg', '12:30:00', '2024-04-12', '22:00:00', 25, 150, 'City 4', '45678', 4, 15, 'Address 4', 'Street 4', 4),
 (65, 'Event 5', 'Description for Event 5', 'image5.jpg', '13:00:00', '2024-04-14', '19:30:00', 30, 200, 'City 5', '56789', 5, 16, 'Address 5', 'Street 5', 0),
-(66, 'Event 6', 'Description for Event 6', 'image6.jpg', '14:30:00', '2024-04-16', '21:00:00', 35, 180, 'City 6', '67890', 6, 17, 'Address 6', 'Street 6', 1),
+(66, 'Event 6', 'Description for Event 6', 'image6.jpg', '14:30:00', '2024-04-16', '21:00:00', 35, 180, 'City 6', '67890', 6, 17, 'Address 6', 'Street 6', 2),
 (67, 'Event 7', 'Description for Event 7', 'image7.jpg', '15:00:00', '2024-04-18', '18:30:00', 40, 250, 'City 7', '78901', 7, 18, 'Address 7', 'Street 7', 6),
 (68, 'Event 8', 'Description for Event 8', 'image8.jpg', '16:30:00', '2024-04-20', '20:00:00', 45, 300, 'City 8', '89012', 8, 19, 'Address 8', 'Street 8', 0),
 (69, 'Event 9', 'Description for Event 9', 'image9.jpg', '17:00:00', '2024-04-22', '22:30:00', 50, 180, 'City 9', '90123', 9, 20, 'Address 9', 'Street 9', 0),
@@ -254,10 +254,10 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 --
 
 CREATE TABLE `image` (
-  `image_id` int(11) NOT NULL,
-  `img_Pf` varchar(300) NOT NULL,
-  `img_Cv` varchar(500) NOT NULL,
-  `User_id` int(11) NOT NULL
+  `image_id` int NOT NULL,
+  `img_Pf` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `img_Cv` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `User_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -267,12 +267,12 @@ CREATE TABLE `image` (
 --
 
 CREATE TABLE `reclamation` (
-  `Reclammation_id` int(11) NOT NULL,
-  `Contact_Name` varchar(30) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Subject` varchar(100) NOT NULL,
-  `Description` varchar(250) NOT NULL,
-  `User_id` int(11) NOT NULL
+  `Reclammation_id` int NOT NULL,
+  `Contact_Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `Subject` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `Description` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `User_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -300,12 +300,12 @@ INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`
 --
 
 CREATE TABLE `reclamation_archive` (
-  `Reclammation_id` int(11) NOT NULL,
-  `Contact_Name` varchar(30) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Subject` varchar(100) NOT NULL,
-  `Description` varchar(250) NOT NULL,
-  `User_id` int(11) NOT NULL
+  `Reclammation_id` int NOT NULL,
+  `Contact_Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `Subject` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `Description` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `User_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -331,16 +331,16 @@ INSERT INTO `reclamation_archive` (`Reclammation_id`, `Contact_Name`, `Email`, `
 --
 
 CREATE TABLE `reservation` (
-  `Reservation_id` int(11) NOT NULL,
-  `R_Fname` varchar(30) NOT NULL,
-  `R_Lname` varchar(30) NOT NULL,
-  `R_email` varchar(100) NOT NULL,
-  `R_adresse` varchar(250) NOT NULL,
-  `R_country` varchar(30) NOT NULL,
-  `R_city` varchar(30) NOT NULL,
-  `R_Zipcode` varchar(20) NOT NULL,
-  `Ticket_id` int(11) NOT NULL,
-  `User_id` int(11) NOT NULL
+  `Reservation_id` int NOT NULL,
+  `R_Fname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `R_Lname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `R_email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `R_adresse` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `R_country` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `R_city` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `R_Zipcode` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `Ticket_id` int NOT NULL,
+  `User_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -449,9 +449,9 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 --
 
 CREATE TABLE `saveevent` (
-  `S_id` int(11) NOT NULL,
-  `User_id` int(11) NOT NULL,
-  `E_id` int(11) NOT NULL
+  `S_id` int NOT NULL,
+  `User_id` int NOT NULL,
+  `E_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -469,12 +469,12 @@ INSERT INTO `saveevent` (`S_id`, `User_id`, `E_id`) VALUES
 --
 
 CREATE TABLE `ticket` (
-  `Ticket_id` int(11) NOT NULL,
-  `QR_code` varchar(1000) NOT NULL,
-  `QR_image` varchar(500) NOT NULL,
-  `Statu` varchar(20) NOT NULL,
-  `User_id` int(11) NOT NULL,
-  `E_id` int(11) NOT NULL,
+  `Ticket_id` int NOT NULL,
+  `QR_code` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
+  `QR_image` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `Statu` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `User_id` int NOT NULL,
+  `E_id` int NOT NULL,
   `prix_tickt` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -558,13 +558,13 @@ INSERT INTO `ticket` (`Ticket_id`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E
 --
 
 CREATE TABLE `user` (
-  `User_id` int(11) NOT NULL,
-  `U_name` varchar(30) NOT NULL,
-  `U_Prenom` varchar(30) NOT NULL,
-  `U_email` varchar(70) NOT NULL,
-  `U_password` varchar(200) NOT NULL,
-  `U_telephone` varchar(30) NOT NULL,
-  `U_adresse` varchar(100) NOT NULL,
+  `User_id` int NOT NULL,
+  `U_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `U_Prenom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `U_email` varchar(70) COLLATE utf8mb4_general_ci NOT NULL,
+  `U_password` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `U_telephone` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `U_adresse` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `U_dateNaissance` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -590,7 +590,28 @@ INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U
 (26, 'Jacobson', 'Josiah', 'xiso@mailinator.com', '$2y$10$dGY6dsOAj3lYLRRgKwRfLOA1P59fWprWT.OWmuqWaHakDYmDgSxLW', '+1 (286) 512-9676', 'Veritatis assumenda ', '2014-02-15'),
 (27, 'test', 'soufiane', 'soufiane@gmail.com', '$2y$10$fKY3DVEwSqtj7WYt6Gz.U.dX1arOHWZpeRIVg7PF5TVftfF6UJ.dq', 'zertyuio', 'zertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyuizertyuiopiuytretyui', '2024-04-26'),
 (28, 'mchachti', 'yassine', 'mchachti@gmail.com', '$2y$10$bl/46ZV8JBnFgqvRpLdIAOq6rfl0DHIV9uZnFAFBdhsufV1hE5Z/i', '0618181818', 'Quia quisquam animi', '2024-04-26'),
-(29, 'Cooke', 'Rahim', 'joharevo@mailinator.com', '$2y$10$xakg16xcShg5oOJt6NDImemacNXJaoOhyFSg7SgB0e1JFeBDqi7oq', '+1 (446) 953-3705', 'Atque quo mollit et ', '1980-08-01');
+(29, 'Cooke', 'Rahim', 'joharevo@mailinator.com', '$2y$10$xakg16xcShg5oOJt6NDImemacNXJaoOhyFSg7SgB0e1JFeBDqi7oq', '+1 (446) 953-3705', 'Atque quo mollit et ', '1980-08-01'),
+(30, 'test', 'test', 'test@test.test', '$2y$10$.vbo/Tk/ngqFN.lwjQYMme4g3etLwxrjNIozwxEii6BUyh.CaVsPu', '088768568567', 'test@test.test', '2024-04-11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `oauth_provider` enum('google','facebook','twitter','linkedin') CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'google',
+  `oauth_uid` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `first_name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `last_name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `gender` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `locale` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `picture` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -688,6 +709,12 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`User_id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -695,79 +722,85 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `adminee`
 --
 ALTER TABLE `adminee`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `archive_demande`
 --
 ALTER TABLE `archive_demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `event_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Categorie_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `contact_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `event_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `E_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `image_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reclamation`
 --
 ALTER TABLE `reclamation`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `Reclammation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `reclamation_archive`
 --
 ALTER TABLE `reclamation_archive`
-  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `Reclammation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `Reservation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `saveevent`
 --
 ALTER TABLE `saveevent`
-  MODIFY `S_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `S_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `Ticket_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `User_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
