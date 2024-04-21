@@ -5,6 +5,7 @@ if(!isset($_SESSION['user']['U_email'])){
 }
 $emaill = $_SESSION['user']['U_email'];
 $namee = $_SESSION['user']['U_name'];
+$Uid = $_SESSION['user']['User_id'];
 require_once "connect/DataBase.php";
 
 
@@ -543,7 +544,7 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
         $queryDaily_revenu =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase 
 		FROM event AS e 
 		JOIN ticket AS t ON e.E_id = t.E_id 
-		WHERE e.User_id = 27 AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
+		WHERE e.User_id = $Uid AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
 		GROUP BY Purchase_Month 
 		ORDER BY CASE 
 			WHEN Purchase_Month = 'Monday' THEN 1 
@@ -558,7 +559,7 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
         $queryMonthly_revenu =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase
 		FROM event AS e
 		JOIN ticket AS t ON e.E_id = t.E_id
-		WHERE e.User_id = 27 AND YEAR(t.Purchase_Date) = YEAR(CURDATE())
+		WHERE e.User_id = $Uid AND YEAR(t.Purchase_Date) = YEAR(CURDATE())
 		GROUP BY Purchase_Month
 		ORDER BY CASE
 			WHEN Purchase_Month = 'January' THEN 1
@@ -578,7 +579,7 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
         $queryDaily_ticket =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold 
         FROM event AS e 
         JOIN ticket AS t ON e.E_id = t.E_id 
-        WHERE e.User_id = 27 AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
+        WHERE e.User_id = $Uid AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
         GROUP BY Purchase_Month 
         ORDER BY CASE 
             WHEN Purchase_Month = 'Monday' THEN 1 
@@ -593,7 +594,7 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
         $queryMonthly_ticket =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold
         FROM event AS e 
         JOIN ticket AS t ON e.E_id = t.E_id 
-        WHERE e.User_id = 27 AND YEAR(t.Purchase_Date) = YEAR(CURDATE()) 
+        WHERE e.User_id = $Uid AND YEAR(t.Purchase_Date) = YEAR(CURDATE()) 
         GROUP BY Purchase_Month 
         ORDER BY CASE 
             WHEN Purchase_Month = 'January' THEN 1 
