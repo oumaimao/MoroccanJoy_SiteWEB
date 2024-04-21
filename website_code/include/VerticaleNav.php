@@ -72,6 +72,12 @@
 							<span class="menu--label">Archive de reclamation</span>
 						</a>
 					</li>
+					<li class="menu--item">
+						<a href="statistique.php" class="menu--link " title="About" data-bs-toggle="tooltip" data-bs-placement="right">
+							<i class="fa-solid fa-circle-info menu--icon"></i>
+							<span class="menu--label">Statistique</span>
+						</a>
+					</li>
 					
 				</ul>
 			</div>

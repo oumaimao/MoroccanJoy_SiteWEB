@@ -102,7 +102,7 @@ for($i=0;$i<12;$i++){
 <h5 class="mb-4">Statistique </h5>
 		<div class="d-md-flex flex-wrap align-items-center">
 
-        <div style="width: 500px;">
+        <div style="width: 800px;">
           <canvas id="myChart"></canvas>
         </div>
         <script>
