@@ -32,7 +32,7 @@
 </head>
 <?php require_once "connect/DataBase.php";
 
-$query=$connection->query("SELECT MONTHNAME(Purchase_Date) as monthname , count(*) as number_of_tickts from ticket ORDER BY monthname;");
+$query=$connection->query("SELECT MONTHNAME(Purchase_Date) as monthname , count(*) as number_of_tickts from ticket GROUP BY monthname ORDER BY monthname;");
 foreach($query as $data){
   $month[]=$data['monthname'];
   $number_of_tickts[]=$data['number_of_tickts'];

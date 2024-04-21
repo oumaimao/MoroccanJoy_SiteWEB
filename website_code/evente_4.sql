@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 21, 2024 at 12:25 PM
+-- Host: 127.0.0.1:3307
+-- Generation Time: Apr 21, 2024 at 05:35 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -203,7 +203,7 @@ CREATE TABLE `event` (
 
 INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Date_debut`, `Heure_fin`, `Prix_ticket`, `Nombre_tickets`, `Ville`, `Zip_code`, `Categorie_id`, `User_id`, `adress1`, `adress2`, `vue`) VALUES
 (61, 'Event 1', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-06', '17:00:00', 10, 100, 'City 1', '12345', 1, 12, 'Address 1', 'Street 1', 2),
-(62, 'Event 2', 'Description for Event 2', 'image2.jpg', '10:30:00', '2024-04-08', '20:00:00', 15, 80, 'City 2', '23456', 2, 13, 'Address 2', 'Street 2', 17),
+(62, 'Event 2', 'Description for Event 2', 'image2.jpg', '10:30:00', '2024-04-08', '20:00:00', 15, 80, 'City 2', '23456', 2, 13, 'Address 2', 'Street 2', 18),
 (63, 'Event 3', 'Description for Event 3', 'image3.jpg', '11:00:00', '2024-04-10', '18:30:00', 20, 120, 'City 3', '34567', 3, 14, 'Address 3', 'Street 3', 2),
 (64, 'Event 4', 'Description for Event 4', 'image4.jpg', '12:30:00', '2024-04-12', '22:00:00', 25, 150, 'City 4', '45678', 4, 15, 'Address 4', 'Street 4', 4),
 (65, 'Event 5', 'Description for Event 5', 'image5.jpg', '13:00:00', '2024-04-14', '19:30:00', 30, 200, 'City 5', '56789', 5, 16, 'Address 5', 'Street 5', 0),
@@ -211,7 +211,7 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (67, 'Event 7', 'Description for Event 7', 'image7.jpg', '15:00:00', '2024-04-18', '18:30:00', 40, 250, 'City 7', '78901', 7, 18, 'Address 7', 'Street 7', 8),
 (68, 'Event 8', 'Description for Event 8', 'image8.jpg', '16:30:00', '2024-04-20', '20:00:00', 45, 300, 'City 8', '89012', 8, 19, 'Address 8', 'Street 8', 0),
 (69, 'Event 9', 'Description for Event 9', 'image9.jpg', '17:00:00', '2024-04-22', '22:30:00', 50, 180, 'City 9', '90123', 9, 20, 'Address 9', 'Street 9', 0),
-(70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10', 3),
+(70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10', 6),
 (71, 'Event 5', 'Description for Event 5', 'image5.jpg', '14:30:00', '2024-04-09', '00:00:02', 50, 25, 'Miami', '33101', 0, 16, '222 Maple Street', 'Apt 301', 4),
 (72, 'Event 7', 'Description for Event 7', 'image7.jpg', '10:00:00', '2024-04-11', '00:00:03', 70, 35, 'San Francisco', '94101', 0, 18, '444 Walnut Street', '', 0),
 (73, 'Event 8', 'Description for Event 8', 'image8.jpg', '13:00:00', '2024-04-12', '00:00:02', 80, 40, 'Boston', '2101', 0, 19, '555 Oak Street', 'Suite 401', 0),
@@ -219,7 +219,7 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (75, 'Zachery Wiggins', 'Animi porro adipisi', '6611f767f2636image2.jpg', '01:00:00', '0000-00-00', '00:00:00', 0, 0, 'Cupidatat ex quos cu', '15255', 1, 27, '219 First Road', 'Laborum Qui id unde', 8),
 (76, 'Ebony Stein', 'Illum aute ratione ', '66141ff4ed9c5image1.jpg', '05:45:00', '0000-00-00', '00:00:00', 0, 0, 'Nesciunt harum aper', '44005', 5, 27, '441 Cowley Road', 'Eiusmod ad cupidatat', 6),
 (77, 'Event 9', 'Description for Event 9', 'image9.jpg', '16:30:00', '2024-04-13', '00:00:01', 90, 45, 'Philadelphia', '19101', 0, 20, '666 Elm Street', '', 0),
-(78, 'Event 10', 'Description for Event 10', 'image10.jpg', '19:00:00', '2024-04-14', '00:00:02', 100, 50, 'Washington, D.C.', '20001', 0, 21, '777 Pine Street', '', 0),
+(78, 'Event 10', 'Description for Event 10', 'image10.jpg', '19:00:00', '2024-04-14', '00:00:02', 100, 50, 'Washington, D.C.', '20001', 0, 21, '777 Pine Street', '', 2),
 (79, 'Event 1', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-10', '00:00:09', 100, 50, 'New York City', '10001', 0, 12, '123 Main St', 'Apt 101', 0),
 (80, 'Event 2', 'Description for Event 2', 'image2.jpg', '10:00:00', '2024-04-15', '00:00:10', 150, 75, 'Los Angeles', '90001', 0, 13, '456 Oak St', '', 0),
 (81, 'Event 3', 'Description for Event 3', 'image3.jpg', '11:00:00', '2024-04-20', '00:00:11', 200, 100, 'Chicago', '60601', 0, 14, '789 Elm St', '', NULL),
@@ -441,7 +441,9 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 (101, 'Amela Allen', 'Dominic Petty', 'saduneba@mailinator.com', 'Eos dolorem ex enim', 'Italy', 'Facilis id enim quib', '97511', 0, 0),
 (102, 'Imelda Rivers', 'Evelyn Lucas', 'ratuvu@mailinator.com', 'Nulla eaque in possi', 'Malaysia', 'Accusantium culpa i', '30535', 0, 0),
 (103, 'Melodie Ewing', 'Lionel Taylor', 'povedyd@mailinator.com', 'Optio non nemo irur', 'Luxembourg', 'Cum quia veritatis e', '54808', 0, 0),
-(104, 'Kamal Kidd', 'Mariko Alexander', 'xibived@mailinator.com', 'Itaque Nam voluptas ', 'Estonia', 'Ut cumque velit cumq', '86956', 0, 0);
+(104, 'Kamal Kidd', 'Mariko Alexander', 'xibived@mailinator.com', 'Itaque Nam voluptas ', 'Estonia', 'Ut cumque velit cumq', '86956', 0, 0),
+(105, 'Candice Nielsen', 'Sybill Mcdowell', 'bozefelucu@mailinator.com', 'Obcaecati tempora te', 'Bolivia', 'Pariatur Deserunt v', '45015', 0, 0),
+(106, 'Jesse Wise', 'Jason Barrett', 'gybi@mailinator.com', 'Alias alias pariatur', 'Thailand', 'Fuga Vel aut sed do', '61336', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -536,7 +538,7 @@ INSERT INTO `ticket` (`Ticket_id`, `Purchase_Date`, `QR_code`, `QR_image`, `Stat
 (81, '2024-04-21 03:21:29', '6612fd8920b3dee78fc8000ab02adaec27a0aa6fb8cff60d4f9b79d23044fa71e3c8782f07b61', '60d4f9b79d23044fa71e3c8782f07b61qrcode.png', 'Non valide', 27, 63, 20),
 (82, '2024-04-21 03:21:29', '66130396eafd3b5c67b3e3168758ff12e3545fdc70a18b72f0af34c5a17f7ad16a6de49e1f8af', 'b72f0af34c5a17f7ad16a6de49e1f8afqrcode.png', 'Non valide', 27, 63, 20),
 (83, '2024-04-21 03:21:29', '66141a98d40d8ed8e2afdfb15904ddebe6100f2e7130a688ca6cdb69cc071a15e8e8a0311f069', '688ca6cdb69cc071a15e8e8a0311f069qrcode.png', 'Non valide', 27, 70, 55),
-(84, '2024-04-21 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(84, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
 (85, '2024-04-21 03:21:29', '66141f5256357592166b84cd7371303c8f93868cd9354812a24e6c93686a2854dda65bd151144', '812a24e6c93686a2854dda65bd151144qrcode.png', 'Non valide', 27, 63, 20),
 (86, '2024-04-21 03:21:29', '66142026bfbb9d3366b39e15fd4896d79c786e7e91c5ba710896338a1d5b386b20abdebd4a52a', 'a710896338a1d5b386b20abdebd4a52aqrcode.png', 'Valide', 27, 76, 0),
 (87, '2024-04-21 03:21:29', '66144bbfe12c8f656d2745998d1e8819fed7c8c7b651dff901a0a25548e9429334a77b81cf05f', 'ff901a0a25548e9429334a77b81cf05fqrcode.png', 'Non valide', 27, 70, 55),
@@ -548,11 +550,45 @@ INSERT INTO `ticket` (`Ticket_id`, `Purchase_Date`, `QR_code`, `QR_image`, `Stat
 (93, '2024-04-21 03:21:29', '6616acf9d9754d764bd6eefea1f5eb5f113604c17b8cb7d8e6af2d62edb481ee40a601c628dc8', '7d8e6af2d62edb481ee40a601c628dc8qrcode.png', 'Non valide', 27, 90, 100),
 (94, '2024-04-21 03:21:29', '6616ad791900827b3d8095c04b6e4c37c7d14854e06871a387f55606d0b46574928f14e68d2eb', '1a387f55606d0b46574928f14e68d2ebqrcode.png', 'Non valide', 27, 89, 0),
 (95, '2024-04-21 03:21:29', '6616ad993cbd8fa61bf1e33b04e78b8ad36b7d6fb00969f5eced3f9620a71ff3d157c8322e576', '9f5eced3f9620a71ff3d157c8322e576qrcode.png', 'Non valide', 27, 90, 100),
-(96, '2024-04-21 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(96, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
 (97, '2024-04-21 03:21:29', '66171e04cdbd85adda0f7fb5601cdc37a2d0130cd0dd373c9c0aa5c76d23a7a8d755512ff225c', '73c9c0aa5c76d23a7a8d755512ff225cqrcode.png', 'Non valide', 28, 97, 140),
 (98, '2024-04-21 03:21:29', '66171ecc8c0e5c52c6b93eabe4637efce7c0836db9e544c33d450ea464ecb1badf1d3e47df9fa', '4c33d450ea464ecb1badf1d3e47df9faqrcode.png', 'Non valide', 28, 99, 300),
 (99, '2024-04-21 03:21:29', '661720d226e6bc506cc8dfb5e1665b70cd349f98a8722709576cef375908ff3d725f9785a238d', '709576cef375908ff3d725f9785a238dqrcode.png', 'Non valide', 28, 106, 140),
-(103, '2024-04-21 03:22:52', '6624787c70a6f1b2975ce1e45a57ceccb82da0231fb8854bd2cf17fb93775f1dfde219af524ef', '54bd2cf17fb93775f1dfde219af524efqrcode.png', 'Non valide', 27, 67, 40);
+(103, '2024-04-21 03:22:52', '6624787c70a6f1b2975ce1e45a57ceccb82da0231fb8854bd2cf17fb93775f1dfde219af524ef', '54bd2cf17fb93775f1dfde219af524efqrcode.png', 'Non valide', 27, 67, 40),
+(104, '2024-05-21 15:57:08', '664cb644a0ecc4dfc5003529b6c674c9565379d54e5dc035722fa3dd3781617ab07aaf10b3737', '035722fa3dd3781617ab07aaf10b3737qrcode.png', 'Non valide', 27, 70, 55),
+(105, '2024-04-21 15:58:49', '662529a9b9e2a338248708e333ee615d808d2c5d542d0357af13526a832cfe838f45743878d1f', '357af13526a832cfe838f45743878d1fqrcode.png', 'Non valide', 27, 78, 100),
+(106, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(107, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(108, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(109, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(110, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(111, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(112, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(113, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(114, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(115, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(116, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(117, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(118, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(119, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(120, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(121, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(122, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(123, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(124, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(125, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(126, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(127, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(128, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(129, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(130, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(131, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(132, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(133, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(134, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(135, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(136, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(137, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0);
 
 -- --------------------------------------------------------
 
@@ -779,7 +815,7 @@ ALTER TABLE `reclamation_archive`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `saveevent`
@@ -791,7 +827,7 @@ ALTER TABLE `saveevent`
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT for table `user`
