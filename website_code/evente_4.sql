@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 14, 2024 at 12:35 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: Apr 21, 2024 at 12:25 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `adminee` (
-  `admin_id` int NOT NULL,
-  `A_email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `A_password` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
+  `admin_id` int(11) NOT NULL,
+  `A_email` varchar(100) NOT NULL,
+  `A_password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -50,23 +50,23 @@ INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
 --
 
 CREATE TABLE `archive_demande` (
-  `event_id` int NOT NULL,
-  `n_event` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `event_date` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `event_time` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `event_duration` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `adress1` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
-  `adress2` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
-  `country` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `city` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `zip` int NOT NULL,
-  `description` varchar(400) COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(400) COLLATE utf8mb4_general_ci NOT NULL,
-  `gategorie` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `P_tickts` int NOT NULL,
-  `N_tickts` int NOT NULL,
-  `User_id` int NOT NULL,
-  `eventd_id` int DEFAULT NULL
+  `event_id` int(11) NOT NULL,
+  `n_event` varchar(100) DEFAULT NULL,
+  `event_date` varchar(200) NOT NULL,
+  `event_time` varchar(200) NOT NULL,
+  `event_duration` varchar(200) NOT NULL,
+  `adress1` varchar(300) NOT NULL,
+  `adress2` varchar(300) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `zip` int(11) NOT NULL,
+  `description` varchar(400) NOT NULL,
+  `image` varchar(400) NOT NULL,
+  `gategorie` varchar(100) NOT NULL,
+  `P_tickts` int(11) NOT NULL,
+  `N_tickts` int(11) NOT NULL,
+  `User_id` int(11) NOT NULL,
+  `eventd_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -84,8 +84,8 @@ INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`
 --
 
 CREATE TABLE `categorie` (
-  `Categorie_id` int NOT NULL,
-  `Nom_cat` varchar(30) COLLATE utf8mb4_general_ci NOT NULL
+  `Categorie_id` int(11) NOT NULL,
+  `Nom_cat` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -111,13 +111,13 @@ INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
 --
 
 CREATE TABLE `contact_us` (
-  `contact_id` int NOT NULL,
-  `c_nom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `c_prenom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `c_phone` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `c_email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `c_message` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
-  `user_id` int NOT NULL
+  `contact_id` int(11) NOT NULL,
+  `c_nom` varchar(30) NOT NULL,
+  `c_prenom` varchar(30) NOT NULL,
+  `c_phone` varchar(30) NOT NULL,
+  `c_email` varchar(100) NOT NULL,
+  `c_message` varchar(500) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -144,23 +144,23 @@ INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_phone`, `c_email
 --
 
 CREATE TABLE `demande` (
-  `event_id` int NOT NULL,
-  `n_event` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `event_date` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `event_time` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `event_duration` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `adress1` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `adress2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `country` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `state` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `city` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `zip` varchar(80) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `gategorie` int DEFAULT NULL,
-  `P_tickts` int NOT NULL,
-  `N_tickts` int NOT NULL,
-  `User_id` int NOT NULL
+  `event_id` int(11) NOT NULL,
+  `n_event` varchar(50) NOT NULL,
+  `event_date` varchar(200) NOT NULL,
+  `event_time` varchar(50) NOT NULL,
+  `event_duration` varchar(50) NOT NULL,
+  `adress1` varchar(100) NOT NULL,
+  `adress2` varchar(100) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `zip` varchar(80) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  `gategorie` int(11) DEFAULT NULL,
+  `P_tickts` int(11) NOT NULL,
+  `N_tickts` int(11) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -179,22 +179,22 @@ INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event
 --
 
 CREATE TABLE `event` (
-  `E_id` int NOT NULL,
-  `Titre` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Description` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `Image` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `E_id` int(11) NOT NULL,
+  `Titre` varchar(100) DEFAULT NULL,
+  `Description` varchar(200) NOT NULL,
+  `Image` varchar(500) NOT NULL,
   `Heure_debut` time NOT NULL,
   `Date_debut` date NOT NULL,
   `Heure_fin` time NOT NULL,
   `Prix_ticket` float NOT NULL,
-  `Nombre_tickets` int NOT NULL,
-  `Ville` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `Zip_code` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `Categorie_id` int DEFAULT NULL,
-  `User_id` int NOT NULL,
-  `adress1` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `adress2` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `vue` int DEFAULT '0'
+  `Nombre_tickets` int(11) NOT NULL,
+  `Ville` varchar(30) NOT NULL,
+  `Zip_code` varchar(30) NOT NULL,
+  `Categorie_id` int(11) DEFAULT NULL,
+  `User_id` int(11) NOT NULL,
+  `adress1` varchar(200) NOT NULL,
+  `adress2` varchar(200) NOT NULL,
+  `vue` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -208,7 +208,7 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 (64, 'Event 4', 'Description for Event 4', 'image4.jpg', '12:30:00', '2024-04-12', '22:00:00', 25, 150, 'City 4', '45678', 4, 15, 'Address 4', 'Street 4', 4),
 (65, 'Event 5', 'Description for Event 5', 'image5.jpg', '13:00:00', '2024-04-14', '19:30:00', 30, 200, 'City 5', '56789', 5, 16, 'Address 5', 'Street 5', 0),
 (66, 'Event 6', 'Description for Event 6', 'image6.jpg', '14:30:00', '2024-04-16', '21:00:00', 35, 180, 'City 6', '67890', 6, 17, 'Address 6', 'Street 6', 2),
-(67, 'Event 7', 'Description for Event 7', 'image7.jpg', '15:00:00', '2024-04-18', '18:30:00', 40, 250, 'City 7', '78901', 7, 18, 'Address 7', 'Street 7', 6),
+(67, 'Event 7', 'Description for Event 7', 'image7.jpg', '15:00:00', '2024-04-18', '18:30:00', 40, 250, 'City 7', '78901', 7, 18, 'Address 7', 'Street 7', 8),
 (68, 'Event 8', 'Description for Event 8', 'image8.jpg', '16:30:00', '2024-04-20', '20:00:00', 45, 300, 'City 8', '89012', 8, 19, 'Address 8', 'Street 8', 0),
 (69, 'Event 9', 'Description for Event 9', 'image9.jpg', '17:00:00', '2024-04-22', '22:30:00', 50, 180, 'City 9', '90123', 9, 20, 'Address 9', 'Street 9', 0),
 (70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10', 3),
@@ -254,10 +254,10 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 --
 
 CREATE TABLE `image` (
-  `image_id` int NOT NULL,
-  `img_Pf` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
-  `img_Cv` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
-  `User_id` int NOT NULL
+  `image_id` int(11) NOT NULL,
+  `img_Pf` varchar(300) NOT NULL,
+  `img_Cv` varchar(500) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -267,12 +267,12 @@ CREATE TABLE `image` (
 --
 
 CREATE TABLE `reclamation` (
-  `Reclammation_id` int NOT NULL,
-  `Contact_Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `Email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `Subject` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `Description` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `User_id` int NOT NULL
+  `Reclammation_id` int(11) NOT NULL,
+  `Contact_Name` varchar(30) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Subject` varchar(100) NOT NULL,
+  `Description` varchar(250) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -300,12 +300,12 @@ INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`
 --
 
 CREATE TABLE `reclamation_archive` (
-  `Reclammation_id` int NOT NULL,
-  `Contact_Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `Email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `Subject` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `Description` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `User_id` int NOT NULL
+  `Reclammation_id` int(11) NOT NULL,
+  `Contact_Name` varchar(30) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Subject` varchar(100) NOT NULL,
+  `Description` varchar(250) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -331,16 +331,16 @@ INSERT INTO `reclamation_archive` (`Reclammation_id`, `Contact_Name`, `Email`, `
 --
 
 CREATE TABLE `reservation` (
-  `Reservation_id` int NOT NULL,
-  `R_Fname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `R_Lname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `R_email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `R_adresse` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `R_country` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `R_city` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `R_Zipcode` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `Ticket_id` int NOT NULL,
-  `User_id` int NOT NULL
+  `Reservation_id` int(11) NOT NULL,
+  `R_Fname` varchar(30) NOT NULL,
+  `R_Lname` varchar(30) NOT NULL,
+  `R_email` varchar(100) NOT NULL,
+  `R_adresse` varchar(250) NOT NULL,
+  `R_country` varchar(30) NOT NULL,
+  `R_city` varchar(30) NOT NULL,
+  `R_Zipcode` varchar(20) NOT NULL,
+  `Ticket_id` int(11) NOT NULL,
+  `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -440,7 +440,8 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 (100, 'Sandra Ewing', 'Baxter Mercado', 'jodyt@mailinator.com', 'Nemo sed nulla sit ', 'Hong Kong', 'Ex omnis voluptates ', '67119', 0, 0),
 (101, 'Amela Allen', 'Dominic Petty', 'saduneba@mailinator.com', 'Eos dolorem ex enim', 'Italy', 'Facilis id enim quib', '97511', 0, 0),
 (102, 'Imelda Rivers', 'Evelyn Lucas', 'ratuvu@mailinator.com', 'Nulla eaque in possi', 'Malaysia', 'Accusantium culpa i', '30535', 0, 0),
-(103, 'Melodie Ewing', 'Lionel Taylor', 'povedyd@mailinator.com', 'Optio non nemo irur', 'Luxembourg', 'Cum quia veritatis e', '54808', 0, 0);
+(103, 'Melodie Ewing', 'Lionel Taylor', 'povedyd@mailinator.com', 'Optio non nemo irur', 'Luxembourg', 'Cum quia veritatis e', '54808', 0, 0),
+(104, 'Kamal Kidd', 'Mariko Alexander', 'xibived@mailinator.com', 'Itaque Nam voluptas ', 'Estonia', 'Ut cumque velit cumq', '86956', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -449,9 +450,9 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 --
 
 CREATE TABLE `saveevent` (
-  `S_id` int NOT NULL,
-  `User_id` int NOT NULL,
-  `E_id` int NOT NULL
+  `S_id` int(11) NOT NULL,
+  `User_id` int(11) NOT NULL,
+  `E_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -469,12 +470,13 @@ INSERT INTO `saveevent` (`S_id`, `User_id`, `E_id`) VALUES
 --
 
 CREATE TABLE `ticket` (
-  `Ticket_id` int NOT NULL,
-  `QR_code` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
-  `QR_image` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
-  `Statu` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `User_id` int NOT NULL,
-  `E_id` int NOT NULL,
+  `Ticket_id` int(11) NOT NULL,
+  `Purchase_Date` datetime NOT NULL DEFAULT current_timestamp(),
+  `QR_code` varchar(1000) NOT NULL,
+  `QR_image` varchar(500) NOT NULL,
+  `Statu` varchar(20) NOT NULL,
+  `User_id` int(11) NOT NULL,
+  `E_id` int(11) NOT NULL,
   `prix_tickt` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -482,74 +484,75 @@ CREATE TABLE `ticket` (
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`Ticket_id`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E_id`, `prix_tickt`) VALUES
-(31, 'qr_code_1', '', '0', 12, 61, 0),
-(32, 'qr_code_2', '', '0', 13, 62, 0),
-(33, 'qr_code_3', '', '0', 14, 63, 0),
-(34, 'qr_code_4', '', '0', 15, 64, 0),
-(35, 'qr_code_5', '', '0', 16, 65, 0),
-(36, 'qr_code_6', '', '0', 17, 66, 0),
-(37, 'qr_code_7', '', '0', 18, 67, 0),
-(38, 'qr_code_8', '', '0', 19, 68, 0),
-(39, 'qr_code_9', '', '0', 20, 69, 0),
-(40, 'qr_code_10', '', '0', 21, 70, 0),
-(43, '661167ed35dcd799ade0b0672985aec0ccbcb036d2ef9', '799ade0b0672985aec0ccbcb036d2ef9qrcode.png', 'valid', 27, 67, 0),
-(44, '661168b5799ebae35de283a6140092954c57d83924acc', 'ae35de283a6140092954c57d83924accqrcode.png', 'valid', 27, 67, 0),
-(45, '6611ecf8cf8a92d26d1c0628d6b0d49de5d703256d0ae', '2d26d1c0628d6b0d49de5d703256d0aeqrcode.png', 'valid', 27, 61, 0),
-(46, '6611ed08663f9c4e7bdd201d98da6333afb076bf5e2de', 'c4e7bdd201d98da6333afb076bf5e2deqrcode.png', 'valid', 27, 61, 0),
-(47, '6611ee273236b0a4dde44c50e1019eca06f18492ffd10', '0a4dde44c50e1019eca06f18492ffd10qrcode.png', 'valid', 27, 61, 0),
-(48, '6611ee7ec9e1f1e189d664dc094bdd7f87c2520e2926d', '1e189d664dc094bdd7f87c2520e2926dqrcode.png', 'valid', 27, 61, 0),
-(49, '6611efc17f9feb4e9cbb9eea7a8f22da1819c92e4835f', 'b4e9cbb9eea7a8f22da1819c92e4835fqrcode.png', 'valid', 27, 62, 0),
-(50, '6611f079b08a2644c2b2e73fa2f25ed27d5d18c7f9b60', '644c2b2e73fa2f25ed27d5d18c7f9b60qrcode.png', 'valid', 27, 66, 35),
-(51, '6611f4935fe7b05f562a5b32c04821d014bb36ec42399', '05f562a5b32c04821d014bb36ec42399qrcode.png', 'valid', 27, 66, 35),
-(52, '6611f813afff9620692e86b964f1e6bbb661e11b13620', '620692e86b964f1e6bbb661e11b13620qrcode.png', 'valid', 27, 63, 20),
-(53, '661291bc44e5f06ba77ff1fe3b163cd77fa0b7031e7ae', '06ba77ff1fe3b163cd77fa0b7031e7aeqrcode.png', 'Non valide', 27, 61, 10),
-(54, '6612922bb3615b9decc58f4ce962e937bba88bd3aae68', 'b9decc58f4ce962e937bba88bd3aae68qrcode.png', 'Valide', 27, 61, 10),
-(55, '66129353894c2fc0d1e85b17c858720e24e9f89b44868', 'fc0d1e85b17c858720e24e9f89b44868qrcode.png', 'Valide', 27, 62, 15),
-(56, '661297c1d8c7a2a091c7efc1a26b8f49804d69e0c13dd', '2a091c7efc1a26b8f49804d69e0c13ddqrcode.png', 'Valide', 27, 62, 15),
-(57, '661298cb8efbe6909abae82f3059175f1d449cb0a9bf1', '6909abae82f3059175f1d449cb0a9bf1qrcode.png', 'Valide', 27, 62, 15),
-(58, '66129ce9b409a704c6e52eca2dfbf0b7e15bbbfed15c5', '704c6e52eca2dfbf0b7e15bbbfed15c5qrcode.png', 'Non valide', 27, 61, 10),
-(59, '66129d3bef4055dc5a66fbd9a36494a4b317e3a9e1fbb', '5dc5a66fbd9a36494a4b317e3a9e1fbbqrcode.png', 'Non valide', 27, 63, 20),
-(60, '66129d8cbdb750a8612207f91893af7e5a5b02cbe75a1', '0a8612207f91893af7e5a5b02cbe75a1qrcode.png', 'Valide', 27, 63, 20),
-(61, '66129e4bd5ddcdcf4e1c208febac0dbf87f74f2bfece0', 'dcf4e1c208febac0dbf87f74f2bfece0qrcode.png', 'Non valide', 27, 61, 10),
-(62, '76c6ff7d36bc77cc178ec41de84416fe', '589738f55edafc134eab79ad877c9b45.png', 'Non valide', 27, 61, 10),
-(63, '05ad3846096dc6e7f78093fa4ef09f98', '907ce06e22e909dc42c79171c33409ed.png', 'Non valide', 27, 61, 10),
-(64, '6612a022a65ab3af3c29b86dbc8afbd408be54f756202881c6030ee53976a3616cbc04bbc0c00', '881c6030ee53976a3616cbc04bbc0c00qrcode.png', 'Non valide', 27, 61, 10),
-(65, '6612a18b21936092a037c4f30f9b590c9e0a96269435494bf76b3167f6dd8aad68bdff922ce4e', '94bf76b3167f6dd8aad68bdff922ce4eqrcode.png', 'Valide', 27, 61, 10),
-(66, '6612a1db703c1bf1fa33b28ea7b608a813e71fe77069a040ac7559fbf7333f660895aa44a8c77', '040ac7559fbf7333f660895aa44a8c77qrcode.png', 'Valide', 27, 61, 10),
-(67, '6612a351d9cb1488509600abf38397eba10f163a7437e8cfdc67d746d5c803b11cc4ab37f1cd1', '8cfdc67d746d5c803b11cc4ab37f1cd1qrcode.png', 'Valide', 27, 61, 10),
-(68, '6612a4057cfce8b22977dbd1649ceb0bbdb617fd207ac5899b3c52670fe1258e974006118e976', '5899b3c52670fe1258e974006118e976qrcode.png', 'Valide', 27, 61, 10),
-(69, '6612a4718cdff1614bb8794c65e21ea5c1db78f6ab5d63b4c16d275818d6ea7990d4d5f6ba54e', '3b4c16d275818d6ea7990d4d5f6ba54eqrcode.png', 'Valide', 27, 61, 10),
-(70, '6612a51b065f5e55b26e3e420959de1cced817fc871b15b183ce40759f3fdeec6930fcab644a3', '5b183ce40759f3fdeec6930fcab644a3qrcode.png', 'Valide', 27, 61, 10),
-(71, '6612a55f33605131c51c8d7148282feef0e0db2366413b685db398e3bc0bfce648201f512f8b2', 'b685db398e3bc0bfce648201f512f8b2qrcode.png', 'Valide', 27, 61, 10),
-(72, '6612a5f402fba6d21c83e9ff3e2356e6ac256e6ffff7e2fed09c11ffc57dc4eab148a09209e52', '2fed09c11ffc57dc4eab148a09209e52qrcode.png', 'Valide', 27, 61, 10),
-(73, '6612a61e43bf381455c32f3480e315dd0d2b3e81037d9fc02af9caa2dcb86193620be367ce70c', 'fc02af9caa2dcb86193620be367ce70cqrcode.png', 'Valide', 27, 75, 0),
-(74, '6612a6ae51b4e0daae31caf29917336f1296571da27f160307c5551304caf05721acbebd3f147', '60307c5551304caf05721acbebd3f147qrcode.png', 'Valide', 27, 71, 50),
-(75, '6612f763eab0bc0e12cf92b4ee0ff36b84aab14e46773e9be909df994460e1ccbb77a0b09d9ad', 'e9be909df994460e1ccbb77a0b09d9adqrcode.png', 'Valide', 27, 63, 20),
-(76, '6612fd3c890ba120df6c63ecd36d5380bf29b99991253a603dac5a4df0634e4837ac76f084ef1', 'a603dac5a4df0634e4837ac76f084ef1qrcode.png', 'Non valide', 27, 63, 20),
-(77, '6612fd4a3bdd8ce0076362a41a16cae863ad0fa45a1da9f0090374f295d45f11b1ffa3e8d3e53', '9f0090374f295d45f11b1ffa3e8d3e53qrcode.png', 'Non valide', 27, 63, 20),
-(78, '6612fd5970cb94d1fc0bd7579b045b2ad690b99d8a1f75997ad33ef951264f6b9e5450b988fa5', '5997ad33ef951264f6b9e5450b988fa5qrcode.png', 'Non valide', 27, 63, 20),
-(79, '6612fd65c0f0dae2717e588bf730b20bbacd37d2eeeb488592d4b8b4bcb0342b3852e77f76e6f', '88592d4b8b4bcb0342b3852e77f76e6fqrcode.png', 'Non valide', 27, 63, 20),
-(80, '6612fd7827fbecaaeeb140fd45fb67a0d983311f1207ffcf927b1b1be8fdc754354036d9d922d', 'fcf927b1b1be8fdc754354036d9d922dqrcode.png', 'Non valide', 27, 63, 20),
-(81, '6612fd8920b3dee78fc8000ab02adaec27a0aa6fb8cff60d4f9b79d23044fa71e3c8782f07b61', '60d4f9b79d23044fa71e3c8782f07b61qrcode.png', 'Non valide', 27, 63, 20),
-(82, '66130396eafd3b5c67b3e3168758ff12e3545fdc70a18b72f0af34c5a17f7ad16a6de49e1f8af', 'b72f0af34c5a17f7ad16a6de49e1f8afqrcode.png', 'Non valide', 27, 63, 20),
-(83, '66141a98d40d8ed8e2afdfb15904ddebe6100f2e7130a688ca6cdb69cc071a15e8e8a0311f069', '688ca6cdb69cc071a15e8e8a0311f069qrcode.png', 'Non valide', 27, 70, 55),
-(84, '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(85, '66141f5256357592166b84cd7371303c8f93868cd9354812a24e6c93686a2854dda65bd151144', '812a24e6c93686a2854dda65bd151144qrcode.png', 'Non valide', 27, 63, 20),
-(86, '66142026bfbb9d3366b39e15fd4896d79c786e7e91c5ba710896338a1d5b386b20abdebd4a52a', 'a710896338a1d5b386b20abdebd4a52aqrcode.png', 'Valide', 27, 76, 0),
-(87, '66144bbfe12c8f656d2745998d1e8819fed7c8c7b651dff901a0a25548e9429334a77b81cf05f', 'ff901a0a25548e9429334a77b81cf05fqrcode.png', 'Non valide', 27, 70, 55),
-(88, '6616a6b634ac59ce003ef8f89d22889b09bb2a69dfd4855a07c1d9ee01bcfb7c675dff6962857', '55a07c1d9ee01bcfb7c675dff6962857qrcode.png', 'Non valide', 27, 62, 15),
-(89, '6616a6d853b8c47eb8cf71f9eeef4d3ee1da4d7ce064461d7da00900911375a7b4cc282cd5664', '61d7da00900911375a7b4cc282cd5664qrcode.png', 'Non valide', 27, 89, 0),
-(90, '6616a6f7bd46209d9b3e835c269366461fa7efee10134310c84ab52a8b363f04822d5367163b9', '310c84ab52a8b363f04822d5367163b9qrcode.png', 'Non valide', 27, 88, 0),
-(91, '6616a71a98297b13a15eda89f9665f4db6bf8f34e3b4cd70bbfe3acd4aaa267ec352c25ae8e2f', 'd70bbfe3acd4aaa267ec352c25ae8e2fqrcode.png', 'Non valide', 27, 88, 0),
-(92, '6616ab76bbfa7c38244a733c044929d400bec6178f13d6b20d5e1774c1f1304056ad1f58d325e', '6b20d5e1774c1f1304056ad1f58d325eqrcode.png', 'Non valide', 27, 90, 100),
-(93, '6616acf9d9754d764bd6eefea1f5eb5f113604c17b8cb7d8e6af2d62edb481ee40a601c628dc8', '7d8e6af2d62edb481ee40a601c628dc8qrcode.png', 'Non valide', 27, 90, 100),
-(94, '6616ad791900827b3d8095c04b6e4c37c7d14854e06871a387f55606d0b46574928f14e68d2eb', '1a387f55606d0b46574928f14e68d2ebqrcode.png', 'Non valide', 27, 89, 0),
-(95, '6616ad993cbd8fa61bf1e33b04e78b8ad36b7d6fb00969f5eced3f9620a71ff3d157c8322e576', '9f5eced3f9620a71ff3d157c8322e576qrcode.png', 'Non valide', 27, 90, 100),
-(96, '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(97, '66171e04cdbd85adda0f7fb5601cdc37a2d0130cd0dd373c9c0aa5c76d23a7a8d755512ff225c', '73c9c0aa5c76d23a7a8d755512ff225cqrcode.png', 'Non valide', 28, 97, 140),
-(98, '66171ecc8c0e5c52c6b93eabe4637efce7c0836db9e544c33d450ea464ecb1badf1d3e47df9fa', '4c33d450ea464ecb1badf1d3e47df9faqrcode.png', 'Non valide', 28, 99, 300),
-(99, '661720d226e6bc506cc8dfb5e1665b70cd349f98a8722709576cef375908ff3d725f9785a238d', '709576cef375908ff3d725f9785a238dqrcode.png', 'Non valide', 28, 106, 140);
+INSERT INTO `ticket` (`Ticket_id`, `Purchase_Date`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E_id`, `prix_tickt`) VALUES
+(31, '2024-04-21 03:21:29', 'qr_code_1', '', '0', 12, 61, 0),
+(32, '2024-04-21 03:21:29', 'qr_code_2', '', '0', 13, 62, 0),
+(33, '2024-04-21 03:21:29', 'qr_code_3', '', '0', 14, 63, 0),
+(34, '2024-04-21 03:21:29', 'qr_code_4', '', '0', 15, 64, 0),
+(35, '2024-04-21 03:21:29', 'qr_code_5', '', '0', 16, 65, 0),
+(36, '2024-04-21 03:21:29', 'qr_code_6', '', '0', 17, 66, 0),
+(37, '2024-04-21 03:21:29', 'qr_code_7', '', '0', 18, 67, 0),
+(38, '2024-04-21 03:21:29', 'qr_code_8', '', '0', 19, 68, 0),
+(39, '2024-04-21 03:21:29', 'qr_code_9', '', '0', 20, 69, 0),
+(40, '2024-04-21 03:21:29', 'qr_code_10', '', '0', 21, 70, 0),
+(43, '2024-04-21 03:21:29', '661167ed35dcd799ade0b0672985aec0ccbcb036d2ef9', '799ade0b0672985aec0ccbcb036d2ef9qrcode.png', 'valid', 27, 67, 0),
+(44, '2024-04-21 03:21:29', '661168b5799ebae35de283a6140092954c57d83924acc', 'ae35de283a6140092954c57d83924accqrcode.png', 'valid', 27, 67, 0),
+(45, '2024-04-21 03:21:29', '6611ecf8cf8a92d26d1c0628d6b0d49de5d703256d0ae', '2d26d1c0628d6b0d49de5d703256d0aeqrcode.png', 'valid', 27, 61, 0),
+(46, '2024-04-21 03:21:29', '6611ed08663f9c4e7bdd201d98da6333afb076bf5e2de', 'c4e7bdd201d98da6333afb076bf5e2deqrcode.png', 'valid', 27, 61, 0),
+(47, '2024-04-21 03:21:29', '6611ee273236b0a4dde44c50e1019eca06f18492ffd10', '0a4dde44c50e1019eca06f18492ffd10qrcode.png', 'valid', 27, 61, 0),
+(48, '2024-04-21 03:21:29', '6611ee7ec9e1f1e189d664dc094bdd7f87c2520e2926d', '1e189d664dc094bdd7f87c2520e2926dqrcode.png', 'valid', 27, 61, 0),
+(49, '2024-04-21 03:21:29', '6611efc17f9feb4e9cbb9eea7a8f22da1819c92e4835f', 'b4e9cbb9eea7a8f22da1819c92e4835fqrcode.png', 'valid', 27, 62, 0),
+(50, '2024-04-21 03:21:29', '6611f079b08a2644c2b2e73fa2f25ed27d5d18c7f9b60', '644c2b2e73fa2f25ed27d5d18c7f9b60qrcode.png', 'valid', 27, 66, 35),
+(51, '2024-04-21 03:21:29', '6611f4935fe7b05f562a5b32c04821d014bb36ec42399', '05f562a5b32c04821d014bb36ec42399qrcode.png', 'valid', 27, 66, 35),
+(52, '2024-04-21 03:21:29', '6611f813afff9620692e86b964f1e6bbb661e11b13620', '620692e86b964f1e6bbb661e11b13620qrcode.png', 'valid', 27, 63, 20),
+(53, '2024-04-21 03:21:29', '661291bc44e5f06ba77ff1fe3b163cd77fa0b7031e7ae', '06ba77ff1fe3b163cd77fa0b7031e7aeqrcode.png', 'Non valide', 27, 61, 10),
+(54, '2024-04-21 03:21:29', '6612922bb3615b9decc58f4ce962e937bba88bd3aae68', 'b9decc58f4ce962e937bba88bd3aae68qrcode.png', 'Valide', 27, 61, 10),
+(55, '2024-04-21 03:21:29', '66129353894c2fc0d1e85b17c858720e24e9f89b44868', 'fc0d1e85b17c858720e24e9f89b44868qrcode.png', 'Valide', 27, 62, 15),
+(56, '2024-04-21 03:21:29', '661297c1d8c7a2a091c7efc1a26b8f49804d69e0c13dd', '2a091c7efc1a26b8f49804d69e0c13ddqrcode.png', 'Valide', 27, 62, 15),
+(57, '2024-04-21 03:21:29', '661298cb8efbe6909abae82f3059175f1d449cb0a9bf1', '6909abae82f3059175f1d449cb0a9bf1qrcode.png', 'Valide', 27, 62, 15),
+(58, '2024-04-21 03:21:29', '66129ce9b409a704c6e52eca2dfbf0b7e15bbbfed15c5', '704c6e52eca2dfbf0b7e15bbbfed15c5qrcode.png', 'Non valide', 27, 61, 10),
+(59, '2024-04-21 03:21:29', '66129d3bef4055dc5a66fbd9a36494a4b317e3a9e1fbb', '5dc5a66fbd9a36494a4b317e3a9e1fbbqrcode.png', 'Non valide', 27, 63, 20),
+(60, '2024-04-21 03:21:29', '66129d8cbdb750a8612207f91893af7e5a5b02cbe75a1', '0a8612207f91893af7e5a5b02cbe75a1qrcode.png', 'Valide', 27, 63, 20),
+(61, '2024-04-21 03:21:29', '66129e4bd5ddcdcf4e1c208febac0dbf87f74f2bfece0', 'dcf4e1c208febac0dbf87f74f2bfece0qrcode.png', 'Non valide', 27, 61, 10),
+(62, '2024-04-21 03:21:29', '76c6ff7d36bc77cc178ec41de84416fe', '589738f55edafc134eab79ad877c9b45.png', 'Non valide', 27, 61, 10),
+(63, '2024-04-21 03:21:29', '05ad3846096dc6e7f78093fa4ef09f98', '907ce06e22e909dc42c79171c33409ed.png', 'Non valide', 27, 61, 10),
+(64, '2024-04-21 03:21:29', '6612a022a65ab3af3c29b86dbc8afbd408be54f756202881c6030ee53976a3616cbc04bbc0c00', '881c6030ee53976a3616cbc04bbc0c00qrcode.png', 'Non valide', 27, 61, 10),
+(65, '2024-04-21 03:21:29', '6612a18b21936092a037c4f30f9b590c9e0a96269435494bf76b3167f6dd8aad68bdff922ce4e', '94bf76b3167f6dd8aad68bdff922ce4eqrcode.png', 'Valide', 27, 61, 10),
+(66, '2024-04-21 03:21:29', '6612a1db703c1bf1fa33b28ea7b608a813e71fe77069a040ac7559fbf7333f660895aa44a8c77', '040ac7559fbf7333f660895aa44a8c77qrcode.png', 'Valide', 27, 61, 10),
+(67, '2024-04-21 03:21:29', '6612a351d9cb1488509600abf38397eba10f163a7437e8cfdc67d746d5c803b11cc4ab37f1cd1', '8cfdc67d746d5c803b11cc4ab37f1cd1qrcode.png', 'Valide', 27, 61, 10),
+(68, '2024-04-21 03:21:29', '6612a4057cfce8b22977dbd1649ceb0bbdb617fd207ac5899b3c52670fe1258e974006118e976', '5899b3c52670fe1258e974006118e976qrcode.png', 'Valide', 27, 61, 10),
+(69, '2024-04-21 03:21:29', '6612a4718cdff1614bb8794c65e21ea5c1db78f6ab5d63b4c16d275818d6ea7990d4d5f6ba54e', '3b4c16d275818d6ea7990d4d5f6ba54eqrcode.png', 'Valide', 27, 61, 10),
+(70, '2024-04-21 03:21:29', '6612a51b065f5e55b26e3e420959de1cced817fc871b15b183ce40759f3fdeec6930fcab644a3', '5b183ce40759f3fdeec6930fcab644a3qrcode.png', 'Valide', 27, 61, 10),
+(71, '2024-04-21 03:21:29', '6612a55f33605131c51c8d7148282feef0e0db2366413b685db398e3bc0bfce648201f512f8b2', 'b685db398e3bc0bfce648201f512f8b2qrcode.png', 'Valide', 27, 61, 10),
+(72, '2024-04-21 03:21:29', '6612a5f402fba6d21c83e9ff3e2356e6ac256e6ffff7e2fed09c11ffc57dc4eab148a09209e52', '2fed09c11ffc57dc4eab148a09209e52qrcode.png', 'Valide', 27, 61, 10),
+(73, '2024-04-21 03:21:29', '6612a61e43bf381455c32f3480e315dd0d2b3e81037d9fc02af9caa2dcb86193620be367ce70c', 'fc02af9caa2dcb86193620be367ce70cqrcode.png', 'Valide', 27, 75, 0),
+(74, '2024-04-21 03:21:29', '6612a6ae51b4e0daae31caf29917336f1296571da27f160307c5551304caf05721acbebd3f147', '60307c5551304caf05721acbebd3f147qrcode.png', 'Valide', 27, 71, 50),
+(75, '2024-04-21 03:21:29', '6612f763eab0bc0e12cf92b4ee0ff36b84aab14e46773e9be909df994460e1ccbb77a0b09d9ad', 'e9be909df994460e1ccbb77a0b09d9adqrcode.png', 'Valide', 27, 63, 20),
+(76, '2024-04-21 03:21:29', '6612fd3c890ba120df6c63ecd36d5380bf29b99991253a603dac5a4df0634e4837ac76f084ef1', 'a603dac5a4df0634e4837ac76f084ef1qrcode.png', 'Non valide', 27, 63, 20),
+(77, '2024-04-21 03:21:29', '6612fd4a3bdd8ce0076362a41a16cae863ad0fa45a1da9f0090374f295d45f11b1ffa3e8d3e53', '9f0090374f295d45f11b1ffa3e8d3e53qrcode.png', 'Non valide', 27, 63, 20),
+(78, '2024-04-21 03:21:29', '6612fd5970cb94d1fc0bd7579b045b2ad690b99d8a1f75997ad33ef951264f6b9e5450b988fa5', '5997ad33ef951264f6b9e5450b988fa5qrcode.png', 'Non valide', 27, 63, 20),
+(79, '2024-04-21 03:21:29', '6612fd65c0f0dae2717e588bf730b20bbacd37d2eeeb488592d4b8b4bcb0342b3852e77f76e6f', '88592d4b8b4bcb0342b3852e77f76e6fqrcode.png', 'Non valide', 27, 63, 20),
+(80, '2024-04-21 03:21:29', '6612fd7827fbecaaeeb140fd45fb67a0d983311f1207ffcf927b1b1be8fdc754354036d9d922d', 'fcf927b1b1be8fdc754354036d9d922dqrcode.png', 'Non valide', 27, 63, 20),
+(81, '2024-04-21 03:21:29', '6612fd8920b3dee78fc8000ab02adaec27a0aa6fb8cff60d4f9b79d23044fa71e3c8782f07b61', '60d4f9b79d23044fa71e3c8782f07b61qrcode.png', 'Non valide', 27, 63, 20),
+(82, '2024-04-21 03:21:29', '66130396eafd3b5c67b3e3168758ff12e3545fdc70a18b72f0af34c5a17f7ad16a6de49e1f8af', 'b72f0af34c5a17f7ad16a6de49e1f8afqrcode.png', 'Non valide', 27, 63, 20),
+(83, '2024-04-21 03:21:29', '66141a98d40d8ed8e2afdfb15904ddebe6100f2e7130a688ca6cdb69cc071a15e8e8a0311f069', '688ca6cdb69cc071a15e8e8a0311f069qrcode.png', 'Non valide', 27, 70, 55),
+(84, '2024-04-21 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
+(85, '2024-04-21 03:21:29', '66141f5256357592166b84cd7371303c8f93868cd9354812a24e6c93686a2854dda65bd151144', '812a24e6c93686a2854dda65bd151144qrcode.png', 'Non valide', 27, 63, 20),
+(86, '2024-04-21 03:21:29', '66142026bfbb9d3366b39e15fd4896d79c786e7e91c5ba710896338a1d5b386b20abdebd4a52a', 'a710896338a1d5b386b20abdebd4a52aqrcode.png', 'Valide', 27, 76, 0),
+(87, '2024-04-21 03:21:29', '66144bbfe12c8f656d2745998d1e8819fed7c8c7b651dff901a0a25548e9429334a77b81cf05f', 'ff901a0a25548e9429334a77b81cf05fqrcode.png', 'Non valide', 27, 70, 55),
+(88, '2024-04-21 03:21:29', '6616a6b634ac59ce003ef8f89d22889b09bb2a69dfd4855a07c1d9ee01bcfb7c675dff6962857', '55a07c1d9ee01bcfb7c675dff6962857qrcode.png', 'Non valide', 27, 62, 15),
+(89, '2024-04-21 03:21:29', '6616a6d853b8c47eb8cf71f9eeef4d3ee1da4d7ce064461d7da00900911375a7b4cc282cd5664', '61d7da00900911375a7b4cc282cd5664qrcode.png', 'Non valide', 27, 89, 0),
+(90, '2024-04-21 03:21:29', '6616a6f7bd46209d9b3e835c269366461fa7efee10134310c84ab52a8b363f04822d5367163b9', '310c84ab52a8b363f04822d5367163b9qrcode.png', 'Non valide', 27, 88, 0),
+(91, '2024-04-21 03:21:29', '6616a71a98297b13a15eda89f9665f4db6bf8f34e3b4cd70bbfe3acd4aaa267ec352c25ae8e2f', 'd70bbfe3acd4aaa267ec352c25ae8e2fqrcode.png', 'Non valide', 27, 88, 0),
+(92, '2024-04-21 03:21:29', '6616ab76bbfa7c38244a733c044929d400bec6178f13d6b20d5e1774c1f1304056ad1f58d325e', '6b20d5e1774c1f1304056ad1f58d325eqrcode.png', 'Non valide', 27, 90, 100),
+(93, '2024-04-21 03:21:29', '6616acf9d9754d764bd6eefea1f5eb5f113604c17b8cb7d8e6af2d62edb481ee40a601c628dc8', '7d8e6af2d62edb481ee40a601c628dc8qrcode.png', 'Non valide', 27, 90, 100),
+(94, '2024-04-21 03:21:29', '6616ad791900827b3d8095c04b6e4c37c7d14854e06871a387f55606d0b46574928f14e68d2eb', '1a387f55606d0b46574928f14e68d2ebqrcode.png', 'Non valide', 27, 89, 0),
+(95, '2024-04-21 03:21:29', '6616ad993cbd8fa61bf1e33b04e78b8ad36b7d6fb00969f5eced3f9620a71ff3d157c8322e576', '9f5eced3f9620a71ff3d157c8322e576qrcode.png', 'Non valide', 27, 90, 100),
+(96, '2024-04-21 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
+(97, '2024-04-21 03:21:29', '66171e04cdbd85adda0f7fb5601cdc37a2d0130cd0dd373c9c0aa5c76d23a7a8d755512ff225c', '73c9c0aa5c76d23a7a8d755512ff225cqrcode.png', 'Non valide', 28, 97, 140),
+(98, '2024-04-21 03:21:29', '66171ecc8c0e5c52c6b93eabe4637efce7c0836db9e544c33d450ea464ecb1badf1d3e47df9fa', '4c33d450ea464ecb1badf1d3e47df9faqrcode.png', 'Non valide', 28, 99, 300),
+(99, '2024-04-21 03:21:29', '661720d226e6bc506cc8dfb5e1665b70cd349f98a8722709576cef375908ff3d725f9785a238d', '709576cef375908ff3d725f9785a238dqrcode.png', 'Non valide', 28, 106, 140),
+(103, '2024-04-21 03:22:52', '6624787c70a6f1b2975ce1e45a57ceccb82da0231fb8854bd2cf17fb93775f1dfde219af524ef', '54bd2cf17fb93775f1dfde219af524efqrcode.png', 'Non valide', 27, 67, 40);
 
 -- --------------------------------------------------------
 
@@ -558,13 +561,13 @@ INSERT INTO `ticket` (`Ticket_id`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E
 --
 
 CREATE TABLE `user` (
-  `User_id` int NOT NULL,
-  `U_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `U_Prenom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `U_email` varchar(70) COLLATE utf8mb4_general_ci NOT NULL,
-  `U_password` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `U_telephone` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `U_adresse` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `User_id` int(11) NOT NULL,
+  `U_name` varchar(30) NOT NULL,
+  `U_Prenom` varchar(30) NOT NULL,
+  `U_email` varchar(70) NOT NULL,
+  `U_password` varchar(200) NOT NULL,
+  `U_telephone` varchar(30) NOT NULL,
+  `U_adresse` varchar(100) NOT NULL,
   `U_dateNaissance` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -600,18 +603,18 @@ INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
-  `oauth_provider` enum('google','facebook','twitter','linkedin') CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'google',
-  `oauth_uid` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `first_name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `last_name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `gender` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `locale` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `picture` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `oauth_provider` enum('google','facebook','twitter','linkedin') NOT NULL DEFAULT 'google',
+  `oauth_uid` varchar(50) NOT NULL,
+  `first_name` varchar(25) NOT NULL,
+  `last_name` varchar(25) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `locale` varchar(10) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -722,85 +725,85 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `adminee`
 --
 ALTER TABLE `adminee`
-  MODIFY `admin_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `archive_demande`
 --
 ALTER TABLE `archive_demande`
-  MODIFY `event_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `Categorie_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `event_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `E_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `image_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reclamation`
 --
 ALTER TABLE `reclamation`
-  MODIFY `Reclammation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `reclamation_archive`
 --
 ALTER TABLE `reclamation_archive`
-  MODIFY `Reclammation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT for table `saveevent`
 --
 ALTER TABLE `saveevent`
-  MODIFY `S_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `S_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `Ticket_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
