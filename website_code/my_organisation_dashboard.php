@@ -472,10 +472,8 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
 								<div class="dashboard-date-wrap d-flex flex-wrap justify-content-between align-items-center">
 									<div class="select-graphic-category">
 										<div class="form-group main-form mb-2">
-											<select class="selectpicker" data-width="150px">
-												<option value="revenue">Revenue</option>
-												<option value="orders">Orders</option>
-												<option value="pageviews">Page Views</option>
+											<select class="selectpicker" name="mySelect" data-width="150px" id="tabSelect" role="tablist">
+												<option value="revenue" selected>Revenue</option>
 												<option value="ticketsales">Ticket Sales</option>
 											</select>
 										</div>
@@ -484,18 +482,23 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
 								</div>
 								<div class="rs">
 									<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+										<input type="radio" class="btn-check" name="btnradio" id="btnradio3" checked>
+										<label class="btn btn-outline-primary" for="btnradio3">Daily</label>
 										<input type="radio" class="btn-check" name="btnradio" id="btnradio1">
 										<label class="btn btn-outline-primary" for="btnradio1">Monthly</label>
-										<input type="radio" class="btn-check" name="btnradio" id="btnradio2" checked>
-										<label class="btn btn-outline-primary" for="btnradio2">Weekly</label>
-										<input type="radio" class="btn-check" name="btnradio" id="btnradio3">
-										<label class="btn btn-outline-primary" for="btnradio3">Dailty</label>
 									</div>
 								</div>
 							</div>
 							<div class="item-analytics-content p-4 ps-1 pb-2">
-								<div id="views-graphic"></div>
-							</div>
+                                <div id="revenue" class="tab-content">
+                                    <div id="views-graphic"></div>
+                                </div>
+                                <div id="ticketsales" class="tab-content" style="display: none;">
+                                    <div>
+                                        <div id="views-graphic3"></div>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -512,9 +515,181 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
 	<script src="vendor/chartist/dist/chartist.min.js"></script>
 	<script src="vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
-	<script src="js/analytics.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
+	<!-- REVENU -->
+	<script>
+		         
+        document.getElementById('tabSelect').addEventListener('change', function() {
+            document.getElementById('revenue').style.display = 'none';
+            document.getElementById('ticketsales').style.display = 'none';
+            document.getElementById(this.value).style.display = 'block';
+
+            Day_month_update(this.value);
+			updateChart('Daily', 'revenue');
+			updateChart('Daily', 'ticketsales');
+			
+        });        
+        <?php
+        $purchasesMonthly = array('January' => 0, 'February' => 0, 'March' => 0, 'April' => 0, 'May' => 0, 'June' => 0, 'July' => 0, 'August' => 0, 'September' => 0, 'October' => 0, 'November' => 0, 'December' => 0);
+
+        $purchasesDaily = array('Monday' => 0, 'Tuesday' => 0, 'Wednesday' => 0, 'Thursday' => 0, 'Friday' => 0, 'Saturday' => 0, 'Sunday' => 0);
+
+        $purchasesMonthly_ticket = array('January' => 0, 'February' => 0, 'March' => 0, 'April' => 0, 'May' => 0, 'June' => 0, 'July' => 0, 'August' => 0, 'September' => 0, 'October' => 0, 'November' => 0, 'December' => 0);
+
+        $purchasesDaily_ticket = array('Monday' => 0, 'Tuesday' => 0, 'Wednesday' => 0, 'Thursday' => 0, 'Friday' => 0, 'Saturday' => 0, 'Sunday' => 0);
+
+
+        $queryDaily_revenu =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase 
+		FROM event AS e 
+		JOIN ticket AS t ON e.E_id = t.E_id 
+		WHERE e.User_id = 27 AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
+		GROUP BY Purchase_Month 
+		ORDER BY CASE 
+			WHEN Purchase_Month = 'Monday' THEN 1 
+			WHEN Purchase_Month = 'Tuesday' THEN 2 
+			WHEN Purchase_Month = 'Wednesday' THEN 3 
+			WHEN Purchase_Month = 'Thursday' THEN 4 
+			WHEN Purchase_Month = 'Friday' THEN 5 
+			WHEN Purchase_Month = 'Saturday' THEN 6 
+			WHEN Purchase_Month = 'Sunday' THEN 7 
+		END;");
+
+        $queryMonthly_revenu =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase
+		FROM event AS e
+		JOIN ticket AS t ON e.E_id = t.E_id
+		WHERE e.User_id = 27 AND YEAR(t.Purchase_Date) = YEAR(CURDATE())
+		GROUP BY Purchase_Month
+		ORDER BY CASE
+			WHEN Purchase_Month = 'January' THEN 1
+			WHEN Purchase_Month = 'February' THEN 2
+			WHEN Purchase_Month = 'March' THEN 3
+			WHEN Purchase_Month = 'April' THEN 4
+			WHEN Purchase_Month = 'May' THEN 5
+			WHEN Purchase_Month = 'June' THEN 6
+			WHEN Purchase_Month = 'July' THEN 7
+			WHEN Purchase_Month = 'August' THEN 8
+			WHEN Purchase_Month = 'September' THEN 9
+			WHEN Purchase_Month = 'October' THEN 10
+			WHEN Purchase_Month = 'November' THEN 11
+			WHEN Purchase_Month = 'December' THEN 12
+		END;");
+
+        $queryDaily_ticket =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold 
+        FROM event AS e 
+        JOIN ticket AS t ON e.E_id = t.E_id 
+        WHERE e.User_id = 27 AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
+        GROUP BY Purchase_Month 
+        ORDER BY CASE 
+            WHEN Purchase_Month = 'Monday' THEN 1 
+            WHEN Purchase_Month = 'Tuesday' THEN 2 
+            WHEN Purchase_Month = 'Wednesday' THEN 3 
+            WHEN Purchase_Month = 'Thursday' THEN 4 
+            WHEN Purchase_Month = 'Friday' THEN 5 
+            WHEN Purchase_Month = 'Saturday' THEN 6 
+            WHEN Purchase_Month = 'Sunday' THEN 7 
+        END;");
+
+        $queryMonthly_ticket =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold
+        FROM event AS e 
+        JOIN ticket AS t ON e.E_id = t.E_id 
+        WHERE e.User_id = 27 AND YEAR(t.Purchase_Date) = YEAR(CURDATE()) 
+        GROUP BY Purchase_Month 
+        ORDER BY CASE 
+            WHEN Purchase_Month = 'January' THEN 1 
+            WHEN Purchase_Month = 'February' THEN 2 
+            WHEN Purchase_Month = 'March' THEN 3 
+            WHEN Purchase_Month = 'April' THEN 4 
+            WHEN Purchase_Month = 'May' THEN 5 
+            WHEN Purchase_Month = 'June' THEN 6 
+            WHEN Purchase_Month = 'July' THEN 7 
+            WHEN Purchase_Month = 'August' THEN 8 
+            WHEN Purchase_Month = 'September' THEN 9 
+            WHEN Purchase_Month = 'October' THEN 10 
+            WHEN Purchase_Month = 'November' THEN 11 
+            WHEN Purchase_Month = 'December' THEN 12 
+        END;");
+        ?>
+
+        if (chartId === 'revenue') {
+            <?php
+            updatePurchases($queryDaily_revenu, $purchasesDaily);
+            updatePurchases($queryMonthly_revenu, $purchasesMonthly);
+            ?>
+            console.log("data = " + data_date)
+        } else if (chartId === 'ticketsales') {
+            <?php
+            updatePurchases($queryDaily_ticket, $purchasesDaily_ticket);
+            updatePurchases($queryMonthly_ticket, $purchasesMonthly_ticket);
+            ?>
+
+        }
+        <?php
+
+        function updatePurchases($query, &$purchases)
+        {
+            foreach ($query as $data) {
+                if (isset($data['Total_Purchase'])) {
+                    $purchases[$data['Purchase_Month']] = $data['Total_Purchase'];
+                } else if (isset($data['Total_Tickets_Sold'])) {
+                    $purchases[$data['Purchase_Month']] = $data['Total_Tickets_Sold'];
+                }
+            }
+        }
+        ?>
+
+        function Day_month_update(chartId) {
+            document.querySelectorAll('input[name="btnradio"]').forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    document.getElementById(chartId).innerHTML = '';
+                    var timePeriod = this.nextElementSibling.textContent;
+                    updateChart(timePeriod, chartId);			
+                });
+            })
+        }
+        function updateChart(timePeriod, chartId) {
+            var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            var day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            var purchases;
+            var data_date;        
+
+			if (chartId === 'revenue' && timePeriod === 'Daily') {
+                    var purchasesDaily = <?php echo json_encode($purchasesDaily) ?>;
+                    purchases = purchasesDaily;
+                    data_date = day;
+                    console.log(purchases)
+			} else if (chartId === 'revenue' && timePeriod === 'Monthly') {
+                    var purchasesMonthly = <?php echo json_encode(array_values($purchasesMonthly)) ?>;
+                    purchases = purchasesMonthly;
+                    data_date = month;
+                    console.log("month 1 " + purchases)
+			}else if (chartId === 'ticketsales' && timePeriod === 'Daily') {
+                    var purchasesDaily = <?php echo json_encode($purchasesDaily_ticket) ?>;
+                    purchases = purchasesDaily;
+                    data_date = day;
+                    console.log(purchases)
+			} else if (chartId === 'ticketsales' && timePeriod === 'Monthly') {
+                    var purchasesMonthly = <?php echo json_encode(array_values($purchasesMonthly_ticket)) ?>;
+                    purchases = purchasesMonthly;
+                    data_date = month;
+                    console.log("month 2 " + purchases)
+            }
+
+            new Chartist.Line('#' + chartId, {
+                labels: data_date,
+                series: [Object.values(purchases)],
+            }, {
+                low: 0,
+                showArea: true,
+                fullWidth: true,
+                distributeSeries: true,
+                plugins: [
+                    Chartist.plugins.tooltip()
+                ]
+            });
+        }
+		
+        </script>
 
 </body>
 </html>
