@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-if(!isset($_SESSION['user']['U_email'])){
+if (!isset($_SESSION['user']['U_email'])) {
 	header('location:sign_in.php');
 }
 $emaill = $_SESSION['user']['U_email'];
@@ -13,38 +13,39 @@ require_once "connect/DataBase.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
-		<meta name="description" content="Gambolthemes">
-		<meta name="author" content="Gambolthemes">		
-		<title>MoroccanJoy - Système en ligne de billetterie d'événements</title>
-		
-		<!-- Favicon Icon -->
-		<link rel="icon" type="image/png" href="images/fav.png">
-		
-		<!-- Stylesheets -->
-		<link rel="preconnect" href="https://fonts.googleapis.com/">
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
-		<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/vertical-responsive-menu.min.css" rel="stylesheet">
-		<link href="css/analytics.css" rel="stylesheet">
-		<link href="css/responsive.css" rel="stylesheet">
-		<link href="css/night-mode.css" rel="stylesheet">
-		
-		<!-- Vendor Stylesheets -->
-		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">	
-		<link href="vendor/chartist/dist/chartist.min.css" rel="stylesheet">
-		<link href="vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-		
-	</head>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+	<meta name="description" content="Gambolthemes">
+	<meta name="author" content="Gambolthemes">
+	<title>MoroccanJoy - Système en ligne de billetterie d'événements</title>
+
+	<!-- Favicon Icon -->
+	<link rel="icon" type="image/png" href="images/fav.png">
+
+	<!-- Stylesheets -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+	<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/vertical-responsive-menu.min.css" rel="stylesheet">
+	<link href="css/analytics.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link href="css/night-mode.css" rel="stylesheet">
+
+	<!-- Vendor Stylesheets -->
+	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+	<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="vendor/chartist/dist/chartist.min.css" rel="stylesheet">
+	<link href="vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+
+</head>
 
 <body class="d-flex flex-column h-100">
 	<!-- Add Organisation Model Start-->
@@ -64,73 +65,73 @@ require_once "connect/DataBase.php";
 									<span class="org_design_button btn-file">
 										<span><i class="fa-solid fa-camera"></i></span>
 										<input type="file" id="org_avatar" accept="image/*" name="Organisation_avatar">
-									</span>																								
+									</span>
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Name*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Profile Link*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="https://www.barren.com/b/organiser/" disabled>																								
+									<input class="form-control h_40" type="text" placeholder="" value="https://www.barren.com/b/organiser/" disabled>
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">About*</label>
-									<textarea class="form-textarea"  placeholder="">About</textarea>																							
+									<textarea class="form-textarea" placeholder="">About</textarea>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Email*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Phone*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Website*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Facebook*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Instagram*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Twitter*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">LinkedIn*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Youtube*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
@@ -139,13 +140,13 @@ require_once "connect/DataBase.php";
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Address 1*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Address 2*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
@@ -207,26 +208,26 @@ require_once "connect/DataBase.php";
 										<option value="Turkey">Turkey</option>
 										<option value="United Kingdom">United Kingdom</option>
 										<option value="United States">United States</option>
-										<option value="Vietnam">Vietnam</option>																					
+										<option value="Vietnam">Vietnam</option>
 									</select>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">State*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">City/Suburb*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Zip/Post Code*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 						</div>
@@ -242,7 +243,7 @@ require_once "connect/DataBase.php";
 	<!-- Add Organisation Model End-->
 	<!-- Header Start-->
 	<?php
-		include "include/navindex.php";
+	include "include/navindex.php";
 	?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
@@ -288,31 +289,31 @@ require_once "connect/DataBase.php";
 										</h5>
 									</div>
 									<form action="" method="post">
-									<div class="rs">
-										<div class="dropdown dropdown-text event-list-dropdown">
-											<!-- <button class="dropdown-toggle event-list-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										<div class="rs">
+											<div class="dropdown dropdown-text event-list-dropdown">
+												<!-- <button class="dropdown-toggle event-list-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 												<span>Selected Events (1)</span>
 											</button> -->
-											<!-- <ul class="dropdown-menu">
+												<!-- <ul class="dropdown-menu">
 												<li><a class="dropdown-item" href="#">1</a></li>
 											</ul> -->
-																										<?php 
-															$userid = $_SESSION['user']['User_id'];
-															require 'connect/DataBase.php';
-															$sql = 'SELECT * FROM `event` WHERE User_id = :userid';
-															$statement = $connection->prepare($sql);
-															$statement->execute([':userid' => $userid]);
-															$users = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
-											<select class="d-inline form-select w-50 py-1 px-4 dark mx-0" name="ev" id="">
-												<option selected value="0">All</option>
-											<?php foreach ($users as $user) : ?>
-											
-												<option class="dropdown-item"  value="<?php echo $user['E_id'] ?>"><?php echo $user['Titre'] ?></option>
-												<?php endforeach; ?>
-											</select>
-											<input type="submit" class="btn btn-dark  " value="trouve" name="submiit">
+												<?php
+												$userid = $_SESSION['user']['User_id'];
+												require 'connect/DataBase.php';
+												$sql = 'SELECT * FROM `event` WHERE User_id = :userid';
+												$statement = $connection->prepare($sql);
+												$statement->execute([':userid' => $userid]);
+												$users = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
+												<select class="d-inline form-select w-50 py-1 px-4 dark mx-0" name="ev" id="">
+													<option selected value="0">All</option>
+													<?php foreach ($users as $user) : ?>
+
+														<option class="dropdown-item" value="<?php echo $user['E_id'] ?>"><?php echo $user['Titre'] ?></option>
+													<?php endforeach; ?>
+												</select>
+												<input type="submit" class="btn btn-dark  " value="trouve" name="submiit">
+											</div>
 										</div>
-									</div>
 									</form>
 								</div>
 								<div class="dashboard-report-content">
@@ -322,37 +323,36 @@ require_once "connect/DataBase.php";
 												<div class="card-content">
 													<div class="card-content">
 														<?php
-													if(isset($_POST['ev']) && $_POST['ev']!=0 ){
-															
-														if($_POST['ev']!=0){
-															$evv=$_POST['ev'];
-														$sql = "SELECT sum(prix_tickt) as R FROM ticket WHERE  E_id = '$evv'";
-														$result = $connection->query($sql);													
-														if ($result->rowCount() > 0)
-														{
-																																											
-														$rowr = $result->fetch(PDO::FETCH_ASSOC);																										
-																																											
-																													}
-														}
-													}else{
-				$sql = "SELECT sum(prix_tickt) as R FROM ticket WHERE E_id in (SELECT E_id FROM `event` WHERE User_id = '$userid')";
-															$result = $connection->query($sql);													
-															if ($result->rowCount() > 0)
-															{
-																																												
-															$rowr = $result->fetch(PDO::FETCH_ASSOC);																										
-																																												
+														if (isset($_POST['ev']) && $_POST['ev'] != 0) {
+
+															if ($_POST['ev'] != 0) {
+																$evv = $_POST['ev'];
+																$sql = "SELECT sum(prix_tickt) as R FROM ticket WHERE  E_id = '$evv'";
+																$result = $connection->query($sql);
+																if ($result->rowCount() > 0) {
+
+																	$rowr = $result->fetch(PDO::FETCH_ASSOC);
+																}
 															}
-																		
-													}											
-														
+														} else {
+															$sql = "SELECT sum(prix_tickt) as R FROM ticket WHERE E_id in (SELECT E_id FROM `event` WHERE User_id = '$userid')";
+															$result = $connection->query($sql);
+															if ($result->rowCount() > 0) {
+
+																$rowr = $result->fetch(PDO::FETCH_ASSOC);
+															}
+														}
+
 														?>
 														<span class="card-title fs-6">Revenue (MAD)</span>
-														<span class="card-sub-title fs-3"><?php if($rowr['R']>0){echo $rowr['R'];}else{echo '0';}?></span>
+														<span class="card-sub-title fs-3"><?php if ($rowr['R'] > 0) {
+																								echo $rowr['R'];
+																							} else {
+																								echo '0';
+																							} ?></span>
 														<div class="d-flex align-items-center">
-															
-															
+
+
 														</div>
 													</div>
 													<div class="card-media">
@@ -361,57 +361,55 @@ require_once "connect/DataBase.php";
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="col-xl-4 col-lg-6 col-md-6">
 											<div class="dashboard-report-card info">
 												<div class="card-content">
 													<?php
-													if(isset($_POST['ev'])&& $_POST['ev']!=0){
-														$iddd=$_POST['ev'];
+													if (isset($_POST['ev']) && $_POST['ev'] != 0) {
+														$iddd = $_POST['ev'];
 														// Query to fetch page views
 														$sql = "SELECT vue as vew FROM event WHERE E_id = '$iddd'";
 														$result = $connection->query($sql);
 
-														if ($result->rowCount() > 0)
-														 {
-															
+														if ($result->rowCount() > 0) {
+
 															$row = $result->fetch(PDO::FETCH_ASSOC);
-																
 														}
-													}else{
+													} else {
 														$sql = "SELECT sum(vue) as vew FROM event WHERE User_id = '$userid'";
 														$result = $connection->query($sql);
 
-														if ($result->rowCount() > 0)
-														 {
-															
-															$row = $result->fetch(PDO::FETCH_ASSOC);
-															
-																
-														}
+														if ($result->rowCount() > 0) {
 
+															$row = $result->fetch(PDO::FETCH_ASSOC);
+														}
 													}
-													
-													
-													
-													
-													
+
+
+
+
+
 													?>
 													<div class="card-content">
 														<span class="card-title fs-6">Page Views</span>
-														<span class="card-sub-title fs-3"><?php if($row['vew']>0){echo $row['vew'];}else{echo '0';}
+														<span class="card-sub-title fs-3"><?php if ($row['vew'] > 0) {
+																								echo $row['vew'];
+																							} else {
+																								echo '0';
+																							}
 
 
-														
-														
-														
-													
-												
-											?>
+
+
+
+
+
+																							?>
 														</span>
 														<div class="d-flex align-items-center">
-													
-															
+
+
 														</div>
 													</div>
 													<div class="card-media">
@@ -425,37 +423,33 @@ require_once "connect/DataBase.php";
 												<div class="card-content">
 													<div class="card-content">
 														<?php
-if(isset($_POST['ev']) && $_POST['ev']!=0)		{
-	if($_POST['ev']!=0){
-		$sql = "SELECT count(*) as ti FROM ticket WHERE  E_id = '$iddd'";
-	$result = $connection->query($sql);													
-	if ($result->rowCount() > 0)
-	{
-																														
-	$rowtt = $result->fetch(PDO::FETCH_ASSOC);																										
-																														
-	}
-}	
-	}else{
-		$sql = "SELECT count(*) as ti FROM ticket WHERE E_id in (SELECT E_id FROM `event` WHERE User_id = '$userid')";
-	$result = $connection->query($sql);													
-	if ($result->rowCount() > 0)
-	{
-																														
-	$rowtt = $result->fetch(PDO::FETCH_ASSOC);																										
-																														
-	}
-	}
-			
-	
-														
-														
+														if (isset($_POST['ev']) && $_POST['ev'] != 0) {
+															if ($_POST['ev'] != 0) {
+																$sql = "SELECT count(*) as ti FROM ticket WHERE  E_id = '$iddd'";
+																$result = $connection->query($sql);
+																if ($result->rowCount() > 0) {
+
+																	$rowtt = $result->fetch(PDO::FETCH_ASSOC);
+																}
+															}
+														} else {
+															$sql = "SELECT count(*) as ti FROM ticket WHERE E_id in (SELECT E_id FROM `event` WHERE User_id = '$userid')";
+															$result = $connection->query($sql);
+															if ($result->rowCount() > 0) {
+
+																$rowtt = $result->fetch(PDO::FETCH_ASSOC);
+															}
+														}
+
+
+
+
 														?>
 														<span class="card-title fs-6">Ticket Sales</span>
-														<span class="card-sub-title fs-3"><?php  echo $rowtt['ti'] ;?></span>
+														<span class="card-sub-title fs-3"><?php echo $rowtt['ti']; ?></span>
 														<div class="d-flex align-items-center">
-														
-															
+
+
 														</div>
 													</div>
 													<div class="card-media">
@@ -474,7 +468,8 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
 									<div class="select-graphic-category">
 										<div class="form-group main-form mb-2">
 											<select class="selectpicker" name="mySelect" data-width="150px" id="tabSelect" role="tablist">
-												<option value="revenue" selected>Revenue</option>
+												<option disabled selected>Choisie</option>
+												<option value="revenue">Revenue</option>
 												<option value="ticketsales">Ticket Sales</option>
 											</select>
 										</div>
@@ -491,15 +486,26 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
 								</div>
 							</div>
 							<div class="item-analytics-content p-4 ps-1 pb-2">
-                                <div id="revenue" class="tab-content">
-                                    <div id="views-graphic"></div>
-                                </div>
-                                <div id="ticketsales" class="tab-content" style="display: none;">
-                                    <div>
-                                        <div id="views-graphic3"></div>
-                                    </div>
-                                </div>
-                            </div>
+								<div>
+									<div id="revenue"></div>
+								</div>
+								<div>
+									<div>
+										<div id="ticketsales" style="display: none;"></div>
+									</div>
+								</div>
+							</div>
+							<style>
+								#revenue {
+									height: 300px;
+									position: relative;
+								}
+
+								#ticketsales {
+									height: 300px;
+									position: relative;
+								}
+							</style>
 						</div>
 					</div>
 				</div>
@@ -507,190 +513,191 @@ if(isset($_POST['ev']) && $_POST['ev']!=0)		{
 		</div>
 	</div>
 	<!-- Body End -->
-	
+
 
 	<script src="js/vertical-responsive-menu.min.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="vendor/OwlCarousel/owl.carousel.js"></script>
-	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="vendor/chartist/dist/chartist.min.js"></script>
 	<script src="vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
 	<!-- REVENU -->
 	<script>
-		         
-        document.getElementById('tabSelect').addEventListener('change', function() {
-            document.getElementById('revenue').style.display = 'none';
-            document.getElementById('ticketsales').style.display = 'none';
-            document.getElementById(this.value).style.display = 'block';
+		document.getElementById('tabSelect').addEventListener('change', function() {
+			document.getElementById('revenue').style.display = 'none';
+			document.getElementById('ticketsales').style.display = 'none';
+			document.getElementById(this.value).style.display = 'block';
 
-            Day_month_update(this.value);
+			Day_month_update(this.value);
+
+
+		});
+		<?php
+		$purchasesMonthly = array('January' => 0, 'February' => 0, 'March' => 0, 'April' => 0, 'May' => 0, 'June' => 0, 'July' => 0, 'August' => 0, 'September' => 0, 'October' => 0, 'November' => 0, 'December' => 0);
+
+		$purchasesDaily = array('Monday' => 0, 'Tuesday' => 0, 'Wednesday' => 0, 'Thursday' => 0, 'Friday' => 0, 'Saturday' => 0, 'Sunday' => 0);
+
+		$purchasesMonthly_ticket = array('January' => 0, 'February' => 0, 'March' => 0, 'April' => 0, 'May' => 0, 'June' => 0, 'July' => 0, 'August' => 0, 'September' => 0, 'October' => 0, 'November' => 0, 'December' => 0);
+
+		$purchasesDaily_ticket = array('Monday' => 0, 'Tuesday' => 0, 'Wednesday' => 0, 'Thursday' => 0, 'Friday' => 0, 'Saturday' => 0, 'Sunday' => 0);
+
+
+		$queryDaily_revenu =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase 
+				 FROM event AS e 
+				 JOIN ticket AS t ON e.E_id = t.E_id 
+				 WHERE e.User_id = 27 AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
+				 GROUP BY Purchase_Month 
+				 ORDER BY CASE 
+					 WHEN Purchase_Month = 'Monday' THEN 1 
+					 WHEN Purchase_Month = 'Tuesday' THEN 2 
+					 WHEN Purchase_Month = 'Wednesday' THEN 3 
+					 WHEN Purchase_Month = 'Thursday' THEN 4 
+					 WHEN Purchase_Month = 'Friday' THEN 5 
+					 WHEN Purchase_Month = 'Saturday' THEN 6 
+					 WHEN Purchase_Month = 'Sunday' THEN 7 
+				 END;");
+
+		$queryMonthly_revenu =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase
+				 FROM event AS e
+				 JOIN ticket AS t ON e.E_id = t.E_id
+				 WHERE e.User_id = 27 AND YEAR(t.Purchase_Date) = YEAR(CURDATE())
+				 GROUP BY Purchase_Month
+				 ORDER BY CASE
+					 WHEN Purchase_Month = 'January' THEN 1
+					 WHEN Purchase_Month = 'February' THEN 2
+					 WHEN Purchase_Month = 'March' THEN 3
+					 WHEN Purchase_Month = 'April' THEN 4
+					 WHEN Purchase_Month = 'May' THEN 5
+					 WHEN Purchase_Month = 'June' THEN 6
+					 WHEN Purchase_Month = 'July' THEN 7
+					 WHEN Purchase_Month = 'August' THEN 8
+					 WHEN Purchase_Month = 'September' THEN 9
+					 WHEN Purchase_Month = 'October' THEN 10
+					 WHEN Purchase_Month = 'November' THEN 11
+					 WHEN Purchase_Month = 'December' THEN 12
+				 END;");
+
+		$queryDaily_ticket =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold 
+				 FROM event AS e 
+				 JOIN ticket AS t ON e.E_id = t.E_id 
+				 WHERE e.User_id = 27 AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
+				 GROUP BY Purchase_Month 
+				 ORDER BY CASE 
+					 WHEN Purchase_Month = 'Monday' THEN 1 
+					 WHEN Purchase_Month = 'Tuesday' THEN 2 
+					 WHEN Purchase_Month = 'Wednesday' THEN 3 
+					 WHEN Purchase_Month = 'Thursday' THEN 4 
+					 WHEN Purchase_Month = 'Friday' THEN 5 
+					 WHEN Purchase_Month = 'Saturday' THEN 6 
+					 WHEN Purchase_Month = 'Sunday' THEN 7 
+				 END;");
+
+		$queryMonthly_ticket =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold
+				 FROM event AS e 
+				 JOIN ticket AS t ON e.E_id = t.E_id 
+				 WHERE e.User_id = 27 AND YEAR(t.Purchase_Date) = YEAR(CURDATE()) 
+				 GROUP BY Purchase_Month 
+				 ORDER BY CASE 
+					 WHEN Purchase_Month = 'January' THEN 1 
+					 WHEN Purchase_Month = 'February' THEN 2 
+					 WHEN Purchase_Month = 'March' THEN 3 
+					 WHEN Purchase_Month = 'April' THEN 4 
+					 WHEN Purchase_Month = 'May' THEN 5 
+					 WHEN Purchase_Month = 'June' THEN 6 
+					 WHEN Purchase_Month = 'July' THEN 7 
+					 WHEN Purchase_Month = 'August' THEN 8 
+					 WHEN Purchase_Month = 'September' THEN 9 
+					 WHEN Purchase_Month = 'October' THEN 10 
+					 WHEN Purchase_Month = 'November' THEN 11 
+					 WHEN Purchase_Month = 'December' THEN 12 
+				 END;");
+		?>
+
+		if (chartId === 'revenue') {
+			<?php
+			updatePurchases($queryDaily_revenu, $purchasesDaily);
+			updatePurchases($queryMonthly_revenu, $purchasesMonthly);
+			?>
+			console.log("data = " + data_date)
+		} else if (chartId === 'ticketsales') {
+			<?php
+			updatePurchases($queryDaily_ticket, $purchasesDaily_ticket);
+			updatePurchases($queryMonthly_ticket, $purchasesMonthly_ticket);
+			?>
+
+		}
+		<?php
+
+		function updatePurchases($query, &$purchases)
+		{
+			foreach ($query as $data) {
+				if (isset($data['Total_Purchase'])) {
+					$purchases[$data['Purchase_Month']] = $data['Total_Purchase'];
+				} else if (isset($data['Total_Tickets_Sold'])) {
+					$purchases[$data['Purchase_Month']] = $data['Total_Tickets_Sold'];
+				}
+			}
+		}
+		?>
+
+		function Day_month_update(chartId) {
+			document.querySelectorAll('input[name="btnradio"]').forEach(function(radio) {
+				radio.addEventListener('change', function() {
+					document.getElementById(chartId).innerHTML = '';
+					var timePeriod = this.nextElementSibling.textContent;
+					updateChart(timePeriod, chartId);
+				});
+			})
 			updateChart('Daily', 'revenue');
 			updateChart('Daily', 'ticketsales');
-			
-        });        
-        <?php
-        $purchasesMonthly = array('January' => 0, 'February' => 0, 'March' => 0, 'April' => 0, 'May' => 0, 'June' => 0, 'July' => 0, 'August' => 0, 'September' => 0, 'October' => 0, 'November' => 0, 'December' => 0);
+		}
 
-        $purchasesDaily = array('Monday' => 0, 'Tuesday' => 0, 'Wednesday' => 0, 'Thursday' => 0, 'Friday' => 0, 'Saturday' => 0, 'Sunday' => 0);
-
-        $purchasesMonthly_ticket = array('January' => 0, 'February' => 0, 'March' => 0, 'April' => 0, 'May' => 0, 'June' => 0, 'July' => 0, 'August' => 0, 'September' => 0, 'October' => 0, 'November' => 0, 'December' => 0);
-
-        $purchasesDaily_ticket = array('Monday' => 0, 'Tuesday' => 0, 'Wednesday' => 0, 'Thursday' => 0, 'Friday' => 0, 'Saturday' => 0, 'Sunday' => 0);
-
-
-        $queryDaily_revenu =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase 
-		FROM event AS e 
-		JOIN ticket AS t ON e.E_id = t.E_id 
-		WHERE e.User_id = $Uid AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
-		GROUP BY Purchase_Month 
-		ORDER BY CASE 
-			WHEN Purchase_Month = 'Monday' THEN 1 
-			WHEN Purchase_Month = 'Tuesday' THEN 2 
-			WHEN Purchase_Month = 'Wednesday' THEN 3 
-			WHEN Purchase_Month = 'Thursday' THEN 4 
-			WHEN Purchase_Month = 'Friday' THEN 5 
-			WHEN Purchase_Month = 'Saturday' THEN 6 
-			WHEN Purchase_Month = 'Sunday' THEN 7 
-		END;");
-
-        $queryMonthly_revenu =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, SUM(t.prix_tickt) AS Total_Purchase
-		FROM event AS e
-		JOIN ticket AS t ON e.E_id = t.E_id
-		WHERE e.User_id = $Uid AND YEAR(t.Purchase_Date) = YEAR(CURDATE())
-		GROUP BY Purchase_Month
-		ORDER BY CASE
-			WHEN Purchase_Month = 'January' THEN 1
-			WHEN Purchase_Month = 'February' THEN 2
-			WHEN Purchase_Month = 'March' THEN 3
-			WHEN Purchase_Month = 'April' THEN 4
-			WHEN Purchase_Month = 'May' THEN 5
-			WHEN Purchase_Month = 'June' THEN 6
-			WHEN Purchase_Month = 'July' THEN 7
-			WHEN Purchase_Month = 'August' THEN 8
-			WHEN Purchase_Month = 'September' THEN 9
-			WHEN Purchase_Month = 'October' THEN 10
-			WHEN Purchase_Month = 'November' THEN 11
-			WHEN Purchase_Month = 'December' THEN 12
-		END;");
-
-        $queryDaily_ticket =  $connection->query("SELECT DAYNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold 
-        FROM event AS e 
-        JOIN ticket AS t ON e.E_id = t.E_id 
-        WHERE e.User_id = $Uid AND WEEK(t.Purchase_Date, 1) = WEEK(CURDATE(), 1) 
-        GROUP BY Purchase_Month 
-        ORDER BY CASE 
-            WHEN Purchase_Month = 'Monday' THEN 1 
-            WHEN Purchase_Month = 'Tuesday' THEN 2 
-            WHEN Purchase_Month = 'Wednesday' THEN 3 
-            WHEN Purchase_Month = 'Thursday' THEN 4 
-            WHEN Purchase_Month = 'Friday' THEN 5 
-            WHEN Purchase_Month = 'Saturday' THEN 6 
-            WHEN Purchase_Month = 'Sunday' THEN 7 
-        END;");
-
-        $queryMonthly_ticket =  $connection->query("SELECT MONTHNAME(t.Purchase_Date) AS Purchase_Month, COUNT(t.ticket_id) AS Total_Tickets_Sold
-        FROM event AS e 
-        JOIN ticket AS t ON e.E_id = t.E_id 
-        WHERE e.User_id = $Uid AND YEAR(t.Purchase_Date) = YEAR(CURDATE()) 
-        GROUP BY Purchase_Month 
-        ORDER BY CASE 
-            WHEN Purchase_Month = 'January' THEN 1 
-            WHEN Purchase_Month = 'February' THEN 2 
-            WHEN Purchase_Month = 'March' THEN 3 
-            WHEN Purchase_Month = 'April' THEN 4 
-            WHEN Purchase_Month = 'May' THEN 5 
-            WHEN Purchase_Month = 'June' THEN 6 
-            WHEN Purchase_Month = 'July' THEN 7 
-            WHEN Purchase_Month = 'August' THEN 8 
-            WHEN Purchase_Month = 'September' THEN 9 
-            WHEN Purchase_Month = 'October' THEN 10 
-            WHEN Purchase_Month = 'November' THEN 11 
-            WHEN Purchase_Month = 'December' THEN 12 
-        END;");
-        ?>
-
-        if (chartId === 'revenue') {
-            <?php
-            updatePurchases($queryDaily_revenu, $purchasesDaily);
-            updatePurchases($queryMonthly_revenu, $purchasesMonthly);
-            ?>
-            console.log("data = " + data_date)
-        } else if (chartId === 'ticketsales') {
-            <?php
-            updatePurchases($queryDaily_ticket, $purchasesDaily_ticket);
-            updatePurchases($queryMonthly_ticket, $purchasesMonthly_ticket);
-            ?>
-
-        }
-        <?php
-
-        function updatePurchases($query, &$purchases)
-        {
-            foreach ($query as $data) {
-                if (isset($data['Total_Purchase'])) {
-                    $purchases[$data['Purchase_Month']] = $data['Total_Purchase'];
-                } else if (isset($data['Total_Tickets_Sold'])) {
-                    $purchases[$data['Purchase_Month']] = $data['Total_Tickets_Sold'];
-                }
-            }
-        }
-        ?>
-
-        function Day_month_update(chartId) {
-            document.querySelectorAll('input[name="btnradio"]').forEach(function(radio) {
-                radio.addEventListener('change', function() {
-                    document.getElementById(chartId).innerHTML = '';
-                    var timePeriod = this.nextElementSibling.textContent;
-                    updateChart(timePeriod, chartId);			
-                });
-            })
-        }
-        function updateChart(timePeriod, chartId) {
-            var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            var day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            var purchases;
-            var data_date;        
+		function updateChart(timePeriod, chartId) {
+			var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+			var day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+			var purchases;
+			var data_date;
 
 			if (chartId === 'revenue' && timePeriod === 'Daily') {
-                    var purchasesDaily = <?php echo json_encode($purchasesDaily) ?>;
-                    purchases = purchasesDaily;
-                    data_date = day;
-                    console.log(purchases)
+				var purchasesDaily = <?php echo json_encode($purchasesDaily) ?>;
+				purchases = purchasesDaily;
+				data_date = day;
+				console.log(purchases)
 			} else if (chartId === 'revenue' && timePeriod === 'Monthly') {
-                    var purchasesMonthly = <?php echo json_encode(array_values($purchasesMonthly)) ?>;
-                    purchases = purchasesMonthly;
-                    data_date = month;
-                    console.log("month 1 " + purchases)
-			}else if (chartId === 'ticketsales' && timePeriod === 'Daily') {
-                    var purchasesDaily = <?php echo json_encode($purchasesDaily_ticket) ?>;
-                    purchases = purchasesDaily;
-                    data_date = day;
-                    console.log(purchases)
+				var purchasesMonthly = <?php echo json_encode(array_values($purchasesMonthly)) ?>;
+				purchases = purchasesMonthly;
+				data_date = month;
+				console.log("month 1 " + purchases)
+			} else if (chartId === 'ticketsales' && timePeriod === 'Daily') {
+				var purchasesDaily = <?php echo json_encode($purchasesDaily_ticket) ?>;
+				purchases = purchasesDaily;
+				data_date = day;
+				console.log(purchases)
 			} else if (chartId === 'ticketsales' && timePeriod === 'Monthly') {
-                    var purchasesMonthly = <?php echo json_encode(array_values($purchasesMonthly_ticket)) ?>;
-                    purchases = purchasesMonthly;
-                    data_date = month;
-                    console.log("month 2 " + purchases)
-            }
+				var purchasesMonthly = <?php echo json_encode(array_values($purchasesMonthly_ticket)) ?>;
+				purchases = purchasesMonthly;
+				data_date = month;
+				console.log("month 2 " + purchases)
+			}
 
-            new Chartist.Line('#' + chartId, {
-                labels: data_date,
-                series: [Object.values(purchases)],
-            }, {
-                low: 0,
-                showArea: true,
-                fullWidth: true,
-                distributeSeries: true,
-                plugins: [
-                    Chartist.plugins.tooltip()
-                ]
-            });
-        }
-		
-        </script>
+			new Chartist.Line('#' + chartId, {
+				labels: data_date,
+				series: [Object.values(purchases)],
+			}, {
+				low: 0,
+				showArea: true,
+				fullWidth: true,
+				distributeSeries: true,
+				plugins: [
+					Chartist.plugins.tooltip()
+				]
+			});
+		}
+	</script>
 
 </body>
+
 </html>
