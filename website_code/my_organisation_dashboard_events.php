@@ -12,6 +12,9 @@ $statement = $connection->prepare($sql);
 $statement->execute([':userid' => $userid]);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+$users_att;
+$users_rej;
+
 ?>
 
 <!DOCTYPE html>
@@ -67,45 +70,73 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 						</div>
 					</div>
 					<div class="col-md-12">
-						<form action="" method="post">
-							<div class="main-card mt-5">
-								<div class="dashboard-wrap-content p-4">
-									<div class="d-md-flex flex-wrap align-items-center">
-										<div class="dashboard-date-wrap">
-											<div class="form-group">
-												<div class="relative-input position-relative">
-													<input class="form-control h_40" type="text" placeholder="Search by event name, status" value="" name="chr">
-													<i class="uil uil-search"></i>
-												</div>
-											</div>
-										</div>
-										<div class="rs ms-auto mt_r4">
-											<div class="nav custom2-tabs btn-group" role="tablist">
-												<button class="tab-link btn-hover" data-bs-toggle="tab" data-bs-target="#all-tab" type="submit" role="tab" aria-controls="all-tab" aria-selected="true" name="Chercher">Chercher</button>
-											</div>
+						<div class="main-card mt-5">
+							<div class="dashboard-wrap-content p-4">
+								<div class="d-md-flex flex-wrap align-items-center">
+									<div class="rs ms-auto mt_r4">
+										<div class="nav custom2-tabs btn-group" role="tablist">
+											<button class="tab-link active" data-bs-toggle="tab" data-bs-target="#publier" type="button" role="tab" aria-controls="publier" aria-selected="false">Publier</button>
+											<button class="tab-link" data-bs-toggle="tab" data-bs-target="#attente" type="button" role="tab" aria-controls="attente" aria-selected="false">En attente</button>
+											<button class="tab-link" data-bs-toggle="tab" data-bs-target="#rejecter" type="button" role="tab" aria-controls="rejecter" aria-selected="false">Rejeter</button>
 										</div>
 									</div>
 								</div>
 							</div>
-						</form>
-						<?php
-						if(isset($_POST['Chercher'])){
-							require_once "connect/DataBase.php";
-							$Search = $_POST['chr'];
-							$users= $connection->query("SELECT * FROM `event` WHERE  User_id = '$userid' and (E_id like '%$Search%' or Titre like '%$Search%' or `Description` like '%$Search%' or Date_debut like '%$Search%' or adress1 like '%$Search%' or Ville like '%$Search%' or Zip_code like '%$Search%' or Categorie_id like '%$Search%')")->fetchAll(PDO::FETCH_ASSOC);
-						}else{
-								require 'connect/DataBase.php';
-								// $sql = 'SELECT * FROM `event` WHERE User_id = :userid';
-								//$statement = $connection->prepare($sql);
+						</div>
+						<div class="event-list">
+							<div class="tab-content">
+								<?php
+								if (isset($_POST['Chercher_published'])) {
+									require_once "connect/DataBase.php";
+									$Search = $_POST['chr_published'];
+									$users = $connection->query("SELECT * FROM `event` WHERE  User_id = '$userid' and (E_id like '%$Search%' or Titre like '%$Search%' or `Description` like '%$Search%' or Date_debut like '%$Search%' or adress1 like '%$Search%' or Ville like '%$Search%' or Zip_code like '%$Search%' or Categorie_id like '%$Search%')")->fetchAll(PDO::FETCH_ASSOC);								
+								}else {
+									require 'connect/DataBase.php';
+									// $sql = 'SELECT * FROM `event` WHERE User_id = :userid';
+									//$statement = $connection->prepare($sql);
 
-								$users= $connection->query("SELECT * FROM `event` WHERE User_id = '$userid'");
-						}
-							
-						foreach ($users as $user){?>
+									$users = $connection->query("SELECT * FROM `event` WHERE User_id = '$userid'");
+								}
 
-							<div class="event-list">
-								<div class="tab-content">
-									<div class="tab-pane fade show active" id="all-tab" role="tabpanel">
+								?>
+
+								<!----- Publier ------>
+
+								<div class="tab-pane fade show active" id="publier" role="tabpanel">
+
+									<form action="" method="post">
+										<div class="main-card mt-3">
+											<div class="dashboard-wrap-content p-4">
+												<div class="d-md-flex flex-wrap align-items-center">
+													<div class="dashboard-date-wrap">
+														<div class="form-group">
+															<div class="relative-input position-relative">
+																<input class="form-control h_40" type="text" placeholder="Search by event name, status" value="" name="chr_published">
+																<i class="uil uil-search"></i>
+															</div>
+														</div>
+													</div>
+													<div class="rs ms-auto mt_r4">
+														<div class="nav custom2-tabs btn-group" role="tablist">
+															<button class="tab-link btn-hover" type="submit" role="tab" aria-controls="all-tab" aria-selected="true" name="Chercher_published">Chercher</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+									<?php 
+									if (isset($_POST['Chercher_attente'])) {
+										require_once "connect/DataBase.php";
+										$Search_att = $_POST['chr_attente'];
+										$users_att = $connection->query("SELECT * FROM `demande` WHERE  User_id = '$userid' and (event_id like '%$Search_att%' or n_event like '%$Search_att%' or `description` like '%$Search_att%' or event_date like '%$Search_att%' or adress1 like '%$Search_att%' or city like '%$Search_att%' or zip like '%$Search_att%' or gategorie like '%$Search_att%')")->fetchAll(PDO::FETCH_ASSOC);
+									}else{
+										require_once "connect/DataBase.php";
+										$users_att = $connection->query("SELECT * FROM `demande` WHERE User_id = '$userid'");
+
+									}
+										foreach ($users as $user) { 
+										?>
 										<div class="main-card mt-4">
 											<div class="contact-list">
 												<div class="card-top event-top p-4 align-items-center top d-md-flex flex-wrap justify-content-between">
@@ -135,7 +166,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 															<i class="fa-solid fa-location-dot"></i>
 														</span>
 														<p>Status</p>
-														<h6 class="coupon-status">Publish</h6>
+														<h6 class="coupon-status">Publier</h6>
 													</div>
 													<div class="icon-box">
 														<span class="icon">
@@ -175,10 +206,195 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 												</div>
 											</div>
 										</div>
-									</div>
+									<?php } ?>
 								</div>
+
+								<!----- Publier ------>
+								<!----- En attente ------>
+
+								<div class="tab-pane fade" id="attente" role="tabpanel">
+									<form action="" method="post">
+										<div class="main-card mt-3">
+											<div class="dashboard-wrap-content p-4">
+												<div class="d-md-flex flex-wrap align-items-center">
+													<div class="dashboard-date-wrap">
+														<div class="form-group">
+															<div class="relative-input position-relative">
+																<input class="form-control h_40" type="text" placeholder="Search by event name, status" value="" name="chr_attente">
+																<i class="uil uil-search"></i>
+															</div>
+														</div>
+													</div>
+													<div class="rs ms-auto mt_r4">
+														<div class="nav custom2-tabs btn-group" role="tablist">
+															<button class="tab-link btn-hover" type="submit" role="tab" aria-controls="all-tab" aria-selected="true" name="Chercher_attente">Chercher</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+									<?php 
+									if (isset($_POST['Chercher_rejected'])) {
+										require_once "connect/DataBase.php";
+										$Search_rej = $_POST['chr_reject'];
+										$users_rej = $connection->query("SELECT * FROM `archive_demande` WHERE  User_id = '$userid' and (event_id like '%$Search_rej%' or n_event like '%$Search_rej%' or `description` like '%$Search_rej%' or event_date like '%$Search_rej%' or adress1 like '%$Search_rej%' or city like '%$Search_rej%' or zip like '%$Search_rej%' or gategorie like '%$Search_rej%')")->fetchAll(PDO::FETCH_ASSOC);
+									}else{
+										require_once "connect/DataBase.php";
+										$users_rej = $connection->query("SELECT * FROM `archive_demande` WHERE User_id = '$userid'");
+									}
+										foreach ($users_att as $user_att) { 
+										?>
+										<div class="main-card mt-4">
+											<div class="contact-list">
+												<div class="card-top event-top p-4 align-items-center top d-md-flex flex-wrap justify-content-between">
+													<div class="d-md-flex align-items-center event-top-info">
+														<div class="card-event-img">
+															<img src="upload/images/<?php echo $user_att['image'] ?>" alt="">
+														</div>
+														<div class="card-event-dt">
+															<h5><?php echo $user_att['n_event'] ?></h5>
+														</div>
+													</div>													
+												</div>
+												<div class="bottom d-flex flex-wrap justify-content-between align-items-center p-4">
+													<div class="icon-box ">
+														<span class="icon">
+															<i class="fa-solid fa-location-dot" style="color:yellow;"></i>
+														</span>
+														<p>Status</p>
+														<h6 class="coupon-status">En attente</h6>
+													</div>
+													<div class="icon-box">
+														<span class="icon">
+															<i class="fa-solid fa-calendar-days"></i>
+														</span>
+														<p>Starts on</p>
+														<h6 class="coupon-status">
+															<?php
+															$timestamp = strtotime($user_att['event_date']);
+															$dayAbbreviation = date('D', $timestamp);
+															$monthAbbreviation = date('M', $timestamp);
+															$day = date('d', $timestamp);
+															$year = date('Y', $timestamp);
+
+															echo "$dayAbbreviation, ";
+															echo "$monthAbbreviation ";
+															echo "$day, ";
+															echo "$year ";
+															?> <?php echo $user_att['event_time']; ?> PM</h5>
+														</h6>
+													</div>
+													<div class="icon-box">
+														<span class="icon">
+															<i class="fa-solid fa-ticket"></i>
+														</span>
+														<p>Ticket</p>
+														<h6 class="coupon-status"><?php echo $user_att['N_tickts'] ?></h6>
+													</div>
+													<div class="icon-box">
+														<span class="icon">
+															<i class="fa-solid fa-tag"></i>
+														</span>
+														<p>Tickets sold</p>
+														<h6 class="coupon-status"><?php echo $user_att['N_tickts'] ?></h6>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									<?php } ?>
+								</div>
+								<!----- En attente ------>
+
+								<!-- Rejecter -->
+								<div class="tab-pane fade" id="rejecter" role="tabpanel">
+									<form action="" method="post">
+										<div class="main-card mt-3">
+											<div class="dashboard-wrap-content p-4">
+												<div class="d-md-flex flex-wrap align-items-center">
+													<div class="dashboard-date-wrap">
+														<div class="form-group">
+															<div class="relative-input position-relative">
+																<input class="form-control h_40" type="text" placeholder="Search by event name, status" value="" name="chr_reject">
+																<i class="uil uil-search"></i>
+															</div>
+														</div>
+													</div>
+													<div class="rs ms-auto mt_r4">
+														<div class="nav custom2-tabs btn-group" role="tablist">
+															<button class="tab-link btn-hover" type="submit" role="tab" aria-controls="all-tab" aria-selected="true" name="Chercher_rejected">Chercher</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+									<?php foreach ($users_rej as $user_rej) { ?>
+										<div class="main-card mt-4">
+											<div class="contact-list">
+												<div class="card-top event-top p-4 align-items-center top d-md-flex flex-wrap justify-content-between">
+													<div class="d-md-flex align-items-center event-top-info">
+														<div class="card-event-img">
+															<img src="upload/images/<?php echo $user_rej['image'] ?>" alt="">
+														</div>
+														<div class="card-event-dt">
+															<h5><?php echo $user_rej['n_event'] ?></h5>
+														</div>
+													</div>													
+												</div>
+												<div class="bottom d-flex flex-wrap justify-content-between align-items-center p-4">
+													<div class="icon-box ">
+														<span class="icon">
+															<i class="fa-solid fa-location-dot" style="color:red;"></i>
+														</span>
+														<p>Status</p>
+														<h6 class="coupon-status">Rejecer</h6>
+													</div>
+													<div class="icon-box">
+														<span class="icon">
+															<i class="fa-solid fa-calendar-days"></i>
+														</span>
+														<p>Starts on</p>
+														<h6 class="coupon-status">
+															<?php
+															$timestamp = strtotime($user_rej['event_date']);
+															$dayAbbreviation = date('D', $timestamp);
+															$monthAbbreviation = date('M', $timestamp);
+															$day = date('d', $timestamp);
+															$year = date('Y', $timestamp);
+
+															echo "$dayAbbreviation, ";
+															echo "$monthAbbreviation ";
+															echo "$day, ";
+															echo "$year ";
+															?> <?php echo $user_rej['event_time']; ?> PM</h5>
+														</h6>
+													</div>
+													<div class="icon-box">
+														<span class="icon">
+															<i class="fa-solid fa-ticket"></i>
+														</span>
+														<p>Ticket</p>
+														<h6 class="coupon-status"><?php echo $user_rej['N_tickts'] ?></h6>
+													</div>
+													<div class="icon-box">
+														<span class="icon">
+															<i class="fa-solid fa-tag"></i>
+														</span>
+														<p>Tickets sold</p>
+														<h6 class="coupon-status"><?php echo $user_rej['N_tickts'] ?></h6>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									<?php } ?>
+								</div>
+								<!-- Rejecter -->
 							</div>
-						<?php } ?>
+						</div>
+
 					</div>
 				</div>
 			</div>
