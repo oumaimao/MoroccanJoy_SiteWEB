@@ -109,11 +109,26 @@
 									
 									if (isset($_POST['nametrouve']) && $_POST['cat']!= 0) {
 										$Categorie_id = $_POST['cat'];
-										$sqlState = $connection->prepare("SELECT * FROM `event` WHERE Categorie_id=?");
+										$sqlState = $connection->prepare("SELECT * FROM event WHERE Categorie_id=?");
 										$sqlState->execute([$Categorie_id]);
+										
+
 										$events = $sqlState->fetchAll(PDO::FETCH_ASSOC);
 									} else {
-										$events = $connection->query("SELECT * FROM `event`")->fetchAll(PDO::FETCH_ASSOC);
+										$events = $connection->query("SELECT * FROM event")->fetchAll(PDO::FETCH_ASSOC);
+										$sqlState = $connection->prepare("SELECT * FROM event");
+										$sqlState->execute();
+										$np=$sqlState->rowCount();
+										$nnp=12;
+										$tp=ceil($np/$nnp);
+
+										if(isset($_GET['page'])){
+											$page=$_GET['page'];
+										}else{
+											$page=1;
+										}
+										$slimt=($page-1)*$nnp;
+										$events = $connection->query("SELECT * FROM event limit $slimt,$nnp ")->fetchAll(PDO::FETCH_ASSOC);
 										
 									}
 
@@ -162,10 +177,18 @@
 										</div>
 									<?php endforeach; ?>
 
-
+									
 								</div>
 								<div class="browse-btn">
-									<a href="#" class="main-btn btn-hover ">Voir plus </a>
+								<?php
+										for($btn=1;$btn<=$tp;$btn++){
+											?>	
+											<a href="explore_events.php?page=<?php echo $btn?>" class="main-btn btn-hover"><?php echo $btn?></a>
+										<?php
+										}
+
+
+										?>
 								</div>
 							</div>
 						</div>
