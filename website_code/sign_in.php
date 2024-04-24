@@ -35,12 +35,12 @@ if(isset($_POST['submit'])){
 ?>
 
 <?php
-//session_start();
+session_start();
 
 // logged in user shouldn't access this page
-//if(isset($_SESSION['uid'])) {
- //   header('location: index.php');
-//}
+if(isset($_SESSION['uid'])) {
+    header('location: index.php');
+}
 ?>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
@@ -164,7 +164,7 @@ if(isset($_POST['submit'])){
 										Sign in with Facebook
 									</button>
 									
-									<button  class="social-login-btn" id="buttonDiv"></button>
+									
 								</div>
 								
 								<div class="new-sign-link">
