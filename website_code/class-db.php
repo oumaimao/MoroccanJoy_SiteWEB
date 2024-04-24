@@ -1,8 +1,8 @@
 <?php
 class DB {
-    private $dbHost = "localhost"; // Change this to your database host
+    private $dbHost = "localhost:3307"; // Change this to your database host
     private $dbUsername = "root"; // Change this to your database username
-    private $dbPassword = ""; // Change this to your database password
+    private $dbPassword = "root"; // Change this to your database password
     private $dbName = "evente_4"; // Change this to your database name
     private $db; // Variable to hold the database connection
  

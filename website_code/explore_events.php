@@ -109,26 +109,35 @@
 									
 									if (isset($_POST['nametrouve']) && $_POST['cat']!= 0) {
 										$Categorie_id = $_POST['cat'];
-										$sqlState = $connection->prepare("SELECT * FROM event WHERE Categorie_id=?");
+										$sqlState = $connection->prepare("SELECT * FROM `event` WHERE Categorie_id=?");
 										$sqlState->execute([$Categorie_id]);
 										
 
 										$events = $sqlState->fetchAll(PDO::FETCH_ASSOC);
 									} else {
-										$events = $connection->query("SELECT * FROM event")->fetchAll(PDO::FETCH_ASSOC);
-										$sqlState = $connection->prepare("SELECT * FROM event");
+										$events = $connection->query("SELECT * FROM `event`")->fetchAll(PDO::FETCH_ASSOC);
+										$sqlState = $connection->prepare("SELECT * FROM `event`");
 										$sqlState->execute();
 										$np=$sqlState->rowCount();
 										$nnp=12;
 										$tp=ceil($np/$nnp);
-
 										if(isset($_GET['page'])){
 											$page=$_GET['page'];
-										}else{
+										}else {
 											$page=1;
 										}
+										if(isset($_GET['next']) && $_GET['next']<$tp){
+											$nexxt=$_GET['next']+1;
+											$page=$nexxt;
+										}
+										if(isset($_GET['pre']) && $_GET['pre']>1){
+											$pree=$_GET['pre']-1;
+											$page=$pree;
+										}
+										
+										
 										$slimt=($page-1)*$nnp;
-										$events = $connection->query("SELECT * FROM event limit $slimt,$nnp ")->fetchAll(PDO::FETCH_ASSOC);
+										$events = $connection->query("SELECT * FROM `event` limit $slimt,$nnp ")->fetchAll(PDO::FETCH_ASSOC);
 										
 									}
 
@@ -180,7 +189,9 @@
 									
 								</div>
 								<div class="browse-btn">
+								<a href="explore_events.php?pre=<?php echo $page?>" class="main-btn btn-hover">pre</a>
 								<?php
+								
 										for($btn=1;$btn<=$tp;$btn++){
 											?>	
 											<a href="explore_events.php?page=<?php echo $btn?>" class="main-btn btn-hover"><?php echo $btn?></a>
@@ -189,6 +200,7 @@
 
 
 										?>
+										<a href="explore_events.php?next=<?php echo $page?>" class="main-btn btn-hover">next</a>
 								</div>
 							</div>
 						</div>
