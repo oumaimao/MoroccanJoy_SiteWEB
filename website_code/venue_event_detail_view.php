@@ -10,8 +10,8 @@ if (isset($_POST['Booknow'])) {
 if(isset($_SESSION['uid'])) {
 				
 	$user = $db->get_user($_SESSION['uid']);
-	$emaill = $_SESSION['user']['email'];
-	$namee = $_SESSION['user']['name'];
+	//$emaill = $_SESSION['user']['email'];
+	//$namee = $_SESSION['user']['name'];
 	//header('location:sign_in.php');
 }
 else if(!isset($_SESSION['user']['U_email'])){
@@ -157,7 +157,7 @@ else if(!isset($_SESSION['user']['U_email'])){
 										}
 									}
 									if(isset($_SESSION['uid'])) {
-										$user_id = $_SESSION['user']['uid'];
+										$user_id = $_SESSION['uid'];
 
 										if (isset($_GET['event_id'])) {
 											$event_id = $_GET['event_id'];
