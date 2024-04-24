@@ -7,7 +7,7 @@ if (!isset($_SESSION['user']['U_email'])) {
 
 $userid = $_SESSION['user']['User_id'];
 require 'connect/DataBase.php';
-$sql = 'SELECT * FROM `event` WHERE User_id = :userid';
+$sql = 'SELECT event.*, COUNT(ticket.E_id) as total_tickets FROM `event` LEFT JOIN `ticket` ON event.E_id = ticket.E_id WHERE event.User_id = :userid GROUP BY event.E_id';
 $statement = $connection->prepare($sql);
 $statement->execute([':userid' => $userid]);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -89,13 +89,13 @@ $users_rej;
 								if (isset($_POST['Chercher_published'])) {
 									require_once "connect/DataBase.php";
 									$Search = $_POST['chr_published'];
-									$users = $connection->query("SELECT * FROM `event` WHERE  User_id = '$userid' and (E_id like '%$Search%' or Titre like '%$Search%' or `Description` like '%$Search%' or Date_debut like '%$Search%' or adress1 like '%$Search%' or Ville like '%$Search%' or Zip_code like '%$Search%' or Categorie_id like '%$Search%')")->fetchAll(PDO::FETCH_ASSOC);								
+									$users = $connection->query("SELECT event.*, COUNT(ticket.E_id) as total_tickets FROM `event` LEFT JOIN `ticket` ON event.E_id = ticket.E_id WHERE event.User_id = '$userid' AND (event.E_id LIKE '%$Search%' OR event.Titre LIKE '%$Search%' OR event.`Description` LIKE '%$Search%' OR event.Date_debut LIKE '%$Search%' OR event.adress1 LIKE '%$Search%' OR event.Ville LIKE '%$Search%' OR event.Zip_code LIKE '%$Search%' OR event.Categorie_id LIKE '%$Search%') GROUP BY event.E_id")->fetchAll(PDO::FETCH_ASSOC);
 								}else {
 									require 'connect/DataBase.php';
 									// $sql = 'SELECT * FROM `event` WHERE User_id = :userid';
 									//$statement = $connection->prepare($sql);
 
-									$users = $connection->query("SELECT * FROM `event` WHERE User_id = '$userid'");
+									$users = $connection->query("SELECT event.*, COUNT(ticket.E_id) as total_tickets FROM `event` LEFT JOIN `ticket` ON event.E_id = ticket.E_id WHERE event.User_id = '$userid' GROUP BY event.E_id");
 								}
 
 								?>
@@ -193,14 +193,14 @@ $users_rej;
 															<i class="fa-solid fa-ticket"></i>
 														</span>
 														<p>Ticket</p>
-														<h6 class="coupon-status"><?php echo $user['Nombre_tickets'] ?></h6>
+														<h6 class="coupon-status"><?php echo $user['Prix_ticket'] ?></h6>
 													</div>
 													<div class="icon-box">
 														<span class="icon">
 															<i class="fa-solid fa-tag"></i>
 														</span>
 														<p>Tickets sold</p>
-														<h6 class="coupon-status"><?php echo $user['Nombre_tickets'] ?></h6>
+														<h6 class="coupon-status"><?php echo $user['total_tickets'] ?></h6>
 													</div>
 
 												</div>
@@ -290,15 +290,9 @@ $users_rej;
 															<i class="fa-solid fa-ticket"></i>
 														</span>
 														<p>Ticket</p>
-														<h6 class="coupon-status"><?php echo $user_att['N_tickts'] ?></h6>
+														<h6 class="coupon-status"><?php echo $user_att['P_tickts'] ?></h6>
 													</div>
-													<div class="icon-box">
-														<span class="icon">
-															<i class="fa-solid fa-tag"></i>
-														</span>
-														<p>Tickets sold</p>
-														<h6 class="coupon-status"><?php echo $user_att['N_tickts'] ?></h6>
-													</div>
+													
 
 												</div>
 											</div>
@@ -376,15 +370,9 @@ $users_rej;
 															<i class="fa-solid fa-ticket"></i>
 														</span>
 														<p>Ticket</p>
-														<h6 class="coupon-status"><?php echo $user_rej['N_tickts'] ?></h6>
+														<h6 class="coupon-status"><?php echo $user_rej['P_tickts'] ?></h6>
 													</div>
-													<div class="icon-box">
-														<span class="icon">
-															<i class="fa-solid fa-tag"></i>
-														</span>
-														<p>Tickets sold</p>
-														<h6 class="coupon-status"><?php echo $user_rej['N_tickts'] ?></h6>
-													</div>
+													
 
 												</div>
 											</div>
