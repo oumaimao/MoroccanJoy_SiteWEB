@@ -1,6 +1,6 @@
 <?php
-$emaill = $_SESSION['user']['U_email'];
-$namee = $_SESSION['user']['U_name'];
+$emaill = $_SESSION['users']['email'];
+$namee = $_SESSION['users']['name'];
 ?>
 <header class="header">
 		<div class="header-inner">		

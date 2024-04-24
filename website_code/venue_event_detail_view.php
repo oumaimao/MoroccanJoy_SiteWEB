@@ -1,13 +1,23 @@
 ﻿<?php session_start(); ?>
 <?php
+require_once 'class-db.php';
+$db = new DB();
 if (isset($_POST['Booknow'])) {
 
 	header('location:checkout.php');
 	
 }
-if(!isset($_SESSION['user']['U_email'])){
+if(isset($_SESSION['uid'])) {
+				
+	$user = $db->get_user($_SESSION['uid']);
+	$emaill = $_SESSION['user']['email'];
+	$namee = $_SESSION['user']['name'];
+	//header('location:sign_in.php');
+}
+else if(!isset($_SESSION['user']['U_email'])){
 	header('location:sign_in.php');
 }
+
 
 
 
@@ -145,10 +155,21 @@ if(!isset($_SESSION['user']['U_email'])){
 											echo "Event ID not provided in the URL";
 											exit;
 										}
+									}
+									if(isset($_SESSION['uid'])) {
+										$user_id = $_SESSION['user']['uid'];
+
+										if (isset($_GET['event_id'])) {
+											$event_id = $_GET['event_id'];
+										} else {
+											echo "Event ID not provided in the URL";
+											exit;
+										}
 									} else {
 										echo "User not logged in";
 										exit;
 									}
+									
 									?>
 
 									<form id="saveEventForm" action="" method="post">
