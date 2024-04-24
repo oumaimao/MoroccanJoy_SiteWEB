@@ -18,6 +18,7 @@ if(isset($_POST['submit'])){
 			header('location: index.php');
 			
 		}else{
+			//creet a div
 			$message = '<div class="alert alert-danger" role="alert">
 						Les informations est incorecte
 					</div>';
