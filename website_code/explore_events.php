@@ -197,7 +197,7 @@
 									
 								</div>
 								<div class="browse-btn">
-								<a href="explore_events.php?pre=<?php echo $page?>" class="main-btn btn-hover">pre</a>
+								<a href="explore_events.php?pre=<?php echo $page?>" class="main-btn btn-hover"><</a>
 								<?php
 								
 										for($btn=1;$btn<=$tp;$btn++){
@@ -208,7 +208,7 @@
 
 
 										?>
-										<a href="explore_events.php?next=<?php echo $page?>" class="main-btn btn-hover">next</a>
+										<a href="explore_events.php?next=<?php echo $page?>" class="main-btn btn-hover">></a>
 								</div>
 							</div>
 						</div>

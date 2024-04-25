@@ -42,7 +42,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="footer-copyright-text">
-							<p class="mb-0">© 2024, <strong>MorrocanJoy</strong>. Tous les droits sont réservés. Powered by OFPPT</p>
+							<p class="mb-0">© 2024, <strong>MorrocanJoy</strong>. Tous les droits sont réservés. Propulsé par OFPPT</p>
 						</div>
 					</div>
 				</div>

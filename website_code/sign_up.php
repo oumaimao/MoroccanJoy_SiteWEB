@@ -197,7 +197,7 @@ if(isset($_POST['submit'])){
 									</div>
 								</form>
 								<div class="agree-text">
-									By clicking "Sign up", you agree to Morocconjoy <a href="#">Terms & Conditions</a> and have read the <a href="#">Privacy Policy</a>.
+								En cliquant sur « S'inscrire », vous acceptez "les conditions générales"  de Morocconjoy et avez lu  <a href="privacy_policy.php">la politique de confidentialité.</a>.
 								</div>								
 								
 								<div class="new-sign-link">
