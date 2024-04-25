@@ -22,18 +22,8 @@
 						</a>
 					</li>
 					
-					<li class="menu--item">
-						<a href="my_organisation_dashboard_payout.php" class="menu--link" title="Payouts" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-credit-card menu--icon"></i>
-							<span class="menu--label">Payouts</span>
-						</a>
-					</li>
-					<li class="menu--item">
-						<a href="my_organisation_dashboard_reports.php" class="menu--link" title="Reports" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-chart-pie menu--icon"></i>
-							<span class="menu--label">Reports</span>
-						</a>
-					</li>
+					
+					
 					
 					
 					<li class="menu--item">

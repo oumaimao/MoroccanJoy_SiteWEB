@@ -49,16 +49,8 @@
 							<h2>Découvrez des événements pour toutes les choses que vous aimez</h2>
 							<form method="post">
 								<div class="search-form main-form">
-									<div class="row g-3">
-										<div class="col-lg-5 col-md-12">
-											<div class="form-group search-category">
-												<select class="selectpicker" data-width="100%" data-size="5">
-													<option value="browse_all" data-icon="fa-solid fa-tower-broadcast" selected>Voir tout</option>
-													<option value="online_events" data-icon="fa-solid fa-video">Événements en ligne</option>
-													<option value="venue_events" data-icon="fa-solid fa-location-dot">Événements Surpalce</option>
-												</select>
-											</div>
-										</div>
+									<div class="row g-2 justify-content-center"">
+										
 
 
 										<?php
@@ -68,7 +60,7 @@
 
 										?>
 
-										<div class="col-lg-5 col-md-12">
+										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
 												<select name="cat" class="selectpicker" data-width="100%" data-size="5" data-live-search="true">
 													<option name="tot" value="0" selected>Tout</option>
@@ -101,7 +93,11 @@
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="event-filter-items">
 							<div class="featured-controls">
-
+<?php $sqlState = $connection->prepare("SELECT * FROM `event`");
+										$sqlState->execute();
+										$np=$sqlState->rowCount();
+										$nnp=12;
+										$tp=ceil($np/$nnp); ?>
 								<div class="row" data-ref="event-filter-content">
 									<?php
 									require_once './connect/DataBase.php';
@@ -124,7 +120,15 @@
 										if(isset($_GET['page'])){
 											$page=$_GET['page'];
 										}else {
-											$page=1;
+											if(isset($_GET['next'])){
+												if($_GET['next']==4){
+													$page=4;
+												}
+												
+											}else{
+												$page=1;
+											}
+											
 										}
 										if(isset($_GET['next']) && $_GET['next']<$tp){
 											$nexxt=$_GET['next']+1;
@@ -189,7 +193,7 @@
 									
 								</div>
 								<div class="browse-btn">
-								<a href="explore_events.php?pre=<?php echo $page?>" class="main-btn btn-hover">pre</a>
+								<a href="explore_events.php?pre=<?php echo $page?>" class="main-btn btn-hover"><</a>
 								<?php
 								
 										for($btn=1;$btn<=$tp;$btn++){
@@ -200,7 +204,7 @@
 
 
 										?>
-										<a href="explore_events.php?next=<?php echo $page?>" class="main-btn btn-hover">next</a>
+										<a href="explore_events.php?next=<?php echo $page?>" class="main-btn btn-hover">></a>
 								</div>
 							</div>
 						</div>
