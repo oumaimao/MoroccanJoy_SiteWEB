@@ -138,7 +138,7 @@ if (!isset($_SESSION['admin'])) {
 												<td><?php echo $Ticket['Ticket_id'] ?></td>
 												<td><?php echo $Ticket['User_id'] ?></td>
 												<td><?php echo $Ticket['E_id'] ?></td>												
-												<td><img src="images\QRCODE\<?php echo $Ticket['QR_image']; ?>"></td>
+												<td><img src="images\QRCODE\<?php echo $Ticket['QR_image']; ?>" style="width:50px ; height:50px;"></td>
 
 
 												<td><span class="action-btn btn btn-primary"><a href="reservation_detaille.php?id=<?php echo $Reservation['Reservation_id'] ?>">Détaille</a></span></td>												
