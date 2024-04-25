@@ -101,7 +101,11 @@
 					<div class="col-xl-12 col-lg-12 col-md-12">
 						<div class="event-filter-items">
 							<div class="featured-controls">
-
+<?php $sqlState = $connection->prepare("SELECT * FROM `event`");
+										$sqlState->execute();
+										$np=$sqlState->rowCount();
+										$nnp=12;
+										$tp=ceil($np/$nnp); ?>
 								<div class="row" data-ref="event-filter-content">
 									<?php
 									require_once './connect/DataBase.php';
