@@ -50,15 +50,7 @@
 							<form method="post">
 								<div class="search-form main-form">
 									<div class="row g-3">
-										<div class="col-lg-5 col-md-12">
-											<div class="form-group search-category">
-												<select class="selectpicker" data-width="100%" data-size="5">
-													<option value="browse_all" data-icon="fa-solid fa-tower-broadcast" selected>Voir tout</option>
-													<option value="online_events" data-icon="fa-solid fa-video">Événements en ligne</option>
-													<option value="venue_events" data-icon="fa-solid fa-location-dot">Événements Surpalce</option>
-												</select>
-											</div>
-										</div>
+										
 
 
 										<?php
@@ -68,7 +60,7 @@
 
 										?>
 
-										<div class="col-lg-5 col-md-12">
+										<div class="col-lg-10 col-md-12">
 											<div class="form-group">
 												<select name="cat" class="selectpicker" data-width="100%" data-size="5" data-live-search="true">
 													<option name="tot" value="0" selected>Tout</option>

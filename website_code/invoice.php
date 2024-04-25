@@ -122,7 +122,7 @@ window.onload = function () {
 									<tbody>
 										<tr>										
 											<td>1</td>	
-											<td><a href="#" target="_blank"><?php echo $nameevent ?></a></td>	
+											<td style="color:black;"><?php echo $nameevent ?></td>	
 											
 											<td><?php echo $prtkt?> MAD</td>
 											
@@ -131,8 +131,8 @@ window.onload = function () {
 											<td colspan="1"></td>
 											<td colspan="5">
 												<div class="user_dt_trans text-end pe-xl-4">
-													<div class="totalinv2">Total de facture: <?php echo $prtkt?> MAD</div>
-													<p>Payé via paypal</p>
+													<div class="totalinvoice2"><b>Total de facture: <?php echo $prtkt?> MAD</b></div>
+													<p class="paye_via">Payé par MoroccanJoy</p>
 												</div>
 											</td>
 										</tr>
