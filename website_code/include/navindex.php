@@ -130,6 +130,22 @@
 								<i class="fa-solid fa-xmark"></i>
 							</button>
 						</div>
+						<div class="offcanvas-top-area">
+								<div class="create-bg">
+									<a href="create_venue_event.php" class="offcanvas-create-btn">
+										<i class="fa-solid fa-calendar-days"></i>
+										<span>Create Event</span>
+									</a>
+									<a href="sign_up.php" class="offcanvas-create-btn">
+										<i class="fa-solid fa-user"></i>
+										<span> Inscription </span>
+									</a>
+									<a href="sign_in.php" class="offcanvas-create-btn">
+										<i class="fa-solid fa-solid fa-right-to-bracket"></i>
+										<span> connection </span>
+									</a>
+								</div>
+							</div>
 						<div class="offcanvas-body">
 
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
