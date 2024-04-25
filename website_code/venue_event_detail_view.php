@@ -295,16 +295,24 @@ if(!isset($_SESSION['user']['U_email'])){
 										<i class="fa-solid fa-circle-user"></i>
 									</div>
 									<div class="event-dt-right-content">
-									<h4>Organised by</h4>
-                                        <?php
-                                        $stmt = $connection->prepare("SELECT U_name, U_Prenom FROM user WHERE User_id = :user_id");
-                                        $stmt->bindParam(":user_id", $row['User_id']);
-                                        $stmt->execute();
-                                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                                        ?>
-                                        <h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
-										<a href="attendee_profile_view.php">View Profile</a>
+										<h4>Organised by</h4>
+										<?php
+										$stmt = $connection->prepare("SELECT U_name, U_Prenom FROM user WHERE User_id = :user_id");
+										$stmt->bindParam(":user_id", $row['User_id']);
+										$stmt->execute();
+										$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+										if ($user !== false) { // Check if fetch was successful
+											?>
+											<h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
+											<a href="attendee_profile_view.php?user_id=<?php echo $row['User_id']; ?>">View Profile</a>
+											<?php
+										} else {
+											echo "User not found"; // Or handle the error in another appropriate way
+										}
+										?>
 									</div>
+
 								</div>
 								<div class="event-dt-right-group">
 									<div class="event-dt-right-icon">

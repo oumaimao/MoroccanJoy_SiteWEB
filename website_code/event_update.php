@@ -187,8 +187,8 @@ if (isset($_POST['modifier'])) {
                             </div>
                             <div class="col-md-6">
                                 <div class="clock-icon">
-                                     <label class="form-label mt-3 fs-6">Heure de début</label>
-                                     <input class="form-control h_50" type="time" value="<?php echo $data['Heure_debut']; ?>" name="time">
+                                    <label class="form-label mt-3 fs-6">Heure de début</label>
+                                    <input class="form-control h_50" type="time" value="<?php echo $data['Heure_debut']; ?>" name="time">
                                 </div>
                             </div>
                             <div class="col-md-6">
