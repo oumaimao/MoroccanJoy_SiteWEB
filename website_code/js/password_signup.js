@@ -22,3 +22,14 @@ function conf_pass(){
         b = 1;
     }
 }
+function new_passw(){
+    if(b==1){
+        document.getElementById("new_passw").type = "password";
+        document.getElementById("new_eye_slash").className = "fas fa-eye-slash";
+        b = 0;
+    }else{
+        document.getElementById("new_passw").type = "text";
+        document.getElementById("new_eye_slash").className = "fas fa-eye";
+        b = 1;
+    }
+}

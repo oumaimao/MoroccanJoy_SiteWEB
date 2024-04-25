@@ -363,7 +363,8 @@ if (!isset($_SESSION['user']['U_email'])) {
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-										
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
+										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
 									</div>
 								</div>
 							</div>
@@ -544,7 +545,8 @@ if (!isset($_SESSION['user']['U_email'])) {
 															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
 															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
 															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-														
+															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
+															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
 														</div>
 													</div>
 													<div class="about-step">
@@ -568,36 +570,15 @@ if (!isset($_SESSION['user']['U_email'])) {
 														<div class="tab-content">
 															<div class="tab-pane fade show active" id="tab-02" role="tabpanel">
 																<div class="bp-title">
-																	<h4>Password Settings</h4>
+																	<h4>Paramètres de mot de passe</h4>
 																</div>
 																<div class="password-setting p-4">
 																	<div class="password-des">
-																		<h4>Change password</h4>
-																		<p>You can update your password from here. If you can't remember your current password, just log out and click on Forgot password.</p>
+																		<h4>Changer le mot de passe</h4>
+																		<p>Vous pouvez mettre à jour votre mot de passe à partir d'ici. Si vous ne vous souvenez plus de votre mot de passe actuel, déconnectez-vous simplement et cliquez sur Mot de passe oublié.</p>
 																	</div>
-																	<div class="change-password-form">
-																		<div class="form-group mt-4">
-																			<label class="form-label">Current password*</label>
-																			<div class="loc-group position-relative">
-																				<input class="form-control h_50" type="password" placeholder="Enter your password">
-																				<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
-																			</div>
-																		</div>
-																		<div class="form-group mt-4">
-																			<label class="form-label">New password*</label>
-																			<div class="loc-group position-relative">
-																				<input class="form-control h_50" type="password" placeholder="Enter your password">
-																				<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
-																			</div>
-																		</div>
-																		<div class="form-group mt-4">
-																			<label class="form-label">Confirm new password*</label>
-																			<div class="loc-group position-relative">
-																				<input class="form-control h_50" type="password" placeholder="Enter your password">
-																				<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
-																			</div>
-																		</div>
-																		<button class="main-btn btn-hover w-100 mt-5" type="submit">Update Password</button>
+																	<div class="change-password-form">																		
+																		<a href="password_update.php"><button class="main-btn btn-hover w-100 mt-5" type="submit">Mettre à jour le mot de passe</button></a>
 																	</div>
 																</div>
 															</div>

@@ -53,7 +53,7 @@ if (isset($_POST['modifier'])) {
 
         if ($statement->execute([':Titre' => $titr, ':Descr' => $desc, ':img' => $filename, ':Heure_debut' => $timee, ':Date_debut' => $datee, 'Heure_fin' => $Duration, ':Prix_ticket' => $P_tickts, ':Nombre_tickets' => $N_tickts, ':Ville' => $City, ':Zip_cd' => $zip_cd, ':Categorie_id' => $categorie, ':adress1' => $Address1, ':adress2' => $Address2, ':EE_id' => $id])) {
 
-            header('location: my_organisation_dashboard_events.php');
+            header('location: Events.php');
         } else {
             $message = '<div class="alert alert-danger" role="alert">
 								somthing wrong
@@ -275,7 +275,7 @@ if (isset($_POST['modifier'])) {
                         </div>
                         <div class="container step-footer step-tab-pager mt-4">
                             <input type="submit" data-direction="finish" class="main-btn min-width btn-hover h_40" style="color:black;" name="modifier" value="Modifier">
-                            <a href="my_organisation_dashboard_events.php"><button type="button" class="co-main-btn min-width btn-hover h_40">Annuler</button></a>
+                            <a href="Events.php"><button type="button" class="co-main-btn min-width btn-hover h_40">Annuler</button></a>
                         </div>
                     </div>
 

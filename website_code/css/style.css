@@ -324,7 +324,7 @@ body {
 }
 
 .main-logo img {
-    width: 100%;
+    width: 150%;
 	padding-top: 0;
 }
 
@@ -4531,7 +4531,7 @@ body {
 
 .default-event-thumb {
     border: 1px dashed #bbb;
-    height: 240px;
+    height: 500px;
     overflow: hidden;
     position: relative;
 }
