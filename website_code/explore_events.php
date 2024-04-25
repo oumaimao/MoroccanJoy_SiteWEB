@@ -124,7 +124,15 @@
 										if(isset($_GET['page'])){
 											$page=$_GET['page'];
 										}else {
-											$page=1;
+											if(isset($_GET['next'])){
+												if($_GET['next']==4){
+													$page=4;
+												}
+												
+											}else{
+												$page=1;
+											}
+											
 										}
 										if(isset($_GET['next']) && $_GET['next']<$tp){
 											$nexxt=$_GET['next']+1;
