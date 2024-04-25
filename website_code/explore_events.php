@@ -121,8 +121,8 @@
 											$page=$_GET['page'];
 										}else {
 											if(isset($_GET['next'])){
-												if($_GET['next']==4){
-													$page=4;
+												if($_GET['next']==$tp){
+													$page=$tp;
 												}
 												
 											}else{

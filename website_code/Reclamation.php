@@ -110,6 +110,13 @@ session_start();
 			<div class="table-card mt-4">
 				<div class="main-table">
 					<div class="table-responsive">
+					<?php 
+					require_once "connect/DataBase.php";
+					$sqlState = $connection->prepare("SELECT * FROM `reclamation`");
+										$sqlState->execute();
+										$np=$sqlState->rowCount();
+										$nnp=5;
+										$tp=ceil($np/$nnp);?>	
 						<table class="table">
 							<thead class="thead-dark">
 								<tr>
@@ -150,6 +157,31 @@ session_start();
                                     require_once "connect/DataBase.php";
 
                                     $reclamations = $connection->query('SELECT * FROM `reclamation`')->fetchAll(PDO::FETCH_ASSOC);
+									if(isset($_GET['page'])){
+										$page=$_GET['page'];
+									}else {
+										if(isset($_GET['next'])){
+											if($_GET['next']==$tp){
+												$page=$tp;
+											}
+											
+										}else{
+											$page=1;
+										}
+										
+									}
+									if(isset($_GET['next']) && $_GET['next']<$tp){
+										$nexxt=$_GET['next']+1;
+										$page=$nexxt;
+									}
+									if(isset($_GET['pre']) && $_GET['pre']>1){
+										$pree=$_GET['pre']-1;
+										$page=$pree;
+									}
+									
+									
+									$slimt=($page-1)*$nnp;
+									$reclamations= $connection->query("SELECT * FROM `reclamation` limit $slimt,$nnp ")->fetchAll(PDO::FETCH_ASSOC);
 
                                     foreach($reclamations as $reclam){
   	
@@ -177,6 +209,34 @@ session_start();
 			</div>
 		</div>
     </div>
+	<div class="container my-3 d-flex justify-content-center">
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link"href="Reclamation.php?pre=<?php echo $page?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+	<?php
+								
+										for($btn=1;$btn<=$tp;$btn++){
+											?>	
+    <li class="page-item"><a class="page-link"href="Reclamation.php?page=<?php echo $btn?>"><?php echo $btn?></a></li>
+	<?php
+										}
+
+
+										?>
+    <li class="page-item">
+      <a class="page-link" href="Reclamation.php?next=<?php echo $page?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
 </div>
 </form>
 <!-- Body End -->
