@@ -49,7 +49,7 @@
 							<h2>Découvrez des événements pour toutes les choses que vous aimez</h2>
 							<form method="post">
 								<div class="search-form main-form">
-									<div class="row g-3">
+									<div class="row g-2 justify-content-center"">
 										
 
 
@@ -60,7 +60,7 @@
 
 										?>
 
-										<div class="col-lg-10 col-md-12">
+										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
 												<select name="cat" class="selectpicker" data-width="100%" data-size="5" data-live-search="true">
 													<option name="tot" value="0" selected>Tout</option>
