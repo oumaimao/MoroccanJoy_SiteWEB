@@ -10,6 +10,10 @@
 
 		?>
 			<nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0 ps-lg-0 pe-2">
+					
+					<button type="button" id="toggleMenu_verticale" class="toggle_menu">
+						<i class="fa-solid fa-bars-staggered"></i>
+					</button>
 				<div class="container">
 					<button class="navbar-toggler order-3 ms-2 pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 						<span class="navbar-toggler-icon">

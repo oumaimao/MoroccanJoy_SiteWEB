@@ -117,7 +117,7 @@ if (isset($_POST['envoyer'])) {
 					<div class="row justify-content-center">
 						<div class="col-lg-12 col-md-12">
 							<div class="main-title text-center">
-								<h3>Create Venue Event</h3>
+								<h3>Créer un événement</h3>
 							</div>
 						</div>
 						<div class="col-xl-8 col-lg-9 col-md-12">
@@ -139,29 +139,25 @@ if (isset($_POST['envoyer'])) {
 											<div class="tab-from-content">
 												<div class="main-card">
 													<div class="bp-title">
-														<h4><i class="fa-solid fa-circle-info step_icon me-3"></i>Details</h4>
+														<h4><i class="fa-solid fa-circle-info step_icon me-3"></i>Détails</h4>
 													</div>
 													<div class="p-4 bp-form main-form">
 														<div class="row">
 															<div class="col-lg-12 col-md-12">
 																<div class="form-group border_bottom pb_30">
-																	<label class="form-label fs-16">Give your event a name.</label>
-																	<p class="mt-2 d-block fs-14 mb-3">See how your name appears on the event page and a list of all places where your event name will be used. <a href="#" class="a-link">Learn more</a></p>
+																	<label class="form-label fs-16">Donnez un nom à votre événement.</label>
 																	<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="event_name">
 																</div>
 																<div class="form-group border_bottom pb_30">
-																	<label class="form-label fs-16">Give your prix_tickes.</label>
-
+																<label class="form-label fs-16">Donnez le prix de votre billet.</label>
 																	<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="P_tickts">
 																</div>
 																<div class="form-group border_bottom pb_30">
-																	<label class="form-label fs-16">Give your number_tickes.</label>
-
+																<label class="form-label fs-16">Indiquez combien de tickets existent.</label>
 																	<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="N_tickts">
 																</div>
 																<div class="form-group border_bottom pt_30 pb_30">
-																	<label class="form-label fs-16">Choose a category for your event.*</label>
-																	<p class="mt-2 d-block fs-14 mb-3">Choosing relevant categories helps to improve the discoverability of your event. <a href="#" class="a-link">Learn more</a></p>
+																<label class="form-label fs-16">Choisissez une catégorie pour votre événement.*</label>																	<p class="mt-2 d-block fs-14 mb-3">Choosing relevant categories helps to improve the discoverability of your event. <a href="#" class="a-link">Learn more</a></p>
 																	<select class="selectpicker" data-selected-text-format="count > 4" title="Select category" data-live-search="true" name="categorie">
 																		<?php
 																		$gategoriess = $connection->query('SELECT * FROM `categorie`')->fetchAll(PDO::FETCH_ASSOC);
@@ -177,12 +173,11 @@ if (isset($_POST['envoyer'])) {
 																	</select>
 																</div>
 																<div class="form-group border_bottom pt_30 pb_30">
-																	<label class="form-label fs-16">When is your event?*</label>
-																	<p class="mt-2 fs-14 d-block mb-3">Tell your attendees when your event starts so they can get ready to attend.</p>
+																<label class="form-label fs-16">Quand a lieu votre événement ?*</label>
+																	<p class="mt-2 fs-14 d-block mb-3">Informez vos participants du début de votre événement afin qu'ils puissent se préparer à y assister.</p>
 																	<div class="row g-2">
 																		<div class="col-md-6">
-																			<label class="form-label mt-3 fs-6">Event Date.*</label>
-																			<div class="loc-group position-relative">
+																		<label class="form-label mt-3 fs-6">Date de l'événement.*</label>																			<div class="loc-group position-relative">
 																				<input class="form-control h_50 datepicker-here" data-language="en" type="text" placeholder="MM/DD/YYYY" value="" name="date">
 																				<span class="absolute-icon"><i class="fa-solid fa-calendar-days"></i></span>
 																			</div>
@@ -191,8 +186,7 @@ if (isset($_POST['envoyer'])) {
 																			<div class="row g-2">
 																				<div class="col-md-6">
 																					<div class="clock-icon">
-																						<label class="form-label mt-3 fs-6">Time</label>
-																						<select class="selectpicker" data-size="5" data-live-search="true" name="time">
+																					<label class="form-label mt-3 fs-6">Le temp</label>																						<select class="selectpicker" data-size="5" data-live-search="true" name="time">
 																							<option value="00:00">12:00 AM</option>
 																							<option value="00:15">12:15 AM</option>
 																							<option value="00:30">12:30 AM</option>
@@ -317,29 +311,33 @@ if (isset($_POST['envoyer'])) {
 																	</div>
 																</div>
 																<div class="form-group pt_30 pb_30">
-																	<label class="form-label fs-16">Add a few images to your event banner.</label>
-																	<p class="mt-2 fs-14 d-block mb-3 pe_right">Upload colorful and vibrant images as the banner for your event! See how beautiful images help your event details page. <a href="#" class="a-link">Learn more</a></p>
+																	<label class="form-label fs-16">Ajoutez une image à votre événement.</label>
 																	<div class="content-holder mt-4">
 																		<div class="default-event-thumb">
+																			<img src="images/banners/custom-img.jpg" id="thumb-img">
 																			<div class="default-event-thumb-btn">
 																				<div class="thumb-change-btn">
-																					<input type="file" id="thumb-img" name="image">
-																					<label for="thumb-img">Change Image</label>
+																					<input type="file" id="file-input" onchange="loadFile(event)" name="image">
+																					<label for="file-input">Changer l'image</label>
 																				</div>
 																			</div>
-																			<img src="images/banners/custom-img.jpg" alt="">
-
 																		</div>
 																	</div>
 																</div>
+																<script>
+																	var loadFile = function(event) {
+																		var image = document.getElementById('thumb-img');
+																		image.src = URL.createObjectURL(event.target.files[0]);
+																	};
+																</script>
 																<div class="form-group border_bottom pb_30">
-																	<label class="form-label fs-16">Please describe your event.</label>
-																	<p class="mt-2 fs-14 d-block mb-3">Write a few words below to describe your event and provide any extra information such as schedules, itinerary or any special instructions required to attend your event.</p>
+																	<label class="form-label fs-16">Veuillez décrire votre événement.</label>
+																	<p class="mt-2 fs-14 d-block mb-3">Écrivez quelques mots ci-dessous pour décrire votre événement et fournissez toute information supplémentaire telle que les horaires, l'itinéraire ou toute instruction spéciale requise pour assister à votre événement.</p>
 																	<textarea class="form-control p-2" id="exampleFormControlTextarea1" rows="10" name="arr"></textarea>
 																</div>
 																<div class="form-group pt_30 pb-2">
-																	<label class="form-label fs-16">Where is your event taking place? *</label>
-																	<p class="mt-2 fs-14 d-block mb-3">Add a venue to your event to tell your attendees where to join the event.</p>
+																	<label class="form-label fs-16">Où se déroule votre événement ? *</label>
+																	<p class="mt-2 fs-14 d-block mb-3">Ajoutez un lieu à votre événement pour indiquer à vos participants où rejoindre l'événement.</p>
 																	<div class="stepper-data-set">
 																		<div class="content-holder template-selector">
 																			<div class="row g-4">
@@ -359,7 +357,7 @@ if (isset($_POST['envoyer'])) {
 																				</div>
 																				<div class="col-md-6">
 																					<div class="form-group main-form mt-1">
-																						<label class="form-label">Country*</label>
+																						<label class="form-label">Pay*</label>
 																						<select class="selectpicker" data-size="5" title="Nothing selected" data-live-search="true" name="Country">
 																							<option value="Algeria">Algeria</option>
 																							<option value="Argentina">Argentina</option>
@@ -394,7 +392,6 @@ if (isset($_POST['envoyer'])) {
 																							<option value="Luxembourg">Luxembourg</option>
 																							<option value="Malaysia">Malaysia</option>
 																							<option value="Mexico">Mexico</option>
-																							<option value="Morocco">Morocco</option>
 																							<option value="Nepal">Nepal</option>
 																							<option value="Netherlands">Netherlands</option>
 																							<option value="New Zealand">New Zealand</option>
@@ -423,13 +420,13 @@ if (isset($_POST['envoyer'])) {
 																				</div>
 																				<div class="col-md-6">
 																					<div class="form-group mt-1">
-																						<label class="form-label">State*</label>
+																						<label class="form-label">État*</label>
 																						<input class="form-control h_50" type="text" placeholder="" value="Victoria" name="State">
 																					</div>
 																				</div>
 																				<div class="col-lg-6 col-md-12">
 																					<div class="form-group mt-1">
-																						<label class="form-label">City/Suburb*</label>
+																						<label class="form-label">Ville*</label>
 																						<input class="form-control h_50" type="text" placeholder="" value="Melbourne" name="City">
 																					</div>
 																				</div>

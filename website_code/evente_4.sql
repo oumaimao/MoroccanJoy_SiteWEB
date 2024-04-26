@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Apr 21, 2024 at 05:35 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 25 avr. 2024 à 23:58
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `evente_4`
+-- Base de données : `evente_4`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adminee`
+-- Structure de la table `adminee`
 --
 
 CREATE TABLE `adminee` (
@@ -34,7 +34,7 @@ CREATE TABLE `adminee` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `adminee`
+-- Déchargement des données de la table `adminee`
 --
 
 INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `adminee` (`admin_id`, `A_email`, `A_password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `archive_demande`
+-- Structure de la table `archive_demande`
 --
 
 CREATE TABLE `archive_demande` (
@@ -70,7 +70,7 @@ CREATE TABLE `archive_demande` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `archive_demande`
+-- Déchargement des données de la table `archive_demande`
 --
 
 INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`, `User_id`, `eventd_id`) VALUES
@@ -80,7 +80,7 @@ INSERT INTO `archive_demande` (`event_id`, `n_event`, `event_date`, `event_time`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie`
+-- Structure de la table `categorie`
 --
 
 CREATE TABLE `categorie` (
@@ -89,7 +89,7 @@ CREATE TABLE `categorie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categorie`
+-- Déchargement des données de la table `categorie`
 --
 
 INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
@@ -107,7 +107,7 @@ INSERT INTO `categorie` (`Categorie_id`, `Nom_cat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_us`
+-- Structure de la table `contact_us`
 --
 
 CREATE TABLE `contact_us` (
@@ -121,7 +121,7 @@ CREATE TABLE `contact_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `contact_us`
+-- Déchargement des données de la table `contact_us`
 --
 
 INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_phone`, `c_email`, `c_message`, `user_id`) VALUES
@@ -140,7 +140,23 @@ INSERT INTO `contact_us` (`contact_id`, `c_nom`, `c_prenom`, `c_phone`, `c_email
 -- --------------------------------------------------------
 
 --
--- Table structure for table `demande`
+-- Structure de la table `coupon`
+--
+
+CREATE TABLE `coupon` (
+  `Coupon_id` int(11) NOT NULL,
+  `User_id` int(11) DEFAULT NULL,
+  `code` varchar(255) NOT NULL,
+  `Discount` int(11) NOT NULL,
+  `discount_end` date NOT NULL,
+  `time` time NOT NULL,
+  `number_used` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `demande`
 --
 
 CREATE TABLE `demande` (
@@ -164,7 +180,7 @@ CREATE TABLE `demande` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `demande`
+-- Déchargement des données de la table `demande`
 --
 
 INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event_duration`, `adress1`, `adress2`, `country`, `state`, `city`, `zip`, `description`, `image`, `gategorie`, `P_tickts`, `N_tickts`, `User_id`) VALUES
@@ -175,7 +191,7 @@ INSERT INTO `demande` (`event_id`, `n_event`, `event_date`, `event_time`, `event
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+-- Structure de la table `event`
 --
 
 CREATE TABLE `event` (
@@ -198,21 +214,21 @@ CREATE TABLE `event` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `event`
+-- Déchargement des données de la table `event`
 --
 
 INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Date_debut`, `Heure_fin`, `Prix_ticket`, `Nombre_tickets`, `Ville`, `Zip_code`, `Categorie_id`, `User_id`, `adress1`, `adress2`, `vue`) VALUES
-(61, 'Event 1', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-06', '17:00:00', 10, 100, 'City 1', '12345', 1, 12, 'Address 1', 'Street 1', 2),
-(62, 'Event 2', 'Description for Event 2', 'image2.jpg', '10:30:00', '2024-04-08', '20:00:00', 15, 80, 'City 2', '23456', 2, 13, 'Address 2', 'Street 2', 18),
-(63, 'Event 3', 'Description for Event 3', 'image3.jpg', '11:00:00', '2024-04-10', '18:30:00', 20, 120, 'City 3', '34567', 3, 14, 'Address 3', 'Street 3', 2),
-(64, 'Event 4', 'Description for Event 4', 'image4.jpg', '12:30:00', '2024-04-12', '22:00:00', 25, 150, 'City 4', '45678', 4, 15, 'Address 4', 'Street 4', 4),
+(61, 'Event 1', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-06', '17:00:00', 10, 100, 'City 1', '12345', 1, 12, 'Address 1', 'Street 1', 8),
+(62, 'Event 2', 'Description for Event 2', 'image2.jpg', '10:30:00', '2024-04-08', '20:00:00', 15, 80, 'City 2', '23456', 2, 13, 'Address 2', 'Street 2', 24),
+(63, 'Event 3', 'Description for Event 3', 'image3.jpg', '11:00:00', '2024-04-10', '18:30:00', 20, 120, 'City 3', '34567', 3, 14, 'Address 3', 'Street 3', 6),
+(64, 'Event 4', 'Description for Event 4', 'image4.jpg', '12:30:00', '2024-04-12', '22:00:00', 25, 150, 'City 4', '45678', 4, 15, 'Address 4', 'Street 4', 5),
 (65, 'Event 5', 'Description for Event 5', 'image5.jpg', '13:00:00', '2024-04-14', '19:30:00', 30, 200, 'City 5', '56789', 5, 16, 'Address 5', 'Street 5', 0),
 (66, 'Event 6', 'Description for Event 6', 'image6.jpg', '14:30:00', '2024-04-16', '21:00:00', 35, 180, 'City 6', '67890', 6, 17, 'Address 6', 'Street 6', 2),
-(67, 'Event 7', 'Description for Event 7', 'image7.jpg', '15:00:00', '2024-04-18', '18:30:00', 40, 250, 'City 7', '78901', 7, 18, 'Address 7', 'Street 7', 8),
-(68, 'Event 8', 'Description for Event 8', 'image8.jpg', '16:30:00', '2024-04-20', '20:00:00', 45, 300, 'City 8', '89012', 8, 19, 'Address 8', 'Street 8', 0),
+(67, 'Event 7', 'Description for Event 7', 'image7.jpg', '15:00:00', '2024-04-18', '18:30:00', 40, 250, 'City 7', '78901', 7, 18, 'Address 7', 'Street 7', 13),
+(68, 'Event 8', 'Description for Event 8', 'image8.jpg', '16:30:00', '2024-04-20', '20:00:00', 45, 300, 'City 8', '89012', 8, 19, 'Address 8', 'Street 8', 1),
 (69, 'Event 9', 'Description for Event 9', 'image9.jpg', '17:00:00', '2024-04-22', '22:30:00', 50, 180, 'City 9', '90123', 9, 20, 'Address 9', 'Street 9', 0),
-(70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10', 6),
-(71, 'Event 5', 'Description for Event 5', 'image5.jpg', '14:30:00', '2024-04-09', '00:00:02', 50, 25, 'Miami', '33101', 0, 16, '222 Maple Street', 'Apt 301', 4),
+(70, 'Event 10', 'Description for Event 10', 'image10.jpg', '18:30:00', '2024-04-24', '21:30:00', 55, 220, 'City 10', '01234', 10, 21, 'Address 10', 'Street 10', 12),
+(71, 'Event 5', 'Description for Event 5', 'image5.jpg', '14:30:00', '2024-04-09', '00:00:02', 50, 25, 'Miami', '33101', 0, 16, '222 Maple Street', 'Apt 301', 5),
 (72, 'Event 7', 'Description for Event 7', 'image7.jpg', '10:00:00', '2024-04-11', '00:00:03', 70, 35, 'San Francisco', '94101', 0, 18, '444 Walnut Street', '', 0),
 (73, 'Event 8', 'Description for Event 8', 'image8.jpg', '13:00:00', '2024-04-12', '00:00:02', 80, 40, 'Boston', '2101', 0, 19, '555 Oak Street', 'Suite 401', 0),
 (74, 'event-12', 'Description for Event 1', 'image1.jpg', '09:00:00', '2024-04-10', '00:00:09', 100, 50, 'New York City', '10001', 0, 12, '123 Main St', 'Apt 101', 0),
@@ -250,7 +266,7 @@ INSERT INTO `event` (`E_id`, `Titre`, `Description`, `Image`, `Heure_debut`, `Da
 -- --------------------------------------------------------
 
 --
--- Table structure for table `image`
+-- Structure de la table `image`
 --
 
 CREATE TABLE `image` (
@@ -263,7 +279,7 @@ CREATE TABLE `image` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reclamation`
+-- Structure de la table `reclamation`
 --
 
 CREATE TABLE `reclamation` (
@@ -276,7 +292,7 @@ CREATE TABLE `reclamation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `reclamation`
+-- Déchargement des données de la table `reclamation`
 --
 
 INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
@@ -296,7 +312,7 @@ INSERT INTO `reclamation` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reclamation_archive`
+-- Structure de la table `reclamation_archive`
 --
 
 CREATE TABLE `reclamation_archive` (
@@ -309,7 +325,7 @@ CREATE TABLE `reclamation_archive` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `reclamation_archive`
+-- Déchargement des données de la table `reclamation_archive`
 --
 
 INSERT INTO `reclamation_archive` (`Reclammation_id`, `Contact_Name`, `Email`, `Subject`, `Description`, `User_id`) VALUES
@@ -327,7 +343,7 @@ INSERT INTO `reclamation_archive` (`Reclammation_id`, `Contact_Name`, `Email`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservation`
+-- Structure de la table `reservation`
 --
 
 CREATE TABLE `reservation` (
@@ -344,7 +360,7 @@ CREATE TABLE `reservation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `reservation`
+-- Déchargement des données de la table `reservation`
 --
 
 INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R_adresse`, `R_country`, `R_city`, `R_Zipcode`, `Ticket_id`, `User_id`) VALUES
@@ -443,12 +459,15 @@ INSERT INTO `reservation` (`Reservation_id`, `R_Fname`, `R_Lname`, `R_email`, `R
 (103, 'Melodie Ewing', 'Lionel Taylor', 'povedyd@mailinator.com', 'Optio non nemo irur', 'Luxembourg', 'Cum quia veritatis e', '54808', 0, 0),
 (104, 'Kamal Kidd', 'Mariko Alexander', 'xibived@mailinator.com', 'Itaque Nam voluptas ', 'Estonia', 'Ut cumque velit cumq', '86956', 0, 0),
 (105, 'Candice Nielsen', 'Sybill Mcdowell', 'bozefelucu@mailinator.com', 'Obcaecati tempora te', 'Bolivia', 'Pariatur Deserunt v', '45015', 0, 0),
-(106, 'Jesse Wise', 'Jason Barrett', 'gybi@mailinator.com', 'Alias alias pariatur', 'Thailand', 'Fuga Vel aut sed do', '61336', 0, 0);
+(106, 'Jesse Wise', 'Jason Barrett', 'gybi@mailinator.com', 'Alias alias pariatur', 'Thailand', 'Fuga Vel aut sed do', '61336', 0, 0),
+(107, 'Aymane el', 'el', 'aymaneel7@gma.com', 'ifmotica', 'Morocco', 'FES', '33000', 0, 0),
+(108, 'Aymane', 'el', 'aymaneel724@gmail.com', 'zOZEUFIZEFUIO', 'Morocco', 'FES', '33000', 0, 0),
+(109, 'ilyas', 'bouayyad', 'aymaneel7@gma.com', 'ifmotica', 'Morocco', 'FES', '33000', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `saveevent`
+-- Structure de la table `saveevent`
 --
 
 CREATE TABLE `saveevent` (
@@ -458,17 +477,97 @@ CREATE TABLE `saveevent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `saveevent`
+-- Déchargement des données de la table `saveevent`
 --
 
 INSERT INTO `saveevent` (`S_id`, `User_id`, `E_id`) VALUES
-(9, 27, 67),
-(10, 27, 70);
+(10, 27, 70),
+(11, 27, 62);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ticket`
+-- Structure de la table `socialmedia`
+--
+
+CREATE TABLE `socialmedia` (
+  `S_id` int(11) NOT NULL,
+  `siteweb` varchar(255) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `linkedin` varchar(255) DEFAULT NULL,
+  `User_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `socialmedia`
+--
+
+INSERT INTO `socialmedia` (`S_id`, `siteweb`, `facebook`, `twitter`, `linkedin`, `User_id`) VALUES
+(1, 'www.moroccanjoy.com', 'moroccanjoyface', 'moroccanjoytwitt', 'linkmoroccanjoy', 27);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `suivre`
+--
+
+CREATE TABLE `suivre` (
+  `F_id` int(11) NOT NULL,
+  `Followers` int(11) DEFAULT NULL,
+  `Following` int(11) DEFAULT NULL,
+  `User_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `suivre`
+--
+
+INSERT INTO `suivre` (`F_id`, `Followers`, `Following`, `User_id`) VALUES
+(1, 32, 2, 18),
+(2, 27, 0, 27),
+(3, 27, 0, 27),
+(4, 27, 0, 27),
+(5, 27, 0, 27),
+(6, 27, 0, 27),
+(7, 27, 0, 27),
+(8, 27, 0, 27),
+(9, 27, 0, 27),
+(10, 27, 0, 27),
+(11, 27, 0, 27),
+(12, 27, 0, 27),
+(13, 27, 0, 27),
+(14, 27, 0, 27),
+(15, 27, 0, 27),
+(16, 27, 0, 27),
+(17, 27, 0, 27),
+(18, 27, 0, 27),
+(19, 27, 0, 27),
+(20, 27, 0, 27),
+(21, 27, 0, 27),
+(22, 27, 0, 27),
+(23, 27, 0, 27),
+(24, 27, 0, 27),
+(25, 27, 0, 27),
+(26, 27, 0, 27),
+(27, 27, 0, 27),
+(28, 27, 0, 27),
+(29, 27, 0, 27),
+(30, 27, 0, 27),
+(31, 27, 0, 27),
+(32, 27, 0, 27),
+(33, 27, 0, 27),
+(34, 27, 0, 27),
+(35, 27, 0, 27),
+(36, 27, 0, 27),
+(37, 27, 0, 27),
+(38, 27, 0, 27),
+(39, 27, 0, 27);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ticket`
 --
 
 CREATE TABLE `ticket` (
@@ -483,117 +582,20 @@ CREATE TABLE `ticket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `ticket`
+-- Déchargement des données de la table `ticket`
 --
 
 INSERT INTO `ticket` (`Ticket_id`, `Purchase_Date`, `QR_code`, `QR_image`, `Statu`, `User_id`, `E_id`, `prix_tickt`) VALUES
-(31, '2024-04-21 03:21:29', 'qr_code_1', '', '0', 12, 61, 0),
-(32, '2024-04-21 03:21:29', 'qr_code_2', '', '0', 13, 62, 0),
-(33, '2024-04-21 03:21:29', 'qr_code_3', '', '0', 14, 63, 0),
-(34, '2024-04-21 03:21:29', 'qr_code_4', '', '0', 15, 64, 0),
-(35, '2024-04-21 03:21:29', 'qr_code_5', '', '0', 16, 65, 0),
-(36, '2024-04-21 03:21:29', 'qr_code_6', '', '0', 17, 66, 0),
-(37, '2024-04-21 03:21:29', 'qr_code_7', '', '0', 18, 67, 0),
-(38, '2024-04-21 03:21:29', 'qr_code_8', '', '0', 19, 68, 0),
-(39, '2024-04-21 03:21:29', 'qr_code_9', '', '0', 20, 69, 0),
-(40, '2024-04-21 03:21:29', 'qr_code_10', '', '0', 21, 70, 0),
-(43, '2024-04-21 03:21:29', '661167ed35dcd799ade0b0672985aec0ccbcb036d2ef9', '799ade0b0672985aec0ccbcb036d2ef9qrcode.png', 'valid', 27, 67, 0),
-(44, '2024-04-21 03:21:29', '661168b5799ebae35de283a6140092954c57d83924acc', 'ae35de283a6140092954c57d83924accqrcode.png', 'valid', 27, 67, 0),
-(45, '2024-04-21 03:21:29', '6611ecf8cf8a92d26d1c0628d6b0d49de5d703256d0ae', '2d26d1c0628d6b0d49de5d703256d0aeqrcode.png', 'valid', 27, 61, 0),
-(46, '2024-04-21 03:21:29', '6611ed08663f9c4e7bdd201d98da6333afb076bf5e2de', 'c4e7bdd201d98da6333afb076bf5e2deqrcode.png', 'valid', 27, 61, 0),
-(47, '2024-04-21 03:21:29', '6611ee273236b0a4dde44c50e1019eca06f18492ffd10', '0a4dde44c50e1019eca06f18492ffd10qrcode.png', 'valid', 27, 61, 0),
-(48, '2024-04-21 03:21:29', '6611ee7ec9e1f1e189d664dc094bdd7f87c2520e2926d', '1e189d664dc094bdd7f87c2520e2926dqrcode.png', 'valid', 27, 61, 0),
-(49, '2024-04-21 03:21:29', '6611efc17f9feb4e9cbb9eea7a8f22da1819c92e4835f', 'b4e9cbb9eea7a8f22da1819c92e4835fqrcode.png', 'valid', 27, 62, 0),
-(50, '2024-04-21 03:21:29', '6611f079b08a2644c2b2e73fa2f25ed27d5d18c7f9b60', '644c2b2e73fa2f25ed27d5d18c7f9b60qrcode.png', 'valid', 27, 66, 35),
-(51, '2024-04-21 03:21:29', '6611f4935fe7b05f562a5b32c04821d014bb36ec42399', '05f562a5b32c04821d014bb36ec42399qrcode.png', 'valid', 27, 66, 35),
-(52, '2024-04-21 03:21:29', '6611f813afff9620692e86b964f1e6bbb661e11b13620', '620692e86b964f1e6bbb661e11b13620qrcode.png', 'valid', 27, 63, 20),
-(53, '2024-04-21 03:21:29', '661291bc44e5f06ba77ff1fe3b163cd77fa0b7031e7ae', '06ba77ff1fe3b163cd77fa0b7031e7aeqrcode.png', 'Non valide', 27, 61, 10),
-(54, '2024-04-21 03:21:29', '6612922bb3615b9decc58f4ce962e937bba88bd3aae68', 'b9decc58f4ce962e937bba88bd3aae68qrcode.png', 'Valide', 27, 61, 10),
-(55, '2024-04-21 03:21:29', '66129353894c2fc0d1e85b17c858720e24e9f89b44868', 'fc0d1e85b17c858720e24e9f89b44868qrcode.png', 'Valide', 27, 62, 15),
-(56, '2024-04-21 03:21:29', '661297c1d8c7a2a091c7efc1a26b8f49804d69e0c13dd', '2a091c7efc1a26b8f49804d69e0c13ddqrcode.png', 'Valide', 27, 62, 15),
-(57, '2024-04-21 03:21:29', '661298cb8efbe6909abae82f3059175f1d449cb0a9bf1', '6909abae82f3059175f1d449cb0a9bf1qrcode.png', 'Valide', 27, 62, 15),
-(58, '2024-04-21 03:21:29', '66129ce9b409a704c6e52eca2dfbf0b7e15bbbfed15c5', '704c6e52eca2dfbf0b7e15bbbfed15c5qrcode.png', 'Non valide', 27, 61, 10),
-(59, '2024-04-21 03:21:29', '66129d3bef4055dc5a66fbd9a36494a4b317e3a9e1fbb', '5dc5a66fbd9a36494a4b317e3a9e1fbbqrcode.png', 'Non valide', 27, 63, 20),
-(60, '2024-04-21 03:21:29', '66129d8cbdb750a8612207f91893af7e5a5b02cbe75a1', '0a8612207f91893af7e5a5b02cbe75a1qrcode.png', 'Valide', 27, 63, 20),
-(61, '2024-04-21 03:21:29', '66129e4bd5ddcdcf4e1c208febac0dbf87f74f2bfece0', 'dcf4e1c208febac0dbf87f74f2bfece0qrcode.png', 'Non valide', 27, 61, 10),
-(62, '2024-04-21 03:21:29', '76c6ff7d36bc77cc178ec41de84416fe', '589738f55edafc134eab79ad877c9b45.png', 'Non valide', 27, 61, 10),
-(63, '2024-04-21 03:21:29', '05ad3846096dc6e7f78093fa4ef09f98', '907ce06e22e909dc42c79171c33409ed.png', 'Non valide', 27, 61, 10),
-(64, '2024-04-21 03:21:29', '6612a022a65ab3af3c29b86dbc8afbd408be54f756202881c6030ee53976a3616cbc04bbc0c00', '881c6030ee53976a3616cbc04bbc0c00qrcode.png', 'Non valide', 27, 61, 10),
-(65, '2024-04-21 03:21:29', '6612a18b21936092a037c4f30f9b590c9e0a96269435494bf76b3167f6dd8aad68bdff922ce4e', '94bf76b3167f6dd8aad68bdff922ce4eqrcode.png', 'Valide', 27, 61, 10),
-(66, '2024-04-21 03:21:29', '6612a1db703c1bf1fa33b28ea7b608a813e71fe77069a040ac7559fbf7333f660895aa44a8c77', '040ac7559fbf7333f660895aa44a8c77qrcode.png', 'Valide', 27, 61, 10),
-(67, '2024-04-21 03:21:29', '6612a351d9cb1488509600abf38397eba10f163a7437e8cfdc67d746d5c803b11cc4ab37f1cd1', '8cfdc67d746d5c803b11cc4ab37f1cd1qrcode.png', 'Valide', 27, 61, 10),
-(68, '2024-04-21 03:21:29', '6612a4057cfce8b22977dbd1649ceb0bbdb617fd207ac5899b3c52670fe1258e974006118e976', '5899b3c52670fe1258e974006118e976qrcode.png', 'Valide', 27, 61, 10),
-(69, '2024-04-21 03:21:29', '6612a4718cdff1614bb8794c65e21ea5c1db78f6ab5d63b4c16d275818d6ea7990d4d5f6ba54e', '3b4c16d275818d6ea7990d4d5f6ba54eqrcode.png', 'Valide', 27, 61, 10),
-(70, '2024-04-21 03:21:29', '6612a51b065f5e55b26e3e420959de1cced817fc871b15b183ce40759f3fdeec6930fcab644a3', '5b183ce40759f3fdeec6930fcab644a3qrcode.png', 'Valide', 27, 61, 10),
-(71, '2024-04-21 03:21:29', '6612a55f33605131c51c8d7148282feef0e0db2366413b685db398e3bc0bfce648201f512f8b2', 'b685db398e3bc0bfce648201f512f8b2qrcode.png', 'Valide', 27, 61, 10),
-(72, '2024-04-21 03:21:29', '6612a5f402fba6d21c83e9ff3e2356e6ac256e6ffff7e2fed09c11ffc57dc4eab148a09209e52', '2fed09c11ffc57dc4eab148a09209e52qrcode.png', 'Valide', 27, 61, 10),
-(73, '2024-04-21 03:21:29', '6612a61e43bf381455c32f3480e315dd0d2b3e81037d9fc02af9caa2dcb86193620be367ce70c', 'fc02af9caa2dcb86193620be367ce70cqrcode.png', 'Valide', 27, 75, 0),
-(74, '2024-04-21 03:21:29', '6612a6ae51b4e0daae31caf29917336f1296571da27f160307c5551304caf05721acbebd3f147', '60307c5551304caf05721acbebd3f147qrcode.png', 'Valide', 27, 71, 50),
-(75, '2024-04-21 03:21:29', '6612f763eab0bc0e12cf92b4ee0ff36b84aab14e46773e9be909df994460e1ccbb77a0b09d9ad', 'e9be909df994460e1ccbb77a0b09d9adqrcode.png', 'Valide', 27, 63, 20),
-(76, '2024-04-21 03:21:29', '6612fd3c890ba120df6c63ecd36d5380bf29b99991253a603dac5a4df0634e4837ac76f084ef1', 'a603dac5a4df0634e4837ac76f084ef1qrcode.png', 'Non valide', 27, 63, 20),
-(77, '2024-04-21 03:21:29', '6612fd4a3bdd8ce0076362a41a16cae863ad0fa45a1da9f0090374f295d45f11b1ffa3e8d3e53', '9f0090374f295d45f11b1ffa3e8d3e53qrcode.png', 'Non valide', 27, 63, 20),
-(78, '2024-04-21 03:21:29', '6612fd5970cb94d1fc0bd7579b045b2ad690b99d8a1f75997ad33ef951264f6b9e5450b988fa5', '5997ad33ef951264f6b9e5450b988fa5qrcode.png', 'Non valide', 27, 63, 20),
-(79, '2024-04-21 03:21:29', '6612fd65c0f0dae2717e588bf730b20bbacd37d2eeeb488592d4b8b4bcb0342b3852e77f76e6f', '88592d4b8b4bcb0342b3852e77f76e6fqrcode.png', 'Non valide', 27, 63, 20),
-(80, '2024-04-21 03:21:29', '6612fd7827fbecaaeeb140fd45fb67a0d983311f1207ffcf927b1b1be8fdc754354036d9d922d', 'fcf927b1b1be8fdc754354036d9d922dqrcode.png', 'Non valide', 27, 63, 20),
-(81, '2024-04-21 03:21:29', '6612fd8920b3dee78fc8000ab02adaec27a0aa6fb8cff60d4f9b79d23044fa71e3c8782f07b61', '60d4f9b79d23044fa71e3c8782f07b61qrcode.png', 'Non valide', 27, 63, 20),
-(82, '2024-04-21 03:21:29', '66130396eafd3b5c67b3e3168758ff12e3545fdc70a18b72f0af34c5a17f7ad16a6de49e1f8af', 'b72f0af34c5a17f7ad16a6de49e1f8afqrcode.png', 'Non valide', 27, 63, 20),
-(83, '2024-04-21 03:21:29', '66141a98d40d8ed8e2afdfb15904ddebe6100f2e7130a688ca6cdb69cc071a15e8e8a0311f069', '688ca6cdb69cc071a15e8e8a0311f069qrcode.png', 'Non valide', 27, 70, 55),
-(84, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(85, '2024-04-21 03:21:29', '66141f5256357592166b84cd7371303c8f93868cd9354812a24e6c93686a2854dda65bd151144', '812a24e6c93686a2854dda65bd151144qrcode.png', 'Non valide', 27, 63, 20),
-(86, '2024-04-21 03:21:29', '66142026bfbb9d3366b39e15fd4896d79c786e7e91c5ba710896338a1d5b386b20abdebd4a52a', 'a710896338a1d5b386b20abdebd4a52aqrcode.png', 'Valide', 27, 76, 0),
-(87, '2024-04-21 03:21:29', '66144bbfe12c8f656d2745998d1e8819fed7c8c7b651dff901a0a25548e9429334a77b81cf05f', 'ff901a0a25548e9429334a77b81cf05fqrcode.png', 'Non valide', 27, 70, 55),
-(88, '2024-04-21 03:21:29', '6616a6b634ac59ce003ef8f89d22889b09bb2a69dfd4855a07c1d9ee01bcfb7c675dff6962857', '55a07c1d9ee01bcfb7c675dff6962857qrcode.png', 'Non valide', 27, 62, 15),
-(89, '2024-04-21 03:21:29', '6616a6d853b8c47eb8cf71f9eeef4d3ee1da4d7ce064461d7da00900911375a7b4cc282cd5664', '61d7da00900911375a7b4cc282cd5664qrcode.png', 'Non valide', 27, 89, 0),
-(90, '2024-04-21 03:21:29', '6616a6f7bd46209d9b3e835c269366461fa7efee10134310c84ab52a8b363f04822d5367163b9', '310c84ab52a8b363f04822d5367163b9qrcode.png', 'Non valide', 27, 88, 0),
-(91, '2024-04-21 03:21:29', '6616a71a98297b13a15eda89f9665f4db6bf8f34e3b4cd70bbfe3acd4aaa267ec352c25ae8e2f', 'd70bbfe3acd4aaa267ec352c25ae8e2fqrcode.png', 'Non valide', 27, 88, 0),
-(92, '2024-04-21 03:21:29', '6616ab76bbfa7c38244a733c044929d400bec6178f13d6b20d5e1774c1f1304056ad1f58d325e', '6b20d5e1774c1f1304056ad1f58d325eqrcode.png', 'Non valide', 27, 90, 100),
-(93, '2024-04-21 03:21:29', '6616acf9d9754d764bd6eefea1f5eb5f113604c17b8cb7d8e6af2d62edb481ee40a601c628dc8', '7d8e6af2d62edb481ee40a601c628dc8qrcode.png', 'Non valide', 27, 90, 100),
-(94, '2024-04-21 03:21:29', '6616ad791900827b3d8095c04b6e4c37c7d14854e06871a387f55606d0b46574928f14e68d2eb', '1a387f55606d0b46574928f14e68d2ebqrcode.png', 'Non valide', 27, 89, 0),
-(95, '2024-04-21 03:21:29', '6616ad993cbd8fa61bf1e33b04e78b8ad36b7d6fb00969f5eced3f9620a71ff3d157c8322e576', '9f5eced3f9620a71ff3d157c8322e576qrcode.png', 'Non valide', 27, 90, 100),
-(96, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(97, '2024-04-21 03:21:29', '66171e04cdbd85adda0f7fb5601cdc37a2d0130cd0dd373c9c0aa5c76d23a7a8d755512ff225c', '73c9c0aa5c76d23a7a8d755512ff225cqrcode.png', 'Non valide', 28, 97, 140),
-(98, '2024-04-21 03:21:29', '66171ecc8c0e5c52c6b93eabe4637efce7c0836db9e544c33d450ea464ecb1badf1d3e47df9fa', '4c33d450ea464ecb1badf1d3e47df9faqrcode.png', 'Non valide', 28, 99, 300),
-(99, '2024-04-21 03:21:29', '661720d226e6bc506cc8dfb5e1665b70cd349f98a8722709576cef375908ff3d725f9785a238d', '709576cef375908ff3d725f9785a238dqrcode.png', 'Non valide', 28, 106, 140),
-(103, '2024-04-21 03:22:52', '6624787c70a6f1b2975ce1e45a57ceccb82da0231fb8854bd2cf17fb93775f1dfde219af524ef', '54bd2cf17fb93775f1dfde219af524efqrcode.png', 'Non valide', 27, 67, 40),
-(104, '2024-05-21 15:57:08', '664cb644a0ecc4dfc5003529b6c674c9565379d54e5dc035722fa3dd3781617ab07aaf10b3737', '035722fa3dd3781617ab07aaf10b3737qrcode.png', 'Non valide', 27, 70, 55),
-(105, '2024-04-21 15:58:49', '662529a9b9e2a338248708e333ee615d808d2c5d542d0357af13526a832cfe838f45743878d1f', '357af13526a832cfe838f45743878d1fqrcode.png', 'Non valide', 27, 78, 100),
-(106, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(107, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(108, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(109, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(110, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(111, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(112, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
 (113, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(114, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(115, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(116, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(117, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(118, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(119, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(120, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(121, '2024-06-12 03:21:29', '6616b38969286bad59e042a7e1b0a4b5a86bbd30c8cd71977983c4fdcb04db43a1090f9d4aa89', '1977983c4fdcb04db43a1090f9d4aa89qrcode.png', 'Non valide', 27, 90, 100),
-(122, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(123, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(124, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(125, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(126, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(127, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(128, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(129, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(130, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(131, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(132, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(133, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(134, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(135, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
 (136, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0),
-(137, '2024-10-17 03:21:29', '66141ebeb12a2fb10ceb7e18489f3a2b1009fa551f53d802c0514baf4cce8ad53f2bac04fed11', '802c0514baf4cce8ad53f2bac04fed11qrcode.png', 'Valide', 27, 75, 0);
+(138, '2024-04-24 20:33:27', '66295e87399bef01a2f7dfd673d0e4004a1f406b1b2f7b89c6725932930b29d92e77284564124', 'b89c6725932930b29d92e77284564124qrcode.png', 'Non valide', 27, 67, 40),
+(139, '2024-04-24 20:54:01', '6629635950acefc5db1fa26fcb88bf855894546e6ffc6a2e59b99c2216fa2f5f0d30f6ee3e60e', 'a2e59b99c2216fa2f5f0d30f6ee3e60eqrcode.png', 'Non valide', 27, 67, 40),
+(140, '2024-04-25 21:09:46', '662ab889e69375d095a522effb7c795db725c45227debc6910ce8b0607249cfc371765ff74fc1', 'c6910ce8b0607249cfc371765ff74fc1qrcode.png', 'Non valide', 27, 61, 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
 CREATE TABLE `user` (
@@ -608,7 +610,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U_telephone`, `U_adresse`, `U_dateNaissance`) VALUES
@@ -635,7 +637,7 @@ INSERT INTO `user` (`User_id`, `U_name`, `U_Prenom`, `U_email`, `U_password`, `U
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
@@ -653,17 +655,17 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `adminee`
+-- Index pour la table `adminee`
 --
 ALTER TABLE `adminee`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `archive_demande`
+-- Index pour la table `archive_demande`
 --
 ALTER TABLE `archive_demande`
   ADD PRIMARY KEY (`event_id`),
@@ -671,19 +673,27 @@ ALTER TABLE `archive_demande`
   ADD KEY `User_id` (`User_id`);
 
 --
--- Indexes for table `categorie`
+-- Index pour la table `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`Categorie_id`);
 
 --
--- Indexes for table `contact_us`
+-- Index pour la table `contact_us`
 --
 ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`contact_id`);
 
 --
--- Indexes for table `demande`
+-- Index pour la table `coupon`
+--
+ALTER TABLE `coupon`
+  ADD PRIMARY KEY (`Coupon_id`),
+  ADD UNIQUE KEY `code` (`code`),
+  ADD KEY `User_id` (`User_id`);
+
+--
+-- Index pour la table `demande`
 --
 ALTER TABLE `demande`
   ADD PRIMARY KEY (`event_id`),
@@ -691,7 +701,7 @@ ALTER TABLE `demande`
   ADD KEY `User_id` (`User_id`);
 
 --
--- Indexes for table `event`
+-- Index pour la table `event`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`E_id`),
@@ -699,34 +709,34 @@ ALTER TABLE `event`
   ADD KEY `event_ibfk_2` (`User_id`);
 
 --
--- Indexes for table `image`
+-- Index pour la table `image`
 --
 ALTER TABLE `image`
   ADD PRIMARY KEY (`image_id`),
   ADD KEY `User_id` (`User_id`);
 
 --
--- Indexes for table `reclamation`
+-- Index pour la table `reclamation`
 --
 ALTER TABLE `reclamation`
   ADD PRIMARY KEY (`Reclammation_id`),
   ADD KEY `User_id` (`User_id`);
 
 --
--- Indexes for table `reclamation_archive`
+-- Index pour la table `reclamation_archive`
 --
 ALTER TABLE `reclamation_archive`
   ADD PRIMARY KEY (`Reclammation_id`);
 
 --
--- Indexes for table `reservation`
+-- Index pour la table `reservation`
 --
 ALTER TABLE `reservation`
   ADD PRIMARY KEY (`Reservation_id`),
   ADD KEY `Ticket_Of_id` (`Ticket_id`);
 
 --
--- Indexes for table `saveevent`
+-- Index pour la table `saveevent`
 --
 ALTER TABLE `saveevent`
   ADD PRIMARY KEY (`S_id`),
@@ -734,7 +744,21 @@ ALTER TABLE `saveevent`
   ADD KEY `E_id` (`E_id`);
 
 --
--- Indexes for table `ticket`
+-- Index pour la table `socialmedia`
+--
+ALTER TABLE `socialmedia`
+  ADD PRIMARY KEY (`S_id`),
+  ADD KEY `User_id` (`User_id`);
+
+--
+-- Index pour la table `suivre`
+--
+ALTER TABLE `suivre`
+  ADD PRIMARY KEY (`F_id`),
+  ADD KEY `User_id` (`User_id`);
+
+--
+-- Index pour la table `ticket`
 --
 ALTER TABLE `ticket`
   ADD PRIMARY KEY (`Ticket_id`),
@@ -742,142 +766,178 @@ ALTER TABLE `ticket`
   ADD KEY `E_OF_id` (`E_id`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`User_id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `adminee`
+-- AUTO_INCREMENT pour la table `adminee`
 --
 ALTER TABLE `adminee`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `archive_demande`
+-- AUTO_INCREMENT pour la table `archive_demande`
 --
 ALTER TABLE `archive_demande`
   MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
--- AUTO_INCREMENT for table `categorie`
+-- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
   MODIFY `Categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `contact_us`
+-- AUTO_INCREMENT pour la table `contact_us`
 --
 ALTER TABLE `contact_us`
   MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `demande`
+-- AUTO_INCREMENT pour la table `coupon`
+--
+ALTER TABLE `coupon`
+  MODIFY `Coupon_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `demande`
 --
 ALTER TABLE `demande`
   MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
--- AUTO_INCREMENT for table `event`
+-- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
   MODIFY `E_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
--- AUTO_INCREMENT for table `image`
+-- AUTO_INCREMENT pour la table `image`
 --
 ALTER TABLE `image`
   MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `reclamation`
+-- AUTO_INCREMENT pour la table `reclamation`
 --
 ALTER TABLE `reclamation`
   MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
--- AUTO_INCREMENT for table `reclamation_archive`
+-- AUTO_INCREMENT pour la table `reclamation_archive`
 --
 ALTER TABLE `reclamation_archive`
   MODIFY `Reclammation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
--- AUTO_INCREMENT for table `reservation`
+-- AUTO_INCREMENT pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
--- AUTO_INCREMENT for table `saveevent`
+-- AUTO_INCREMENT pour la table `saveevent`
 --
 ALTER TABLE `saveevent`
-  MODIFY `S_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `S_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `ticket`
+-- AUTO_INCREMENT pour la table `socialmedia`
+--
+ALTER TABLE `socialmedia`
+  MODIFY `S_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `suivre`
+--
+ALTER TABLE `suivre`
+  MODIFY `F_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT pour la table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `Ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
   MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `archive_demande`
+-- Contraintes pour la table `archive_demande`
 --
 ALTER TABLE `archive_demande`
   ADD CONSTRAINT `archive_demande_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `demande`
+-- Contraintes pour la table `coupon`
+--
+ALTER TABLE `coupon`
+  ADD CONSTRAINT `coupon_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`);
+
+--
+-- Contraintes pour la table `demande`
 --
 ALTER TABLE `demande`
   ADD CONSTRAINT `demande_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `image`
+-- Contraintes pour la table `image`
 --
 ALTER TABLE `image`
   ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `reclamation`
+-- Contraintes pour la table `reclamation`
 --
 ALTER TABLE `reclamation`
   ADD CONSTRAINT `reclamation_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `saveevent`
+-- Contraintes pour la table `saveevent`
 --
 ALTER TABLE `saveevent`
   ADD CONSTRAINT `saveevent_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `saveevent_ibfk_2` FOREIGN KEY (`E_id`) REFERENCES `event` (`E_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `ticket`
+-- Contraintes pour la table `socialmedia`
+--
+ALTER TABLE `socialmedia`
+  ADD CONSTRAINT `socialmedia_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`);
+
+--
+-- Contraintes pour la table `suivre`
+--
+ALTER TABLE `suivre`
+  ADD CONSTRAINT `suivre_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`);
+
+--
+-- Contraintes pour la table `ticket`
 --
 ALTER TABLE `ticket`
   ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE CASCADE,
