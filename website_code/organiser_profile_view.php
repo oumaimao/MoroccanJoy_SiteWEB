@@ -395,10 +395,10 @@ if (!isset($_SESSION['user']['U_email'])) {
 									<p>Hey I am a <?php echo $user['U_Prenom'] . " " . $user['U_name']; ?></p>
 								</div>
 								<div class="user-btns">
-									<a href="my_organisation_dashboard.php" class="co-main-btn co-btn-width min-width d-inline-block h_40">My Organisation</a>
+									<a href="my_organisation_dashboard.php" class="co-main-btn co-btn-width min-width d-inline-block h_40">Mon organisation</a>
 								</div>
 								<div class="profile-social-link">
-									<h6>Find me on</h6>
+									<h6>Trouvez-moi sur</h6>
 									<div class="social-links">
 										<?php
 
@@ -435,24 +435,20 @@ if (!isset($_SESSION['user']['U_email'])) {
 								<div class="profile-tabs">
 									<ul class="nav nav-pills nav-fill p-2 garren-line-tab" id="myTab" role="tablist">
 										<li class="nav-item">
-											<a class="nav-link active" id="feed-tab" data-bs-toggle="tab" href="#feed" role="tab" aria-controls="feed" aria-selected="true"><i class="fa-solid fa-house"></i>Home</a>
+											<a class="nav-link active" id="feed-tab" data-bs-toggle="tab" href="#feed" role="tab" aria-controls="feed" aria-selected="true"><i class="fa-solid fa-house"></i>Accueil</a>
 										</li>
-										<li class="nav-item">
-											<a class="nav-link" id="about-tab" data-bs-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false"><i class="fa-solid fa-circle-info"></i>About</a>
-										</li>
+										
 										<li class="nav-item">
 											<a class="nav-link" id="setting-tab" data-bs-toggle="tab" href="#setting" role="tab" aria-controls="setting" aria-selected="false"><i class="fa-solid fa-gear"></i>Paramètres</a>
 										</li>
-										<li class="nav-item">
-											<a class="nav-link" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false"><i class="fa-solid fa-box"></i>My Orders</a>
-										</li>
+										
 									</ul>
 									<div class="tab-content" id="myTabContent">
 										<div class="tab-pane fade active show" id="feed" role="tabpanel" aria-labelledby="feed-tab">
 											<div class="nav my-event-tabs mt-4" role="tablist">
-												<button class="event-link active" data-bs-toggle="tab" data-bs-target="#saved" type="button" role="tab" aria-controls="saved" aria-selected="true"><span class="event-count">1</span><span>Saved Events</span></button>
-												<button class="event-link" data-bs-toggle="tab" data-bs-target="#organised" type="button" role="tab" aria-controls="organised" aria-selected="false"><span class="event-count">2</span><span>Organised Events</span></button>
-												<button class="event-link" data-bs-toggle="tab" data-bs-target="#attending" type="button" role="tab" aria-controls="attending" aria-selected="false"><span class="event-count">3</span><span>Attending Events</span></button>
+												<button class="event-link active" data-bs-toggle="tab" data-bs-target="#saved" type="button" role="tab" aria-controls="saved" aria-selected="true"><span class="event-count">1</span><span>Événements enregistrés</span></button>
+												<button class="event-link" data-bs-toggle="tab" data-bs-target="#organised" type="button" role="tab" aria-controls="organised" aria-selected="false"><span class="event-count">2</span><span>Événements organisés</span></button>
+												<button class="event-link" data-bs-toggle="tab" data-bs-target="#attending" type="button" role="tab" aria-controls="attending" aria-selected="false"><span class="event-count">3</span><span>Assister à des événements</span></button>
 											</div>
 											<div class="tab-content">
 												<div class="tab-pane fade show active" id="saved" role="tabpanel">
@@ -500,9 +496,9 @@ if (!isset($_SESSION['user']['U_email'])) {
 																			<div class="event-btn-group d-flex">
 																				<form action="" method="POST">
 																					<input type="hidden" name="sid" value="<?php echo $event['S_id']; ?>">
-																					<button type="submit" class="esv-btn delete-btn me-2"><i class="fa-regular fa-trash-alt me-2"></i>Delete</button>
+																					<button type="submit" class="esv-btn delete-btn me-2"><i class="fa-regular fa-trash-alt me-2"></i>Supprimer</button>
 																				</form>
-																				<button class="esv-btn me-2" onclick="window.location.href='venue_event_detail_view.php?event_id=<?php echo $event['E_id']; ?>'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View</button>
+																				<button class="esv-btn me-2" onclick="window.location.href='venue_event_detail_view.php?event_id=<?php echo $event['E_id']; ?>'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Voir</button>
 
 																				<?php
 																				require_once './connect/DataBase.php';
@@ -555,7 +551,7 @@ if (!isset($_SESSION['user']['U_email'])) {
 																					<h5><?php echo $event['Titre']; ?></h5>
 																					<div class="evnt-time"><?php echo date("D, M d, Y g:i A", strtotime($event['Heure_debut'])); ?></div>
 																					<div class="event-btn-group">
-																						<button class="esv-btn me-2" onclick="window.location.href='event_update.php?id=<?php echo $event['E_id'] ?>'"><i class="fa-solid fa-gear me-2"></i>Manage Event</button>
+																						<button class="esv-btn me-2" onclick="window.location.href='event_update.php?id=<?php echo $event['E_id'] ?>'"><i class="fa-solid fa-gear me-2"></i>Gérer l'événement</button>
 																					</div>
 																				</div>
 																			</div>
@@ -601,7 +597,7 @@ if (!isset($_SESSION['user']['U_email'])) {
 																					<h5><?php echo $row['Titre']; ?></h5>
 																					<div class="evnt-time"><?php echo date("D, M d, Y g:i A", strtotime($row['Heure_debut'])); ?></div>
 																					<div class="event-btn-group">
-																						<button class="esv-btn me-2" onclick="window.location.href='invoice_ticket.php?Ticket_id=<?php echo $row['Ticket_id']; ?>'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View Ticket</button>
+																						<button class="esv-btn me-2" onclick="window.location.href='invoice_ticket.php?Ticket_id=<?php echo $row['Ticket_id']; ?>'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Voir Ticket</button>
 																					</div>
 																				</div>
 																			</div>
@@ -623,41 +619,7 @@ if (!isset($_SESSION['user']['U_email'])) {
 												</div>
 											</div>
 										</div>
-										<div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
-											<div class="main-card mt-4">
-												<div class="bp-title position-relative">
-													<h4>About</h4>
-													<button class="main-btn btn-hover ms-auto edit-btn me-3 pe-4 ps-4 h_40" data-bs-toggle="modal" data-bs-target="#aboutModal">
-														<i class="fa-regular fa-pen-to-square me-2"></i>Edit
-													</button>
-												</div>
-												<div class="about-details">
-													<div class="about-step">
-														<h5>Name</h5>
-														<span>Joginder Singh</span>
-													</div>
-													<div class="about-step">
-														<h5>Tell us about yourself and let people know who you are</h5>
-														<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt interdum nunc et auctor. Phasellus quis pharetra sapien. Integer ligula sem, sodales vitae varius in, varius eget augue.</p>
-													</div>
-													<div class="about-step">
-														<h5>Find me on</h5>
-														<div class="social-links">
-															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-															<!-- <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a> -->
-															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
-															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-															<!-- <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a> -->
-															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
-														</div>
-													</div>
-													<div class="about-step">
-														<h5>Address</h5>
-														<p class="mb-0">00 Challis St, Newport, Victoria, 0000, Australia</p>
-													</div>
-												</div>
-											</div>
-										</div>
+										
 										<div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
 											<div class="row">
 												<div class="col-lg-12">

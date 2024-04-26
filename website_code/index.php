@@ -147,7 +147,7 @@
 
 								</div>
 								<div class="browse-btn">
-									<a href="explore_events.php" class="main-btn btn-hover "> Parcourir tout</a>
+									<a href="explore_events.php" class="main-btn btn-hover "> voir tout</a>
 								</div>
 							</div>
 						</div>

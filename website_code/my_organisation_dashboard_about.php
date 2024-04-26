@@ -344,7 +344,7 @@ if(!isset($_SESSION['user']['U_email'])){
 	<!-- Organisation Profile Update Model End-->
 	<!-- Header Start-->
 	<?php
-		include "include/navindex.php";
+		include "include/navcreateure.php";
 	?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
@@ -357,7 +357,7 @@ if(!isset($_SESSION['user']['U_email'])){
 				<div class="row">
 					<div class="col-md-12">
 						<div class="d-main-title">
-							<h3><i class="fa-solid fa-circle-info me-3"></i>About My Organisation</h3>
+							<h3><i class="fa-solid fa-circle-info me-3"></i>À propos de mon organisation</h3>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-12">
@@ -382,11 +382,11 @@ if(!isset($_SESSION['user']['U_email'])){
 										</div>
 									</div>
 									<div class="about-step">
-										<h5>Tell us about yourself and let people know who you are</h5>
+										<h5>Parlez-nous de vous et faites savoir aux gens qui vous êtes</h5>
 										<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt interdum nunc et auctor. Phasellus quis pharetra sapien. Integer ligula sem, sodales vitae varius in, varius eget augue.</p>
 									</div>
 									<div class="about-step">
-										<h5>Find me on</h5>
+										<h5>Trouver moi sur</h5>
 										<div class="social-links">
 											<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
 											<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -401,7 +401,7 @@ if(!isset($_SESSION['user']['U_email'])){
 										<p class="mb-0">00 Challis St, Newport, Victoria, 0000, Australia</p>
 									</div>
 									<div class="about-step">
-										<a href="#" class="view-profile-link a-link">View Public Profile<i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+										<a href="#" class="view-profile-link a-link">Afficher le profil public<i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
 									</div>
 								</div>
 							</div>

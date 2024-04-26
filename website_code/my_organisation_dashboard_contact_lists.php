@@ -124,7 +124,7 @@ if(!isset($_SESSION['user']['U_email'])){
 	<!-- Add Contact List Model End-->
 	<!-- Header Start-->
 	<?php
-		include "include/navindex.php";
+		include "include/navcreateure.php";
 	?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->

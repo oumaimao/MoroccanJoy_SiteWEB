@@ -53,8 +53,8 @@ $users_rej;
 <body class="d-flex flex-column h-100">
 	<!-- Header Start-->
 	<?php
-	include "include/navindex.php";
-	?>
+		include "include/navcreateure.php";
+		?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
 	<?php include 'include/CreateureVerticaleNav.php' ?>
@@ -66,7 +66,7 @@ $users_rej;
 				<div class="row">
 					<div class="col-md-12">
 						<div class="d-main-title">
-							<h3><i class="fa-solid fa-calendar-days me-3"></i>Events</h3>
+							<h3><i class="fa-solid fa-calendar-days me-3"></i>Événements</h3>
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -154,7 +154,7 @@ $users_rej;
 
 														<button class="option-btn" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></button>
 														<div class="dropdown-menu dropdown-menu-right">
-															<a href="event_update.php?id=<?php echo $user['E_id'] ?>" class="dropdown-item"><i class="fa-solid fa-gear me-3"></i>Modifier Event</a>
+															<a href="event_update_createure.php?id=<?php echo $user['E_id'] ?>" class="dropdown-item"><i class="fa-solid fa-gear me-3"></i>Modifier Event</a>
 															<a href="Event_Cr_detaille.php?id=<?php echo $user['E_id'] ?>" class="dropdown-item"><i class="fa-solid fa-eye me-3"></i>Détaille</a>
 															<a href="Event_Cr_Delete.php?id=<?php echo $user['E_id'] ?>" class="dropdown-item delete-event" onclick="return confirm( 'Voulez vous vraiment supprimer:  <?php echo $user['Titre'] ?>' );"><i class="fa-solid fa-trash-can me-3 text-danger"></i>supprimer</a>
 														</div>
@@ -172,7 +172,7 @@ $users_rej;
 														<span class="icon">
 															<i class="fa-solid fa-calendar-days"></i>
 														</span>
-														<p>Starts on</p>
+														<p>Commence a</p>
 														<h6 class="coupon-status">
 															<?php
 															$timestamp = strtotime($user['Date_debut']);
@@ -199,7 +199,7 @@ $users_rej;
 														<span class="icon">
 															<i class="fa-solid fa-tag"></i>
 														</span>
-														<p>Tickets sold</p>
+														<p>Ticketes vendu</p>
 														<h6 class="coupon-status"><?php echo $user['total_tickets'] ?></h6>
 													</div>
 

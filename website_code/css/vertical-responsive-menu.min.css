@@ -170,41 +170,9 @@
 	display: none;
 }
 
-.toggleMenu_verticale {
-	display: none;
-}
 @media (min-width:992px) {	
 .vertical_nav{
 	left: 0;
-}
-.toggleMenu_verticale {
-	display: block;
-    float: left;
-    line-height: 60px;
-    padding: 0;
-    background: 0 0;
-    border: 0;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.toggleMenu_verticale i {
-	width: 30px;
-    text-align: center;
-    display: block;
-    padding: 0;
-    border: 0;
-    background: #fff;
-    color: #737373;
-    font-size: 120%;
-    margin: 0;
-    cursor: pointer;
-    float: left;
-}
-
-.toggleMenu_verticale i:hover {
-    color: #ff9900;
 }
 	
 .toggle_menu {

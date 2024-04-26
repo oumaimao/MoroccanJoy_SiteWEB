@@ -6,13 +6,13 @@
 					<li class="menu--item">
 						<a href="my_organisation_dashboard.php" class="menu--link" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
 							<i class="fa-solid fa-gauge menu--icon"></i>
-							<span class="menu--label">Dashboard</span>
+							<span class="menu--label">Tableau de bord</span>
 						</a>
 					</li>
 					<li class="menu--item">
 						<a href="my_organisation_dashboard_events.php" class="menu--link" title="Events" data-bs-toggle="tooltip" data-bs-placement="right">
 							<i class="fa-solid fa-calendar-days menu--icon"></i>
-							<span class="menu--label">Events</span>
+							<span class="menu--label">Événements</span>
 						</a>
 					</li>
 					
@@ -24,7 +24,7 @@
 					<li class="menu--item">
 						<a href="my_organisation_dashboard_about.php" class="menu--link active" title="About" data-bs-toggle="tooltip" data-bs-placement="right">
 							<i class="fa-solid fa-circle-info menu--icon"></i>
-							<span class="menu--label">About</span>
+							<span class="menu--label">À propos</span>
 						</a>
 					</li>
                    

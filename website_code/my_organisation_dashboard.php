@@ -243,7 +243,7 @@ require_once "connect/DataBase.php";
 	<!-- Add Organisation Model End-->
 	<!-- Header Start-->
 	<?php
-	include "include/navindex.php";
+	include "include/navcreateure.php";
 	?>
 	<!-- Header End-->
 	<!-- Left Sidebar Start -->
@@ -256,7 +256,7 @@ require_once "connect/DataBase.php";
 				<div class="row">
 					<div class="col-md-12">
 						<div class="d-main-title">
-							<h3><i class="fa-solid fa-gauge me-3"></i>Dashboard</h3>
+							<h3><i class="fa-solid fa-gauge me-3"></i>Tableau de bord</h3>
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -267,12 +267,10 @@ require_once "connect/DataBase.php";
 								</div>
 								<div class="ocard-name">
 									<h4><?php echo $namee ?></h4>
-									<span>My Organisation</span>
+									<span>Mon Organisation</span>
 								</div>
 							</div>
-							<div class="ocard-right">
-								<button class="pe-4 ps-4 co-main-btn min-width" data-bs-toggle="modal" data-bs-target="#addorganisationModal"><i class="fa-solid fa-plus"></i>Add Organisation</button>
-							</div>
+						
 						</div>
 						<div class="main-card mt-4">
 							<div class="dashboard-wrap-content">
@@ -344,7 +342,7 @@ require_once "connect/DataBase.php";
 														}
 
 														?>
-														<span class="card-title fs-6">Revenue (MAD)</span>
+														<span class="card-title fs-6">Revenus (MAD)</span>
 														<span class="card-sub-title fs-3"><?php if ($rowr['R'] > 0) {
 																								echo $rowr['R'];
 																							} else {
@@ -392,7 +390,7 @@ require_once "connect/DataBase.php";
 
 													?>
 													<div class="card-content">
-														<span class="card-title fs-6">Page Views</span>
+														<span class="card-title fs-6">Pages vues</span>
 														<span class="card-sub-title fs-3"><?php if ($row['vew'] > 0) {
 																								echo $row['vew'];
 																							} else {
@@ -479,9 +477,9 @@ require_once "connect/DataBase.php";
 								<div class="rs">
 									<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 										<input type="radio" class="btn-check" name="btnradio" id="btnradio3" checked>
-										<label class="btn btn-outline-primary" for="btnradio3">Daily</label>
+										<label class="btn btn-outline-primary" for="btnradio3">Jour</label>
 										<input type="radio" class="btn-check" name="btnradio" id="btnradio1">
-										<label class="btn btn-outline-primary" for="btnradio1">Monthly</label>
+										<label class="btn btn-outline-primary" for="btnradio1">Moi</label>
 									</div>
 								</div>
 							</div>
@@ -656,8 +654,8 @@ require_once "connect/DataBase.php";
 		}
 
 		function updateChart(timePeriod, chartId) {
-			var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-			var day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+			var month = ['Jan', 'Fév', 'Mar', 'Avr', 'May', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc']
+			var day = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'dim']
 			var purchases;
 			var data_date;
 
