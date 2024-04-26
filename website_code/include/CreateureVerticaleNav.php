@@ -15,12 +15,7 @@
 							<span class="menu--label">Events</span>
 						</a>
 					</li>
-					<li class="menu--item">
-						<a href="my_organisation_dashboard_promotion.php" class="menu--link" title="Promotion" data-bs-toggle="tooltip" data-bs-placement="right">
-							<i class="fa-solid fa-rectangle-ad menu--icon"></i>
-							<span class="menu--label">Promotion</span>
-						</a>
-					</li>
+					
 					
 					
 					

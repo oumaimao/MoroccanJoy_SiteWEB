@@ -114,183 +114,214 @@ if (!isset($_SESSION['user']['U_email'])) {
 	<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="aboutModalLabel">Edit Details</h5>
-					<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
-				</div>
-				<div class="modal-body">
-					<div class="model-content main-form">
-						<div class="row">
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">First Name*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="John">
+				<form action="" method="post">
+					<div class="modal-header">
+						<h5 class="modal-title" id="aboutModalLabel">Edit Details</h5>
+						<button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
+					</div>
+					<div class="modal-body">
+
+						<div class="model-content main-form">
+							<div class="row">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">First Name*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="John">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Last Name*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="Doe">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Last Name*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="Doe">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-12 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Bio*</label>
-									<textarea class="form-textarea" placeholder=""></textarea>
+								<div class="col-lg-12 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Bio*</label>
+										<textarea class="form-textarea" placeholder=""></textarea>
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Email*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="Johndoe@example.com">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Email*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="Johndoe@example.com">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Phone*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Phone*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Website*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+
+								<?php
+								require_once './connect/DataBase.php';
+								if ($_SERVER["REQUEST_METHOD"] == "POST") {
+									$website = $_POST['website'];
+									$facebook = $_POST['facebook'];
+									$twitter = $_POST['twitter'];
+									$linkedin = $_POST['linkedin'];
+									$user_id = $_SESSION['user']['User_id'];
+
+									$stmt = $connection->prepare("INSERT INTO socialmedia (siteweb, facebook, twitter, linkedin, User_id) VALUES (:website, :facebook, :twitter, :linkedin, :user_id)");
+
+									// Bind parameters
+									$stmt->bindParam(':website', $website);
+									$stmt->bindParam(':facebook', $facebook);
+									$stmt->bindParam(':twitter', $twitter);
+									$stmt->bindParam(':linkedin', $linkedin);
+									$stmt->bindParam(':user_id', $user_id);
+
+									// Execute the statement
+									$stmt->execute();
+								}
+								?>
+
+
+
+
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Website*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="" name="website">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Facebook*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Facebook*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="" name="facebook">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
+								<!-- <div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Instagram*</label>
 									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Twitter*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+							</div> -->
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Twitter*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="" name="twitter">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">LinkedIn*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">LinkedIn*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="" name="linkedin">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
+								<!-- <div class="col-lg-6 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Youtube*</label>
 									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
-							</div>
-							<div class="col-lg-12 col-md-12">
-								<h4 class="address-title">Address</h4>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Address 1*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+							</div> -->
+								<div class="col-lg-12 col-md-12">
+									<h4 class="address-title">Address</h4>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Address 2*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Address 1*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group main-form mt-4">
-									<label class="form-label">Country*</label>
-									<select class="selectpicker" data-size="5" title="Nothing selected" data-live-search="true">
-										<option value="Algeria">Algeria</option>
-										<option value="Argentina">Argentina</option>
-										<option value="Australia">Australia</option>
-										<option value="Austria">Austria (Österreich)</option>
-										<option value="Belgium">Belgium (België)</option>
-										<option value="Bolivia">Bolivia</option>
-										<option value="Brazil">Brazil</option>
-										<option value="Canada">Canada</option>
-										<option value="Chile">Chile</option>
-										<option value="Colombia">Colombia</option>
-										<option value="Costa Rica">Costa Rica</option>
-										<option value="Cyprus">Cyprus</option>
-										<option value="Czech Republic">Czech Republic</option>
-										<option value="Denmark">Denmark</option>
-										<option value="Dominican Republic">Dominican Republic</option>
-										<option value="Estonia">Estonia</option>
-										<option value="Finland">Finland</option>
-										<option value="France">France</option>
-										<option value="Germany">Germany</option>
-										<option value="Greece">Greece</option>
-										<option value="Hong Kong">Hong Kong</option>
-										<option value="Iceland">Iceland</option>
-										<option value="India">India</option>
-										<option value="Indonesia">Indonesia</option>
-										<option value="Ireland">Ireland</option>
-										<option value="Israel">Israel</option>
-										<option value="Italy">Italy</option>
-										<option value="Japan">Japan</option>
-										<option value="Latvia">Latvia</option>
-										<option value="Lithuania">Lithuania</option>
-										<option value="Luxembourg">Luxembourg</option>
-										<option value="Malaysia">Malaysia</option>
-										<option value="Mexico">Mexico</option>
-										<option value="Morocco">Morocco</option>
-										<option value="Nepal">Nepal</option>
-										<option value="Netherlands">Netherlands</option>
-										<option value="New Zealand">New Zealand</option>
-										<option value="Norway">Norway</option>
-										<option value="Paraguay">Paraguay</option>
-										<option value="Peru">Peru</option>
-										<option value="Philippines">Philippines</option>
-										<option value="Poland">Poland</option>
-										<option value="Portugal">Portugal</option>
-										<option value="Singapore">Singapore</option>
-										<option value="Slovakia">Slovakia</option>
-										<option value="Slovenia">Slovenia</option>
-										<option value="South Africa">South Africa</option>
-										<option value="South Korea">South Korea</option>
-										<option value="Spain">Spain</option>
-										<option value="Sweden">Sweden</option>
-										<option value="Switzerland">Switzerland</option>
-										<option value="Tanzania">Tanzania</option>
-										<option value="Thailand">Thailand</option>
-										<option value="Turkey">Turkey</option>
-										<option value="United Kingdom">United Kingdom</option>
-										<option value="United States">United States</option>
-										<option value="Vietnam">Vietnam</option>
-									</select>
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Address 2*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">State*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group main-form mt-4">
+										<label class="form-label">Country*</label>
+										<select class="selectpicker" data-size="5" title="Nothing selected" data-live-search="true">
+											<option value="Algeria">Algeria</option>
+											<option value="Argentina">Argentina</option>
+											<option value="Australia">Australia</option>
+											<option value="Austria">Austria (Österreich)</option>
+											<option value="Belgium">Belgium (België)</option>
+											<option value="Bolivia">Bolivia</option>
+											<option value="Brazil">Brazil</option>
+											<option value="Canada">Canada</option>
+											<option value="Chile">Chile</option>
+											<option value="Colombia">Colombia</option>
+											<option value="Costa Rica">Costa Rica</option>
+											<option value="Cyprus">Cyprus</option>
+											<option value="Czech Republic">Czech Republic</option>
+											<option value="Denmark">Denmark</option>
+											<option value="Dominican Republic">Dominican Republic</option>
+											<option value="Estonia">Estonia</option>
+											<option value="Finland">Finland</option>
+											<option value="France">France</option>
+											<option value="Germany">Germany</option>
+											<option value="Greece">Greece</option>
+											<option value="Hong Kong">Hong Kong</option>
+											<option value="Iceland">Iceland</option>
+											<option value="India">India</option>
+											<option value="Indonesia">Indonesia</option>
+											<option value="Ireland">Ireland</option>
+											<option value="Israel">Israel</option>
+											<option value="Italy">Italy</option>
+											<option value="Japan">Japan</option>
+											<option value="Latvia">Latvia</option>
+											<option value="Lithuania">Lithuania</option>
+											<option value="Luxembourg">Luxembourg</option>
+											<option value="Malaysia">Malaysia</option>
+											<option value="Mexico">Mexico</option>
+											<option value="Morocco">Morocco</option>
+											<option value="Nepal">Nepal</option>
+											<option value="Netherlands">Netherlands</option>
+											<option value="New Zealand">New Zealand</option>
+											<option value="Norway">Norway</option>
+											<option value="Paraguay">Paraguay</option>
+											<option value="Peru">Peru</option>
+											<option value="Philippines">Philippines</option>
+											<option value="Poland">Poland</option>
+											<option value="Portugal">Portugal</option>
+											<option value="Singapore">Singapore</option>
+											<option value="Slovakia">Slovakia</option>
+											<option value="Slovenia">Slovenia</option>
+											<option value="South Africa">South Africa</option>
+											<option value="South Korea">South Korea</option>
+											<option value="Spain">Spain</option>
+											<option value="Sweden">Sweden</option>
+											<option value="Switzerland">Switzerland</option>
+											<option value="Tanzania">Tanzania</option>
+											<option value="Thailand">Thailand</option>
+											<option value="Turkey">Turkey</option>
+											<option value="United Kingdom">United Kingdom</option>
+											<option value="United States">United States</option>
+											<option value="Vietnam">Vietnam</option>
+										</select>
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">City/Suburb*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">State*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="">
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
-								<div class="form-group mt-4">
-									<label class="form-label">Zip/Post Code*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">City/Suburb*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group mt-4">
+										<label class="form-label">Zip/Post Code*</label>
+										<input class="form-control h_40" type="text" placeholder="" value="">
+									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-target="#aboutModal" data-bs-toggle="modal" data-bs-dismiss="modal">Cancel</button>
-					<button type="button" class="main-btn min-width btn-hover h_40">Update</button>
-				</div>
+					<div class="modal-footer">
+						<button type="button" class="co-main-btn min-width btn-hover h_40" data-bs-target="#aboutModal" data-bs-toggle="modal" data-bs-dismiss="modal">Cancel</button>
+						<button type="submit" class="main-btn min-width btn-hover h_40">Update</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -325,6 +356,8 @@ if (!isset($_SESSION['user']['U_email'])) {
 					<div class="row">
 						<div class="col-xl-4 col-lg-5 col-md-12">
 							<div class="main-card user-left-dt">
+
+
 								<div class="user-avatar-img">
 									<img src="images/profile-imgs/img-13.jpg" alt="">
 									<div class="avatar-img-btn">
@@ -332,11 +365,19 @@ if (!isset($_SESSION['user']['U_email'])) {
 										<label for="avatar-img"><i class="fa-solid fa-camera"></i></label>
 									</div>
 								</div>
+
+
+
+
+
+
+
 								<div class="user-dts">
 									<?php
 									require_once './connect/DataBase.php';
 									$emaill = $_SESSION['user']['U_email'];
 									$user_id = $_SESSION['user']['User_id'];
+
 									$stmt = $connection->prepare("SELECT U_name, U_Prenom FROM `user` WHERE User_id= :user_id");
 									$stmt->bindParam(":user_id", $user_id);
 									$stmt->execute();
@@ -359,12 +400,32 @@ if (!isset($_SESSION['user']['U_email'])) {
 								<div class="profile-social-link">
 									<h6>Find me on</h6>
 									<div class="social-links">
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
+										<?php
+
+										try {
+											require_once './connect/DataBase.php';
+
+											$stmt = $connection->prepare("SELECT siteweb, facebook, twitter, linkedin FROM socialmedia WHERE User_id = :user_id");
+
+											$user_id = $_SESSION['user']['User_id'];
+											$stmt->bindParam(':user_id', $user_id);
+											$stmt->execute();
+
+											$social_media_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+											 ?>
+												<a href="<?php echo $row['siteweb']; ?>" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
+												<a href="<?php echo $row['facebook']; ?>" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+												<!-- <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a> -->
+												<a href="<?php echo $row['twitter']; ?>" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
+												<a href="<?php echo $row['linkedin']; ?>" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+										<?php 
+										} catch (PDOException $e) {
+											echo "Error: " . $e->getMessage();
+										}
+										?>
+
+
 									</div>
 								</div>
 							</div>
@@ -391,7 +452,7 @@ if (!isset($_SESSION['user']['U_email'])) {
 											<div class="nav my-event-tabs mt-4" role="tablist">
 												<button class="event-link active" data-bs-toggle="tab" data-bs-target="#saved" type="button" role="tab" aria-controls="saved" aria-selected="true"><span class="event-count">1</span><span>Saved Events</span></button>
 												<button class="event-link" data-bs-toggle="tab" data-bs-target="#organised" type="button" role="tab" aria-controls="organised" aria-selected="false"><span class="event-count">2</span><span>Organised Events</span></button>
-												<button class="event-link" data-bs-toggle="tab" data-bs-target="#attending" type="button" role="tab" aria-controls="attending" aria-selected="false"><span class="event-count">1</span><span>Attending Events</span></button>
+												<button class="event-link" data-bs-toggle="tab" data-bs-target="#attending" type="button" role="tab" aria-controls="attending" aria-selected="false"><span class="event-count">3</span><span>Attending Events</span></button>
 											</div>
 											<div class="tab-content">
 												<div class="tab-pane fade show active" id="saved" role="tabpanel">
@@ -403,7 +464,6 @@ if (!isset($_SESSION['user']['U_email'])) {
 														$stmt = $connection->prepare("SELECT e.*, se.* FROM saveevent se JOIN event e ON se.E_id = e.E_id;");
 														$stmt->execute();
 														$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
-														// var_dump($events);
 														?>
 
 														<?php foreach ($events as $event) : ?>
@@ -430,7 +490,11 @@ if (!isset($_SESSION['user']['U_email'])) {
 																				echo "$day, ";
 																				echo "$year ";
 																				?>
-																				<?php echo $event['Heure_debut']; ?>
+																				<?php
+																				$heure_debut = $event['Heure_debut'];
+																				$heure_debut_am_pm = date("g:i A", strtotime($heure_debut));
+																				echo $heure_debut_am_pm;
+																				?>
 																			</div>
 
 																			<div class="event-btn-group d-flex">
@@ -468,56 +532,94 @@ if (!isset($_SESSION['user']['U_email'])) {
 												<div class="tab-pane fade" id="organised" role="tabpanel">
 													<div class="row">
 														<div class="col-md-12">
-															<div class="main-card mt-4">
-																<div class="card-top p-4">
-																	<div class="card-event-img">
-																		<img src="images/event-imgs/img-6.jpg" alt="">
-																	</div>
-																	<div class="card-event-dt">
-																		<h5>Step Up Open Mic Show</h5>
-																		<div class="evnt-time">Thu, Jun 30, 2022 4:30 AM</div>
-																		<div class="event-btn-group">
-																			<button class="esv-btn me-2" onclick="window.location.href='create_online_event.html'"><i class="fa-solid fa-gear me-2"></i>Manage Event</button>
+															<?php
+															require_once './connect/DataBase.php';
+
+															if (isset($_SESSION['user']['User_id'])) {
+																$userId = $_SESSION['user']['User_id'];
+
+
+																$sqlState = $connection->prepare("SELECT * FROM `event` WHERE User_id=?");
+																$sqlState->execute([$userId]);
+																$events = $sqlState->fetchAll(PDO::FETCH_ASSOC);
+
+																if (count($events) > 0) {
+																	foreach ($events as $event) {
+															?>
+																		<div class="main-card mt-4">
+																			<div class="card-top p-4">
+																				<div class="card-event-img">
+																					<img src="upload/images/<?php echo $event['Image']; ?>" alt="">
+																				</div>
+																				<div class="card-event-dt">
+																					<h5><?php echo $event['Titre']; ?></h5>
+																					<div class="evnt-time"><?php echo date("D, M d, Y g:i A", strtotime($event['Heure_debut'])); ?></div>
+																					<div class="event-btn-group">
+																						<button class="esv-btn me-2" onclick="window.location.href='event_update.php?id=<?php echo $event['E_id'] ?>'"><i class="fa-solid fa-gear me-2"></i>Manage Event</button>
+																					</div>
+																				</div>
+																			</div>
 																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="main-card mt-4">
-																<div class="card-top p-4">
-																	<div class="card-event-img">
-																		<img src="images/event-imgs/img-7.jpg" alt="">
-																	</div>
-																	<div class="card-event-dt">
-																		<h5>Tutorial on Canvas Painting for Beginners</h5>
-																		<div class="evnt-time">Sun, Jul 17, 2022 5:30 AM</div>
-																		<div class="event-btn-group">
-																			<button class="esv-btn me-2" onclick="window.location.href='create_online_event.html'"><i class="fa-solid fa-gear me-2"></i>Manage Event</button>
-																		</div>
-																	</div>
-																</div>
-															</div>
+															<?php
+																	}
+																} else {
+																	echo "<p>No events found for this user.</p>";
+																}
+															} else {
+																echo "<p>User not logged in.</p>";
+															}
+															?>
 														</div>
+
 													</div>
 												</div>
 												<div class="tab-pane fade" id="attending" role="tabpanel">
 													<div class="row">
 														<div class="col-md-12">
-															<div class="main-card mt-4">
-																<div class="card-top p-4">
-																	<div class="card-event-img">
-																		<img src="images/event-imgs/img-6.jpg" alt="">
-																	</div>
-																	<div class="card-event-dt">
-																		<h5>Step Up Open Mic Show</h5>
-																		<div class="evnt-time">Thu, Jun 30, 2022 4:30 AM</div>
-																		<div class="event-btn-group">
-																			<button class="esv-btn me-2" onclick="window.location.href='invoice.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View Ticket</button>
+															<?php
+															require_once './connect/DataBase.php';
+
+															if (isset($_SESSION['user']['User_id'])) {
+																$userId = $_SESSION['user']['User_id'];
+
+																$stmt = $connection->prepare("SELECT ticket.Ticket_id, event.*
+                                    FROM ticket
+                                    INNER JOIN `event` ON ticket.E_id = event.E_id
+                                    WHERE ticket.User_id=?");
+																$stmt->execute([$userId]);
+																$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+																if (count($data) > 0) {
+																	foreach ($data as $row) {
+															?>
+																		<div class="main-card mt-4">
+																			<div class="card-top p-4">
+																				<div class="card-event-img">
+																					<img src="upload/images/<?php echo $row['Image']; ?>" alt="">
+																				</div>
+																				<div class="card-event-dt">
+																					<h5><?php echo $row['Titre']; ?></h5>
+																					<div class="evnt-time"><?php echo date("D, M d, Y g:i A", strtotime($row['Heure_debut'])); ?></div>
+																					<div class="event-btn-group">
+																						<button class="esv-btn me-2" onclick="window.location.href='invoice_ticket.php?Ticket_id=<?php echo $row['Ticket_id']; ?>'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View Ticket</button>
+																					</div>
+																				</div>
+																			</div>
 																		</div>
-																	</div>
-																</div>
-															</div>
+															<?php
+																	}
+																} else {
+																	echo "<p>No data found for this user.</p>";
+																}
+															} else {
+																echo "<p>User not logged in.</p>";
+															}
+															?>
+
 														</div>
 													</div>
+
+
 												</div>
 											</div>
 										</div>
@@ -542,10 +644,10 @@ if (!isset($_SESSION['user']['U_email'])) {
 														<h5>Find me on</h5>
 														<div class="social-links">
 															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
+															<!-- <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a> -->
 															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
 															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
+															<!-- <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a> -->
 															<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
 														</div>
 													</div>
@@ -570,15 +672,36 @@ if (!isset($_SESSION['user']['U_email'])) {
 														<div class="tab-content">
 															<div class="tab-pane fade show active" id="tab-02" role="tabpanel">
 																<div class="bp-title">
-																	<h4>Paramètres de mot de passe</h4>
+																	<h4>Password Settings</h4>
 																</div>
 																<div class="password-setting p-4">
 																	<div class="password-des">
-																		<h4>Changer le mot de passe</h4>
-																		<p>Vous pouvez mettre à jour votre mot de passe à partir d'ici. Si vous ne vous souvenez plus de votre mot de passe actuel, déconnectez-vous simplement et cliquez sur Mot de passe oublié.</p>
+																		<h4>Change password</h4>
+																		<p>You can update your password from here. If you can't remember your current password, just log out and click on Forgot password.</p>
 																	</div>
-																	<div class="change-password-form">																		
-																		<a href="password_update.php"><button class="main-btn btn-hover w-100 mt-5" type="submit">Mettre à jour le mot de passe</button></a>
+																	<div class="change-password-form">
+																		<div class="form-group mt-4">
+																			<label class="form-label">Current password*</label>
+																			<div class="loc-group position-relative">
+																				<input class="form-control h_50" type="password" placeholder="Enter your password">
+																				<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+																			</div>
+																		</div>
+																		<div class="form-group mt-4">
+																			<label class="form-label">New password*</label>
+																			<div class="loc-group position-relative">
+																				<input class="form-control h_50" type="password" placeholder="Enter your password">
+																				<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+																			</div>
+																		</div>
+																		<div class="form-group mt-4">
+																			<label class="form-label">Confirm new password*</label>
+																			<div class="loc-group position-relative">
+																				<input class="form-control h_50" type="password" placeholder="Enter your password">
+																				<span class="pass-show-eye"><i class="fas fa-eye-slash"></i></span>
+																			</div>
+																		</div>
+																		<button class="main-btn btn-hover w-100 mt-5" type="submit">Update Password</button>
 																	</div>
 																</div>
 															</div>

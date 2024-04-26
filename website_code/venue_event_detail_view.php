@@ -1,12 +1,10 @@
-﻿<?php 
-session_start();
-
+﻿<?php session_start(); ?>
+<?php
 if (isset($_POST['Booknow'])) {
 
 	header('location:checkout.php');
-	
 }
-if(!isset($_SESSION['user']['U_email'])){
+if (!isset($_SESSION['user']['U_email'])) {
 	header('location:sign_in.php');
 }
 
@@ -16,6 +14,7 @@ if(!isset($_SESSION['user']['U_email'])){
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,7 +73,7 @@ if(!isset($_SESSION['user']['U_email'])){
 					require_once './connect/DataBase.php';
 
 					$E_id = $_GET['event_id'];
-					$_SESSION['E_id']=$E_id;
+					$_SESSION['E_id'] = $E_id;
 					$stmt = $connection->prepare("SELECT * FROM `event` WHERE E_id = :E_id");
 
 					$stmt->bindParam(':E_id', $E_id);
@@ -82,12 +81,12 @@ if(!isset($_SESSION['user']['U_email'])){
 					$stmt->execute();
 
 					$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-					
-										// Query to update page views
-										$sql = "UPDATE `event` SET vue = vue + 1 WHERE E_id = '$E_id' ";
-										if ($connection->query($sql) === TRUE) {
-											echo "Page views updated successfully";
-										} 
+
+					// Query to update page views
+					$sql = "UPDATE `event` SET vue = vue + 1 WHERE E_id = '$E_id' ";
+					if ($connection->query($sql) === TRUE) {
+						echo "Page views updated successfully";
+					}
 
 					?>
 					<?php foreach ($results as $row) : ?>
@@ -105,7 +104,7 @@ if(!isset($_SESSION['user']['U_email'])){
 								</div>
 								<div class="event-top-dt">
 									<h3 class="event-main-title"><?php echo $row['Titre'];
-									$_SESSION['eventname'] =$row['Titre']?></h3>
+																	$_SESSION['eventname'] = $row['Titre'] ?></h3>
 									<div class="event-top-info-status">
 										<span class="event-type-name"><i class="fa-solid fa-location-dot"></i>Venue Event</span>
 										<span class="event-type-name details-hr">Starts on <span class="ev-event-date"><?php
@@ -119,10 +118,13 @@ if(!isset($_SESSION['user']['U_email'])){
 																														echo "$monthAbbreviation ";
 																														echo "$day, ";
 																														echo "$year ";
-																														
+
 																														?>
-												<?php echo $row['Heure_debut'];
-												$_SESSION['date']=$dayAbbreviation.",  ".$monthAbbreviation."/".$day."/".$year." Durée: ".$row['Heure_fin']; ?> PM</span></span>
+												<?php
+												$heure_debut = $row['Heure_debut'];
+												$heure_debut_am_pm = date("g:i A", strtotime($heure_debut));
+												echo $heure_debut_am_pm;
+												?></span></span>
 										<span class="event-type-name details-hr"><?php echo $row['Heure_fin']; ?>h</span>
 									</div>
 								</div>
@@ -172,13 +174,13 @@ if(!isset($_SESSION['user']['U_email'])){
 										}
 										?>
 										<!-- <button class="sv-btn me-2"><i class="fa-regular fa-bookmark me-2"></i>Save</button> -->
-									<button class="sv-btn" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-share-nodes me-2"></i>Share</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#"><i class="fa-brands fa-facebook me-3"></i>Facebook</a></li>
-										<li><a class="dropdown-item" href="#"><i class="fa-brands fa-twitter me-3"></i>Twitter</a></li>
-										<li><a class="dropdown-item" href="#"><i class="fa-brands fa-linkedin-in me-3"></i>LinkedIn</a></li>
-										<li><a class="dropdown-item" href="#"><i class="fa-regular fa-envelope me-3"></i>Email</a></li>
-									</ul>
+										<button class="sv-btn" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-share-nodes me-2"></i>Share</button>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="#"><i class="fa-brands fa-facebook me-3"></i>Facebook</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fa-brands fa-twitter me-3"></i>Twitter</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fa-brands fa-linkedin-in me-3"></i>LinkedIn</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fa-regular fa-envelope me-3"></i>Email</a></li>
+										</ul>
 									</form>
 
 
@@ -261,7 +263,7 @@ if(!isset($_SESSION['user']['U_email'])){
 
 
 
-									
+
 								</div>
 								<div class="main-event-content">
 									<h4>About This Event</h4>
@@ -301,18 +303,18 @@ if(!isset($_SESSION['user']['U_email'])){
 										$stmt->bindParam(":user_id", $row['User_id']);
 										$stmt->execute();
 										$user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-										if ($user !== false) { // Check if fetch was successful
-											?>
-											<h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
-											<a href="attendee_profile_view.php?user_id=<?php echo $row['User_id']; ?>">View Profile</a>
-											<?php
-										} else {
-											echo "User not found"; // Or handle the error in another appropriate way
-										}
 										?>
-									</div>
+										<h5><?php echo $user['U_name'] . " " . $user['U_Prenom']; ?></h5>
 
+
+
+										<?php $eventId = $_GET['event_id']; ?>
+										<a href="attendee_profile_view.php?E_id=<?php echo $eventId; ?>">View Profile</a>
+
+										
+
+
+									</div>
 								</div>
 								<div class="event-dt-right-group">
 									<div class="event-dt-right-icon">
@@ -331,7 +333,11 @@ if(!isset($_SESSION['user']['U_email'])){
 											echo "$monthAbbreviation ";
 											echo "$day, ";
 											echo "$year ";
-											?> <?php echo $row['Heure_debut']; ?> PM</h5>
+											?> <?php
+												$heure_debut = $row['Heure_debut'];
+												$heure_debut_am_pm = date("g:i A", strtotime($heure_debut));
+												echo $heure_debut_am_pm;
+												?> </h5>
 										<div class="add-to-calendar">
 											<a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 												<i class="fa-regular fa-calendar-days me-3"></i>Add to Calendar
@@ -358,14 +364,14 @@ if(!isset($_SESSION['user']['U_email'])){
 
 								<form action="" method="post">
 									<div class="select-tickets-block">
-										
-										
+
+
 										<div class="xtotel-tickets-count">
 											<div class="x-title">Ticket</div>
 											<h4>MAD <span><?php echo $row['Prix_ticket'];
-											$_SESSION['Prix_ticket']= $row['Prix_ticket'];?></span></h4>
+															$_SESSION['Prix_ticket'] = $row['Prix_ticket']; ?></span></h4>
 										</div>
-										
+
 									</div>
 									<div class="booking-btn">
 										<input type="submit" value="Book Now" name="Booknow" class="main-btn btn-hover w-100">
@@ -423,7 +429,11 @@ if(!isset($_SESSION['user']['U_email'])){
 																	echo "$dayAbbreviation ";
 
 
-																	?><?php echo $row['Heure_debut']; ?> PM</span>
+																	?><?php
+																		$heure_debut = $row['Heure_debut'];
+																		$heure_debut_am_pm = date("g:i A", strtotime($heure_debut));
+																		echo $heure_debut_am_pm;
+																		?></span>
 														</div>
 														<span class="publish-time"><i class="fa-solid fa-clock me-2"></i><?php echo $row['Heure_fin']; ?>h</span>
 													</div>

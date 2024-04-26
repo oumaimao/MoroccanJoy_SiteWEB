@@ -1,33 +1,37 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+?>
+<!DOCTYPE html>
 <html lang="en" class="h-100">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
-		<meta name="description" content="Gambolthemes">
-		<meta name="author" content="Gambolthemes">		
-		<title>MoroccanJoy - Système de billetterie d'événements en ligne simple</title>
-		
-		<!-- Favicon Icon -->
-		<link rel="icon" type="image/png" href="images/fav.png">
-		
-		<!-- Stylesheets -->
-		<link rel="preconnect" href="https://fonts.googleapis.com/">
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
-		<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/responsive.css" rel="stylesheet">
-		<link href="css/night-mode.css" rel="stylesheet">
-		
-		<!-- Vendor Stylesheets -->
-		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">		
-		
-	</head>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+	<meta name="description" content="Gambolthemes">
+	<meta name="author" content="Gambolthemes">
+	<title>MoroccanJoy - Système de billetterie d'événements en ligne simple</title>
+
+	<!-- Favicon Icon -->
+	<link rel="icon" type="image/png" href="images/fav.png">
+
+	<!-- Stylesheets -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+	<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link href="css/night-mode.css" rel="stylesheet">
+
+	<!-- Vendor Stylesheets -->
+	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+	<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+
+</head>
 
 <body class="d-flex flex-column h-100">
 	<!-- Follow People Model Start-->
@@ -45,12 +49,12 @@
 								<li class="nav-item d-flex me-4">
 									<a class="nav-link px-0 pt-0 pb-3 active" id="pills-following-tab" data-bs-toggle="pill" href="#following" role="tab" aria-controls="following" aria-selected="true">Suivante <span class="following_count">(2)</span></a>
 								</li>
-										<li class="nav-item d-flex">
-									<a class="nav-link px-0 pt-0 pb-3" id="pills-followers-tab" data-bs-toggle="pill" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Suiveuses  </a>
+								<li class="nav-item d-flex">
+									<a class="nav-link px-0 pt-0 pb-3" id="pills-followers-tab" data-bs-toggle="pill" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Suiveuses </a>
 								</li>
 							</ul>
 							<div class="tab-content mt-4">
-								<div class="tab-pane fade active show" id="following" role="tabpanel" aria-labelledby="pills-following-tab">							
+								<div class="tab-pane fade active show" id="following" role="tabpanel" aria-labelledby="pills-following-tab">
 									<div class="users-list min-height-430">
 										<div class="user-follow-card mb-4">
 											<div class="follow-card-left">
@@ -82,7 +86,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="pills-followers-tab">							
+								<div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="pills-followers-tab">
 									<div id="followers-empty-state" class="d-flex align-items-center justify-content-center flex-column min-height-430">
 										<span>
 											<svg width="60" height="47" viewBox="0 0 60 47" fill="none">
@@ -114,15 +118,15 @@
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">Sujette*</label>
-									<input class="form-control h_40" type="text" placeholder="" value="">																								
+									<input class="form-control h_40" type="text" placeholder="" value="">
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
 								<div class="form-group mt-4">
 									<label class="form-label">message*</label>
-									<textarea class="form-textarea"  placeholder=""></textarea>																							
+									<textarea class="form-textarea" placeholder=""></textarea>
 								</div>
-							</div>					
+							</div>
 						</div>
 					</div>
 				</div>
@@ -135,14 +139,14 @@
 	</div>
 	<!-- Contact Model End-->
 	<!-- Header Start-->
-	<?php include "include/nav.php";?>
+	<?php include "include/nav.php"; ?>
 	<!-- Header End-->
 	<!-- Body Start-->
 	<div class="wrapper">
 		<div class="profile-banner">
 			<div class="hero-cover-block">
 				<div class="hero-cover">
-					<div class="hero-cover-img"></div>	
+					<div class="hero-cover-img"></div>
 				</div>
 			</div>
 			<div class="user-dt-block">
@@ -154,28 +158,102 @@
 									<img src="images/profile-imgs/img-2.jpg" alt="">
 								</div>
 								<div class="user-dts">
-									<h4 class="user-name">Jassica William<span class="verify-badge"><i class="fa-solid fa-circle-check"></i></span></h4>
-									<span class="user-email">jassica@example.com</span>
-								</div>
-								<div class="ff-block">
-									<a href="#" class="" role="button" data-bs-toggle="modal" data-bs-target="#FFModal"><span>0</span>Followers</a>
-									<a href="#" class="" role="button" data-bs-toggle="modal" data-bs-target="#FFModal"><span>2</span>Following</a>
+									<?php
+									require_once './connect/DataBase.php';
+									if (isset($_GET['E_id'])) {
+										$eventId = $_GET['E_id'];
+
+										$stmt = $connection->prepare("SELECT User_id FROM `event` WHERE E_id = ?");
+										$stmt->execute([$eventId]);
+										$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+										if ($result) {
+											$userId = $result['User_id'];
+
+											$stmt = $connection->prepare("SELECT U_name, U_Prenom, U_email FROM `user` WHERE User_id = ?");
+											$stmt->execute([$userId]);
+											$userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+											if ($userData) {
+												$userName = $userData['U_name'];
+												$userPrenom = $userData['U_Prenom'];
+												$userEmail = $userData['U_email'];
+											} else {
+												echo "User data not found.";
+											}
+										} else {
+											echo "Event not found.";
+										}
+									} else {
+										echo "E_id not provided.";
+									}
+									?>
+
+									<h4 class="user-name"><?php echo $userPrenom . " " . $userName;
+															?><span class="verify-badge"><i class="fa-solid fa-circle-check"></i></span></h4>
+									<span class="user-email"><?php echo $userEmail; ?></span>
 								</div>
 								<div class="user-description">
-									<p>Salut, c'est Jassica William</p>
+									<p>Salut, c'est <?php echo $userPrenom . " " . $userName; ?></p>
+								</div>
+
+
+
+								<?php
+								require_once './connect/DataBase.php';
+
+								$followersCount = 0;
+								$followingCount = 0;
+								$user_id_to_follow = 0;
+
+								if (isset($_SESSION['user']['User_id'])) {
+									$user_id = $_SESSION['user']['User_id'];
+
+									// Query to get followers count
+									$stmt = $connection->prepare("SELECT COUNT(*) AS followers_count FROM Suivre WHERE Following = ?");
+									$stmt->execute([$user_id]);
+									$followersCount = $stmt->fetch(PDO::FETCH_ASSOC)['followers_count'];
+
+									// Query to get following count
+									$stmt = $connection->prepare("SELECT COUNT(*) AS following_count FROM Suivre WHERE Followers = ?");
+									$stmt->execute([$user_id]);
+									$followingCount = $stmt->fetch(PDO::FETCH_ASSOC)['following_count'];
+								}
+
+								if (isset($_POST['following_id'])) {
+									$user_id_to_follow = $_POST['following_id'];
+									$follower_id = $_SESSION['user']['User_id'];
+
+									// Insert record into Suivre table
+									$stmt = $connection->prepare("INSERT INTO Suivre (Followers, Following, User_id) VALUES (?, ?, ?)");
+									$stmt->execute([$follower_id, $user_id_to_follow, $follower_id]);
+								}
+								?>
+
+								<div class="ff-block">
+									<a href="#" class="" role="button" data-bs-toggle="modal" data-bs-target="#FFModal">12 </span>Followers</a>
+									<a href="#" class="" role="button" data-bs-toggle="modal" data-bs-target="#FFModal">35 </span>Following</a>
 								</div>
 								<div class="user-btns">
-									<button class="main-btn btn-hover min-width h_40 me-2">Suivre</button>
-									<button class="co-main-btn min-width h_40" data-bs-toggle="modal" data-bs-target="#contactModal">Contactez-nous</button>
+									<form action="" method="post">
+										<input type="hidden" name="following_id" value="<?php echo $user_id_to_follow; ?>">
+										<button type="submit" class="main-btn btn-hover min-width h_40 me-2">Suivre</button>
+										<button class="co-main-btn min-width h_40" data-bs-toggle="modal" data-bs-target="#contactModal">Contactez-nous</button>
+									</form>
 								</div>
+
+
+
+
+
+
+
 								<div class="profile-social-link">
 									<h6>Trouvez-moi sur</h6>
 									<div class="social-links">
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
 										<a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Website"><i class="fa-solid fa-globe"></i></a>
 									</div>
 								</div>
@@ -186,34 +264,43 @@
 								<div class="user-events">
 									<div class="row">
 										<div class="col-md-12">
-											<div class="main-card mt-4">
-												<div class="card-top p-4 border-bottom-0">
-													<div class="card-event-img">
-														<img src="images/event-imgs/img-6.jpg" alt="">
-													</div>
-													<div class="card-event-dt">
-														<h5>Émission de microphone ouvrir</h5>
-														<div class="evnt-time">Jeu, 30 juin 2022 4h30</div>
-														<div class="event-btn-group">
-															<button class="esv-btn me-2" onclick="window.location.href='venue_event_detail_view.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Voir</button>
+											<?php
+											require_once './connect/DataBase.php';
+
+											if (isset($_GET['E_id'])) {
+												$eventId = $_GET['E_id'];
+
+
+												$sqlState = $connection->prepare("SELECT * FROM `event` WHERE E_id=?");
+												$sqlState->execute([$eventId]);
+												$events = $sqlState->fetchAll(PDO::FETCH_ASSOC);
+
+												if (count($events) > 0) {
+													foreach ($events as $event) {
+											?>
+														<div class="main-card mt-4">
+															<div class="card-top p-4">
+																<div class="card-event-img">
+																	<img src="upload/images/<?php echo $event['Image']; ?>" alt="">
+																</div>
+																<div class="card-event-dt">
+																	<h5><?php echo $event['Titre']; ?></h5>
+																	<div class="evnt-time"><?php echo date("D, M d, Y g:i A", strtotime($event['Heure_debut'])); ?></div>
+																	<div class="event-btn-group">
+																		<button class="esv-btn me-2" onclick="window.location.href='venue_event_detail_view.php?event_id=<?php echo $event['E_id'] ?>'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View</button>
+																	</div>
+																</div>
+															</div>
 														</div>
-													</div>
-												</div>																
-											</div>
-											<div class="main-card mt-4">
-												<div class="card-top p-4 border-bottom-0">
-													<div class="card-event-img">
-														<img src="images/event-imgs/img-7.jpg" alt="">
-													</div>
-													<div class="card-event-dt">
-														<h5>Tutorial Canvas Painting pour Débutantes</h5>
-														<div class="evnt-time">Soleil, 17 juillet, 2022 5:30 AM </div>
-														<div class="event-btn-group">
-															<button class="esv-btn me-2" onclick="window.location.href='online_event_detail_view.html'"><i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Voir</button>
-														</div>
-													</div>
-												</div>																
-											</div>
+											<?php
+													}
+												} else {
+													echo "<p>No events found for this user.</p>";
+												}
+											} else {
+												echo "<p>User not logged in.</p>";
+											}
+											?>
 										</div>
 									</div>
 								</div>
@@ -227,16 +314,17 @@
 	</div>
 	<!-- Body End-->
 	<!-- Footer Start-->
-	<?php include "include/Footer.php";?>
+	<?php include "include/Footer.php"; ?>
 	<!-- Footer End-->
-	
-	
-	
+
+
+
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="vendor/OwlCarousel/owl.carousel.js"></script>
-	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>	
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
 </body>
+
 </html>

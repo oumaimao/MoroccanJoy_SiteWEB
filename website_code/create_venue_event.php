@@ -1,58 +1,51 @@
-﻿﻿﻿<?php session_start();?>
-<?php 
+﻿﻿<?php session_start(); ?>
+<?php
 
-	if(!isset($_SESSION['user']['U_email'])){
-		header('location:sign_in.php');
-	}
-
-	require_once "connect/DataBase.php";
-
-	$chk=False;
-	$k=False;
-	if(isset($_POST['envoyer'])){
-		if(!empty($_POST['event_name'])&& !empty($_POST['categorie'])&& !empty($_POST['date'])&& !empty($_POST['time'])&& !empty($_POST['Duration'])&& !empty($_POST['Address1'])&& !empty($_POST['Address2'])&& !empty($_POST['State']) && !empty($_POST['Country']) && !empty($_POST['City']) && !empty($_POST['State']) && !empty($_POST['arr']) && !empty($_POST['Zip']) && !empty($_POST['P_tickts'])&& !empty($_POST['N_tickts'])){
-			$event_name=$_POST['event_name'];
-		$categorie=$_POST['categorie'];
-		$datee=$_POST['date'];
-		$timee=$_POST['time'];
-		$Duration=$_POST['Duration'];
-		$Address1=$_POST['Address1'];
-		$Address2=$_POST['Address2'];
-		$Country=$_POST['Country'];
-		$Statee=$_POST['State'];
-		$City=$_POST['City'];
-		$Zip=$_POST['Zip'];
-        $arr=$_POST['arr'];
-		$N_tickts=$_POST['N_tickts'];
-        $P_tickts=$_POST['P_tickts'];
-		$user_id = $_SESSION['user']['User_id'];
-		$filename="";
-		
-		if(isset($_FILES['image'])){
-			$image=$_FILES['image']['name'];
-			$filename=uniqid().$image;
-			echo "$filename";
-			move_uploaded_file($_FILES['image']['tmp_name'],'upload/images/'.$filename);
-			
-	
-		}
-	if( $sql= $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")){
-        $sql->execute([$event_name,$datee,$timee,$Duration,$Address1,$Address2,$Country,$Statee,$City,$Zip,$arr,$filename,$categorie,$P_tickts,$N_tickts,$user_id]);
-		$chk=True;
-	
-	
-
-	}else{
-		$chk=True;
-	}
-		}else{
-			
-				$k=True;
-			
-		}
-			
+if (!isset($_SESSION['user']['U_email'])) {
+	header('location:sign_in.php');
 }
-		
+
+require_once "connect/DataBase.php";
+
+$chk = False;
+$k = False;
+if (isset($_POST['envoyer'])) {
+	if (!empty($_POST['event_name']) && !empty($_POST['categorie']) && !empty($_POST['date']) && !empty($_POST['time']) && !empty($_POST['Duration']) && !empty($_POST['Address1']) && !empty($_POST['Address2']) && !empty($_POST['State']) && !empty($_POST['Country']) && !empty($_POST['City']) && !empty($_POST['State']) && !empty($_POST['arr']) && !empty($_POST['Zip']) && !empty($_POST['P_tickts']) && !empty($_POST['N_tickts'])) {
+		$event_name = $_POST['event_name'];
+		$categorie = $_POST['categorie'];
+		$datee = $_POST['date'];
+		$timee = $_POST['time'];
+		$Duration = $_POST['Duration'];
+		$Address1 = $_POST['Address1'];
+		$Address2 = $_POST['Address2'];
+		$Country = $_POST['Country'];
+		$Statee = $_POST['State'];
+		$City = $_POST['City'];
+		$Zip = $_POST['Zip'];
+		$arr = $_POST['arr'];
+		$N_tickts = $_POST['N_tickts'];
+		$P_tickts = $_POST['P_tickts'];
+		$user_id = $_SESSION['user']['User_id'];
+		$filename = "";
+
+		if (isset($_FILES['image'])) {
+			$image = $_FILES['image']['name'];
+			$filename = uniqid() . $image;
+			echo "$filename";
+			move_uploaded_file($_FILES['image']['tmp_name'], 'upload/images/' . $filename);
+		}
+		if ($sql = $connection->prepare("INSERT INTO `demande` VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")) {
+			$sql->execute([$event_name, $datee, $timee, $Duration, $Address1, $Address2, $Country, $Statee, $City, $Zip, $arr, $filename, $categorie, $P_tickts, $N_tickts, $user_id]);
+			$chk = True;
+		} else {
+			$chk = True;
+		}
+	} else {
+
+		$k = True;
+	}
+}
+
 
 
 
@@ -152,21 +145,23 @@
 														<div class="row">
 															<div class="col-lg-12 col-md-12">
 																<div class="form-group border_bottom pb_30">
-																	<label class="form-label fs-16">Donnez un nom à votre événement.</label>
+																	<label class="form-label fs-16">Give your event a name.</label>
+																	<p class="mt-2 d-block fs-14 mb-3">See how your name appears on the event page and a list of all places where your event name will be used. <a href="#" class="a-link">Learn more</a></p>
 																	<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="event_name">
 																</div>
 																<div class="form-group border_bottom pb_30">
-																	<label class="form-label fs-16">Donnez le prix de votre billet.</label>
+																	<label class="form-label fs-16">Give your prix_tickes.</label>
 
 																	<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="P_tickts">
 																</div>
 																<div class="form-group border_bottom pb_30">
-																<label class="form-label fs-16">Indiquez combien de tickets existent.</label>
-																
-																<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="N_tickts">
-															</div>														
+																	<label class="form-label fs-16">Give your number_tickes.</label>
+
+																	<input class="form-control h_50" type="text" placeholder="Enter event name here" value="" name="N_tickts">
+																</div>
 																<div class="form-group border_bottom pt_30 pb_30">
-																	<label class="form-label fs-16">Choisissez une catégorie pour votre événement.*</label>
+																	<label class="form-label fs-16">Choose a category for your event.*</label>
+																	<p class="mt-2 d-block fs-14 mb-3">Choosing relevant categories helps to improve the discoverability of your event. <a href="#" class="a-link">Learn more</a></p>
 																	<select class="selectpicker" data-selected-text-format="count > 4" title="Select category" data-live-search="true" name="categorie">
 																		<?php
 																		$gategoriess = $connection->query('SELECT * FROM `categorie`')->fetchAll(PDO::FETCH_ASSOC);
@@ -182,11 +177,11 @@
 																	</select>
 																</div>
 																<div class="form-group border_bottom pt_30 pb_30">
-																	<label class="form-label fs-16">Quand a lieu votre événement ?*</label>
-																	<p class="mt-2 fs-14 d-block mb-3">Informez vos participants du début de votre événement afin qu'ils puissent se préparer à y assister.</p>
+																	<label class="form-label fs-16">When is your event?*</label>
+																	<p class="mt-2 fs-14 d-block mb-3">Tell your attendees when your event starts so they can get ready to attend.</p>
 																	<div class="row g-2">
 																		<div class="col-md-6">
-																			<label class="form-label mt-3 fs-6">Date de l'événement.*</label>
+																			<label class="form-label mt-3 fs-6">Event Date.*</label>
 																			<div class="loc-group position-relative">
 																				<input class="form-control h_50 datepicker-here" data-language="en" type="text" placeholder="MM/DD/YYYY" value="" name="date">
 																				<span class="absolute-icon"><i class="fa-solid fa-calendar-days"></i></span>
@@ -196,7 +191,7 @@
 																			<div class="row g-2">
 																				<div class="col-md-6">
 																					<div class="clock-icon">
-																						<label class="form-label mt-3 fs-6">Le temp</label>
+																						<label class="form-label mt-3 fs-6">Time</label>
 																						<select class="selectpicker" data-size="5" data-live-search="true" name="time">
 																							<option value="00:00">12:00 AM</option>
 																							<option value="00:15">12:15 AM</option>
@@ -300,21 +295,21 @@
 																				<div class="col-md-6">
 																					<label class="form-label mt-3 fs-6">Duration</label>
 																					<select class="selectpicker" data-size="5" data-live-search="true" name="Duration">
-																						<option value="15">15m</option>
-																						<option value="30">30m</option>
-																						<option value="45">45m</option>
-																						<option value="60" selected="selected">1h</option>
-																						<option value="75">1h 15m</option>
-																						<option value="90">1h 30m</option>
-																						<option value="105">1h 45m</option>
-																						<option value="120">2h</option>
-																						<option value="135">2h 15m</option>
-																						<option value="150">2h 30m</option>
-																						<option value="165">2h 45m</option>
-																						<option value="180">3h</option>
-																						<option value="195">3h 15m</option>
-																						<option value="210">3h 30m</option>
-																						<option value="225">3h 45m</option>
+																						<option value="00:15:00">00:15</option>
+																						<option value="00:30:00">00:30</option>
+																						<option value="00:45:00">00:45</option>
+																						<option value="01:00:00">01:00</option>
+																						<option value="01:15:00">01:15</option>
+																						<option value="01:30:00">01:30</option>
+																						<option value="01:45:00">01:45</option>
+																						<option value="02:00:00">02:00</option>
+																						<option value="02:15:00">02:15</option>
+																						<option value="02:30:00">02:30</option>
+																						<option value="02:45:00">02:45</option>
+																						<option value="03:00:00">03:00</option>
+																						<option value="03:15:00">03:15</option>
+																						<option value="03:30:00">03:30</option>
+																						<option value="03:45:00">03:45</option>
 																					</select>
 																				</div>
 																			</div>
@@ -322,33 +317,29 @@
 																	</div>
 																</div>
 																<div class="form-group pt_30 pb_30">
-																	<label class="form-label fs-16">Ajoutez une image à votre événement.</label>
+																	<label class="form-label fs-16">Add a few images to your event banner.</label>
+																	<p class="mt-2 fs-14 d-block mb-3 pe_right">Upload colorful and vibrant images as the banner for your event! See how beautiful images help your event details page. <a href="#" class="a-link">Learn more</a></p>
 																	<div class="content-holder mt-4">
 																		<div class="default-event-thumb">
-																			<img src="images/banners/custom-img.jpg" id="thumb-img">
 																			<div class="default-event-thumb-btn">
 																				<div class="thumb-change-btn">
-																					<input type="file" id="file-input" onchange="loadFile(event)" name="image">
-																					<label for="file-input">Changer l'image</label>
+																					<input type="file" id="thumb-img" name="image">
+																					<label for="thumb-img">Change Image</label>
 																				</div>
 																			</div>
+																			<img src="images/banners/custom-img.jpg" alt="">
+
 																		</div>
 																	</div>
 																</div>
-																<script>
-																	var loadFile = function(event) {
-																		var image = document.getElementById('thumb-img');
-																		image.src = URL.createObjectURL(event.target.files[0]);
-																	};
-																</script>
 																<div class="form-group border_bottom pb_30">
-																	<label class="form-label fs-16">Veuillez décrire votre événement.</label>
-																	<p class="mt-2 fs-14 d-block mb-3">Écrivez quelques mots ci-dessous pour décrire votre événement et fournissez toute information supplémentaire telle que les horaires, l'itinéraire ou toute instruction spéciale requise pour assister à votre événement.</p>
+																	<label class="form-label fs-16">Please describe your event.</label>
+																	<p class="mt-2 fs-14 d-block mb-3">Write a few words below to describe your event and provide any extra information such as schedules, itinerary or any special instructions required to attend your event.</p>
 																	<textarea class="form-control p-2" id="exampleFormControlTextarea1" rows="10" name="arr"></textarea>
 																</div>
 																<div class="form-group pt_30 pb-2">
-																	<label class="form-label fs-16">Où se déroule votre événement ? *</label>
-																	<p class="mt-2 fs-14 d-block mb-3">Ajoutez un lieu à votre événement pour indiquer à vos participants où rejoindre l'événement.</p>
+																	<label class="form-label fs-16">Where is your event taking place? *</label>
+																	<p class="mt-2 fs-14 d-block mb-3">Add a venue to your event to tell your attendees where to join the event.</p>
 																	<div class="stepper-data-set">
 																		<div class="content-holder template-selector">
 																			<div class="row g-4">
@@ -368,7 +359,7 @@
 																				</div>
 																				<div class="col-md-6">
 																					<div class="form-group main-form mt-1">
-																						<label class="form-label">Pay*</label>
+																						<label class="form-label">Country*</label>
 																						<select class="selectpicker" data-size="5" title="Nothing selected" data-live-search="true" name="Country">
 																							<option value="Algeria">Algeria</option>
 																							<option value="Argentina">Argentina</option>
@@ -403,6 +394,7 @@
 																							<option value="Luxembourg">Luxembourg</option>
 																							<option value="Malaysia">Malaysia</option>
 																							<option value="Mexico">Mexico</option>
+																							<option value="Morocco">Morocco</option>
 																							<option value="Nepal">Nepal</option>
 																							<option value="Netherlands">Netherlands</option>
 																							<option value="New Zealand">New Zealand</option>
@@ -431,13 +423,13 @@
 																				</div>
 																				<div class="col-md-6">
 																					<div class="form-group mt-1">
-																						<label class="form-label">État*</label>
+																						<label class="form-label">State*</label>
 																						<input class="form-control h_50" type="text" placeholder="" value="Victoria" name="State">
 																					</div>
 																				</div>
 																				<div class="col-lg-6 col-md-12">
 																					<div class="form-group mt-1">
-																						<label class="form-label">Ville*</label>
+																						<label class="form-label">City/Suburb*</label>
 																						<input class="form-control h_50" type="text" placeholder="" value="Melbourne" name="City">
 																					</div>
 																				</div>
