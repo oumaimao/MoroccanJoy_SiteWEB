@@ -80,6 +80,7 @@ if(isset($_POST['submit'])){
 					<img src="images/sign-logo.svg" alt="">
 				</div>
 				<div class="sign_sidebar_text">
+					
 					<h1>Créer des événements et vendre plus de billets en ligne facilement en quelque clicks</h1>
 				</div>
 			</div>
